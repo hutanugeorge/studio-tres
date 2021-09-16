@@ -1,0 +1,12 @@
+@import '../utils/variables'
+
+@mixin respond($size)
+    @if $size == $phone
+        @media(max-width: $phone)
+            @content
+    @if $size == $tablet-portrait
+        @media(max-width: $tablet-portrait)
+            @content
+    @if $size == $tablet-landscape
+        @media(max-width: $tablet-landscape)
+            @content
