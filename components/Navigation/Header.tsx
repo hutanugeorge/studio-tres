@@ -3,7 +3,7 @@ import React from 'react'
 import { upperLinks } from '../../utils/constants'
 import '../stylesheets/components/_header.sass'
 
-const Header = () => (
+const Header = (): JSX.Element => (
    <div className="wrap-header">
        <div className="header">
            {navigationUpper()}
@@ -11,7 +11,7 @@ const Header = () => (
    </div>
 )
 
-const navigationUpper = () => upperLinks.map((link, index) => (
+const navigationUpper = (): JSX.Element[] => upperLinks.map((link, index) => (
    <div key={index} className={`header-${link.position}`}>
        <a className={`header-link`}
           href={`${link.link}`}>

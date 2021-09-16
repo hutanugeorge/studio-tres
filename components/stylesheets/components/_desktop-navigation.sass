@@ -6,8 +6,12 @@
     display: flex
     flex-direction: column
     padding: 0 6rem
+    
     @include respond($tablet-portrait)
         display: none
+        
+    @include respond($large-desktop)
+        padding: 0 35rem
 
     &__lower
         display: flex
@@ -15,14 +19,11 @@
         padding: 2rem 0
         
         &-link
-    
             &,
             &:visited,
             &:link
                 display: inline-block
                 transition: all .2s
-                text-decoration: none
-                color: black
             
             &:hover
                 transform: scale(1.05)

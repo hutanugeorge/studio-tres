@@ -1,15 +1,13 @@
 import React from 'react'
 
-import DesktopNavigation from '../components/Navigation/DesktopNavigation'
-import MobileNavigation from '../components/Navigation/MobileNavigation'
-import Header from '../components/Navigation/Header'
+import Navigation from '../components/Navigation'
+import HeroSection from '../components/Header/HeroSection'
 
 
-const App = () => (
+const App = (): JSX.Element => (
    <div>
-       <Header/>
-       <DesktopNavigation/>
-       <MobileNavigation/>
+       <Navigation />
+       <HeroSection />
    </div>
 )
 

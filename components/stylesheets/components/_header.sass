@@ -17,6 +17,9 @@
     
     @include respond($phone)
         padding: 0 2rem
+    
+    @include respond($large-desktop)
+        padding: 0 35rem
 
     &-link
 
@@ -25,8 +28,6 @@
         &:link
             display: inline-block
             transition: all .2s
-            text-decoration: none
-            color: black
 
         &:hover
             transform: scale(1.14)

@@ -10,3 +10,6 @@
     @if $size == $tablet-landscape
         @media(max-width: $tablet-landscape)
             @content
+    @if $size == $large-desktop
+        @media(min-width: $large-desktop)
+            @content
