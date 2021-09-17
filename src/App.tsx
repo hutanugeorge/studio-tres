@@ -1,13 +1,15 @@
 import React from 'react'
 
-import Navigation from '../components/Navigation'
-import HeroSection from '../components/Header/HeroSection'
+import NavigationSection from '../components/NavigationSection'
+import HeroSection from '../components/HeroSection/HeroSection'
+import FeatureSection from '../components/FeatureSection/FeatureSection'
 
 
 const App = (): JSX.Element => (
    <div>
-       <Navigation />
+       <NavigationSection />
        <HeroSection />
+       <FeatureSection />
    </div>
 )
 

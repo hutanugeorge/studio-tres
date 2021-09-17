@@ -1,10 +1,11 @@
 import React from 'react'
 
 import '../stylesheets/components/_hero-section.sass'
+import '../stylesheets/utils/_utils.sass'
 
 const HeroSection = (): JSX.Element => {
     return (
-       <div className="hero-section">
+       <section className="hero-section row">
            <div className="hero-section__image-container">
            </div>
            <div className="hero-section__text-container">
@@ -13,7 +14,7 @@ const HeroSection = (): JSX.Element => {
                    Make an appointment
                </a>
            </div>
-       </div>
+       </section>
     )
 }
 

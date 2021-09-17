@@ -1,0 +1,14 @@
+@import '../utils/variables'
+@import '../utils/mixins'
+
+.feature-section
+    display: flex
+    gap: 13rem
+    margin: 0 auto 5rem auto
+    height: fit-content
+    width: 75%
+    flex-wrap: wrap
+    justify-content: center
+    
+    @include respond($tablet-portrait)
+        gap: 4rem

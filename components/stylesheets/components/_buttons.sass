@@ -1,17 +1,22 @@
 @import '../utils/variables'
+@import '../utils/mixins'
 
 .btn-navigation
     z-index: 2
-    position: absolute
-    top: 5%
+    position: fixed
+    top: 2%
     right: 6%
-    width: 5rem
-    height: 5rem
+    width: 7rem
+    height: 7rem
     background-color: $color-white-ghost
     box-shadow: 0 1rem 2rem rgba($color-black, .3)
     border-radius: 50%
     cursor: pointer
     transition: all .2s
+    
+    @include respond($phone)
+        width: 5rem
+        height: 5rem
     
     &:hover  &--inside
         &::after
@@ -51,3 +56,6 @@
             left: -1px
             width: 100%
             border: .15rem solid $color-black
+            
+    
+        
