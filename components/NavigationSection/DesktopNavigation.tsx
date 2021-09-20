@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import { lowerLinks } from '../../utils/constants'
 import '../stylesheets/components/_desktop-navigation.sass'
@@ -14,10 +15,10 @@ const DesktopNavigation = (): JSX.Element => (
 
 const navigationLower = (): JSX.Element[] => lowerLinks.map((link, index): JSX.Element => (
    <div key={index} className={`desktop-navigation__lower-${++index}`}>
-       <a className={`desktop-navigation__lower-link`}
-          href={`${link.link}`}>
+       <Link className={`desktop-navigation__lower-link`}
+          to={`${link.link}`}>
            {link.name}
-       </a>
+       </Link>
    </div>
 ))
 

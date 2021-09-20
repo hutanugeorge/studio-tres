@@ -55,8 +55,11 @@
             text-decoration: none
             color: rgba($color-black, .8)
     
-    &-middle
-        letter-spacing: .6rem
+    &-middle &-link
+        letter-spacing: .8rem
+        background-image: linear-gradient(to right, rgba($color-primary-dark, .8), rgba($color-primary, .5))
+        -webkit-background-clip: text
+        color: transparent
         
         @include respond($phone)
             padding: 0 1rem
@@ -116,3 +119,33 @@
     
     @include respond($tablet-portrait)
         font-size: 1.5rem
+        
+.pricing-card
+    font-family: 'Montserrat', sans-serif
+    text-transform: uppercase
+    
+    &__main-service
+        font-size: 1.8rem
+        letter-spacing: .3rem
+        font-weight: 700
+        color: $color-primary
+    
+        @include respond($tablet-landscape)
+            font-size: 1.4rem
+        
+    &__sub-services
+        &--service
+            &--title
+                color: $color-white-ghost
+                font-size: 1.5rem
+    
+                @include respond($tablet-landscape)
+                    font-size: 1.2rem
+            
+            &--price
+                color: $color-white-ghost
+                font-weight: 100
+                font-size: 2rem
+    
+                @include respond($tablet-landscape)
+                    font-size: 1.5rem

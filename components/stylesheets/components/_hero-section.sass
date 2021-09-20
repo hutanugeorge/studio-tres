@@ -6,19 +6,24 @@
 .hero-section
     display: flex
     margin: 0 auto
-    height: 70vh
+    height: 100vh
     width: 100%
     
     @include respond($tablet-portrait)
+        height: 100vh
         flex-direction: column
+        
+    @include respond($phone)
+        margin-bottom: 10%
     
     &__image-container
-        margin: 5% 0 0 10%
+        margin: 5% 0 0 6%
         height: 70%
         width: 60%
-        background-image: linear-gradient(to left top, rgba($color-primary-dark, .6), rgba($color-primary-light, .6)), url(/images/hero-photo.jpg)
+        background-image: linear-gradient(to left top, rgba($color-primary-dark, .3), rgba($color-primary-light, .2)), url(/images/hero-photo.jpg)
         background-size: cover
         background-position: center
+        border-radius: 10px
         top: 0
         clip-path: polygon(0 0, 85% 0%, 60% 100%, 0% 100%)
     
@@ -28,12 +33,13 @@
             width: 90%
             
         @include respond($phone)
-            clip-path: polygon(0 0, 95% 0%, 80% 100%, 0% 100%)
+            margin: 10% 0 0 5%
+            clip-path: polygon(0 0, 100% 0%, 80% 100%, 0% 100%)
             
     &__text-container
         position: relative
         display: inline-block
-        height: 70%
+        height: 80%
         flex-grow: 1
         margin: 5% 0 0 2%
         text-align: center
@@ -46,7 +52,7 @@
     &__title
         position: absolute
         top: 30%
-        left: -45%
+        left: -38%
         animation: moveToLeft .5s ease-out .5s
         animation-fill-mode: backwards
     
@@ -58,8 +64,8 @@
         
     &__button
         position: absolute
-        bottom: 10%
-        left: -20%
+        bottom: 30%
+        left: -10%
         width: 20rem
         animation: moveInBottom .5s ease-out .5s
         animation-fill-mode: backwards
@@ -68,8 +74,11 @@
     
         @include respond($tablet-portrait)
             position: relative
-            top: 10%
+            top: 15%
             left: 0
+            
+        @include respond($phone)
+            top: 10%
         
         &,
         &:visited,
@@ -78,12 +87,9 @@
             border-radius: 50px
             background-color: $color-secondary
             color: $color-white-ghost
-    
-            @include respond($tablet-portrait)
-                padding: 2.5rem
                 
             @include respond($phone)
-                padding: 1.5rem
+                padding: 2rem
             
             
         &:hover

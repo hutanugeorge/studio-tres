@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 import { upperLinks } from '../../utils/constants'
 import '../stylesheets/components/_header.sass'
@@ -13,10 +14,10 @@ const Header = (): JSX.Element => (
 
 const navigationUpper = (): JSX.Element[] => upperLinks.map((link, index) => (
    <div key={index} className={`header-${link.position}`}>
-       <a className={`header-link`}
-          href={`${link.link}`}>
+       <Link className={`header-link`}
+          to={`${link.link}`}>
            {link.name}
-       </a>
+       </Link>
    </div>
 ))
 

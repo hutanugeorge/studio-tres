@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import {Link} from 'react-router-dom'
 
 import { lowerLinks } from '../../utils/constants'
 import '../stylesheets/components/_mobile-navigation.sass'
@@ -23,10 +24,10 @@ const onClickNavigationHandler = (): void => {
            </div>
            <div className={`mobile-navigation ${navigation}`}>
                <div className="mobile-navigation__header">
-                   <a className="mobile-navigation__header-link"
-                      href="#">
+                   <Link className="mobile-navigation__header-link"
+                      to="/">
                        Tres Studio
-                   </a>
+                   </Link>
                </div>
                <div className="mobile-navigation__links">
                    {navigationLower()}
@@ -38,10 +39,10 @@ const onClickNavigationHandler = (): void => {
 
 const navigationLower = (): JSX.Element[] => lowerLinks.map((link, index) => (
    <div key={index} className={`mobile-navigation__menu mobile-navigation__menu-${++index}`}>
-       <a className={`mobile-navigation__menu-link`}
-          href={`${link.link}`}>
+       <Link className={`mobile-navigation__menu-link`}
+          to={`${link.link}`}>
            {link.name}
-       </a>
+       </Link>
    </div>
 ))
 

@@ -4,7 +4,7 @@ import '../stylesheets/components/_card.sass'
 import { featureCard } from '../../utils/constants'
 
 
-const Card = (props: featureCard):JSX.Element => {
+const FeatureCard = (props: featureCard):JSX.Element => {
     return (
        <div className="card">
            <div className="card__image-container" >
@@ -26,4 +26,4 @@ const Card = (props: featureCard):JSX.Element => {
 }
 
 
-export default Card
+export default FeatureCard
