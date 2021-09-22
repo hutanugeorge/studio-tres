@@ -4,7 +4,7 @@ import { Price, SubService } from '../../utils/constants'
 import '../stylesheets/components/_pricing-card.sass'
 
 
-const PricingCard = (props: Price): JSX.Element => {
+const PricingCard: React.FC<Price> = (props: Price): JSX.Element => {
     return (
        <div className="pricing-card">
            <div className="pricing-card__main-service">
@@ -32,3 +32,4 @@ const generateSubServices = (subServices: SubService[]): JSX.Element[] =>
    ))
 
 export default PricingCard
+

@@ -1,8 +1,20 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from 'react-dom'
+import {Provider} from 'react-redux'
+import {createStore, applyMiddleware} from '@reduxjs/toolkit'
+import thunk from "redux-thunk"
+
+import { rootReducer } from '../reducers'
 import App from './App'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+
+const store = createStore(rootReducer, applyMiddleware(thunk))
+
+render(
+   <Provider store={store}>
+      <App />
+   </Provider>,
+   document.getElementById('root'))
 
 document.documentElement.style.fontSize = '62.5%'
 document.documentElement.style.margin = '0px'
