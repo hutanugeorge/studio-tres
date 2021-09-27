@@ -1,0 +1,51 @@
+@import '../sharedStyles/utils/variables'
+@import '../sharedStyles/base/typography'
+
+
+.pricing-card
+    height: 40rem
+    padding: 2rem
+    min-width: 40%
+    max-width: 110rem
+    display: flex
+    box-shadow: 0 1rem 2rem rgba($color-black, .4)
+    margin: 3rem
+    border-radius: 10px
+    overflow: hidden
+    align-self: center
+    background: $color-white-ghost
+    
+    @include respond($tablet-landscape)
+        width: 55%
+        
+    @include respond($tablet-portrait)
+        width: 75%
+        flex-direction: column
+        
+    
+    &__main-service
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 30%
+        padding-left: 3rem
+        
+        @include respond($tablet-portrait)
+            width: 85%
+        
+    &__sub-services
+        display: flex
+        justify-content: center
+        width: 73%
+        flex-direction: column
+        clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%)
+        border-radius: 10px
+        background-image: linear-gradient(to right bottom, rgba($color-primary-dark, .7), rgba($color-primary, .4))
+    
+        @include respond($tablet-portrait)
+            clip-path: polygon(5% 0, 100% 0, 100% 100%, 0 100%)
+            width: 100%
+        
+        &--service
+            display: flex
+            justify-content: space-evenly

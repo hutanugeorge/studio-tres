@@ -4,7 +4,6 @@ import { GoogleMap, Marker, useLoadScript } from '@react-google-maps/api'
 
 import mapStyles from '../../utils/mapStyles'
 import { GOOGLE_API_KEY } from '../../keys'
-import '../stylesheets/components/_directions-section.sass'
 
 
 const DirectionsSection: FC = (): JSX.Element => {
@@ -15,16 +14,18 @@ const DirectionsSection: FC = (): JSX.Element => {
   if (loadError) return (<div>Error loading maps</div>)
   if (!isLoaded) return (<div>Loading Maps</div>)
   return (
-    <div className="direction-section">
-      <h1 className="direction-section__title">Tres Studio</h1>
-      <GoogleMap mapContainerStyle={mapContainerStyle}
-                 zoom={13}
-                 center={center}
-                 options={options}>
-        <Marker position={center}
-                onClick={() => window.open('https://www.google.com/maps/place/45°43\'41.6%22N+21°16\'16.3%22E/')}/>
-      </GoogleMap>
-    </div>
+    <section id="directions" className="direction-section--wrap">
+      <div className="direction-section">
+        <h1 className="direction-section__title">Tres Studio</h1>
+        <GoogleMap mapContainerStyle={mapContainerStyle}
+                   zoom={13}
+                   center={center}
+                   options={options}>
+          <Marker position={center}
+                  onClick={() => window.open('https://www.google.com/maps/place/45°43\'41.6%22N+21°16\'16.3%22E/')}/>
+        </GoogleMap>
+      </div>
+    </section>
   )
 
 }

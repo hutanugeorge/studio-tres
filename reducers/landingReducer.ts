@@ -1,20 +1,16 @@
-import { actions } from '../utils/constants'
-import { LandingInfo } from '../shared/interfaces/landingInfo'
+import { actions, defaultValues } from '../utils/constants'
+import { ILandingInfo } from '../shared/interfaces/presentationPage'
 
 
 interface landingReducerAction {
   type: string,
-  payload: LandingInfo
+  payload: ILandingInfo
 }
 
 const { FETCH_HERO_SECTION } = actions
+const { DEFAULT_LANDING_INFO } = defaultValues
 
-const INITIAL_STATE: LandingInfo = {
-  landingPhrase: 'Default',
-  landingButtonPhrase: 'Make an appointment'
-}
-
-const landingReducer = (state: LandingInfo = INITIAL_STATE, { type, payload }: landingReducerAction) => {
+const landingReducer = (state: ILandingInfo = DEFAULT_LANDING_INFO, { type, payload }: landingReducerAction) => {
   switch (type) {
     case FETCH_HERO_SECTION:
       return { ...state, landingPhrase: payload.landingPhrase, landingButtonPhrase: payload.landingButtonPhrase}

@@ -1,12 +1,14 @@
 import { combineReducers } from 'redux'
 
 import landingReducer from './landingReducer'
-import featureCardsReducer from './featureSectionReducer'
+import featuresReducer from './featureReducer'
+import reviewsReducer from './reviewsReducer'
 
 
 export const rootReducer = combineReducers({
   landingInfo: landingReducer,
-  featureCards: featureCardsReducer
+  features: featuresReducer,
+  reviews: reviewsReducer
 })
 
 export type RootState = ReturnType<typeof rootReducer>

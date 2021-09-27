@@ -1,0 +1,138 @@
+@import '../sharedStyles/utils/variables'
+@import '../sharedStyles/utils/mixins'
+@import '../sharedStyles/base/typography'
+@import '../sharedStyles/base/animations'
+
+
+.hidden
+    display: none !important
+
+.login-modal
+    &__wrap
+        background-color: rgba($color-primary-light, .7)
+        height: 100%
+        width: 100%
+        position: fixed
+        top: 0
+        z-index: 60
+        animation: moveInBottom .7s ease-in backwards
+        
+    &__container
+        z-index: 60
+        border-radius: 10px
+        position: fixed
+        top: 50%
+        right: 50%
+        transform: translate(50%, -50%)
+        animation: moveInBottomModal .7s ease-in .2s backwards
+        margin: 0 auto
+        background: url(../../images/modal-background.svg)
+        background-size: cover
+        height: fit-content
+        width: 80rem
+        display: flex
+        flex-direction: column
+        align-items: flex-end
+        padding-bottom: 5rem
+        
+        @include respond($tablet-portrait)
+            background: url(../../images/modal-background-vertical.svg) bottom
+            max-width: 50rem
+            
+        @include respond($phone)
+            max-width: 30rem
+        
+        &--close
+            padding: 2rem 2rem
+            width: 2rem
+            height: 2rem
+            cursor: pointer
+            
+            &--icon
+                width: 100%
+                height: 100%
+        
+        &--form
+            width: 50%
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+    
+            @include respond($tablet-portrait)
+                width: 100%
+            
+            &--title
+                margin-bottom: 5rem
+            
+            &--inputs
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                
+                &--input
+                    text-align: center
+                    border: none
+                    border-radius: 40px
+                    padding: 1rem 2rem
+                    width: 20rem
+                    height: 3rem
+                    box-shadow: 0 1rem 2rem rgba($color-black, .2)
+                    transition: all .4s
+    
+                    @include respond($phone)
+                        padding: .6rem 1.6rem
+                    
+                    &:focus
+                        transform: translateY(-.4rem)
+                        box-shadow: 0 2rem 4rem rgba($color-black, .2)
+                        
+                        &::placeholder
+                            opacity: 0
+                            
+                    &:focus + .login-modal__container--form--inputs--label
+                        opacity: 1
+                        transform: translateY(0)
+                        margin-bottom: 3rem
+                        
+                    &--buttons
+                        display: flex
+                    
+                &--label
+                    transition: all .6s
+                    margin-top: 1rem
+                    opacity: 0
+                    transform: translateY(-1.5rem)
+                    
+                &--button
+                    box-shadow: 0 1rem 2rem rgba($color-black, .3)
+                    cursor: pointer
+                    margin-top: 1rem
+                    margin-right: 2rem
+                    transition: all .4s
+                    border-radius: 50px
+                    
+                    &--login
+                        padding: 1.4rem 4rem
+                        border: none
+                        background-image: linear-gradient(to bottom right, $color-secondary-dark, $color-secondary)
+    
+                        @include respond($phone)
+                            padding: 1rem 2rem
+                        
+                    &--signup
+                        padding: 1.1rem 3.2rem
+                        border: .3rem solid $color-secondary
+                        background: $color-white-ghost
+    
+                        @include respond($phone)
+                            padding: .8rem 1.8rem
+                        
+                    &:hover
+                        box-shadow: 0 2rem 4rem rgba($color-black, .2)
+                    
+                    &:active
+                        transform: translateY(0)
+                        box-shadow: 0 1rem 2rem rgba($color-black, .2)
+                        

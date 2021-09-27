@@ -4,8 +4,6 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { RootState } from '../../reducers'
 import { fetchLanding } from '../../actions'
-import '../stylesheets/components/_hero-section.sass'
-import '../stylesheets/utils/_utils.sass'
 
 
 const HeroSection: FC = (): JSX.Element => {

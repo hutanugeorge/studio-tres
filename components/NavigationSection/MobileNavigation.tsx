@@ -1,14 +1,17 @@
-import React, { FC, useState } from 'react'
+import React, { Dispatch, FC, SetStateAction, useState } from 'react'
+
 import { Link } from 'react-router-dom'
 
-import { JSXArrayElements } from '../../shared/types'
-import { lowerLinks } from '../../utils/constants'
-import '../stylesheets/components/_mobile-navigation.sass'
-import '../stylesheets/components/_buttons.sass'
+import LoginModal from '../LoginModal/LoginModal'
+import { navigationLinks, otherPageLinks } from '../../utils/constants'
+import { Link as ScrollLink } from 'react-scroll/modules'
 
+
+type GenerateNavigationLinks = (setShowModal: Dispatch<SetStateAction<string>>) => JSX.Element[]
 
 
 const MobileNavigation: FC = (): JSX.Element => {
+  const [ showModal, setShowModal ] = useState(false)
   const [ navigation, setNavigation ] = useState('')
   const onClickNavigationHandler = (): void => {
     navigation === '' && setNavigation('mobile-navigation-open')
@@ -16,34 +19,76 @@ const MobileNavigation: FC = (): JSX.Element => {
   }
 
   return (
-    <div className="wrap-navigation">
-      <div className="btn-navigation"
-           onClick={onClickNavigationHandler}>
-        <div className="btn-navigation--inside"/>
-      </div>
-      <div className={`mobile-navigation ${navigation}`}>
-        <div className="mobile-navigation__header">
-          <Link className="mobile-navigation__header-link"
-                to="/">
-            Tres Studio
-          </Link>
+    <>
+      <LoginModal showModal={showModal} toggleModal={() => {
+        setShowModal(prev => !prev)
+      }}/>
+      <div className="wrap-navigation">
+        <div className="btn-navigation"
+             onClick={onClickNavigationHandler}>
+          <div className="btn-navigation--inside"/>
         </div>
-        <div className="mobile-navigation__links">
-          {navigationLower()}
+        <div className={`mobile-navigation ${navigation}`}>
+          <div className="mobile-navigation__header">
+            <Link className="mobile-navigation__header-link"
+                  to="/">
+              Tres Studio
+            </Link>
+          </div>
+          <div className="mobile-navigation__links">
+            {generateNavigationLinks(setNavigation)}
+          </div>
+          <div className="mobile-navigation__bottom">
+            <a
+              onClick={() => {
+                setNavigation('')
+                setShowModal(true)
+              }}
+              className="mobile-navigation__login-button ">
+              Login
+            </a>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 
-const navigationLower: JSXArrayElements = (): JSX.Element[] => lowerLinks.map((link, index) => (
-  <div key={index}
-       className={`mobile-navigation__menu mobile-navigation__menu-${++index}`}>
-    <Link className={`mobile-navigation__menu-link`}
-          to={`${link.link}`}>
-      {link.name}
-    </Link>
-  </div>
-))
+
+const generateNavigationLinks: GenerateNavigationLinks = (setNavigation): JSX.Element[] =>
+  window.location.href === 'http://localhost:3000/' ?
+
+    navigationLinks.map((link, index): JSX.Element =>
+      <div key={index}
+           className={`mobile-navigation__menu mobile-navigation__menu-${++index}`}>
+        {link.link[ 0 ] === '/' ?
+          <Link
+            className="mobile-navigation__menu-link"
+            to={link.link}>
+            {link.name}
+          </Link>
+          :
+          <ScrollLink
+            className="mobile-navigation__menu-link"
+            to={link.link}
+            smooth={true}
+            onClick={() => setNavigation('')}
+          >
+            {link.name}
+          </ScrollLink>
+        }
+      </div>)
+
+    :
+
+    otherPageLinks.map((link, index): JSX.Element =>
+      <div key={index}
+           className={`mobile-navigation__menu mobile-navigation__menu-${++index}`}>
+        <Link
+          className="mobile-navigation__menu-link"
+          to={link.link}>
+          {link.name}
+        </Link>
+      </div>)
 
 export default MobileNavigation

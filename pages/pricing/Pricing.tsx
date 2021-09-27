@@ -1,14 +1,16 @@
 import React, { FC } from 'react'
 
 import PricingSection from '../../components/PricingSection/PricingSection'
-import Navigation from '../../components/NavigationSection/NavigationSection'
+import DesktopNavigation from '../../components/NavigationSection/DesktopNavigation'
+import MobileNavigation from '../../components/NavigationSection/MobileNavigation'
+import '../../components/PricingSection/pricing-section.sass'
 
 const Pricing: FC = (): JSX.Element =>
-  (
-    <>
-      <Navigation/>
-      <PricingSection/>
-    </>
-  )
+  <div className="pricing-wrap">
+    <DesktopNavigation/>
+    <MobileNavigation/>
+    <PricingSection/>
+  </div>
+
 
 export default Pricing

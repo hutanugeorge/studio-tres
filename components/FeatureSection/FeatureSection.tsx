@@ -2,49 +2,47 @@ import React, { FC, useEffect } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
 
-import { fetchFeatureCards } from '../../actions'
-import '../stylesheets/components/_feature-section.sass'
-import '../stylesheets/components/_card.sass'
+import { fetchFeatures } from '../../actions'
 import { RootState } from '../../reducers'
-import { FeatureCard } from '../../shared/interfaces/featureSection'
+import { IFeature } from '../../shared/interfaces/presentationPage'
 
 
-interface FeatureCards {
-  featureCards: FeatureCard[]
+interface IFeatures {
+  features: IFeature[]
 }
 
-type generateCards = (featureCards: FeatureCards) => JSX.Element[]
+type generateCards = (features: IFeatures) => JSX.Element[]
 
 const FeatureSection: FC = (): JSX.Element => {
   const dispatch = useDispatch()
-  const featureCards: FeatureCards = useSelector((state: RootState) => state.featureCards)
+  const features: IFeatures = useSelector((state: RootState) => state.features)
 
   useEffect(() => {
-    dispatch(fetchFeatureCards())
+    dispatch(fetchFeatures())
   }, [ dispatch ])
 
   return (
-    <section className="feature-section--wrap">
+    <section className="feature-section--wrap" id="features">
       <div className="feature-section">
-        {generateCards(featureCards)}
+        {generateCards(features)}
       </div>
     </section>
   )
 }
 
-const generateCards: generateCards = ({ featureCards }: FeatureCards): JSX.Element[] => {
-  if (featureCards === undefined) return [ <div key={'1'}>Loading...</div> ]
-  return featureCards.map((featureCard: FeatureCard) =>
-    <div className="card" key={featureCard._id}>
+const generateCards: generateCards = ({ features }: IFeatures): JSX.Element[] => {
+  if (features === undefined) return [ <div key={'1'}>Loading...</div> ]
+  return features.map((feature: IFeature) =>
+    <div className="card" key={feature._id}>
       <div className="card__image-container">
-        <img className="card__image" src={`./images/${featureCard.image}`} alt=""/>
+        <img className="card__image" src={`./images/${feature.image}`} alt=""/>
       </div>
       <div className="card__title-container">
-        <h2 className="card__title-container-title">{featureCard.title}</h2>
+        <h2 className="card__title-container-title">{feature.title}</h2>
       </div>
       <div className="card__description-container">
         <p className="card__description-container-text">
-          {featureCard.description}
+          {feature.description}
         </p>
       </div>
       <div className="card__button-container">
