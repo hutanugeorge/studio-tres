@@ -3,13 +3,13 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import NavigationSection from '../components/NavigationSection/NavigationSection'
 import FeatureSection from '../components/FeatureSection/FeatureSection'
-import Pricing from '../pages/Pricing'
 import ReviewsSection from '../components/ReviewsSection/ReviewsSection'
 import DirectionsSection from '../components/DirectionsSection/DirectionsSection'
-import Program from '../pages/Program'
 import FooterSection from '../components/FooterSection/FooterSection'
-import '../components/sharedStyles/all.sass'
+import Pricing from '../pages/Pricing'
+import Program from '../pages/Program'
 import UserSide from '../pages/UserSide'
+import '../components/sharedStyles/all.sass'
 
 
 const App: FC = (): JSX.Element =>
@@ -21,18 +21,20 @@ const App: FC = (): JSX.Element =>
           <FeatureSection/>
           <ReviewsSection/>
           <DirectionsSection/>
+          <FooterSection />
         </Route>
         <Route path="/pricing">
           <Pricing/>
+          <FooterSection />
         </Route>
         <Route path="/program">
           <Program/>
+          <FooterSection />
         </Route>
         <Route path="/login">
           <UserSide />
         </Route>
       </Switch>
-      <FooterSection />
     </div>
   </Router>
 

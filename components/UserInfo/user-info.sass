@@ -14,11 +14,16 @@
     height: 100vh
     transition: all .5s
     animation: moveInBottom 1s ease-in
+    position: sticky
+    top: 0
+    left: 0
+    bottom: 0
     
     &-wrap
         background: $color-primary-dark
-    
+
     &:hover
+        width: 24rem
         max-width: 30rem
     
     &:hover &__details--detail--icon ~ &__details--detail--personal

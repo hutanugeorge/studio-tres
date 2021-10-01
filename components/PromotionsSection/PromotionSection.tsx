@@ -1,11 +1,10 @@
 import * as React from 'react';
 import { FC } from 'react'
+import PromoCard from "./PromoCard";
 
 const PromotionSection: FC = (): JSX.Element =>
   <div className="promotions">
-    <div className="promotions__title-container">
-      <p className="promotions__title" >Promotions</p>
-    </div>
+    <PromoCard />
   </div>
 
 export default PromotionSection

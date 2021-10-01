@@ -9,24 +9,21 @@ type getLandingInfo = () => Promise<ILandingInfo>
 type getFeatures = () => Promise<IFeature[]>
 type getReviews = () => Promise<IReview[]>
 
-const { landing, features, reviews } = tresStudioAPIRoutes
-const { DEFAULT_LANDING_INFO, DEFAULT_FEATURE, DEFAULT_REVIEW } = defaultValues
-
 export const getLandingInfo: getLandingInfo = async (): Promise<ILandingInfo> => {
-  const { status, data }: AxiosResponse = await getAxiosResponse(landing)
-  return status === 200 ? data.landingInfo : DEFAULT_LANDING_INFO
+   const { status, data }: AxiosResponse = await getAxiosResponse(tresStudioAPIRoutes.landing)
+   return status === 200 ? data.landingInfo : defaultValues.LANDING_INFO
 }
 
 export const getFeatures: getFeatures = async (): Promise<IFeature[]> => {
-  const { status, data }: AxiosResponse = await getAxiosResponse(features)
-  return status === 200 ? data.features : [ DEFAULT_FEATURE ]
+   const { status, data }: AxiosResponse = await getAxiosResponse(tresStudioAPIRoutes.features)
+   return status === 200 ? data.features : [ defaultValues.FEATURE ]
 }
 
 export const getReviews: getReviews = async (): Promise<IReview[]> => {
-  const { status, data }: AxiosResponse = await getAxiosResponse(reviews)
-  return status === 200 ? data.reviews : [ DEFAULT_REVIEW ]
+   const { status, data }: AxiosResponse = await getAxiosResponse(tresStudioAPIRoutes.reviews)
+   return status === 200 ? data.reviews : [ defaultValues.REVIEW ]
 }
 
 const getAxiosResponse: getAxiosResponse = async (route: string): Promise<AxiosResponse> => {
-  return await axios.get(route)
+   return await axios.get(route)
 }

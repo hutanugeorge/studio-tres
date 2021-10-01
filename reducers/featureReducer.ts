@@ -8,9 +8,9 @@ interface featuresReducerAction {
 }
 
 const { FETCH_FEATURES } = actions
-const { DEFAULT_FEATURE } = defaultValues
+const { FEATURE } = defaultValues
 
-const featuresReducer = (state: IFeature[] = [ DEFAULT_FEATURE ], {
+const featuresReducer = (state: IFeature[] = [ FEATURE ], {
   type,
   payload
 }: featuresReducerAction) => {

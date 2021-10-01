@@ -8,9 +8,9 @@ interface landingReducerAction {
 }
 
 const { FETCH_HERO_SECTION } = actions
-const { DEFAULT_LANDING_INFO } = defaultValues
+const { LANDING_INFO } = defaultValues
 
-const landingReducer = (state: ILandingInfo = DEFAULT_LANDING_INFO, { type, payload }: landingReducerAction) => {
+const landingReducer = (state: ILandingInfo = LANDING_INFO, { type, payload }: landingReducerAction) => {
   switch (type) {
     case FETCH_HERO_SECTION:
       return { ...state, landingPhrase: payload.landingPhrase, landingButtonPhrase: payload.landingButtonPhrase}

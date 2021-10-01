@@ -1,0 +1,61 @@
+
+.promo-card
+  width: 100%
+  height: 100%
+  background-image: linear-gradient(0deg, rgba(0,124,119,1) 0%, rgba(82,182,154,1) 43%, rgba(244,244,244,1) 100%)
+  border-radius: 20px
+  overflow: hidden
+  box-shadow: 0 1rem 2rem rgba($color-black, .4)
+
+  &:hover
+    transition: all .4s
+    transform: rotate3d(0, 0, 10, -8deg) scale(1.04)
+
+  &--wrapper
+    width: 30rem
+    height: 50rem
+
+  &__image
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 70%)
+    width: 100%
+    height: 50%
+    overflow: hidden
+    position: relative
+
+    &--content
+      position: absolute
+      top: -10%
+      left: -15%
+      height: 100%
+      filter: saturate(.7)
+
+  &__description
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    width: 100%
+    height: 50%
+
+    &--title
+      padding: 2rem 3rem
+      border-radius: 10px
+      left: 1%
+      top: 4%
+      transform: rotate(-20deg)
+      position: absolute
+
+    &--text
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 100%
+      height: 40%
+
+
+    &--button
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 100%
+      height: 40%

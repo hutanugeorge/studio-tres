@@ -8,9 +8,9 @@ interface IReviewsReducerAction {
 }
 
 const { FETCH_REVIEWS } = actions
-const { DEFAULT_REVIEW } = defaultValues
+const { REVIEW } = defaultValues
 
-const reviewsReducer = (state: IReview[] = [ DEFAULT_REVIEW ], action: IReviewsReducerAction) => {
+const reviewsReducer = (state: IReview[] = [ REVIEW ], action: IReviewsReducerAction) => {
   const { type, payload } = action
   switch (type) {
     case FETCH_REVIEWS:
