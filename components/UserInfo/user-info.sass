@@ -1,0 +1,87 @@
+@import '../sharedStyles/utils/variables'
+@import '../sharedStyles/utils/mixins'
+@import '../sharedStyles/base/typography'
+@import '../sharedStyles/base/animations'
+
+.user-info
+    box-shadow: 1rem 1rem 2rem rgba($color-black, .2)
+    background: $color-primary-dark
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    gap: 5rem
+    max-width: 9rem
+    height: 100vh
+    transition: all .5s
+    animation: moveInBottom 1s ease-in
+    
+    &-wrap
+        background: $color-primary-dark
+    
+    &:hover
+        max-width: 30rem
+    
+    &:hover &__details--detail--icon ~ &__details--detail--personal
+        transition: all .3s .2s
+        opacity: 1
+        transform: translateX(0)
+    
+    &:hover &__header--image ~ &__header--name
+        transition: opacity .5s .2s
+        opacity: 1
+        width: 80%
+    
+    &__header
+        display: flex
+        margin: 5rem 2rem 6rem 1rem
+        height: 10vh
+        align-items: center
+        
+        &--image
+            clip-path: circle()
+            width: 6rem
+            
+            &--content
+                width: 6rem
+        
+        &--name
+            opacity: 0
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 0
+            height: 100%
+    
+    &__details
+        display: flex
+        flex-direction: column
+        gap: 2rem
+        margin: 2rem 2.5rem
+        
+        &--detail
+            text-decoration: none
+            display: flex
+            align-items: center
+            gap: 2rem
+            
+            &:hover &--personal
+                color: $color-white-ghost
+            
+            &--icon
+                cursor: pointer
+                
+                &--content
+                    width: 3rem
+                    height: 3rem
+            
+            &--personal
+                transform: translatex(-5rem)
+                opacity: 0
+                cursor: pointer
+    
+    &__settings
+        display: flex
+        flex-direction: column
+        gap: 2rem
+        margin: 2rem 2.5rem
+        
