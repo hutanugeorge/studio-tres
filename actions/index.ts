@@ -1,10 +1,9 @@
 import { Dispatch } from 'redux'
 
-import { getFeatures, getLandingInfo, getReviews } from '../api/tresStudio'
+import { getFeatures, getLandingInfo, getPromotions, getReviews } from '../api/tresStudio'
 import { actions } from '../utils/constants'
-import { IFeature, ILandingInfo, IReview } from '../shared/interfaces/presentationPage'
+import { IFeature, ILandingInfo, IPromotion, IReview } from '../shared/interfaces/presentationPage'
 import { SetUserView } from "../shared/types";
-
 
 
 type FetchActionType = () => (dispatch: Dispatch) => void
@@ -31,6 +30,14 @@ export const fetchReviews: FetchActionType = () => async (dispatch: Dispatch): P
    dispatch({
       type: actions.FETCH_REVIEWS,
       payload: { reviews }
+   })
+}
+
+export const fetchPromotions: FetchActionType = () => async (dispatch: Dispatch): Promise<void> => {
+   const promotions: IPromotion[] = await getPromotions()
+   dispatch({
+      type: actions.FETCH_PROMOTIONS,
+      payload: { promotions }
    })
 }
 

@@ -3,9 +3,9 @@ import { FC } from 'react'
 
 import { useSelector } from "react-redux";
 
-import PromotionSection from '../PromotionsSection/PromotionSection'
-import RewardsSection from '../RewardsSection/RewardsSection'
-import LastAppointmentsSection from '../VisitsSection/VisitsSection'
+import PromotionSection from './PromotionsSection/PromotionSection'
+import RewardsSection from './RewardsSection/RewardsSection'
+import LastAppointmentsSection from './VisitsSection/VisitsSection'
 import { RootState } from "../../reducers";
 import { actions } from '../../utils/constants'
 
@@ -19,6 +19,14 @@ const UserDashboardSection: FC = (): JSX.Element => {
 
    return (
       <div className="user-dashboard">
+         <div className="user-dashboard__toggle-menu--wrap">
+            <div className="user-dashboard__toggle-menu" />
+         </div>
+         <div className="user-dashboard__mobile-menu--wrap">
+            <div className="user-dashboard__mobile-menu">
+
+            </div>
+         </div>
          {renderUserView(userView)}
       </div>
    )

@@ -1,6 +1,6 @@
-import { IFeature, ILandingInfo, IReview } from '../shared/interfaces/presentationPage'
-import { IUserViewAction } from "../shared/interfaces/userView";
 import { setUserViewDiscounts, setUserViewRewards, setUserViewVisits } from "../actions";
+import { IFeature, ILandingInfo, IPromotion, IReview } from '../shared/interfaces/presentationPage'
+import { IUserViewAction } from "../shared/interfaces/userView";
 
 
 export interface Link {
@@ -28,6 +28,7 @@ interface ITresStudioAPIRoutes {
    landing: string
    features: string
    reviews: string
+   promotions: string
 }
 
 interface IUpperTab {
@@ -39,8 +40,10 @@ interface IDefaultValues {
    LANDING_INFO: ILandingInfo
    FEATURE: IFeature
    REVIEW: IReview,
-   USER_VIEW: string
+   USER_VIEW: string,
+   PROMOTION: IPromotion
 }
+
 
 export const otherPageLinks: Link[] = [
    {
@@ -183,7 +186,7 @@ export const prices: Price[] = [
       ]
    },
    {
-      title: 'Waxing',
+      title: 'Hair Removal',
       subServices: [
          {
             title: 'Short waxing',
@@ -203,22 +206,24 @@ export const prices: Price[] = [
 ]
 
 export const services = [ 'Hair Care', 'Facial Treatments', 'Body Massage', 'Makeup' +
-' Services', 'Nails Care' ]
+' Services', 'Nails Care', 'Hair Removal' ]
 
 export const tresStudioAPIRoutes: ITresStudioAPIRoutes = {
    root: 'http://localhost:3001',
    landing: 'http://localhost:3001/landing',
    features: 'http://localhost:3001/features',
-   reviews: 'http://localhost:3001/reviews'
+   reviews: 'http://localhost:3001/reviews',
+   promotions: 'http://localhost:3001/promotions'
 }
 
 export const actions = {
    FETCH_HERO_SECTION: 'FETCH_HERO_SECTION',
    FETCH_FEATURES: 'FETCH_FEATURE_CARDS',
    FETCH_REVIEWS: 'FETCH_REVIEWS',
+   FETCH_PROMOTIONS: 'FETCH_PROMOTIONS',
    DISCOUNTS: 'DISCOUNTS',
    REWARDS: 'REWARDS',
-   VISITS: 'VISITS'
+   VISITS: 'VISITS',
 }
 
 export const defaultValues: IDefaultValues = {
@@ -236,7 +241,14 @@ export const defaultValues: IDefaultValues = {
       fullName: 'Loading...',
       review: 'Loading...'
    },
-   USER_VIEW: actions.DISCOUNTS
+   USER_VIEW: actions.DISCOUNTS,
+   PROMOTION: {
+      title: 'Not promotions yes',
+      saleType: 'percentage',
+      amount: 0,
+      description: '',
+
+   }
 }
 
 export const userUpperTabs: IUpperTab[] = [
@@ -254,5 +266,13 @@ export const userUpperTabs: IUpperTab[] = [
    }
 ]
 
+export const promoCardsColors = {
+   'Hair Care': '--color-red',
+   'Hair Removal': '--color-green',
+   'Nail Care': '--color-yellow',
+   'Makeup Services': '--color-pink',
+   'Facial Treatments': '--color-teal',
+   'Body Massage': '--color-light-purple',
+}
 
 export const weekDays = [ 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday' ]

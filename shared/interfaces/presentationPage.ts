@@ -17,3 +17,10 @@ export interface IReview {
   fullName: string
   review: string
 }
+
+export interface IPromotion {
+  title: string
+  saleType: string
+  amount: number
+  description?: string
+}

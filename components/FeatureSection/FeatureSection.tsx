@@ -11,7 +11,7 @@ interface IFeatures {
    features: IFeature[]
 }
 
-type generateCards = (features: IFeatures) => JSX.Element[]
+type RenderCards = (features: IFeatures) => JSX.Element[]
 
 const FeatureSection: FC = (): JSX.Element => {
    const dispatch = useDispatch()
@@ -24,13 +24,13 @@ const FeatureSection: FC = (): JSX.Element => {
    return (
       <section className="feature-section--wrap" id="features">
          <div className="feature-section">
-            {generateCards(features)}
+            {renderCards(features)}
          </div>
       </section>
    )
 }
 
-const generateCards: generateCards = ({ features }: IFeatures): JSX.Element[] => {
+const renderCards: RenderCards = ({ features }: IFeatures): JSX.Element[] => {
    if (features === undefined) return [ <div key={'1'}>Loading...</div> ]
    return features.map((feature: IFeature) =>
       <div className="card" key={feature._id}>

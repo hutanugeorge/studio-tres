@@ -20,46 +20,51 @@ type RenderIcon = (title: string) => JSX.Element
 
 const UserInfo: FC = (): JSX.Element => {
    return (
-      <div className="user-info-wrap">
-         <div className="user-info">
-            <div className="user-info__container">
-               <div className="user-info__header">
-                  <div className="user-info__header--image">
-                     <img
-                        src="https://avataaars.io/?avatarStyle=Circle&topType=LongHairBob&accessoriesType=Sunglasses&hairColor=BrownDark&facialHairType=MoustacheFancy&facialHairColor=BrownDark&clotheType=BlazerSweater&eyeType=Dizzy&eyebrowType=RaisedExcitedNatural&mouthType=Eating&skinColor=DarkBrown"
-                        alt="avatar" className="user-info__header--image--content"/>
+      <>
+         <div className="user-info-wrap">
+            <div className="user-info">
+               <div className="user-info__container">
+                  <div className="user-info__header">
+                     <div className="user-info__header--image">
+                        <img
+                           src="https://avataaars.io/?avatarStyle=Circle&topType=LongHairBob&accessoriesType=Sunglasses&hairColor=BrownDark&facialHairType=MoustacheFancy&facialHairColor=BrownDark&clotheType=BlazerSweater&eyeType=Dizzy&eyebrowType=RaisedExcitedNatural&mouthType=Eating&skinColor=DarkBrown"
+                           alt="avatar" className="user-info__header--image--content"/>
+                     </div>
+                     <p className="user-info__header--name">
+                        Hello,
+                        <span className="user-info__header--name--firstname">
+                        &nbsp;John!
+                     </span>
+                     </p>
                   </div>
-                  <p className="user-info__header--name">
-                     Hello, <span
-                     className="user-info__header--name--firstname">&nbsp; John!</span>
-                  </p>
+                  <div className="user-info__details">
+                     <Link className="user-info__details--detail" to={'/'}>
+                        <div className="user-info__details--detail--icon">
+                           <HomeIcon/>
+                        </div>
+                        <p className="user-info__details--detail--personal">Home</p>
+                     </Link>
+                     {renderUserUpperTabs()}
+                  </div>
                </div>
-               <div className="user-info__details">
+               <div className="user-info__settings">
+                  <div className="user-info__details--detail">
+                     <div className="user-info__details--detail--icon">
+                        <SettingsIcon/>
+                     </div>
+                     <p className="user-info__details--detail--personal">Settings</p>
+                  </div>
                   <Link className="user-info__details--detail" to={'/'}>
                      <div className="user-info__details--detail--icon">
-                        <HomeIcon />
+                        <LogoutIcon/>
                      </div>
-                     <p className="user-info__details--detail--personal">Home</p>
+                     <p className="user-info__details--detail--personal">Logout</p>
                   </Link>
-                  {renderUserUpperTabs()}
                </div>
-            </div>
-            <div className="user-info__settings">
-               <div className="user-info__details--detail">
-                  <div className="user-info__details--detail--icon">
-                     <SettingsIcon/>
-                  </div>
-                  <p className="user-info__details--detail--personal">Settings</p>
-               </div>
-               <Link className="user-info__details--detail" to={'/'}>
-                  <div className="user-info__details--detail--icon">
-                     <LogoutIcon/>
-                  </div>
-                  <p className="user-info__details--detail--personal">Logout</p>
-               </Link>
             </div>
          </div>
-      </div>)
+      </>
+   )
 }
 
 const dispatchOnClick: DispatchOnClick = (action: IUserViewAction | undefined, dispatch: Dispatch<IUserViewAction>): void => {
@@ -69,9 +74,8 @@ const dispatchOnClick: DispatchOnClick = (action: IUserViewAction | undefined, d
 const renderUserUpperTabs: JSXArrayElements = (): JSX.Element[] => {
    const dispatch = useDispatch()
 
-   return (userUpperTabs.map(({ title, action }) =>
-
-      <div className="user-info__details--detail"
+   return (userUpperTabs.map(({ title, action }, index: number) =>
+      <div key={index} className="user-info__details--detail"
            onClick={() => dispatchOnClick(action, dispatch)}>
          <div className="user-info__details--detail--icon">
             {renderIcon(title)}
