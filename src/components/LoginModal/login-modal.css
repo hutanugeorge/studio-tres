@@ -1,0 +1,663 @@
+.desktop-navigation {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.desktop-navigation__lower {
+  font-size: 2rem;
+}
+.desktop-navigation__lower-link {
+  text-decoration: none;
+  color: #F3F5F3;
+}
+
+.mobile-navigation {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #F3F5F3;
+}
+.mobile-navigation__login-button {
+  font-size: 2rem;
+  color: #F3F5F3;
+}
+@media (max-width: 56em) {
+  .mobile-navigation__login-button {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .mobile-navigation__login-button {
+    font-size: 1.3rem;
+  }
+}
+.mobile-navigation__bottom {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+@media (max-width: 56em) {
+  .mobile-navigation__bottom {
+    font-size: 1.2rem;
+  }
+}
+.mobile-navigation__header {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+@media (max-width: 37em) {
+  .mobile-navigation__header {
+    font-size: 1.8rem;
+  }
+}
+.mobile-navigation__header-link {
+  color: inherit;
+  text-decoration: none;
+}
+.mobile-navigation__menu {
+  font-size: 2rem;
+}
+@media (max-width: 37em) {
+  .mobile-navigation__menu {
+    font-size: 1.5rem;
+    line-height: 2.5;
+  }
+}
+.mobile-navigation__menu-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.header {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+@media (max-width: 56em) {
+  .header {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .header {
+    font-size: 1.4rem;
+  }
+}
+.header-link, .header-link:visited, .header-link:link {
+  text-decoration: none;
+  color: #F3F5F3;
+}
+.header-middle .header-link {
+  font-weight: 700;
+  letter-spacing: 0.8rem;
+}
+@media (max-width: 37em) {
+  .header-middle .header-link {
+    padding: 0 1rem;
+    letter-spacing: 0.2rem;
+  }
+}
+
+.hero-section {
+  font-family: "Montserrat", sans-serif;
+}
+.hero-section__title {
+  text-transform: uppercase;
+  font-size: 4rem;
+  color: rgba(243, 245, 243, 0.9);
+}
+@media (max-width: 56em) {
+  .hero-section__title {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 37em) {
+  .hero-section__title {
+    font-size: 2rem;
+  }
+}
+.hero-section__button {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+@media (max-width: 56em) {
+  .hero-section__button {
+    font-size: 1.6rem;
+  }
+}
+
+.card__title-container-title {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #F3F5F3;
+  margin: 1.5rem;
+}
+@media (max-width: 56em) {
+  .card__title-container-title {
+    font-size: 1.5rem;
+  }
+}
+
+.card__description-container-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.8em;
+  font-weight: 300;
+  color: #2A1E38;
+}
+@media (max-width: 56em) {
+  .card__description-container-text {
+    font-size: 1.3rem;
+  }
+}
+
+.card__button {
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  color: #F3F5F3;
+}
+@media (max-width: 56em) {
+  .card__button {
+    font-size: 1.5rem;
+  }
+}
+
+.pricing-card {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+}
+.pricing-card__main-service {
+  font-size: 1.8rem;
+  letter-spacing: 0.3rem;
+  font-weight: 700;
+  color: #A663CC;
+}
+@media (max-width: 75em) {
+  .pricing-card__main-service {
+    font-size: 1.4rem;
+  }
+}
+.pricing-card__sub-services--service--title {
+  color: #F3F5F3;
+  font-size: 1.5rem;
+}
+@media (max-width: 75em) {
+  .pricing-card__sub-services--service--title {
+    font-size: 1.2rem;
+  }
+}
+.pricing-card__sub-services--service--price {
+  color: #F3F5F3;
+  font-weight: 100;
+  font-size: 2rem;
+}
+@media (max-width: 75em) {
+  .pricing-card__sub-services--service--price {
+    font-size: 1.5rem;
+  }
+}
+
+.pricing-section__title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 4rem;
+  text-transform: uppercase;
+  color: #F3F5F3;
+}
+@media (max-width: 56em) {
+  .pricing-section__title {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 37em) {
+  .pricing-section__title {
+    font-size: 2rem;
+  }
+}
+
+.review-card__person {
+  font-family: "Montserrat", sans-serif;
+}
+.review-card__person--name {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: rgba(42, 30, 56, 0.8);
+}
+@media (max-width: 56em) {
+  .review-card__person--name {
+    font-size: 2.3rem;
+  }
+}
+@media (max-width: 37em) {
+  .review-card__person--name {
+    font-size: 2rem;
+  }
+}
+.review-card__person--review {
+  font-size: 1.6rem;
+  font-weight: 200;
+  color: rgba(42, 30, 56, 0.8);
+}
+@media (max-width: 56em) {
+  .review-card__person--review {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .review-card__person--review {
+    font-size: 1.3rem;
+  }
+}
+
+.direction-section__title {
+  font-family: "Montserrat", sans-serif;
+  background-image: linear-gradient(to left, rgba(111, 45, 189, 0.8), rgba(166, 99, 204, 0.8));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.schedule-card {
+  color: #F3F5F3;
+  font-family: "Montserrat", sans-serif;
+}
+.schedule-card__title-container {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 3rem;
+}
+@media (max-width: 56em) {
+  .schedule-card__title-container {
+    font-size: 2rem;
+  }
+}
+.schedule-card__hours {
+  font-weight: 200;
+}
+.schedule-card__hours-service--title {
+  font-size: 2rem;
+}
+@media (max-width: 56em) {
+  .schedule-card__hours-service--title {
+    font-size: 1.6rem;
+  }
+}
+.schedule-card__hours-service--hours {
+  font-size: 2.2rem;
+}
+@media (max-width: 56em) {
+  .schedule-card__hours-service--hours {
+    font-size: 1.8rem;
+  }
+}
+
+.footer-section {
+  color: rgba(243, 245, 243, 0.7);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+}
+
+.login-modal__container--form {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: rgba(82, 182, 154, 0.9);
+}
+@media (max-width: 37em) {
+  .login-modal__container--form {
+    font-size: 1.5rem;
+  }
+}
+.login-modal__container--form--title {
+  font-size: 2.7rem;
+  font-weight: 700;
+}
+@media (max-width: 37em) {
+  .login-modal__container--form--title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 56em) {
+  .login-modal__container--form--inputs--label {
+    color: rgba(243, 245, 243, 0.7);
+  }
+  .login-modal__container--form--inputs--label--firstname, .login-modal__container--form--inputs--label--lastname {
+    color: rgba(42, 30, 56, 0.7);
+  }
+}
+.login-modal__container--form--inputs--button {
+  font-size: 2rem;
+}
+@media (max-width: 37em) {
+  .login-modal__container--form--inputs--button {
+    font-size: 1.5rem;
+  }
+}
+.login-modal__container--form--inputs--button--login {
+  color: #F3F5F3;
+}
+.login-modal__container--form--inputs--button--signup {
+  color: #52b69a;
+}
+.login-modal__container--form--inputs--input {
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+@media (max-width: 37em) {
+  .login-modal__container--form--inputs--input {
+    font-size: 1.2rem;
+  }
+}
+
+.user-info {
+  color: #F3F5F3;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+}
+.user-info__header--name {
+  font-weight: 500;
+}
+.user-info__header--name--firstname {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.user-info__details--detail--personal {
+  color: #c8c8c8;
+  font-size: 1.8rem;
+}
+.user-info__details--detail--personal:hover {
+  color: #F3F5F3;
+}
+.user-info__mobile {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  color: #F3F5F3;
+}
+.user-info__mobile-details--detail--personal {
+  text-decoration: none;
+  color: #F3F5F3;
+}
+
+.user-dashboard {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+}
+
+.promo-card {
+  font-size: 2rem;
+  color: rgba(243, 245, 243, 0.9);
+}
+.promo-card__information--expiration {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+}
+.promo-card__information--expiration--date {
+  font-size: 2.2rem;
+  font-weight: 900;
+}
+.promo-card__information--button {
+  text-transform: uppercase;
+  font-size: 2.7rem;
+  font-weight: 900;
+}
+.promo-card__image--title {
+  font-size: 3rem;
+  font-weight: 900;
+}
+.promo-card__image--title span {
+  font-size: 5rem;
+}
+.promo-card__touch {
+  color: rgba(243, 245, 243, 0.9);
+}
+.promo-card__touch-image--title {
+  font-size: 3rem;
+  font-weight: 900;
+}
+.promo-card__touch-image--title span {
+  font-size: 5rem;
+}
+.promo-card__touch-information--expiration {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+}
+.promo-card__touch-information--expiration--date {
+  font-size: 2.2rem;
+  font-weight: 900;
+}
+.promo-card__touch-information--button {
+  text-transform: uppercase;
+  font-size: 2.7rem;
+  font-weight: 900;
+}
+
+.promotions__empty {
+  font-size: 6rem;
+  font-weight: 900;
+  background-image: linear-gradient(to left, rgba(111, 45, 189, 0.8), rgba(166, 99, 204, 0.8));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes moveInBottomModal {
+  0% {
+    opacity: 0;
+    transform: translate(50%, -30%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(50%, -50%);
+  }
+}
+@keyframes moveToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveToRight {
+  0% {
+    opacity: 0;
+    transform: translate(-50rem) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0) scale(1);
+  }
+}
+@keyframes moveToBottomPromo {
+  0% {
+    opacity: 0;
+    transform: translateX(-25rem) scale(0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+@keyframes moveToTopPromo {
+  0% {
+    opacity: 0;
+    transform: translateX(25rem) scale(0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+@keyframes bounceUp {
+  0% {
+    transform: scale(0.7);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.hidden {
+  display: none !important;
+}
+
+.login-modal__wrap {
+  background-color: rgba(178, 152, 220, 0.7);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 60;
+  animation: moveInBottom 0.7s ease-in backwards;
+}
+.login-modal__container {
+  z-index: 60;
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  animation: moveInBottomModal 0.7s ease-in 0.2s backwards;
+  margin: 0 auto;
+  background: url(../../../images/modal-background.svg);
+  background-size: cover;
+  height: fit-content;
+  width: 80rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-bottom: 5rem;
+}
+@media (max-width: 56em) {
+  .login-modal__container {
+    background: url(../../../images/modal-background-vertical.svg) bottom;
+    max-width: 50rem;
+  }
+}
+@media (max-width: 37em) {
+  .login-modal__container {
+    max-width: 30rem;
+  }
+}
+.login-modal__container--close {
+  padding: 2rem 2rem;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+.login-modal__container--close--icon {
+  width: 100%;
+  height: 100%;
+}
+.login-modal__container--form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 56em) {
+  .login-modal__container--form {
+    width: 100%;
+  }
+}
+.login-modal__container--form--title {
+  margin-bottom: 5rem;
+}
+.login-modal__container--form--inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login-modal__container--form--inputs--input {
+  text-align: center;
+  border: none;
+  border-radius: 40px;
+  padding: 1rem 2rem;
+  width: 20rem;
+  height: 3rem;
+  box-shadow: 0 1rem 2rem rgba(42, 30, 56, 0.2);
+  transition: all 0.4s;
+}
+@media (max-width: 37em) {
+  .login-modal__container--form--inputs--input {
+    padding: 0.6rem 1.6rem;
+  }
+}
+.login-modal__container--form--inputs--input:focus {
+  transform: translateY(-0.4rem);
+  box-shadow: 0 2rem 4rem rgba(42, 30, 56, 0.2);
+}
+.login-modal__container--form--inputs--input:focus::placeholder {
+  opacity: 0;
+}
+.login-modal__container--form--inputs--input:focus + .login-modal__container--form--inputs--label {
+  opacity: 1;
+  transform: translateY(0);
+  margin-bottom: 3rem;
+}
+.login-modal__container--form--inputs--input--buttons {
+  display: flex;
+}
+.login-modal__container--form--inputs--label {
+  transition: all 0.6s;
+  margin-top: 1rem;
+  opacity: 0;
+  transform: translateY(-1.5rem);
+}
+.login-modal__container--form--inputs--button {
+  box-shadow: 0 1rem 2rem rgba(42, 30, 56, 0.3);
+  cursor: pointer;
+  margin-top: 1rem;
+  margin-right: 2rem;
+  transition: all 0.4s;
+  border-radius: 50px;
+}
+.login-modal__container--form--inputs--button--login {
+  padding: 1.4rem 4rem;
+  border: none;
+  background-image: linear-gradient(to bottom right, #007C77, #52b69a);
+}
+@media (max-width: 37em) {
+  .login-modal__container--form--inputs--button--login {
+    padding: 1rem 2rem;
+  }
+}
+.login-modal__container--form--inputs--button--signup {
+  padding: 1.1rem 3.2rem;
+  border: 0.3rem solid #52b69a;
+  background: #F3F5F3;
+}
+@media (max-width: 37em) {
+  .login-modal__container--form--inputs--button--signup {
+    padding: 0.8rem 1.8rem;
+  }
+}
+.login-modal__container--form--inputs--button:hover {
+  box-shadow: 0 2rem 4rem rgba(42, 30, 56, 0.2);
+}
+.login-modal__container--form--inputs--button:active {
+  transform: translateY(0);
+  box-shadow: 0 1rem 2rem rgba(42, 30, 56, 0.2);
+}
+
+/*# sourceMappingURL=login-modal.css.map */

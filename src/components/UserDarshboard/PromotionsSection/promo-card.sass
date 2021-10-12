@@ -1,0 +1,284 @@
+@import '../../sharedStyles/utils/variables'
+@import '../../sharedStyles/base/animations'
+@import '../../sharedStyles/utils/mixins'
+
+
+.promo-card
+    z-index: 10
+    width: 100%
+    height: 100%
+    border-radius: 20px
+    overflow: hidden
+    box-shadow: 0 1rem 2rem rgba($color-black, .4)
+    position: relative
+    transition: all .2s
+
+    @media (hover: none)
+        display: none
+
+    &--wrapper
+        width: 30rem
+        height: 40rem
+
+    &:hover > &__image
+        &--color-red
+            @include promoBackgroundImageOnHover('/images/hair-care-promo.jpg')
+
+        &--color-green
+            @include promoBackgroundImageOnHover('/images/hair-removal-promo.jpg')
+
+        &--color-yellow
+            @include promoBackgroundImageOnHover('/images/nails-care-promo.jpg')
+
+        &--color-pink
+            @include promoBackgroundImageOnHover('/images/makeup-services-promo.jpg')
+
+        &--color-teal
+            @include promoBackgroundImageOnHover('/images/facial-treatments-promo.jpg')
+
+        &--color-light-purple
+            @include promoBackgroundImageOnHover('/images/body-massage-promo.jpg')
+
+    &:hover
+        transform: scale(1.1)
+        box-shadow: 0 2rem 4rem rgba($color-black, .4)
+
+    &__information
+        z-index: 54
+        visibility: visible
+        opacity: 1
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        width: 100%
+        height: 100%
+        display: flex
+        flex-direction: column
+        justify-content: space-evenly
+        align-items: center
+        transition: all .2s
+
+        &:hover &--button
+            transition: opacity .2s, scale .2s
+            animation: moveToTopPromo .4s
+            opacity: 1
+            visibility: visible
+
+        &:hover &--expiration
+            transition: opacity .2s
+            animation: moveToBottomPromo .4s
+            visibility: visible
+            opacity: 1
+
+        &:hover + .promo-card__image > .promo-card__image--title
+            transition: opacity .2s
+            visibility: hidden
+            opacity: 0
+
+        &--expiration
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            max-width: 15rem
+            opacity: 0
+            z-index: 50
+            visibility: hidden
+            transition: all .2s
+
+            &--text, &--date
+                margin: 0
+
+        &--button
+            opacity: 0
+            z-index: 50
+            visibility: hidden
+            padding: 1rem 3rem
+            background-image: linear-gradient(to right bottom, rgba($color-primary-dark, .8), rgba($color-primary, .8))
+            border-radius: 10px
+            box-shadow: 0 1rem 2rem rgba($color-black, .3)
+            cursor: pointer
+
+            &--color-red
+                @include promoBackgroundButton(#c81f70, #d19592)
+
+            &--color-green
+                @include promoBackgroundButton(#39e5b6, #70b2d9)
+
+            &--color-yellow
+                @include promoBackgroundButton(#f9d976, #f39f86)
+
+            &--color-pink
+                @include promoBackgroundButton(#b279a7, #d387ab)
+
+            &--color-teal
+                @include promoBackgroundButton(#6e45e1, #89d4cf)
+
+            &--color-light-purple
+                @include promoBackgroundButton(#ebbba7, #cfc7f8)
+
+            &:hover
+                transition: all .6s
+                transform: scale(1.1)
+                box-shadow: 0 2rem 4rem rgba($color-black, .3)
+
+    &__image
+        background-position: center
+        background-size: cover
+        width: 100%
+        height: 100%
+        overflow: hidden
+        position: relative
+
+        &:hover > &--title
+            transition: all .4s
+            opacity: 0
+            visibility: hidden
+
+        &:hover
+            transition: all .4s
+            transform: scale(1.1)
+
+        &--color-red
+            @include promoBackgroundImage(#c81f70, #d19592, '/images/hair-care-promo.jpg')
+
+        &--color-green
+            @include promoBackgroundImage(#39e5b6, #70b2d9, '/images/hair-removal-promo.jpg')
+
+        &--color-yellow
+            @include promoBackgroundImage(#f9d976, #f39f86, '/images/nails-care-promo.jpg')
+
+        &--color-pink
+            @include promoBackgroundImage(#b279a7, #d387ab, '/images/makeup-services-promo.jpg')
+
+        &--color-teal
+            @include promoBackgroundImage(#6e45e1, #89d4cf, '/images/facial-treatments-promo.jpg')
+
+        &--color-light-purple
+            @include promoBackgroundImage(#ebbba7, #cfc7f8, '/images/body-massage-promo.jpg')
+
+        &--title
+            text-align: center
+            top: 45%
+            left: 40%
+            width: 23rem
+            transform: translate(-40%, -50%) rotate(-30deg)
+            position: absolute
+
+            & span
+                line-height: 1.6
+    &__touch
+        height: 0
+        width: 0
+        padding-bottom: 3rem
+        border-radius: 10px
+        overflow: hidden
+        display: none
+
+        @media (hover: none)
+            height: 100%
+            width: 100%
+            display: block
+
+        &--color-red
+            @include promoBackgroundCardMobile(#c81f70, #d19592)
+
+        &--color-green
+            @include promoBackgroundCardMobile(#39e5b6, #70b2d9)
+
+        &--color-yellow
+            @include promoBackgroundCardMobile(#f9d976, #f39f86)
+
+        &--color-pink
+            @include promoBackgroundCardMobile(#b279a7, #d387ab)
+
+        &--color-teal
+            @include promoBackgroundCardMobile(#6e45e1, #89d4cf)
+
+        &--color-light-purple
+            @include promoBackgroundCardMobile(#ebbba7, #cfc7f8)
+
+        &--wrapper
+            width: 0
+            height: 0
+
+            @media (hover: none)
+                width: 30rem
+                height: 50rem
+
+        &-information
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            height: 100%
+            width: 100%
+
+            &--expiration
+                &--text
+                    text-align: center
+            &--button
+                padding: 1rem 3rem
+                border-radius: 10px
+
+                &--color-red
+                    @include promoButtonMobile(#c81f70, #d19592)
+
+                &--color-green
+                    @include promoButtonMobile(#39e5b6, #70b2d9)
+
+                &--color-yellow
+                    @include promoButtonMobile(#f9d976, #f39f86)
+
+                &--color-pink
+                    @include promoButtonMobile(#b279a7, #d387ab)
+
+                &--color-teal
+                    @include promoButtonMobile(#6e45e1, #89d4cf)
+
+                &--color-light-purple
+                    @include promoButtonMobile(#ebbba7, #cfc7f8)
+
+        &-image
+            position: relative
+            display: flex
+            flex-direction: column
+            height: 80%
+            width: 100%
+            border-radius: 10px
+            background-position: center
+            background-size: cover
+            clip-path: polygon(0 0, 100% 0, 100% 80%, 0 97%)
+
+            &--color-red
+                @include promoBackgroundImageMobile(#c81f70, #d19592, '/images/hair-care-promo.jpg')
+
+            &--color-green
+                @include promoBackgroundImageMobile(#39e5b6, #70b2d9, '/images/hair-removal-promo.jpg')
+
+            &--color-yellow
+                @include promoBackgroundImageMobile(#f9d976, #f39f86, '/images/nails-care-promo.jpg')
+
+            &--color-pink
+                @include promoBackgroundImageMobile(#b279a7, #d387ab, '/images/makeup-services-promo.jpg')
+
+            &--color-teal
+                @include promoBackgroundImageMobile(#6e45e1, #89d4cf, '/images/facial-treatments-promo.jpg')
+
+            &--color-light-purple
+                @include promoBackgroundImageMobile(#ebbba7, #cfc7f8, '/images/body-massage-promo.jpg')
+
+            &--title
+                text-align: center
+                top: 45%
+                left: 40%
+                width: 23rem
+                transform: translate(-40%, -50%) rotate(-30deg)
+                position: absolute
+
+                & span
+                    line-height: 1.6
+
+

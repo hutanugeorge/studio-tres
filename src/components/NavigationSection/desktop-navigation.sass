@@ -1,0 +1,66 @@
+@import '../sharedStyles/base/typography'
+@import '../sharedStyles/utils/variables'
+@import '../sharedStyles/utils/mixins'
+
+
+.navigation-section
+    position: relative
+    background-image: linear-gradient(rgba($color-primary-dark, 1) 10%, rgba($color-primary-light, .4) 75%, $color-white-ghost 100%), url(../../../images/new-hero.jpg)
+    background-position: center
+    background-size: cover
+
+    @include respond($tablet-portrait)
+        background-image: linear-gradient(rgba($color-primary-dark, 1) 0%, rgba($color-primary-light, .4) 75%, $color-white-ghost 100%), url(../../../images/navigation-photo-mobile.jpg)
+
+.desktop-navigation
+    display: flex
+    flex-direction: column
+    padding: 4rem 6rem 0 6rem
+    max-width: 180rem
+    margin: 0 auto
+    
+    @include respond($tablet-portrait)
+        height: 0
+        display: none
+        
+    @include respond($large-desktop)
+        padding: 4rem 25rem 0 25rem
+        
+    &__login
+        background-image: linear-gradient(to bottom right, $color-secondary-dark, $color-secondary)
+        padding: 1.6rem 2.4rem !important
+        border-radius: 50px
+        box-shadow: 0 1rem 2rem rgba($color-black, .3)
+        border: 0
+        
+        &:hover
+            box-shadow: 0 2rem 4rem rgba($color-black, .3)
+            
+        &--outline
+            margin-left: 1rem
+            background: none
+            border: .5rem $color-secondary solid
+        
+    &__lower
+        display: flex
+        justify-content: space-between
+        align-items: center
+        
+        &-links
+            display: flex
+            justify-content: center
+            align-items: center
+            gap: 3rem
+            
+        &-link
+            &,
+            &:visited,
+            &:link
+                display: inline-block
+                transition: all .2s
+                cursor: pointer
+               
+            &:hover
+                transform: scale(1.05) translateY(-.6rem)
+                
+                

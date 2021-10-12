@@ -1,0 +1,144 @@
+@import '../../sharedStyles/utils/variables'
+@import '../../sharedStyles/base/animations'
+@import '../../sharedStyles/utils/mixins'
+
+
+.rewards-card
+    &__product-list
+        width: 100%
+        height: fit-content
+        display: flex
+        justify-content: center
+        flex-wrap: wrap
+        gap: 10rem
+        padding-top: 5rem
+        padding-bottom: 20rem
+
+        &-image
+            background-size: cover
+            background-position: center
+            height: 100%
+            width: 40%
+            clip-path: polygon(0 0, 100% 0, 77% 100%, 0% 100%)
+
+            @include respond($phone)
+                width: 100%
+                height: 60%
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 80%)
+
+            &--color-red
+                @include rewardCardBackgroundImage('/images/hair-care-reward.jpg')
+
+            &--color-green
+                @include rewardCardBackgroundImage('/images/hair-removal-reward.jpg')
+
+            &--color-yellow
+                @include rewardCardBackgroundImage('/images/nails-care-reward.jpg')
+
+            &--color-pink
+                @include rewardCardBackgroundImage('/images/makeup-services-reward.jpg')
+
+            &--color-teal
+                @include rewardCardBackgroundImage('/images/facial-treatments-reward.jpg')
+
+            &--color-light-purple
+                @include rewardCardBackgroundImage('/images/body-massage-reward.jpg')
+
+        &-content
+            overflow: hidden
+            display: flex
+            height: 50rem
+            min-width: 70rem
+            width: 100rem
+            background-image: linear-gradient(to right, rgba($color-primary-dark, 1) 0%, rgba($color-primary, 1) 55%, rgba($color-primary, .5) 100%)
+            border-radius: 20px
+            box-shadow: 1rem 1rem 2rem rgba($color-black, .3)
+            transition: all .4s
+
+            @include respond($tablet-landscape)
+                max-width: 50rem
+
+            @include respond($phone)
+                background-image: linear-gradient(to bottom, rgba($color-primary-dark, 1) 0%, rgba($color-primary, 1) 55%, rgba($color-primary, .5) 100%)
+                flex-direction: column
+                width: 90%
+                min-width: unset
+                height: 50rem
+
+            &:hover
+                transform: translateY(-1rem)
+                box-shadow: 2rem 2rem 4rem rgba($color-black, .3)
+
+        &--no-rewards
+            background-image: linear-gradient(to left, rgba(111, 45, 189, 0.8), rgba(166, 99, 204, 0.8))
+            -webkit-background-clip: text
+            color: transparent
+
+    &__services-list
+        width: 60%
+        display: flex
+        height: fit-content
+        flex-direction: column
+        padding: 5rem 3rem
+
+        @include respond($phone)
+            width: 100%
+            padding: unset
+
+        &-header
+            width: 100%
+            height: 10rem
+            display: flex
+            justify-content: flex-start
+            align-items: center
+
+            @include respond($phone)
+                justify-content: center
+
+        &-content
+            width: 100%
+            height: 80%
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+
+            @include respond($phone)
+                padding: 1rem .4rem 1rem 0
+
+            &-element
+                height: 100%
+                padding: 1rem 0
+                width: 100%
+                justify-content: space-around
+                align-items: center
+                display: flex
+
+                @include respond($phone)
+                    padding: unset
+            &--button
+                transition: all .4s
+
+                &, &:link
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    box-shadow: 1rem 1rem 2rem rgba($color-black, .3)
+                    padding: 0
+                    cursor: pointer
+                    height: 5rem
+                    width: 12rem
+                    border-radius: 50px
+                    background-image: linear-gradient(45deg, rgba($color-secondary-dark, .9), rgba($color-secondary, 1))
+
+                    @include respond($phone)
+                        height: 3rem
+                        width: 7rem
+
+                &:hover
+                    box-shadow: 2rem 2rem 4rem rgba($color-black, .3)
+                    transform: translateY(-1rem)
+
+                &:active
+                    transform: translateY(0)
+                    box-shadow: 1rem 1rem 2rem rgba($color-black, .3)

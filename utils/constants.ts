@@ -1,6 +1,7 @@
-import { setUserViewDiscounts, setUserViewRewards, setUserViewVisits } from "../actions";
-import { IFeature, ILandingInfo, IPromotion, IReview } from '../shared/interfaces/presentationPage'
+import { setUserViewDiscounts, setUserViewRewards, setUserViewVisits } from "../src/actions";
+import { IFeature, ILandingInfo, IReview } from '../shared/interfaces/presentationPage'
 import { IUserViewAction } from "../shared/interfaces/userView";
+import { IAppointment, IReward, IPromotion } from "../shared/interfaces/userDashboard";
 
 
 export interface Link {
@@ -23,14 +24,6 @@ export interface SubService {
    price: Number
 }
 
-interface ITresStudioAPIRoutes {
-   root: string
-   landing: string
-   features: string
-   reviews: string
-   promotions: string
-}
-
 interface IUpperTab {
    title: string
    action?: IUserViewAction
@@ -39,11 +32,12 @@ interface IUpperTab {
 interface IDefaultValues {
    LANDING_INFO: ILandingInfo
    FEATURE: IFeature
-   REVIEW: IReview,
-   USER_VIEW: string,
+   REVIEW: IReview
+   USER_VIEW: string
    PROMOTION: IPromotion
+   REWARD: IReward
+   APPOINTMENT: IAppointment
 }
-
 
 export const otherPageLinks: Link[] = [
    {
@@ -61,6 +55,10 @@ export const otherPageLinks: Link[] = [
 ]
 
 export const navigationLinks: Link[] = [
+   {
+      name: 'Tres Studio',
+      link: '/'
+   },
    {
       name: 'Visit Us',
       link: 'directions'
@@ -208,22 +206,27 @@ export const prices: Price[] = [
 export const services = [ 'Hair Care', 'Facial Treatments', 'Body Massage', 'Makeup' +
 ' Services', 'Nails Care', 'Hair Removal' ]
 
-export const tresStudioAPIRoutes: ITresStudioAPIRoutes = {
-   root: 'http://localhost:3001',
-   landing: 'http://localhost:3001/landing',
-   features: 'http://localhost:3001/features',
-   reviews: 'http://localhost:3001/reviews',
-   promotions: 'http://localhost:3001/promotions'
+export enum tresStudioAPIRoutes {
+   root = 'http://localhost:3001',
+   landing = 'http://localhost:3001/landing',
+   features = 'http://localhost:3001/features',
+   reviews = 'http://localhost:3001/reviews',
+   promotions = 'http://localhost:3001/promotions',
+   rewards = 'http://localhost:3001/rewards',
+   appointments = 'http://localhost:3001/appointments',
 }
 
-export const actions = {
-   FETCH_HERO_SECTION: 'FETCH_HERO_SECTION',
-   FETCH_FEATURES: 'FETCH_FEATURE_CARDS',
-   FETCH_REVIEWS: 'FETCH_REVIEWS',
-   FETCH_PROMOTIONS: 'FETCH_PROMOTIONS',
-   DISCOUNTS: 'DISCOUNTS',
-   REWARDS: 'REWARDS',
-   VISITS: 'VISITS',
+export enum Actions {
+   FETCH_HERO_SECTION = 'FETCH_HERO_SECTION',
+   FETCH_FEATURES = 'FETCH_FEATURE_CARDS',
+   FETCH_REVIEWS = 'FETCH_REVIEWS',
+   FETCH_PROMOTIONS = 'FETCH_PROMOTIONS',
+   FETCH_REWARDS = 'FETCH_REWARDS',
+   DISCOUNTS = 'DISCOUNTS',
+   REWARDS = 'REWARDS',
+   VISITS = 'VISITS',
+   TOGGLE_MENU = 'TOGGLE_MENU',
+   APPOINTMENTS = 'APPOINTMENTS'
 }
 
 export const defaultValues: IDefaultValues = {
@@ -241,13 +244,27 @@ export const defaultValues: IDefaultValues = {
       fullName: 'Loading...',
       review: 'Loading...'
    },
-   USER_VIEW: actions.DISCOUNTS,
+   USER_VIEW: Actions.DISCOUNTS,
    PROMOTION: {
-      title: 'Not promotions yes',
+      title: 'Not promotions yet',
       saleType: 'percentage',
       amount: 0,
-      description: '',
-
+      description: ''
+   },
+   REWARD: {
+      title: 'No rewards yet',
+      services: [
+         {
+            title: 'No rewards',
+            points: 0
+         }
+      ]
+   },
+   APPOINTMENT: {
+      serviceTitle: 'No appointment',
+      employeeName: 'No employee',
+      date: 'No date',
+      status: 'No status'
    }
 }
 
@@ -266,13 +283,18 @@ export const userUpperTabs: IUpperTab[] = [
    }
 ]
 
-export const promoCardsColors = {
-   'Hair Care': '--color-red',
-   'Hair Removal': '--color-green',
-   'Nail Care': '--color-yellow',
-   'Makeup Services': '--color-pink',
-   'Facial Treatments': '--color-teal',
-   'Body Massage': '--color-light-purple',
+export enum promoCardsColors {
+   'Hair Care' = '--color-red',
+   'Hair Removal' = '--color-green',
+   'Nails Care' = '--color-yellow',
+   'Makeup Services' = '--color-pink',
+   'Facial Treatments' = '--color-teal',
+   'Body Massage' = '--color-light-purple',
 }
 
 export const weekDays = [ 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday' ]
+
+export enum IconColor {
+   DEFAULT = '#f4f4f4',
+   ACTIVE = '#52b69a'
+}

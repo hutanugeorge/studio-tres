@@ -1,0 +1,178 @@
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes moveInBottomModal {
+  0% {
+    opacity: 0;
+    transform: translate(50%, -30%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(50%, -50%);
+  }
+}
+@keyframes moveToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveToRight {
+  0% {
+    opacity: 0;
+    transform: translate(-50rem) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0) scale(1);
+  }
+}
+@keyframes moveToBottomPromo {
+  0% {
+    opacity: 0;
+    transform: translateX(-25rem) scale(0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+@keyframes moveToTopPromo {
+  0% {
+    opacity: 0;
+    transform: translateX(25rem) scale(0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+@keyframes bounceUp {
+  0% {
+    transform: scale(0.7);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.rewards-card__product-list {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10rem;
+  padding-top: 5rem;
+  padding-bottom: 20rem;
+  overflow: scroll;
+}
+.rewards-card__product-list-image {
+  background-image: linear-gradient(0deg, rgba(42, 30, 56, 0.4), rgba(42, 30, 56, 0.1)), url(/images/hair-care-promo.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 40%;
+  clip-path: polygon(0 0, 100% 0, 77% 100%, 0% 100%);
+}
+.rewards-card__product-list-image--color-red {
+  background-image: linear-gradient(0deg, rgba(42, 30, 56, 0.4), rgba(42, 30, 56, 0.1)), url(/images/hair-care-promo.jpg);
+}
+.rewards-card__product-list-image--color-green {
+  background-image: linear-gradient(0deg, rgba(42, 30, 56, 0.4), rgba(42, 30, 56, 0.1)), url("/images/hair-removal-promo.jpg");
+}
+.rewards-card__product-list-image--color-yellow {
+  background-image: linear-gradient(0deg, rgba(42, 30, 56, 0.4), rgba(42, 30, 56, 0.1)), url("/images/nails-care-promo.jpg");
+}
+.rewards-card__product-list-image--color-pink {
+  background-image: linear-gradient(0deg, rgba(42, 30, 56, 0.4), rgba(42, 30, 56, 0.1)), url("/images/makeup-services-promo.jpg");
+}
+.rewards-card__product-list-image--color-teal {
+  background-image: linear-gradient(0deg, rgba(42, 30, 56, 0.4), rgba(42, 30, 56, 0.1)), url("/images/facial-treatments-promo.jpg");
+}
+.rewards-card__product-list-image--color-light-purple {
+  background-image: linear-gradient(0deg, rgba(42, 30, 56, 0.4), rgba(42, 30, 56, 0.1)), url("/images/body-massage-promo.jpg");
+}
+.rewards-card__product-list-content {
+  overflow: hidden;
+  display: flex;
+  height: 100%;
+  min-width: 70rem;
+  width: 100rem;
+  background-image: linear-gradient(to right, #6f2dbd 0%, #a663cc 55%, rgba(166, 99, 204, 0.5) 100%);
+  border-radius: 20px;
+  box-shadow: 1rem 1rem 2rem rgba(42, 30, 56, 0.3);
+  transition: all 0.4s;
+}
+.rewards-card__product-list-content:hover {
+  transform: translateY(-1rem);
+  box-shadow: 2rem 2rem 4rem rgba(42, 30, 56, 0.3);
+}
+.rewards-card__services-list {
+  width: 60%;
+  display: flex;
+  height: fit-content;
+  flex-direction: column;
+  padding: 5rem 3rem;
+}
+.rewards-card__services-list-header {
+  width: 100%;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rewards-card__services-list-content {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.rewards-card__services-list-content-element {
+  height: 100%;
+  padding: 1rem 0;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  display: flex;
+}
+.rewards-card__services-list-content--button {
+  transition: all 0.4s;
+}
+.rewards-card__services-list-content--button, .rewards-card__services-list-content--button:link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1rem 1rem 2rem rgba(42, 30, 56, 0.3);
+  padding: 0;
+  cursor: pointer;
+  height: 5rem;
+  width: 12rem;
+  border-radius: 50px;
+  background-image: linear-gradient(45deg, rgba(0, 124, 119, 0.9), #52b69a);
+}
+.rewards-card__services-list-content--button:hover {
+  box-shadow: 2rem 2rem 4rem rgba(42, 30, 56, 0.3);
+  transform: translateY(-1rem);
+}
+.rewards-card__services-list-content--button:active {
+  transform: translateY(0);
+  box-shadow: 1rem 1rem 2rem rgba(42, 30, 56, 0.3);
+}
+
+/*# sourceMappingURL=rewards-card.css.map */
