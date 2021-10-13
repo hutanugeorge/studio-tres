@@ -2,7 +2,6 @@ import * as React from 'react';
 import { FC, useEffect, useState } from 'react'
 
 import { useDispatch, useSelector } from "react-redux";
-import moment from "moment";
 
 import { fetchAppointments } from "../../../actions";
 import { RootState } from "../../../reducers";
@@ -11,12 +10,13 @@ import { IAppointment } from "../../../../shared/interfaces/userDashboard";
 
 const AppointmentsSection: FC = (): JSX.Element => {
    const dispatch = useDispatch()
-   const appointments = useSelector((state: RootState) => state.appointments)
-   const [ appointmentsType, setAppointmentsType ] = useState('future')
+   const appointments: IAppointment[] = useSelector((state: RootState) => state.appointments)
+   const [ appointmentsType, setAppointmentsType ] = useState<string>('future')
 
    useEffect(() => {
       dispatch(fetchAppointments())
    }, [])
+
    return (
       <div className="appointments--wrap">
          <div className="appointments__title">

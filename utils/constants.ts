@@ -2,6 +2,8 @@ import { setUserViewDiscounts, setUserViewRewards, setUserViewVisits } from "../
 import { IFeature, ILandingInfo, IReview } from '../shared/interfaces/presentationPage'
 import { IUserViewAction } from "../shared/interfaces/userView";
 import { IAppointment, IReward, IPromotion } from "../shared/interfaces/userDashboard";
+import { Dispatch } from "redux";
+import { Action } from "../shared/interfaces/api";
 
 
 export interface Link {
@@ -240,7 +242,7 @@ export const defaultValues: IDefaultValues = {
       description: 'Loading...'
    },
    REVIEW: {
-      image: '/loading',
+      image: 'loading',
       fullName: 'Loading...',
       review: 'Loading...'
    },

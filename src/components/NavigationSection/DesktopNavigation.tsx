@@ -10,7 +10,7 @@ import LoginModal from '../LoginModal/LoginModal'
 
 const DesktopNavigation: FC = (): JSX.Element => {
 
-  const [showModal, setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState<boolean>(false)
 
   return(
     <>
@@ -37,9 +37,7 @@ const DesktopNavigation: FC = (): JSX.Element => {
 
 
 const generateNavigationLinks: JSXArrayElements = (): JSX.Element[] =>
-
   window.location.href === 'http://localhost:3000/' ?
-
     navigationLinks.map((link, index): JSX.Element =>
       <div key={index} className={`desktop-navigation__lower-${++index}`}>
         {link.link[ 0 ] === '/' ?

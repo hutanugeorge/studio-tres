@@ -5,21 +5,18 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchFeatures } from '../../actions'
 import { RootState } from '../../reducers'
 import { IFeature } from '../../../shared/interfaces/presentationPage'
+import FeatureCard from "./FeatureCard";
 
 
-interface IFeatures {
-   features: IFeature[]
-}
-
-type RenderCards = (features: IFeatures) => JSX.Element[]
+type RenderCards = (features: IFeature[]) => JSX.Element[]
 
 const FeatureSection: FC = (): JSX.Element => {
+   const features = useSelector((state: RootState) => state.features)
    const dispatch = useDispatch()
-   const features: IFeatures = useSelector((state: RootState) => state.features)
 
    useEffect(() => {
       dispatch(fetchFeatures())
-   }, [ dispatch ])
+   }, [])
 
    return (
       <section className="feature-section--wrap" id="features">
@@ -30,26 +27,11 @@ const FeatureSection: FC = (): JSX.Element => {
    )
 }
 
-const renderCards: RenderCards = ({ features }: IFeatures): JSX.Element[] => {
-   if (features === undefined) return [ <div key={'1'}>Loading...</div> ]
-   return features.map((feature: IFeature, index: number) =>
-      <div className="card" key={index}>
-         <div className="card__image-container">
-            <img className="card__image" src={`./images/${feature.image}`} alt=""/>
-         </div>
-         <div className="card__title-container">
-            <h2 className="card__title-container-title">{feature.title}</h2>
-         </div>
-         <div className="card__description-container">
-            <p className="card__description-container-text">
-               {feature.description}
-            </p>
-         </div>
-         <div className="card__button-container">
-            <a href="#" className="card__button">Learn More</a>
-         </div>
-      </div>
-   )
-}
+const renderCards: RenderCards = (features: IFeature[]): JSX.Element[] =>
+   features.length === 0
+      ? [ <div key={'1'}>Loading...</div> ]
+      : features.map(({ image, title, description }: IFeature, index: number) =>
+         <FeatureCard index={index} image={image} title={title} description={description}/>)
+
 
 export default FeatureSection

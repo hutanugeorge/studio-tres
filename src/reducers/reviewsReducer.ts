@@ -1,23 +1,23 @@
 import { Actions, defaultValues } from '../../utils/constants'
 import { IReview } from '../../shared/interfaces/presentationPage'
+import { Reducer } from "../../shared/types";
 
 
 interface IReviewsReducerAction {
   type: string
-  payload: { reviews: IReview[] }
+  payload: IReview[]
 }
 
 const { FETCH_REVIEWS } = Actions
 const { REVIEW } = defaultValues
 
-const reviewsReducer = (state: IReview[] = [ REVIEW ], action: IReviewsReducerAction) => {
+const reviewsReducer: Reducer<IReview[], IReviewsReducerAction> = (state: IReview[] = [ REVIEW ], action: IReviewsReducerAction): IReview[] => {
   const { type, payload } = action
   switch (type) {
     case FETCH_REVIEWS:
-      const { reviews } = payload
-      return reviews.length === 0 ? { ...state } : { reviews }
+      return  payload
     default:
-      return { ...state }
+      return state
   }
 }
 

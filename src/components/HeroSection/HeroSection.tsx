@@ -4,11 +4,12 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { RootState } from '../../reducers'
 import { fetchLanding } from '../../actions'
+import { ILandingInfo } from "../../../shared/interfaces/presentationPage";
 
 
 const HeroSection: FC = (): JSX.Element => {
    const dispatch = useDispatch()
-   const landingInfo = useSelector((state: RootState) => state.landingInfo)
+   const landingInfo: ILandingInfo = useSelector((state: RootState) => state.landingInfo)
 
    useEffect(() => {
       dispatch(fetchLanding())

@@ -1,26 +1,26 @@
 import { Actions, defaultValues } from '../../utils/constants'
 import { IFeature } from '../../shared/interfaces/presentationPage'
+import { Reducer } from '../../shared/types'
 
 
-interface featuresReducerAction {
-  type: string
-  payload: { features: IFeature[] }
+
+interface IFetchFeatureAction {
+   type: Actions.FETCH_FEATURES
+   payload: IFeature[]
 }
+type Action = IFetchFeatureAction
 
 const { FETCH_FEATURES } = Actions
 const { FEATURE } = defaultValues
 
-const featuresReducer = (state: IFeature[] = [ FEATURE ], {
-  type,
-  payload
-}: featuresReducerAction) => {
-  switch (type) {
-    case FETCH_FEATURES:
-      const { features } = payload
-      return features.length === 0 ? { ...state } : { features }
-    default:
-      return { ...state }
-  }
+const featuresReducer: Reducer<IFeature[], Action> = (state: IFeature[] = [ FEATURE ], action: Action): IFeature[] => {
+   const { type, payload } = action
+   switch (type) {
+      case FETCH_FEATURES:
+         return payload
+      default:
+         return state
+   }
 }
 
 export default featuresReducer

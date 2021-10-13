@@ -21,7 +21,9 @@ const RewardsSection: FC = (): JSX.Element => {
    return (
       <div className="rewards--wrap">
          <div className="rewards__title">
-            <p className="rewards__title-content">Rewards</p>
+            <p className="rewards__title-content">
+               Rewards
+            </p>
          </div>
          <div className="rewards">
             <div className="rewards__header">
@@ -33,19 +35,20 @@ const RewardsSection: FC = (): JSX.Element => {
                </div>
             </div>
             <div className="rewards-card__product-list">
-               {rewards[0].title === 'No rewards yet' ?
-                  <div className="rewards-card__product-list--no-rewards" key={1}>Loading Rewards...</div> :
-                  renderRewardCards(rewards)}
+               {
+                  rewards[0].title === 'No rewards yet'
+                     ? <div className="rewards-card__product-list--no-rewards" key={1}>Loading Rewards...</div>
+                     : renderRewardCards(rewards)
+               }
             </div>
          </div>
       </div>)
 }
 
 const renderRewardCards: RenderRewardCard = (rewards: IReward[]): JSX.Element[] =>
-   rewards.map(({ title, services }: IReward, index: number): JSX.Element =>
+   rewards.map(({ title, services }: IReward, index: number) =>
       <RewardCard key={index} title={title} services={services}/>
    )
-
 
 
 export default RewardsSection

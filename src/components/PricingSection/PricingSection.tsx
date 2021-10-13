@@ -2,7 +2,7 @@ import React from 'react'
 
 import { JSXArrayElements } from '../../../shared/types'
 import { prices } from '../../../utils/constants'
-import PricingCard from '../PricindCard/PricingCard'
+import PricingCard from './PricingCard'
 import './pricing-section.sass'
 
 

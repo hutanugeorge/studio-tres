@@ -1,11 +1,10 @@
 import { Actions } from "../../utils/constants";
 import { IToggleSettingsMenu } from "../../shared/interfaces/userView";
+import { Reducer } from "../../shared/types";
 
 
-type ToggleMenuReducer = (state: boolean, action: IToggleSettingsMenu) => boolean
-
-
-const toggleMenuReducer: ToggleMenuReducer = (state: boolean = false, { type, payload }: IToggleSettingsMenu) => {
+const toggleMenuReducer: Reducer<boolean, IToggleSettingsMenu> = (state: boolean = false, action: IToggleSettingsMenu): boolean => {
+   const { type, payload } = action
    switch (type) {
       case Actions.TOGGLE_MENU:
          return !payload

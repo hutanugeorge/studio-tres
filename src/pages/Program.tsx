@@ -1,17 +1,17 @@
 import * as React from 'react'
 import { FC } from 'react'
 
-import ScheduleSection from '../components/Program/ScheduleSection'
+import ProgramSection from '../components/Program/ProgramSection'
 import DesktopNavigation from '../components/NavigationSection/DesktopNavigation'
 import MobileNavigation from '../components/NavigationSection/MobileNavigation'
-import '../components/Program/schedule-section.sass'
+import '../components/Program/program-section.sass'
 
 
 const Program: FC = (): JSX.Element =>
   <div className="section-program__wrap">
     <DesktopNavigation/>
     <MobileNavigation/>
-    <ScheduleSection/>
+    <ProgramSection/>
   </div>
 
 export default Program

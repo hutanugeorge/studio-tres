@@ -11,8 +11,8 @@ type GenerateNavigationLinks = (setShowModal: Dispatch<SetStateAction<string>>) 
 
 
 const MobileNavigation: FC = (): JSX.Element => {
-  const [ showModal, setShowModal ] = useState(false)
-  const [ navigation, setNavigation ] = useState('')
+  const [ showModal, setShowModal ] = useState<boolean>(false)
+  const [ navigation, setNavigation ] = useState<string>('')
   const onClickNavigationHandler = (): void => {
     navigation === '' && setNavigation('mobile-navigation-open')
     navigation === 'mobile-navigation-open' && setNavigation('')

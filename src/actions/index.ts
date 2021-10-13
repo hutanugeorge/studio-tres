@@ -1,25 +1,19 @@
 import { Dispatch } from 'redux'
 
-import {
-   getAppointments,
-   getFeatures,
-   getLandingInfo,
-   getPromotions,
-   getReviews,
-   getRewards
-} from '../../api/tresStudio'
-import { Actions } from '../../utils/constants'
+import { getFeatures, getLandingInfo, getReviews } from "../../api/tresStudio/presentationPage";
+import { getAppointments, getPromotions, getRewards } from "../../api/tresStudio/userDashboard";
 import { IFeature, ILandingInfo, IReview } from '../../shared/interfaces/presentationPage'
-import { SetUserView } from "../../shared/types";
-import { IToggleSettingsMenu, IUserViewAction } from "../../shared/interfaces/userView";
 import { IAppointment, IReward, IPromotion } from "../../shared/interfaces/userDashboard";
+import { IToggleSettingsMenu, IUserViewAction } from "../../shared/interfaces/userView";
+import { Actions } from '../../utils/constants'
+import { Action } from "../../shared/interfaces/api";
 
 
-type FetchActionType = () => (dispatch: Dispatch) => void
+type FetchActionType<T> = () => (dispatch: Dispatch<Action<T>>) => void
 type ToggleSettingsMenu = (isOpen: boolean) => IToggleSettingsMenu
+type SetUserView = () => IUserViewAction
 
-
-export const fetchLanding: FetchActionType = () => async (dispatch: Dispatch): Promise<void> => {
+export const fetchLanding: FetchActionType<{ landingPhrase: string, landingButtonPhrase: string }> = () => async (dispatch: Dispatch<Action<{ landingPhrase: string, landingButtonPhrase: string }>>): Promise<void> => {
    const { landingPhrase, landingButtonPhrase }: ILandingInfo = await getLandingInfo()
    dispatch({
       type: Actions.FETCH_HERO_SECTION,
@@ -27,43 +21,43 @@ export const fetchLanding: FetchActionType = () => async (dispatch: Dispatch): P
    })
 }
 
-export const fetchFeatures: FetchActionType = () => async (dispatch: Dispatch): Promise<void> => {
+export const fetchFeatures: FetchActionType<IFeature[]> = () => async (dispatch: Dispatch<Action<IFeature[]>>): Promise<void> => {
    const features: IFeature[] = await getFeatures()
    dispatch({
       type: Actions.FETCH_FEATURES,
-      payload: { features }
+      payload: features
    })
 }
 
-export const fetchReviews: FetchActionType = () => async (dispatch: Dispatch): Promise<void> => {
+export const fetchReviews: FetchActionType<IReview[]> = () => async (dispatch: Dispatch<Action<IReview[]>>): Promise<void> => {
    const reviews: IReview[] = await getReviews()
    dispatch({
       type: Actions.FETCH_REVIEWS,
-      payload: { reviews }
+      payload: reviews
    })
 }
 
-export const fetchPromotions: FetchActionType = () => async (dispatch: Dispatch): Promise<void> => {
+export const fetchPromotions: FetchActionType<IPromotion[]> = () => async (dispatch: Dispatch<Action<IPromotion[]>>): Promise<void> => {
    const promotions: IPromotion[] = await getPromotions()
    dispatch({
       type: Actions.FETCH_PROMOTIONS,
-      payload: { promotions }
+      payload: promotions
    })
 }
 
-export const fetchRewards: FetchActionType = () => async (dispatch: Dispatch): Promise<void> => {
+export const fetchRewards: FetchActionType<IReward[]> = () => async (dispatch: Dispatch<Action<IReward[]>>): Promise<void> => {
    const rewards: IReward[] = await getRewards()
    dispatch({
       type: Actions.FETCH_REWARDS,
-      payload: { rewards }
+      payload: rewards
    })
 }
 
-export const fetchAppointments: FetchActionType = () => async (dispatch: Dispatch): Promise<void> => {
+export const fetchAppointments: FetchActionType<IAppointment[]> = () => async (dispatch: Dispatch<Action<IAppointment[]>>): Promise<void> => {
    const appointments: IAppointment[] = await getAppointments()
    dispatch({
-         type: Actions.APPOINTMENTS,
-         payload: { appointments }
+      type: Actions.APPOINTMENTS,
+      payload: appointments
    })
 }
 

@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Dispatch, SetStateAction, useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import * as H from "history";
 
 
 interface ILoginModalProps {
@@ -9,8 +10,8 @@ interface ILoginModalProps {
 }
 
 interface IFormComponent {
-  toggleModal: () => void
   setForm: Dispatch<SetStateAction<string>>
+  toggleModal: () => void
 }
 
 type LoginModal = ({ showModal, toggleModal }: ILoginModalProps) => JSX.Element

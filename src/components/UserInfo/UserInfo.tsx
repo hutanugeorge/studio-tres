@@ -21,8 +21,7 @@ type DispatchOnClick = (action: IUserViewAction | undefined, dispatch: Dispatch<
 type RenderIcon = (title: string, active: boolean) => JSX.Element
 
 const UserInfo: FC = (): JSX.Element => {
-
-   const isMenuOpen = useSelector((state: RootState) => state.isMenuOpen)
+   const isMenuOpen: boolean = useSelector((state: RootState) => state.isMenuOpen)
    const openUserClassName = 'user-info__mobile--open'
    const dispatch = useDispatch()
 

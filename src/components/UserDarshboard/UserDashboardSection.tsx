@@ -16,9 +16,9 @@ type RenderUserView = (userView: string) => JSX.Element
 const { REWARDS, VISITS } = Actions
 
 const UserDashboardSection: FC = (): JSX.Element => {
-   const userView = useSelector((state: RootState) => state.userView)
+   const userView: string = useSelector((state: RootState) => state.userView)
+   const isMenuOpen: boolean = useSelector((state: RootState) => state.isMenuOpen)
    const dispatch = useDispatch()
-   const isMenuOpen = useSelector((state: RootState) => state.isMenuOpen)
 
    return (
       <div className="user-dashboard">
