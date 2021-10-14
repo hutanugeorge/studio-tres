@@ -1,9 +1,16 @@
 @import 'variables'
 
-@mixin respond($size)
+@mixin respond($size, $length: 0)
     @if $size == $phone
         @media(max-width: $phone)
             @content
+    @if $size == $phone
+        //@if $length != 0
+        //    @media(max-width: $phone) and (min-height: 620px)
+        //        @content
+        @if $length == 0
+            @media(max-width: $phone)
+                @content
     @if $size == $tablet-portrait
         @media(max-width: $tablet-portrait)
             @content

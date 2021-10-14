@@ -36,6 +36,11 @@
     font-size: 1.3rem;
   }
 }
+@media (max-width: 37em) {
+  .mobile-navigation__login-button {
+    font-size: 1.3rem;
+  }
+}
 .mobile-navigation__bottom {
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.5rem;
@@ -56,12 +61,23 @@
     font-size: 1.8rem;
   }
 }
+@media (max-width: 37em) {
+  .mobile-navigation__header {
+    font-size: 1.8rem;
+  }
+}
 .mobile-navigation__header-link {
   color: inherit;
   text-decoration: none;
 }
 .mobile-navigation__menu {
   font-size: 2rem;
+}
+@media (max-width: 37em) {
+  .mobile-navigation__menu {
+    font-size: 1.5rem;
+    line-height: 2.5;
+  }
 }
 @media (max-width: 37em) {
   .mobile-navigation__menu {
@@ -90,6 +106,11 @@
     font-size: 1.4rem;
   }
 }
+@media (max-width: 37em) {
+  .header {
+    font-size: 1.4rem;
+  }
+}
 .header-link, .header-link:visited, .header-link:link {
   text-decoration: none;
   color: #F3F5F3;
@@ -97,6 +118,12 @@
 .header-middle .header-link {
   font-weight: 700;
   letter-spacing: 0.8rem;
+}
+@media (max-width: 37em) {
+  .header-middle .header-link {
+    padding: 0 1rem;
+    letter-spacing: 0.2rem;
+  }
 }
 @media (max-width: 37em) {
   .header-middle .header-link {
@@ -122,6 +149,11 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .hero-section__title {
+    font-size: 2rem;
+  }
+}
 .hero-section__button {
   font-family: "Nunito Sans", sans-serif;
   font-size: 2rem;
@@ -131,6 +163,11 @@
 @media (max-width: 56em) {
   .hero-section__button {
     font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .hero-section__button {
+    font-size: 1.5rem;
   }
 }
 @media (max-width: 37em) {
@@ -229,6 +266,11 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .pricing-section__title {
+    font-size: 2rem;
+  }
+}
 
 .review-card__person {
   font-family: "Nunito Sans", sans-serif;
@@ -248,6 +290,11 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .review-card__person--name {
+    font-size: 2rem;
+  }
+}
 .review-card__person--review {
   font-size: 1.6rem;
   font-weight: 200;
@@ -256,6 +303,11 @@
 @media (max-width: 56em) {
   .review-card__person--review {
     font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .review-card__person--review {
+    font-size: 1.3rem;
   }
 }
 @media (max-width: 37em) {
@@ -322,9 +374,19 @@
     font-size: 1.5rem;
   }
 }
+@media (max-width: 37em) {
+  .login-modal__container--form {
+    font-size: 1.5rem;
+  }
+}
 .login-modal__container--form--title {
   font-size: 2.7rem;
   font-weight: 700;
+}
+@media (max-width: 37em) {
+  .login-modal__container--form--title {
+    font-size: 2rem;
+  }
 }
 @media (max-width: 37em) {
   .login-modal__container--form--title {
@@ -347,6 +409,11 @@
     font-size: 1.5rem;
   }
 }
+@media (max-width: 37em) {
+  .login-modal__container--form--inputs--button {
+    font-size: 1.5rem;
+  }
+}
 .login-modal__container--form--inputs--button--login {
   color: #F3F5F3;
 }
@@ -356,6 +423,11 @@
 .login-modal__container--form--inputs--input {
   font-size: 1.5rem;
   font-weight: 200;
+}
+@media (max-width: 37em) {
+  .login-modal__container--form--inputs--input {
+    font-size: 1.2rem;
+  }
 }
 @media (max-width: 37em) {
   .login-modal__container--form--inputs--input {
@@ -462,6 +534,11 @@
     font-size: 3rem;
   }
 }
+@media (max-width: 37em) {
+  .promotions__title-content {
+    font-size: 3rem;
+  }
+}
 .promotions__empty {
   font-size: 6rem;
   font-weight: 900;
@@ -490,6 +567,11 @@
     font-size: 3rem;
   }
 }
+@media (max-width: 37em) {
+  .rewards__title-content {
+    font-size: 3rem;
+  }
+}
 .rewards__header-points-content, .rewards__header-code-content {
   text-transform: uppercase;
   font-size: 2.5rem;
@@ -499,6 +581,11 @@
 @media (max-width: 75em) {
   .rewards__header-points-content, .rewards__header-code-content {
     font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .rewards__header-points-content, .rewards__header-code-content {
+    font-size: 1.4rem;
   }
 }
 @media (max-width: 37em) {
@@ -521,6 +608,11 @@
     font-size: 1.8rem;
   }
 }
+@media (max-width: 37em) {
+  .rewards__header-points-content span, .rewards__header-code-content span {
+    font-size: 1.8rem;
+  }
+}
 
 .rewards-card__product-list {
   color: #F3F5F3;
@@ -528,7 +620,7 @@
 }
 @media (max-width: 75em) {
   .rewards-card__product-list {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 }
 .rewards-card__product-list--no-rewards {
@@ -554,12 +646,22 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .rewards-card__services-list-header {
+    font-size: 2rem;
+  }
+}
 .rewards-card__services-list-content-element {
   font-weight: 200;
 }
 @media (max-width: 37em) {
   .rewards-card__services-list-content-element {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .rewards-card__services-list-content-element {
+    font-size: 1.4rem;
   }
 }
 .rewards-card__services-list-content--points {
@@ -568,11 +670,10 @@
 }
 .rewards-card__services-list-content--button {
   text-transform: uppercase;
-  font-weight: 200;
+  font-weight: 500;
 }
 
 .appointments {
-  text-transform: uppercase;
   color: #F3F5F3;
 }
 .appointments__title--content {
@@ -592,10 +693,30 @@
     font-size: 3rem;
   }
 }
+@media (max-width: 37em) {
+  .appointments__title--content {
+    font-size: 3rem;
+  }
+}
 .appointments__list-title {
   text-transform: capitalize;
   font-size: 4.5rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .appointments__list-title {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointments__list-title {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointments__list-title {
+    font-size: 2.5rem;
+  }
 }
 .appointments__list-title--content {
   background-image: linear-gradient(to right, rgba(111, 45, 189, 0.8), rgba(166, 99, 204, 0.8));
@@ -604,7 +725,7 @@
 }
 .appointments__buttons--button {
   color: #52b69a;
-  font-weight: 700;
+  font-weight: 500;
 }
 .appointments__buttons--button--active {
   color: #F3F5F3;
@@ -615,12 +736,28 @@
   font-size: 2rem;
   font-weight: 500;
 }
+@media (max-width: 75em) {
+  .appointment {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointment {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointment {
+    font-size: 1.4rem;
+  }
+}
 .appointment__employee--content {
   font-weight: 900;
 }
 .appointment__rate--content {
+  text-transform: uppercase;
   color: #F3F5F3 !important;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .section-program__wrap {

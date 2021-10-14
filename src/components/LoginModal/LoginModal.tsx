@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { Dispatch, SetStateAction, useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import * as H from "history";
 
 
 interface ILoginModalProps {

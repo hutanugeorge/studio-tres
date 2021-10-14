@@ -14,6 +14,13 @@
     align-items: center
     position: relative
 
+    @include respond($phone)
+        position: fixed
+        top: 0
+        right: 0
+        left: 0
+        bottom: 0
+
     &__toggle-menu
 
         @include respond($tablet-portrait)

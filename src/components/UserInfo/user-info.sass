@@ -19,8 +19,8 @@
     bottom: 0
 
     @include respond($tablet-portrait)
+        position: fixed
         z-index: 1000
-        position: absolute
         flex-direction: row
         height: 4rem
         top: unset
@@ -29,6 +29,7 @@
         right: 0
         width: 100%
         box-shadow: unset
+
 
     &-wrap
         background: $color-primary-dark

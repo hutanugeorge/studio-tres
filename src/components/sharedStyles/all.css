@@ -36,6 +36,11 @@
     font-size: 1.3rem;
   }
 }
+@media (max-width: 37em) {
+  .mobile-navigation__login-button {
+    font-size: 1.3rem;
+  }
+}
 .mobile-navigation__bottom {
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.5rem;
@@ -56,12 +61,23 @@
     font-size: 1.8rem;
   }
 }
+@media (max-width: 37em) {
+  .mobile-navigation__header {
+    font-size: 1.8rem;
+  }
+}
 .mobile-navigation__header-link {
   color: inherit;
   text-decoration: none;
 }
 .mobile-navigation__menu {
   font-size: 2rem;
+}
+@media (max-width: 37em) {
+  .mobile-navigation__menu {
+    font-size: 1.5rem;
+    line-height: 2.5;
+  }
 }
 @media (max-width: 37em) {
   .mobile-navigation__menu {
@@ -90,6 +106,11 @@
     font-size: 1.4rem;
   }
 }
+@media (max-width: 37em) {
+  .header {
+    font-size: 1.4rem;
+  }
+}
 .header-link, .header-link:visited, .header-link:link {
   text-decoration: none;
   color: #F3F5F3;
@@ -97,6 +118,12 @@
 .header-middle .header-link {
   font-weight: 700;
   letter-spacing: 0.8rem;
+}
+@media (max-width: 37em) {
+  .header-middle .header-link {
+    padding: 0 1rem;
+    letter-spacing: 0.2rem;
+  }
 }
 @media (max-width: 37em) {
   .header-middle .header-link {
@@ -122,6 +149,11 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .hero-section__title {
+    font-size: 2rem;
+  }
+}
 .hero-section__button {
   font-family: "Nunito Sans", sans-serif;
   font-size: 2rem;
@@ -131,6 +163,11 @@
 @media (max-width: 56em) {
   .hero-section__button {
     font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .hero-section__button {
+    font-size: 1.5rem;
   }
 }
 @media (max-width: 37em) {
@@ -229,6 +266,11 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .pricing-section__title {
+    font-size: 2rem;
+  }
+}
 
 .review-card__person {
   font-family: "Nunito Sans", sans-serif;
@@ -248,6 +290,11 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .review-card__person--name {
+    font-size: 2rem;
+  }
+}
 .review-card__person--review {
   font-size: 1.6rem;
   font-weight: 200;
@@ -256,6 +303,11 @@
 @media (max-width: 56em) {
   .review-card__person--review {
     font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .review-card__person--review {
+    font-size: 1.3rem;
   }
 }
 @media (max-width: 37em) {
@@ -322,9 +374,19 @@
     font-size: 1.5rem;
   }
 }
+@media (max-width: 37em) {
+  .login-modal__container--form {
+    font-size: 1.5rem;
+  }
+}
 .login-modal__container--form--title {
   font-size: 2.7rem;
   font-weight: 700;
+}
+@media (max-width: 37em) {
+  .login-modal__container--form--title {
+    font-size: 2rem;
+  }
 }
 @media (max-width: 37em) {
   .login-modal__container--form--title {
@@ -347,6 +409,11 @@
     font-size: 1.5rem;
   }
 }
+@media (max-width: 37em) {
+  .login-modal__container--form--inputs--button {
+    font-size: 1.5rem;
+  }
+}
 .login-modal__container--form--inputs--button--login {
   color: #F3F5F3;
 }
@@ -356,6 +423,11 @@
 .login-modal__container--form--inputs--input {
   font-size: 1.5rem;
   font-weight: 200;
+}
+@media (max-width: 37em) {
+  .login-modal__container--form--inputs--input {
+    font-size: 1.2rem;
+  }
 }
 @media (max-width: 37em) {
   .login-modal__container--form--inputs--input {
@@ -462,6 +534,11 @@
     font-size: 3rem;
   }
 }
+@media (max-width: 37em) {
+  .promotions__title-content {
+    font-size: 3rem;
+  }
+}
 .promotions__empty {
   font-size: 6rem;
   font-weight: 900;
@@ -490,6 +567,11 @@
     font-size: 3rem;
   }
 }
+@media (max-width: 37em) {
+  .rewards__title-content {
+    font-size: 3rem;
+  }
+}
 .rewards__header-points-content, .rewards__header-code-content {
   text-transform: uppercase;
   font-size: 2.5rem;
@@ -499,6 +581,11 @@
 @media (max-width: 75em) {
   .rewards__header-points-content, .rewards__header-code-content {
     font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .rewards__header-points-content, .rewards__header-code-content {
+    font-size: 1.4rem;
   }
 }
 @media (max-width: 37em) {
@@ -521,6 +608,11 @@
     font-size: 1.8rem;
   }
 }
+@media (max-width: 37em) {
+  .rewards__header-points-content span, .rewards__header-code-content span {
+    font-size: 1.8rem;
+  }
+}
 
 .rewards-card__product-list {
   color: #F3F5F3;
@@ -528,7 +620,7 @@
 }
 @media (max-width: 75em) {
   .rewards-card__product-list {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 }
 .rewards-card__product-list--no-rewards {
@@ -554,12 +646,22 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .rewards-card__services-list-header {
+    font-size: 2rem;
+  }
+}
 .rewards-card__services-list-content-element {
   font-weight: 200;
 }
 @media (max-width: 37em) {
   .rewards-card__services-list-content-element {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .rewards-card__services-list-content-element {
+    font-size: 1.4rem;
   }
 }
 .rewards-card__services-list-content--points {
@@ -568,11 +670,10 @@
 }
 .rewards-card__services-list-content--button {
   text-transform: uppercase;
-  font-weight: 200;
+  font-weight: 500;
 }
 
 .appointments {
-  text-transform: uppercase;
   color: #F3F5F3;
 }
 .appointments__title--content {
@@ -592,10 +693,30 @@
     font-size: 3rem;
   }
 }
+@media (max-width: 37em) {
+  .appointments__title--content {
+    font-size: 3rem;
+  }
+}
 .appointments__list-title {
   text-transform: capitalize;
   font-size: 4.5rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .appointments__list-title {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointments__list-title {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointments__list-title {
+    font-size: 2.5rem;
+  }
 }
 .appointments__list-title--content {
   background-image: linear-gradient(to right, rgba(111, 45, 189, 0.8), rgba(166, 99, 204, 0.8));
@@ -604,7 +725,7 @@
 }
 .appointments__buttons--button {
   color: #52b69a;
-  font-weight: 700;
+  font-weight: 500;
 }
 .appointments__buttons--button--active {
   color: #F3F5F3;
@@ -615,12 +736,28 @@
   font-size: 2rem;
   font-weight: 500;
 }
+@media (max-width: 75em) {
+  .appointment {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointment {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointment {
+    font-size: 1.4rem;
+  }
+}
 .appointment__employee--content {
   font-weight: 900;
 }
 .appointment__rate--content {
+  text-transform: uppercase;
   color: #F3F5F3 !important;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .footer-section {
@@ -747,6 +884,11 @@
     font-size: 1.3rem;
   }
 }
+@media (max-width: 37em) {
+  .mobile-navigation__login-button {
+    font-size: 1.3rem;
+  }
+}
 .mobile-navigation__bottom {
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.5rem;
@@ -767,12 +909,23 @@
     font-size: 1.8rem;
   }
 }
+@media (max-width: 37em) {
+  .mobile-navigation__header {
+    font-size: 1.8rem;
+  }
+}
 .mobile-navigation__header-link {
   color: inherit;
   text-decoration: none;
 }
 .mobile-navigation__menu {
   font-size: 2rem;
+}
+@media (max-width: 37em) {
+  .mobile-navigation__menu {
+    font-size: 1.5rem;
+    line-height: 2.5;
+  }
 }
 @media (max-width: 37em) {
   .mobile-navigation__menu {
@@ -801,6 +954,11 @@
     font-size: 1.4rem;
   }
 }
+@media (max-width: 37em) {
+  .header {
+    font-size: 1.4rem;
+  }
+}
 .header-link, .header-link:visited, .header-link:link {
   text-decoration: none;
   color: #F3F5F3;
@@ -808,6 +966,12 @@
 .header-middle .header-link {
   font-weight: 700;
   letter-spacing: 0.8rem;
+}
+@media (max-width: 37em) {
+  .header-middle .header-link {
+    padding: 0 1rem;
+    letter-spacing: 0.2rem;
+  }
 }
 @media (max-width: 37em) {
   .header-middle .header-link {
@@ -833,6 +997,11 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .hero-section__title {
+    font-size: 2rem;
+  }
+}
 .hero-section__button {
   font-family: "Nunito Sans", sans-serif;
   font-size: 2rem;
@@ -842,6 +1011,11 @@
 @media (max-width: 56em) {
   .hero-section__button {
     font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .hero-section__button {
+    font-size: 1.5rem;
   }
 }
 @media (max-width: 37em) {
@@ -940,6 +1114,11 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .pricing-section__title {
+    font-size: 2rem;
+  }
+}
 
 .review-card__person {
   font-family: "Nunito Sans", sans-serif;
@@ -959,6 +1138,11 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .review-card__person--name {
+    font-size: 2rem;
+  }
+}
 .review-card__person--review {
   font-size: 1.6rem;
   font-weight: 200;
@@ -967,6 +1151,11 @@
 @media (max-width: 56em) {
   .review-card__person--review {
     font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .review-card__person--review {
+    font-size: 1.3rem;
   }
 }
 @media (max-width: 37em) {
@@ -1033,9 +1222,19 @@
     font-size: 1.5rem;
   }
 }
+@media (max-width: 37em) {
+  .login-modal__container--form {
+    font-size: 1.5rem;
+  }
+}
 .login-modal__container--form--title {
   font-size: 2.7rem;
   font-weight: 700;
+}
+@media (max-width: 37em) {
+  .login-modal__container--form--title {
+    font-size: 2rem;
+  }
 }
 @media (max-width: 37em) {
   .login-modal__container--form--title {
@@ -1058,6 +1257,11 @@
     font-size: 1.5rem;
   }
 }
+@media (max-width: 37em) {
+  .login-modal__container--form--inputs--button {
+    font-size: 1.5rem;
+  }
+}
 .login-modal__container--form--inputs--button--login {
   color: #F3F5F3;
 }
@@ -1067,6 +1271,11 @@
 .login-modal__container--form--inputs--input {
   font-size: 1.5rem;
   font-weight: 200;
+}
+@media (max-width: 37em) {
+  .login-modal__container--form--inputs--input {
+    font-size: 1.2rem;
+  }
 }
 @media (max-width: 37em) {
   .login-modal__container--form--inputs--input {
@@ -1173,6 +1382,11 @@
     font-size: 3rem;
   }
 }
+@media (max-width: 37em) {
+  .promotions__title-content {
+    font-size: 3rem;
+  }
+}
 .promotions__empty {
   font-size: 6rem;
   font-weight: 900;
@@ -1201,6 +1415,11 @@
     font-size: 3rem;
   }
 }
+@media (max-width: 37em) {
+  .rewards__title-content {
+    font-size: 3rem;
+  }
+}
 .rewards__header-points-content, .rewards__header-code-content {
   text-transform: uppercase;
   font-size: 2.5rem;
@@ -1210,6 +1429,11 @@
 @media (max-width: 75em) {
   .rewards__header-points-content, .rewards__header-code-content {
     font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .rewards__header-points-content, .rewards__header-code-content {
+    font-size: 1.4rem;
   }
 }
 @media (max-width: 37em) {
@@ -1232,6 +1456,11 @@
     font-size: 1.8rem;
   }
 }
+@media (max-width: 37em) {
+  .rewards__header-points-content span, .rewards__header-code-content span {
+    font-size: 1.8rem;
+  }
+}
 
 .rewards-card__product-list {
   color: #F3F5F3;
@@ -1239,7 +1468,7 @@
 }
 @media (max-width: 75em) {
   .rewards-card__product-list {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 }
 .rewards-card__product-list--no-rewards {
@@ -1265,12 +1494,22 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .rewards-card__services-list-header {
+    font-size: 2rem;
+  }
+}
 .rewards-card__services-list-content-element {
   font-weight: 200;
 }
 @media (max-width: 37em) {
   .rewards-card__services-list-content-element {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .rewards-card__services-list-content-element {
+    font-size: 1.4rem;
   }
 }
 .rewards-card__services-list-content--points {
@@ -1279,11 +1518,10 @@
 }
 .rewards-card__services-list-content--button {
   text-transform: uppercase;
-  font-weight: 200;
+  font-weight: 500;
 }
 
 .appointments {
-  text-transform: uppercase;
   color: #F3F5F3;
 }
 .appointments__title--content {
@@ -1303,10 +1541,30 @@
     font-size: 3rem;
   }
 }
+@media (max-width: 37em) {
+  .appointments__title--content {
+    font-size: 3rem;
+  }
+}
 .appointments__list-title {
   text-transform: capitalize;
   font-size: 4.5rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .appointments__list-title {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointments__list-title {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointments__list-title {
+    font-size: 2.5rem;
+  }
 }
 .appointments__list-title--content {
   background-image: linear-gradient(to right, rgba(111, 45, 189, 0.8), rgba(166, 99, 204, 0.8));
@@ -1315,7 +1573,7 @@
 }
 .appointments__buttons--button {
   color: #52b69a;
-  font-weight: 700;
+  font-weight: 500;
 }
 .appointments__buttons--button--active {
   color: #F3F5F3;
@@ -1326,12 +1584,28 @@
   font-size: 2rem;
   font-weight: 500;
 }
+@media (max-width: 75em) {
+  .appointment {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointment {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointment {
+    font-size: 1.4rem;
+  }
+}
 .appointment__employee--content {
   font-weight: 900;
 }
 .appointment__rate--content {
+  text-transform: uppercase;
   color: #F3F5F3 !important;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .btn-navigation {
@@ -1346,6 +1620,12 @@
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.2s;
+}
+@media (max-width: 37em) {
+  .btn-navigation {
+    width: 5rem;
+    height: 5rem;
+  }
 }
 @media (max-width: 37em) {
   .btn-navigation {
@@ -1419,6 +1699,12 @@
     background-color: #F3F5F3;
   }
 }
+@media (max-width: 37em) {
+  .card {
+    height: 35rem;
+    background-color: #F3F5F3;
+  }
+}
 .card:hover {
   background-color: #F3F5F3;
   transform: translateY(2rem) scale(1.1);
@@ -1473,11 +1759,21 @@
     padding: 0.3rem;
   }
 }
+@media (max-width: 37em) {
+  .card__button-container {
+    padding: 0.3rem;
+  }
+}
 .card__button, .card__button:visited, .card__button:link {
   padding: 2rem;
   border-radius: 50px;
   background-color: #52b69a;
   box-shadow: 0 1rem 3rem rgba(42, 30, 56, 0.4);
+}
+@media (max-width: 37em) {
+  .card__button, .card__button:visited, .card__button:link {
+    padding: 1.2rem;
+  }
 }
 @media (max-width: 37em) {
   .card__button, .card__button:visited, .card__button:link {
@@ -1520,6 +1816,12 @@
     margin-top: -15rem;
   }
 }
+@media (max-width: 37em) {
+  .feature-section {
+    padding-top: 15rem;
+    margin-top: -15rem;
+  }
+}
 
 .direction-section {
   border-radius: 10px;
@@ -1529,6 +1831,11 @@
   position: relative;
   max-width: 120rem;
   width: 80vw;
+}
+@media (max-width: 37em) {
+  .direction-section {
+    height: 25rem;
+  }
 }
 @media (max-width: 37em) {
   .direction-section {
@@ -1548,6 +1855,12 @@
   justify-content: center;
   align-items: center;
   background-color: #F3F5F3;
+}
+@media (max-width: 37em) {
+  .direction-section--wrap {
+    height: 35rem;
+    padding-bottom: 5rem;
+  }
 }
 @media (max-width: 37em) {
   .direction-section--wrap {
@@ -1644,6 +1957,11 @@
     margin-bottom: 5rem;
   }
 }
+@media (max-width: 37em) {
+  .hero-section {
+    margin-bottom: 5rem;
+  }
+}
 .hero-section__text-container {
   height: 100%;
   width: 70%;
@@ -1688,11 +2006,23 @@
     width: 10rem;
   }
 }
+@media (max-width: 37em) {
+  .hero-section__button {
+    height: 1.4rem;
+    width: 10rem;
+  }
+}
 .hero-section__button, .hero-section__button:visited, .hero-section__button:link {
   padding: 2.5rem;
   border-radius: 50px;
   background-color: #52b69a;
   color: #F3F5F3;
+}
+@media (max-width: 37em) {
+  .hero-section__button, .hero-section__button:visited, .hero-section__button:link {
+    padding: 2rem;
+    width: 20rem;
+  }
 }
 @media (max-width: 37em) {
   .hero-section__button, .hero-section__button:visited, .hero-section__button:link {
@@ -1747,6 +2077,11 @@
     font-size: 1.3rem;
   }
 }
+@media (max-width: 37em) {
+  .mobile-navigation__login-button {
+    font-size: 1.3rem;
+  }
+}
 .mobile-navigation__bottom {
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.5rem;
@@ -1767,12 +2102,23 @@
     font-size: 1.8rem;
   }
 }
+@media (max-width: 37em) {
+  .mobile-navigation__header {
+    font-size: 1.8rem;
+  }
+}
 .mobile-navigation__header-link {
   color: inherit;
   text-decoration: none;
 }
 .mobile-navigation__menu {
   font-size: 2rem;
+}
+@media (max-width: 37em) {
+  .mobile-navigation__menu {
+    font-size: 1.5rem;
+    line-height: 2.5;
+  }
 }
 @media (max-width: 37em) {
   .mobile-navigation__menu {
@@ -1801,6 +2147,11 @@
     font-size: 1.4rem;
   }
 }
+@media (max-width: 37em) {
+  .header {
+    font-size: 1.4rem;
+  }
+}
 .header-link, .header-link:visited, .header-link:link {
   text-decoration: none;
   color: #F3F5F3;
@@ -1808,6 +2159,12 @@
 .header-middle .header-link {
   font-weight: 700;
   letter-spacing: 0.8rem;
+}
+@media (max-width: 37em) {
+  .header-middle .header-link {
+    padding: 0 1rem;
+    letter-spacing: 0.2rem;
+  }
 }
 @media (max-width: 37em) {
   .header-middle .header-link {
@@ -1833,6 +2190,11 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .hero-section__title {
+    font-size: 2rem;
+  }
+}
 .hero-section__button {
   font-family: "Nunito Sans", sans-serif;
   font-size: 2rem;
@@ -1842,6 +2204,11 @@
 @media (max-width: 56em) {
   .hero-section__button {
     font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .hero-section__button {
+    font-size: 1.5rem;
   }
 }
 @media (max-width: 37em) {
@@ -1940,6 +2307,11 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .pricing-section__title {
+    font-size: 2rem;
+  }
+}
 
 .review-card__person {
   font-family: "Nunito Sans", sans-serif;
@@ -1959,6 +2331,11 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .review-card__person--name {
+    font-size: 2rem;
+  }
+}
 .review-card__person--review {
   font-size: 1.6rem;
   font-weight: 200;
@@ -1967,6 +2344,11 @@
 @media (max-width: 56em) {
   .review-card__person--review {
     font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .review-card__person--review {
+    font-size: 1.3rem;
   }
 }
 @media (max-width: 37em) {
@@ -2033,9 +2415,19 @@
     font-size: 1.5rem;
   }
 }
+@media (max-width: 37em) {
+  .login-modal__container--form {
+    font-size: 1.5rem;
+  }
+}
 .login-modal__container--form--title {
   font-size: 2.7rem;
   font-weight: 700;
+}
+@media (max-width: 37em) {
+  .login-modal__container--form--title {
+    font-size: 2rem;
+  }
 }
 @media (max-width: 37em) {
   .login-modal__container--form--title {
@@ -2058,6 +2450,11 @@
     font-size: 1.5rem;
   }
 }
+@media (max-width: 37em) {
+  .login-modal__container--form--inputs--button {
+    font-size: 1.5rem;
+  }
+}
 .login-modal__container--form--inputs--button--login {
   color: #F3F5F3;
 }
@@ -2067,6 +2464,11 @@
 .login-modal__container--form--inputs--input {
   font-size: 1.5rem;
   font-weight: 200;
+}
+@media (max-width: 37em) {
+  .login-modal__container--form--inputs--input {
+    font-size: 1.2rem;
+  }
 }
 @media (max-width: 37em) {
   .login-modal__container--form--inputs--input {
@@ -2173,6 +2575,11 @@
     font-size: 3rem;
   }
 }
+@media (max-width: 37em) {
+  .promotions__title-content {
+    font-size: 3rem;
+  }
+}
 .promotions__empty {
   font-size: 6rem;
   font-weight: 900;
@@ -2201,6 +2608,11 @@
     font-size: 3rem;
   }
 }
+@media (max-width: 37em) {
+  .rewards__title-content {
+    font-size: 3rem;
+  }
+}
 .rewards__header-points-content, .rewards__header-code-content {
   text-transform: uppercase;
   font-size: 2.5rem;
@@ -2210,6 +2622,11 @@
 @media (max-width: 75em) {
   .rewards__header-points-content, .rewards__header-code-content {
     font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .rewards__header-points-content, .rewards__header-code-content {
+    font-size: 1.4rem;
   }
 }
 @media (max-width: 37em) {
@@ -2232,6 +2649,11 @@
     font-size: 1.8rem;
   }
 }
+@media (max-width: 37em) {
+  .rewards__header-points-content span, .rewards__header-code-content span {
+    font-size: 1.8rem;
+  }
+}
 
 .rewards-card__product-list {
   color: #F3F5F3;
@@ -2239,7 +2661,7 @@
 }
 @media (max-width: 75em) {
   .rewards-card__product-list {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 }
 .rewards-card__product-list--no-rewards {
@@ -2265,12 +2687,22 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .rewards-card__services-list-header {
+    font-size: 2rem;
+  }
+}
 .rewards-card__services-list-content-element {
   font-weight: 200;
 }
 @media (max-width: 37em) {
   .rewards-card__services-list-content-element {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .rewards-card__services-list-content-element {
+    font-size: 1.4rem;
   }
 }
 .rewards-card__services-list-content--points {
@@ -2279,11 +2711,10 @@
 }
 .rewards-card__services-list-content--button {
   text-transform: uppercase;
-  font-weight: 200;
+  font-weight: 500;
 }
 
 .appointments {
-  text-transform: uppercase;
   color: #F3F5F3;
 }
 .appointments__title--content {
@@ -2303,10 +2734,30 @@
     font-size: 3rem;
   }
 }
+@media (max-width: 37em) {
+  .appointments__title--content {
+    font-size: 3rem;
+  }
+}
 .appointments__list-title {
   text-transform: capitalize;
   font-size: 4.5rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .appointments__list-title {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointments__list-title {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointments__list-title {
+    font-size: 2.5rem;
+  }
 }
 .appointments__list-title--content {
   background-image: linear-gradient(to right, rgba(111, 45, 189, 0.8), rgba(166, 99, 204, 0.8));
@@ -2315,7 +2766,7 @@
 }
 .appointments__buttons--button {
   color: #52b69a;
-  font-weight: 700;
+  font-weight: 500;
 }
 .appointments__buttons--button--active {
   color: #F3F5F3;
@@ -2326,12 +2777,28 @@
   font-size: 2rem;
   font-weight: 500;
 }
+@media (max-width: 75em) {
+  .appointment {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointment {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointment {
+    font-size: 1.4rem;
+  }
+}
 .appointment__employee--content {
   font-weight: 900;
 }
 .appointment__rate--content {
+  text-transform: uppercase;
   color: #F3F5F3 !important;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 @keyframes moveInBottom {
@@ -2447,6 +2914,11 @@
     max-width: 30rem;
   }
 }
+@media (max-width: 37em) {
+  .login-modal__container {
+    max-width: 30rem;
+  }
+}
 .login-modal__container--close {
   padding: 2rem 2rem;
   width: 2rem;
@@ -2493,6 +2965,11 @@
     padding: 0.6rem 1.6rem;
   }
 }
+@media (max-width: 37em) {
+  .login-modal__container--form--inputs--input {
+    padding: 0.6rem 1.6rem;
+  }
+}
 .login-modal__container--form--inputs--input:focus {
   transform: translateY(-0.4rem);
   box-shadow: 0 2rem 4rem rgba(42, 30, 56, 0.2);
@@ -2532,10 +3009,20 @@
     padding: 1rem 2rem;
   }
 }
+@media (max-width: 37em) {
+  .login-modal__container--form--inputs--button--login {
+    padding: 1rem 2rem;
+  }
+}
 .login-modal__container--form--inputs--button--signup {
   padding: 1.1rem 3.2rem;
   border: 0.3rem solid #52b69a;
   background: #F3F5F3;
+}
+@media (max-width: 37em) {
+  .login-modal__container--form--inputs--button--signup {
+    padding: 0.8rem 1.8rem;
+  }
 }
 @media (max-width: 37em) {
   .login-modal__container--form--inputs--button--signup {
@@ -2562,6 +3049,12 @@
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.2s;
+}
+@media (max-width: 37em) {
+  .btn-navigation {
+    width: 5rem;
+    height: 5rem;
+  }
 }
 @media (max-width: 37em) {
   .btn-navigation {
@@ -2645,6 +3138,11 @@
     font-size: 1.3rem;
   }
 }
+@media (max-width: 37em) {
+  .mobile-navigation__login-button {
+    font-size: 1.3rem;
+  }
+}
 .mobile-navigation__bottom {
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.5rem;
@@ -2665,12 +3163,23 @@
     font-size: 1.8rem;
   }
 }
+@media (max-width: 37em) {
+  .mobile-navigation__header {
+    font-size: 1.8rem;
+  }
+}
 .mobile-navigation__header-link {
   color: inherit;
   text-decoration: none;
 }
 .mobile-navigation__menu {
   font-size: 2rem;
+}
+@media (max-width: 37em) {
+  .mobile-navigation__menu {
+    font-size: 1.5rem;
+    line-height: 2.5;
+  }
 }
 @media (max-width: 37em) {
   .mobile-navigation__menu {
@@ -2699,6 +3208,11 @@
     font-size: 1.4rem;
   }
 }
+@media (max-width: 37em) {
+  .header {
+    font-size: 1.4rem;
+  }
+}
 .header-link, .header-link:visited, .header-link:link {
   text-decoration: none;
   color: #F3F5F3;
@@ -2706,6 +3220,12 @@
 .header-middle .header-link {
   font-weight: 700;
   letter-spacing: 0.8rem;
+}
+@media (max-width: 37em) {
+  .header-middle .header-link {
+    padding: 0 1rem;
+    letter-spacing: 0.2rem;
+  }
 }
 @media (max-width: 37em) {
   .header-middle .header-link {
@@ -2731,6 +3251,11 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .hero-section__title {
+    font-size: 2rem;
+  }
+}
 .hero-section__button {
   font-family: "Nunito Sans", sans-serif;
   font-size: 2rem;
@@ -2740,6 +3265,11 @@
 @media (max-width: 56em) {
   .hero-section__button {
     font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .hero-section__button {
+    font-size: 1.5rem;
   }
 }
 @media (max-width: 37em) {
@@ -2838,6 +3368,11 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .pricing-section__title {
+    font-size: 2rem;
+  }
+}
 
 .review-card__person {
   font-family: "Nunito Sans", sans-serif;
@@ -2857,6 +3392,11 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .review-card__person--name {
+    font-size: 2rem;
+  }
+}
 .review-card__person--review {
   font-size: 1.6rem;
   font-weight: 200;
@@ -2865,6 +3405,11 @@
 @media (max-width: 56em) {
   .review-card__person--review {
     font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .review-card__person--review {
+    font-size: 1.3rem;
   }
 }
 @media (max-width: 37em) {
@@ -2931,9 +3476,19 @@
     font-size: 1.5rem;
   }
 }
+@media (max-width: 37em) {
+  .login-modal__container--form {
+    font-size: 1.5rem;
+  }
+}
 .login-modal__container--form--title {
   font-size: 2.7rem;
   font-weight: 700;
+}
+@media (max-width: 37em) {
+  .login-modal__container--form--title {
+    font-size: 2rem;
+  }
 }
 @media (max-width: 37em) {
   .login-modal__container--form--title {
@@ -2956,6 +3511,11 @@
     font-size: 1.5rem;
   }
 }
+@media (max-width: 37em) {
+  .login-modal__container--form--inputs--button {
+    font-size: 1.5rem;
+  }
+}
 .login-modal__container--form--inputs--button--login {
   color: #F3F5F3;
 }
@@ -2965,6 +3525,11 @@
 .login-modal__container--form--inputs--input {
   font-size: 1.5rem;
   font-weight: 200;
+}
+@media (max-width: 37em) {
+  .login-modal__container--form--inputs--input {
+    font-size: 1.2rem;
+  }
 }
 @media (max-width: 37em) {
   .login-modal__container--form--inputs--input {
@@ -3071,6 +3636,11 @@
     font-size: 3rem;
   }
 }
+@media (max-width: 37em) {
+  .promotions__title-content {
+    font-size: 3rem;
+  }
+}
 .promotions__empty {
   font-size: 6rem;
   font-weight: 900;
@@ -3099,6 +3669,11 @@
     font-size: 3rem;
   }
 }
+@media (max-width: 37em) {
+  .rewards__title-content {
+    font-size: 3rem;
+  }
+}
 .rewards__header-points-content, .rewards__header-code-content {
   text-transform: uppercase;
   font-size: 2.5rem;
@@ -3108,6 +3683,11 @@
 @media (max-width: 75em) {
   .rewards__header-points-content, .rewards__header-code-content {
     font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .rewards__header-points-content, .rewards__header-code-content {
+    font-size: 1.4rem;
   }
 }
 @media (max-width: 37em) {
@@ -3130,6 +3710,11 @@
     font-size: 1.8rem;
   }
 }
+@media (max-width: 37em) {
+  .rewards__header-points-content span, .rewards__header-code-content span {
+    font-size: 1.8rem;
+  }
+}
 
 .rewards-card__product-list {
   color: #F3F5F3;
@@ -3137,7 +3722,7 @@
 }
 @media (max-width: 75em) {
   .rewards-card__product-list {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 }
 .rewards-card__product-list--no-rewards {
@@ -3163,12 +3748,22 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .rewards-card__services-list-header {
+    font-size: 2rem;
+  }
+}
 .rewards-card__services-list-content-element {
   font-weight: 200;
 }
 @media (max-width: 37em) {
   .rewards-card__services-list-content-element {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .rewards-card__services-list-content-element {
+    font-size: 1.4rem;
   }
 }
 .rewards-card__services-list-content--points {
@@ -3177,11 +3772,10 @@
 }
 .rewards-card__services-list-content--button {
   text-transform: uppercase;
-  font-weight: 200;
+  font-weight: 500;
 }
 
 .appointments {
-  text-transform: uppercase;
   color: #F3F5F3;
 }
 .appointments__title--content {
@@ -3201,10 +3795,30 @@
     font-size: 3rem;
   }
 }
+@media (max-width: 37em) {
+  .appointments__title--content {
+    font-size: 3rem;
+  }
+}
 .appointments__list-title {
   text-transform: capitalize;
   font-size: 4.5rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .appointments__list-title {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointments__list-title {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointments__list-title {
+    font-size: 2.5rem;
+  }
 }
 .appointments__list-title--content {
   background-image: linear-gradient(to right, rgba(111, 45, 189, 0.8), rgba(166, 99, 204, 0.8));
@@ -3213,7 +3827,7 @@
 }
 .appointments__buttons--button {
   color: #52b69a;
-  font-weight: 700;
+  font-weight: 500;
 }
 .appointments__buttons--button--active {
   color: #F3F5F3;
@@ -3224,12 +3838,28 @@
   font-size: 2rem;
   font-weight: 500;
 }
+@media (max-width: 75em) {
+  .appointment {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointment {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointment {
+    font-size: 1.4rem;
+  }
+}
 .appointment__employee--content {
   font-weight: 900;
 }
 .appointment__rate--content {
+  text-transform: uppercase;
   color: #F3F5F3 !important;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .navigation-section {
@@ -3335,6 +3965,11 @@
     font-size: 1.3rem;
   }
 }
+@media (max-width: 37em) {
+  .mobile-navigation__login-button {
+    font-size: 1.3rem;
+  }
+}
 .mobile-navigation__bottom {
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.5rem;
@@ -3355,12 +3990,23 @@
     font-size: 1.8rem;
   }
 }
+@media (max-width: 37em) {
+  .mobile-navigation__header {
+    font-size: 1.8rem;
+  }
+}
 .mobile-navigation__header-link {
   color: inherit;
   text-decoration: none;
 }
 .mobile-navigation__menu {
   font-size: 2rem;
+}
+@media (max-width: 37em) {
+  .mobile-navigation__menu {
+    font-size: 1.5rem;
+    line-height: 2.5;
+  }
 }
 @media (max-width: 37em) {
   .mobile-navigation__menu {
@@ -3389,6 +4035,11 @@
     font-size: 1.4rem;
   }
 }
+@media (max-width: 37em) {
+  .header {
+    font-size: 1.4rem;
+  }
+}
 .header-link, .header-link:visited, .header-link:link {
   text-decoration: none;
   color: #F3F5F3;
@@ -3396,6 +4047,12 @@
 .header-middle .header-link {
   font-weight: 700;
   letter-spacing: 0.8rem;
+}
+@media (max-width: 37em) {
+  .header-middle .header-link {
+    padding: 0 1rem;
+    letter-spacing: 0.2rem;
+  }
 }
 @media (max-width: 37em) {
   .header-middle .header-link {
@@ -3421,6 +4078,11 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .hero-section__title {
+    font-size: 2rem;
+  }
+}
 .hero-section__button {
   font-family: "Nunito Sans", sans-serif;
   font-size: 2rem;
@@ -3430,6 +4092,11 @@
 @media (max-width: 56em) {
   .hero-section__button {
     font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .hero-section__button {
+    font-size: 1.5rem;
   }
 }
 @media (max-width: 37em) {
@@ -3528,6 +4195,11 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .pricing-section__title {
+    font-size: 2rem;
+  }
+}
 
 .review-card__person {
   font-family: "Nunito Sans", sans-serif;
@@ -3547,6 +4219,11 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .review-card__person--name {
+    font-size: 2rem;
+  }
+}
 .review-card__person--review {
   font-size: 1.6rem;
   font-weight: 200;
@@ -3555,6 +4232,11 @@
 @media (max-width: 56em) {
   .review-card__person--review {
     font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .review-card__person--review {
+    font-size: 1.3rem;
   }
 }
 @media (max-width: 37em) {
@@ -3621,9 +4303,19 @@
     font-size: 1.5rem;
   }
 }
+@media (max-width: 37em) {
+  .login-modal__container--form {
+    font-size: 1.5rem;
+  }
+}
 .login-modal__container--form--title {
   font-size: 2.7rem;
   font-weight: 700;
+}
+@media (max-width: 37em) {
+  .login-modal__container--form--title {
+    font-size: 2rem;
+  }
 }
 @media (max-width: 37em) {
   .login-modal__container--form--title {
@@ -3646,6 +4338,11 @@
     font-size: 1.5rem;
   }
 }
+@media (max-width: 37em) {
+  .login-modal__container--form--inputs--button {
+    font-size: 1.5rem;
+  }
+}
 .login-modal__container--form--inputs--button--login {
   color: #F3F5F3;
 }
@@ -3655,6 +4352,11 @@
 .login-modal__container--form--inputs--input {
   font-size: 1.5rem;
   font-weight: 200;
+}
+@media (max-width: 37em) {
+  .login-modal__container--form--inputs--input {
+    font-size: 1.2rem;
+  }
 }
 @media (max-width: 37em) {
   .login-modal__container--form--inputs--input {
@@ -3761,6 +4463,11 @@
     font-size: 3rem;
   }
 }
+@media (max-width: 37em) {
+  .promotions__title-content {
+    font-size: 3rem;
+  }
+}
 .promotions__empty {
   font-size: 6rem;
   font-weight: 900;
@@ -3789,6 +4496,11 @@
     font-size: 3rem;
   }
 }
+@media (max-width: 37em) {
+  .rewards__title-content {
+    font-size: 3rem;
+  }
+}
 .rewards__header-points-content, .rewards__header-code-content {
   text-transform: uppercase;
   font-size: 2.5rem;
@@ -3798,6 +4510,11 @@
 @media (max-width: 75em) {
   .rewards__header-points-content, .rewards__header-code-content {
     font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .rewards__header-points-content, .rewards__header-code-content {
+    font-size: 1.4rem;
   }
 }
 @media (max-width: 37em) {
@@ -3820,6 +4537,11 @@
     font-size: 1.8rem;
   }
 }
+@media (max-width: 37em) {
+  .rewards__header-points-content span, .rewards__header-code-content span {
+    font-size: 1.8rem;
+  }
+}
 
 .rewards-card__product-list {
   color: #F3F5F3;
@@ -3827,7 +4549,7 @@
 }
 @media (max-width: 75em) {
   .rewards-card__product-list {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 }
 .rewards-card__product-list--no-rewards {
@@ -3853,12 +4575,22 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .rewards-card__services-list-header {
+    font-size: 2rem;
+  }
+}
 .rewards-card__services-list-content-element {
   font-weight: 200;
 }
 @media (max-width: 37em) {
   .rewards-card__services-list-content-element {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .rewards-card__services-list-content-element {
+    font-size: 1.4rem;
   }
 }
 .rewards-card__services-list-content--points {
@@ -3867,11 +4599,10 @@
 }
 .rewards-card__services-list-content--button {
   text-transform: uppercase;
-  font-weight: 200;
+  font-weight: 500;
 }
 
 .appointments {
-  text-transform: uppercase;
   color: #F3F5F3;
 }
 .appointments__title--content {
@@ -3891,10 +4622,30 @@
     font-size: 3rem;
   }
 }
+@media (max-width: 37em) {
+  .appointments__title--content {
+    font-size: 3rem;
+  }
+}
 .appointments__list-title {
   text-transform: capitalize;
   font-size: 4.5rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .appointments__list-title {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointments__list-title {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointments__list-title {
+    font-size: 2.5rem;
+  }
 }
 .appointments__list-title--content {
   background-image: linear-gradient(to right, rgba(111, 45, 189, 0.8), rgba(166, 99, 204, 0.8));
@@ -3903,7 +4654,7 @@
 }
 .appointments__buttons--button {
   color: #52b69a;
-  font-weight: 700;
+  font-weight: 500;
 }
 .appointments__buttons--button--active {
   color: #F3F5F3;
@@ -3914,12 +4665,28 @@
   font-size: 2rem;
   font-weight: 500;
 }
+@media (max-width: 75em) {
+  .appointment {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointment {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointment {
+    font-size: 1.4rem;
+  }
+}
 .appointment__employee--content {
   font-weight: 900;
 }
 .appointment__rate--content {
+  text-transform: uppercase;
   color: #F3F5F3 !important;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .wrap-navigation {
@@ -3986,11 +4753,21 @@
     top: 10%;
   }
 }
+@media (max-width: 37em) {
+  .mobile-navigation__bottom-button {
+    top: 10%;
+  }
+}
 .mobile-navigation__bottom-button, .mobile-navigation__bottom-button:visited, .mobile-navigation__bottom-button:link {
   padding: 2.5rem;
   border-radius: 50px;
   background-color: #52b69a;
   color: #F3F5F3;
+}
+@media (max-width: 37em) {
+  .mobile-navigation__bottom-button, .mobile-navigation__bottom-button:visited, .mobile-navigation__bottom-button:link {
+    padding: 2rem;
+  }
 }
 @media (max-width: 37em) {
   .mobile-navigation__bottom-button, .mobile-navigation__bottom-button:visited, .mobile-navigation__bottom-button:link {
@@ -4025,6 +4802,11 @@
     height: 15%;
   }
 }
+@media (max-width: 37em) {
+  .mobile-navigation__header {
+    height: 15%;
+  }
+}
 .mobile-navigation__header-link {
   position: relative;
 }
@@ -4045,6 +4827,11 @@
     line-height: 5rem;
   }
 }
+@media (max-width: 37em) {
+  .mobile-navigation__menu {
+    line-height: 5rem;
+  }
+}
 
 .review-card {
   height: 30rem;
@@ -4059,6 +4846,11 @@
 @media (max-width: 56em) {
   .review-card {
     flex-direction: column;
+    width: 75%;
+  }
+}
+@media (max-width: 37em) {
+  .review-card {
     width: 75%;
   }
 }
@@ -4111,12 +4903,22 @@
     width: 55%;
   }
 }
+@media (max-width: 37em) {
+  .review-card__person--image-wrap {
+    width: 55%;
+  }
+}
 .review-card__person--name {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 25%;
+}
+@media (max-width: 37em) {
+  .review-card__person--name {
+    margin-bottom: 5%;
+  }
 }
 @media (max-width: 37em) {
   .review-card__person--name {
@@ -4141,6 +4943,11 @@
     width: 100%;
   }
 }
+@media (max-width: 37em) {
+  .review-card__person--review {
+    width: 100%;
+  }
+}
 
 .swiper {
   display: block;
@@ -4156,6 +4963,11 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
+}
+@media (max-width: 37em) {
+  .swiper-wrap {
+    padding: 0;
+  }
 }
 @media (max-width: 37em) {
   .swiper-wrap {
@@ -4284,6 +5096,11 @@
     flex-direction: row-reverse;
   }
 }
+@media (max-width: 37em) {
+  .rewards__header {
+    flex-direction: row-reverse;
+  }
+}
 .rewards__header-points, .rewards__header-code {
   padding: 0 3rem;
   width: fit-content;
@@ -4293,6 +5110,11 @@
   align-items: center;
 }
 @media (max-width: 75em) {
+  .rewards__header-points, .rewards__header-code {
+    width: fit-content;
+  }
+}
+@media (max-width: 37em) {
   .rewards__header-points, .rewards__header-code {
     width: fit-content;
   }
@@ -4427,6 +5249,24 @@
   align-items: center;
   position: relative;
 }
+@media (max-width: 37em) {
+  .user-dashboard {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+}
+@media (max-width: 37em) {
+  .user-dashboard {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+}
 @media (max-width: 56em) {
   .user-dashboard__toggle-menu {
     position: absolute;
@@ -4446,6 +5286,14 @@
     position: fixed;
     top: 0;
     left: 0;
+  }
+}
+@media (max-width: 37em) {
+  .user-dashboard__toggle-menu {
+    width: 6rem;
+    height: 6rem;
+    top: 1rem;
+    left: 2rem;
   }
 }
 @media (max-width: 37em) {
@@ -4495,6 +5343,11 @@
     font-size: 1.3rem;
   }
 }
+@media (max-width: 37em) {
+  .mobile-navigation__login-button {
+    font-size: 1.3rem;
+  }
+}
 .mobile-navigation__bottom {
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.5rem;
@@ -4515,12 +5368,23 @@
     font-size: 1.8rem;
   }
 }
+@media (max-width: 37em) {
+  .mobile-navigation__header {
+    font-size: 1.8rem;
+  }
+}
 .mobile-navigation__header-link {
   color: inherit;
   text-decoration: none;
 }
 .mobile-navigation__menu {
   font-size: 2rem;
+}
+@media (max-width: 37em) {
+  .mobile-navigation__menu {
+    font-size: 1.5rem;
+    line-height: 2.5;
+  }
 }
 @media (max-width: 37em) {
   .mobile-navigation__menu {
@@ -4549,6 +5413,11 @@
     font-size: 1.4rem;
   }
 }
+@media (max-width: 37em) {
+  .header {
+    font-size: 1.4rem;
+  }
+}
 .header-link, .header-link:visited, .header-link:link {
   text-decoration: none;
   color: #F3F5F3;
@@ -4556,6 +5425,12 @@
 .header-middle .header-link {
   font-weight: 700;
   letter-spacing: 0.8rem;
+}
+@media (max-width: 37em) {
+  .header-middle .header-link {
+    padding: 0 1rem;
+    letter-spacing: 0.2rem;
+  }
 }
 @media (max-width: 37em) {
   .header-middle .header-link {
@@ -4581,6 +5456,11 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .hero-section__title {
+    font-size: 2rem;
+  }
+}
 .hero-section__button {
   font-family: "Nunito Sans", sans-serif;
   font-size: 2rem;
@@ -4590,6 +5470,11 @@
 @media (max-width: 56em) {
   .hero-section__button {
     font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .hero-section__button {
+    font-size: 1.5rem;
   }
 }
 @media (max-width: 37em) {
@@ -4688,6 +5573,11 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .pricing-section__title {
+    font-size: 2rem;
+  }
+}
 
 .review-card__person {
   font-family: "Nunito Sans", sans-serif;
@@ -4707,6 +5597,11 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .review-card__person--name {
+    font-size: 2rem;
+  }
+}
 .review-card__person--review {
   font-size: 1.6rem;
   font-weight: 200;
@@ -4715,6 +5610,11 @@
 @media (max-width: 56em) {
   .review-card__person--review {
     font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .review-card__person--review {
+    font-size: 1.3rem;
   }
 }
 @media (max-width: 37em) {
@@ -4781,9 +5681,19 @@
     font-size: 1.5rem;
   }
 }
+@media (max-width: 37em) {
+  .login-modal__container--form {
+    font-size: 1.5rem;
+  }
+}
 .login-modal__container--form--title {
   font-size: 2.7rem;
   font-weight: 700;
+}
+@media (max-width: 37em) {
+  .login-modal__container--form--title {
+    font-size: 2rem;
+  }
 }
 @media (max-width: 37em) {
   .login-modal__container--form--title {
@@ -4806,6 +5716,11 @@
     font-size: 1.5rem;
   }
 }
+@media (max-width: 37em) {
+  .login-modal__container--form--inputs--button {
+    font-size: 1.5rem;
+  }
+}
 .login-modal__container--form--inputs--button--login {
   color: #F3F5F3;
 }
@@ -4815,6 +5730,11 @@
 .login-modal__container--form--inputs--input {
   font-size: 1.5rem;
   font-weight: 200;
+}
+@media (max-width: 37em) {
+  .login-modal__container--form--inputs--input {
+    font-size: 1.2rem;
+  }
 }
 @media (max-width: 37em) {
   .login-modal__container--form--inputs--input {
@@ -4921,6 +5841,11 @@
     font-size: 3rem;
   }
 }
+@media (max-width: 37em) {
+  .promotions__title-content {
+    font-size: 3rem;
+  }
+}
 .promotions__empty {
   font-size: 6rem;
   font-weight: 900;
@@ -4949,6 +5874,11 @@
     font-size: 3rem;
   }
 }
+@media (max-width: 37em) {
+  .rewards__title-content {
+    font-size: 3rem;
+  }
+}
 .rewards__header-points-content, .rewards__header-code-content {
   text-transform: uppercase;
   font-size: 2.5rem;
@@ -4958,6 +5888,11 @@
 @media (max-width: 75em) {
   .rewards__header-points-content, .rewards__header-code-content {
     font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .rewards__header-points-content, .rewards__header-code-content {
+    font-size: 1.4rem;
   }
 }
 @media (max-width: 37em) {
@@ -4980,6 +5915,11 @@
     font-size: 1.8rem;
   }
 }
+@media (max-width: 37em) {
+  .rewards__header-points-content span, .rewards__header-code-content span {
+    font-size: 1.8rem;
+  }
+}
 
 .rewards-card__product-list {
   color: #F3F5F3;
@@ -4987,7 +5927,7 @@
 }
 @media (max-width: 75em) {
   .rewards-card__product-list {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 }
 .rewards-card__product-list--no-rewards {
@@ -5013,12 +5953,22 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .rewards-card__services-list-header {
+    font-size: 2rem;
+  }
+}
 .rewards-card__services-list-content-element {
   font-weight: 200;
 }
 @media (max-width: 37em) {
   .rewards-card__services-list-content-element {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .rewards-card__services-list-content-element {
+    font-size: 1.4rem;
   }
 }
 .rewards-card__services-list-content--points {
@@ -5027,11 +5977,10 @@
 }
 .rewards-card__services-list-content--button {
   text-transform: uppercase;
-  font-weight: 200;
+  font-weight: 500;
 }
 
 .appointments {
-  text-transform: uppercase;
   color: #F3F5F3;
 }
 .appointments__title--content {
@@ -5051,10 +6000,30 @@
     font-size: 3rem;
   }
 }
+@media (max-width: 37em) {
+  .appointments__title--content {
+    font-size: 3rem;
+  }
+}
 .appointments__list-title {
   text-transform: capitalize;
   font-size: 4.5rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .appointments__list-title {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointments__list-title {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointments__list-title {
+    font-size: 2.5rem;
+  }
 }
 .appointments__list-title--content {
   background-image: linear-gradient(to right, rgba(111, 45, 189, 0.8), rgba(166, 99, 204, 0.8));
@@ -5063,7 +6032,7 @@
 }
 .appointments__buttons--button {
   color: #52b69a;
-  font-weight: 700;
+  font-weight: 500;
 }
 .appointments__buttons--button--active {
   color: #F3F5F3;
@@ -5074,12 +6043,28 @@
   font-size: 2rem;
   font-weight: 500;
 }
+@media (max-width: 75em) {
+  .appointment {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointment {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointment {
+    font-size: 1.4rem;
+  }
+}
 .appointment__employee--content {
   font-weight: 900;
 }
 .appointment__rate--content {
+  text-transform: uppercase;
   color: #F3F5F3 !important;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 @keyframes moveInBottom {
@@ -5170,8 +6155,8 @@
 }
 @media (max-width: 56em) {
   .user-info {
+    position: fixed;
     z-index: 1000;
-    position: absolute;
     flex-direction: row;
     height: 4rem;
     top: unset;
@@ -5422,8 +6407,17 @@
   justify-content: flex-start;
   width: 100%;
   height: 100%;
-  overflow-x: scroll;
   padding-bottom: 5rem;
+}
+@media (max-width: 75em) {
+  .appointments {
+    padding: unset;
+  }
+}
+@media (max-width: 56em) {
+  .appointments {
+    overflow-y: scroll;
+  }
 }
 .appointments--wrap {
   width: 100%;
@@ -5442,12 +6436,12 @@
   animation: moveToLeft 1s ease-in;
 }
 .appointments__list {
-  width: 90rem;
+  width: 70rem;
   max-height: 45rem;
   height: fit-content;
   display: flex;
   flex-direction: column;
-  padding: 4rem 8.5rem 4rem 4rem;
+  padding: 4rem;
   align-items: center;
   gap: 5rem;
   overflow-y: scroll;
@@ -5456,21 +6450,67 @@
   box-shadow: 0 1rem 2rem rgba(42, 30, 56, 0.4);
   transition: all 0.4s;
 }
-.appointments__list::-webkit-scrollbar {
-  background: transparent;
-}
 .appointments__list:hover {
   background-image: linear-gradient(to right bottom, #6f2dbd, rgba(166, 99, 204, 0.7));
   transform: translateY(-2rem);
   box-shadow: 0 3rem 4rem rgba(42, 30, 56, 0.6);
 }
+@media (max-width: 75em) {
+  .appointments__list {
+    width: 75rem;
+    max-height: 30rem;
+  }
+}
+@media (max-width: 56em) {
+  .appointments__list {
+    overflow-y: hidden;
+    width: 95vw;
+    max-height: 100%;
+    padding: 3rem 1rem;
+    margin-bottom: 10%;
+  }
+}
+@media (max-width: 37em) {
+  .appointments__list {
+    margin-bottom: 20%;
+  }
+}
+@media (max-width: 37em) {
+  .appointments__list {
+    margin-bottom: 20%;
+  }
+}
 .appointments__list-title {
   margin: 6rem;
+}
+@media (max-width: 37em) {
+  .appointments__list-title {
+    margin: 1rem 1rem 1rem 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointments__list-title {
+    margin: 1rem 1rem 1rem 2rem;
+  }
 }
 .appointments__buttons {
   display: flex;
   justify-content: center;
   gap: 5rem;
+}
+@media (max-width: 37em) {
+  .appointments__buttons {
+    gap: 2rem;
+    margin-right: 1rem;
+    justify-content: flex-end;
+  }
+}
+@media (max-width: 37em) {
+  .appointments__buttons {
+    gap: 2rem;
+    margin-right: 1rem;
+    justify-content: flex-end;
+  }
 }
 .appointments__buttons--button {
   border-radius: 30rem;
@@ -5479,6 +6519,23 @@
   border: 0.2rem solid #52b69a;
   cursor: pointer;
   transition: all 0.3s;
+}
+@media (max-width: 56em) {
+  .appointments__buttons--button {
+    padding: 1rem 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointments__buttons--button {
+    gap: 2rem;
+    padding: 0.5rem 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointments__buttons--button {
+    gap: 2rem;
+    padding: 0.5rem 1rem;
+  }
 }
 .appointments__buttons--button:hover {
   box-shadow: 0 2rem 4rem rgba(42, 30, 56, 0.3);
@@ -5502,8 +6559,14 @@
   height: 3rem;
   width: 90%;
 }
+@media (max-width: 75em) {
+  .appointment {
+    height: 4.5rem;
+  }
+}
 .appointment__title {
   width: 25%;
+  height: fit-content;
 }
 .appointment__title--content {
   width: 100%;
@@ -5512,6 +6575,7 @@
 }
 .appointment__employee {
   width: 25%;
+  height: fit-content;
 }
 .appointment__employee--content {
   width: 100%;
@@ -5519,30 +6583,60 @@
   justify-content: center;
 }
 .appointment__date {
-  width: 35%;
+  height: fit-content;
+  width: 30%;
+  display: flex;
+  justify-content: center;
 }
 .appointment__date--content {
   width: 100%;
-  display: flex;
-  justify-content: center;
 }
 .appointment__rate {
-  width: 15%;
-}
-.appointment__rate--content {
-  width: 100%;
+  height: 4.5rem;
+  width: 20%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media (max-width: 37em) {
+  .appointment__rate {
+    margin-left: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointment__rate {
+    margin-left: 2rem;
+  }
+}
+.appointment__rate--content {
+  display: flex;
   border-radius: 30rem;
-  padding: 1rem 1.6rem;
+  padding: 0.6rem 2rem;
   background-image: linear-gradient(to right bottom, #007c77, #52b69a);
   box-shadow: 0 1rem 2rem rgba(42, 30, 56, 0.3);
   transition: all 0.3s;
 }
+@media (max-width: 56em) {
+  .appointment__rate--content {
+    margin-right: 15%;
+    padding: 0.7rem 1.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointment__rate--content {
+    margin-right: 15%;
+    padding: 0.5rem 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointment__rate--content {
+    margin-right: 15%;
+    padding: 0.5rem 1.2rem;
+  }
+}
 .appointment__rate--content, .appointment__rate--content:link {
   text-decoration: none;
-  letter-spacing: 0.4rem;
+  letter-spacing: 0.2rem;
 }
 .appointment__rate--content:hover, .appointment__rate--content:link:hover {
   transform: translateY(-1rem);
@@ -5959,6 +7053,11 @@
     font-size: 1.3rem;
   }
 }
+@media (max-width: 37em) {
+  .mobile-navigation__login-button {
+    font-size: 1.3rem;
+  }
+}
 .mobile-navigation__bottom {
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.5rem;
@@ -5979,12 +7078,23 @@
     font-size: 1.8rem;
   }
 }
+@media (max-width: 37em) {
+  .mobile-navigation__header {
+    font-size: 1.8rem;
+  }
+}
 .mobile-navigation__header-link {
   color: inherit;
   text-decoration: none;
 }
 .mobile-navigation__menu {
   font-size: 2rem;
+}
+@media (max-width: 37em) {
+  .mobile-navigation__menu {
+    font-size: 1.5rem;
+    line-height: 2.5;
+  }
 }
 @media (max-width: 37em) {
   .mobile-navigation__menu {
@@ -6013,6 +7123,11 @@
     font-size: 1.4rem;
   }
 }
+@media (max-width: 37em) {
+  .header {
+    font-size: 1.4rem;
+  }
+}
 .header-link, .header-link:visited, .header-link:link {
   text-decoration: none;
   color: #F3F5F3;
@@ -6020,6 +7135,12 @@
 .header-middle .header-link {
   font-weight: 700;
   letter-spacing: 0.8rem;
+}
+@media (max-width: 37em) {
+  .header-middle .header-link {
+    padding: 0 1rem;
+    letter-spacing: 0.2rem;
+  }
 }
 @media (max-width: 37em) {
   .header-middle .header-link {
@@ -6045,6 +7166,11 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .hero-section__title {
+    font-size: 2rem;
+  }
+}
 .hero-section__button {
   font-family: "Nunito Sans", sans-serif;
   font-size: 2rem;
@@ -6054,6 +7180,11 @@
 @media (max-width: 56em) {
   .hero-section__button {
     font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .hero-section__button {
+    font-size: 1.5rem;
   }
 }
 @media (max-width: 37em) {
@@ -6152,6 +7283,11 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .pricing-section__title {
+    font-size: 2rem;
+  }
+}
 
 .review-card__person {
   font-family: "Nunito Sans", sans-serif;
@@ -6171,6 +7307,11 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .review-card__person--name {
+    font-size: 2rem;
+  }
+}
 .review-card__person--review {
   font-size: 1.6rem;
   font-weight: 200;
@@ -6179,6 +7320,11 @@
 @media (max-width: 56em) {
   .review-card__person--review {
     font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .review-card__person--review {
+    font-size: 1.3rem;
   }
 }
 @media (max-width: 37em) {
@@ -6245,9 +7391,19 @@
     font-size: 1.5rem;
   }
 }
+@media (max-width: 37em) {
+  .login-modal__container--form {
+    font-size: 1.5rem;
+  }
+}
 .login-modal__container--form--title {
   font-size: 2.7rem;
   font-weight: 700;
+}
+@media (max-width: 37em) {
+  .login-modal__container--form--title {
+    font-size: 2rem;
+  }
 }
 @media (max-width: 37em) {
   .login-modal__container--form--title {
@@ -6270,6 +7426,11 @@
     font-size: 1.5rem;
   }
 }
+@media (max-width: 37em) {
+  .login-modal__container--form--inputs--button {
+    font-size: 1.5rem;
+  }
+}
 .login-modal__container--form--inputs--button--login {
   color: #F3F5F3;
 }
@@ -6279,6 +7440,11 @@
 .login-modal__container--form--inputs--input {
   font-size: 1.5rem;
   font-weight: 200;
+}
+@media (max-width: 37em) {
+  .login-modal__container--form--inputs--input {
+    font-size: 1.2rem;
+  }
 }
 @media (max-width: 37em) {
   .login-modal__container--form--inputs--input {
@@ -6385,6 +7551,11 @@
     font-size: 3rem;
   }
 }
+@media (max-width: 37em) {
+  .promotions__title-content {
+    font-size: 3rem;
+  }
+}
 .promotions__empty {
   font-size: 6rem;
   font-weight: 900;
@@ -6413,6 +7584,11 @@
     font-size: 3rem;
   }
 }
+@media (max-width: 37em) {
+  .rewards__title-content {
+    font-size: 3rem;
+  }
+}
 .rewards__header-points-content, .rewards__header-code-content {
   text-transform: uppercase;
   font-size: 2.5rem;
@@ -6422,6 +7598,11 @@
 @media (max-width: 75em) {
   .rewards__header-points-content, .rewards__header-code-content {
     font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .rewards__header-points-content, .rewards__header-code-content {
+    font-size: 1.4rem;
   }
 }
 @media (max-width: 37em) {
@@ -6444,6 +7625,11 @@
     font-size: 1.8rem;
   }
 }
+@media (max-width: 37em) {
+  .rewards__header-points-content span, .rewards__header-code-content span {
+    font-size: 1.8rem;
+  }
+}
 
 .rewards-card__product-list {
   color: #F3F5F3;
@@ -6451,7 +7637,7 @@
 }
 @media (max-width: 75em) {
   .rewards-card__product-list {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 }
 .rewards-card__product-list--no-rewards {
@@ -6477,12 +7663,22 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .rewards-card__services-list-header {
+    font-size: 2rem;
+  }
+}
 .rewards-card__services-list-content-element {
   font-weight: 200;
 }
 @media (max-width: 37em) {
   .rewards-card__services-list-content-element {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .rewards-card__services-list-content-element {
+    font-size: 1.4rem;
   }
 }
 .rewards-card__services-list-content--points {
@@ -6491,11 +7687,10 @@
 }
 .rewards-card__services-list-content--button {
   text-transform: uppercase;
-  font-weight: 200;
+  font-weight: 500;
 }
 
 .appointments {
-  text-transform: uppercase;
   color: #F3F5F3;
 }
 .appointments__title--content {
@@ -6515,10 +7710,30 @@
     font-size: 3rem;
   }
 }
+@media (max-width: 37em) {
+  .appointments__title--content {
+    font-size: 3rem;
+  }
+}
 .appointments__list-title {
   text-transform: capitalize;
   font-size: 4.5rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .appointments__list-title {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointments__list-title {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointments__list-title {
+    font-size: 2.5rem;
+  }
 }
 .appointments__list-title--content {
   background-image: linear-gradient(to right, rgba(111, 45, 189, 0.8), rgba(166, 99, 204, 0.8));
@@ -6527,7 +7742,7 @@
 }
 .appointments__buttons--button {
   color: #52b69a;
-  font-weight: 700;
+  font-weight: 500;
 }
 .appointments__buttons--button--active {
   color: #F3F5F3;
@@ -6538,12 +7753,28 @@
   font-size: 2rem;
   font-weight: 500;
 }
+@media (max-width: 75em) {
+  .appointment {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointment {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointment {
+    font-size: 1.4rem;
+  }
+}
 .appointment__employee--content {
   font-weight: 900;
 }
 .appointment__rate--content {
+  text-transform: uppercase;
   color: #F3F5F3 !important;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .pricing-card {
@@ -6600,6 +7831,894 @@
 .pricing-card__sub-services--service {
   display: flex;
   justify-content: space-evenly;
+}
+
+.desktop-navigation {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.desktop-navigation__lower {
+  font-size: 1.6rem;
+}
+.desktop-navigation__lower-link {
+  text-decoration: none;
+  color: #F3F5F3;
+}
+.desktop-navigation__lower-link-logo {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: #52b69a;
+}
+
+.mobile-navigation {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #F3F5F3;
+}
+.mobile-navigation__login-button {
+  font-size: 1rem;
+  color: #F3F5F3;
+}
+@media (max-width: 56em) {
+  .mobile-navigation__login-button {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .mobile-navigation__login-button {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 37em) {
+  .mobile-navigation__login-button {
+    font-size: 1.3rem;
+  }
+}
+.mobile-navigation__bottom {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+@media (max-width: 56em) {
+  .mobile-navigation__bottom {
+    font-size: 1.2rem;
+  }
+}
+.mobile-navigation__header {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+@media (max-width: 37em) {
+  .mobile-navigation__header {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .mobile-navigation__header {
+    font-size: 1.8rem;
+  }
+}
+.mobile-navigation__header-link {
+  color: inherit;
+  text-decoration: none;
+}
+.mobile-navigation__menu {
+  font-size: 2rem;
+}
+@media (max-width: 37em) {
+  .mobile-navigation__menu {
+    font-size: 1.5rem;
+    line-height: 2.5;
+  }
+}
+@media (max-width: 37em) {
+  .mobile-navigation__menu {
+    font-size: 1.5rem;
+    line-height: 2.5;
+  }
+}
+.mobile-navigation__menu-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.header {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+@media (max-width: 56em) {
+  .header {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .header {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .header {
+    font-size: 1.4rem;
+  }
+}
+.header-link, .header-link:visited, .header-link:link {
+  text-decoration: none;
+  color: #F3F5F3;
+}
+.header-middle .header-link {
+  font-weight: 700;
+  letter-spacing: 0.8rem;
+}
+@media (max-width: 37em) {
+  .header-middle .header-link {
+    padding: 0 1rem;
+    letter-spacing: 0.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .header-middle .header-link {
+    padding: 0 1rem;
+    letter-spacing: 0.2rem;
+  }
+}
+
+.hero-section {
+  font-family: "Nunito Sans", sans-serif;
+}
+.hero-section__title {
+  font-size: 6rem;
+  color: rgba(243, 245, 243, 0.9);
+}
+@media (max-width: 56em) {
+  .hero-section__title {
+    font-size: 4.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .hero-section__title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .hero-section__title {
+    font-size: 2rem;
+  }
+}
+.hero-section__button {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 2rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+@media (max-width: 56em) {
+  .hero-section__button {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .hero-section__button {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .hero-section__button {
+    font-size: 1.5rem;
+  }
+}
+
+.card__title-container-title {
+  font-family: "Nunito Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #F3F5F3;
+  margin: 1.5rem;
+}
+@media (max-width: 56em) {
+  .card__title-container-title {
+    font-size: 1.5rem;
+  }
+}
+
+.card__description-container-text {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.8em;
+  font-weight: 300;
+  color: #2A1E38;
+}
+@media (max-width: 56em) {
+  .card__description-container-text {
+    font-size: 1.3rem;
+  }
+}
+
+.card__button {
+  text-decoration: none;
+  font-family: "Nunito Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  color: #F3F5F3;
+}
+@media (max-width: 56em) {
+  .card__button {
+    font-size: 1.5rem;
+  }
+}
+
+.pricing-card {
+  font-family: "Nunito Sans", sans-serif;
+  text-transform: uppercase;
+}
+.pricing-card__main-service {
+  font-size: 1.8rem;
+  letter-spacing: 0.3rem;
+  font-weight: 700;
+  color: #A663CC;
+}
+@media (max-width: 75em) {
+  .pricing-card__main-service {
+    font-size: 1.4rem;
+  }
+}
+.pricing-card__sub-services--service--title {
+  color: #F3F5F3;
+  font-size: 1.5rem;
+}
+@media (max-width: 75em) {
+  .pricing-card__sub-services--service--title {
+    font-size: 1.2rem;
+  }
+}
+.pricing-card__sub-services--service--price {
+  color: #F3F5F3;
+  font-weight: 100;
+  font-size: 2rem;
+}
+@media (max-width: 75em) {
+  .pricing-card__sub-services--service--price {
+    font-size: 1.5rem;
+  }
+}
+
+.pricing-section__title {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 4rem;
+  text-transform: uppercase;
+  color: #F3F5F3;
+}
+@media (max-width: 56em) {
+  .pricing-section__title {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 37em) {
+  .pricing-section__title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .pricing-section__title {
+    font-size: 2rem;
+  }
+}
+
+.review-card__person {
+  font-family: "Nunito Sans", sans-serif;
+}
+.review-card__person--name {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: rgba(42, 30, 56, 0.8);
+}
+@media (max-width: 56em) {
+  .review-card__person--name {
+    font-size: 2.3rem;
+  }
+}
+@media (max-width: 37em) {
+  .review-card__person--name {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .review-card__person--name {
+    font-size: 2rem;
+  }
+}
+.review-card__person--review {
+  font-size: 1.6rem;
+  font-weight: 200;
+  color: rgba(42, 30, 56, 0.8);
+}
+@media (max-width: 56em) {
+  .review-card__person--review {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .review-card__person--review {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 37em) {
+  .review-card__person--review {
+    font-size: 1.3rem;
+  }
+}
+
+.direction-section__title {
+  font-family: "Nunito Sans", sans-serif;
+  background-image: linear-gradient(to left, rgba(111, 45, 189, 0.8), rgba(166, 99, 204, 0.8));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.schedule-card {
+  color: #F3F5F3;
+  font-family: "Nunito Sans", sans-serif;
+}
+.schedule-card__title-container {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 3rem;
+}
+@media (max-width: 56em) {
+  .schedule-card__title-container {
+    font-size: 2rem;
+  }
+}
+.schedule-card__hours {
+  font-weight: 200;
+}
+.schedule-card__hours-service--title {
+  font-size: 2rem;
+}
+@media (max-width: 56em) {
+  .schedule-card__hours-service--title {
+    font-size: 1.6rem;
+  }
+}
+.schedule-card__hours-service--hours {
+  font-size: 2.2rem;
+}
+@media (max-width: 56em) {
+  .schedule-card__hours-service--hours {
+    font-size: 1.8rem;
+  }
+}
+
+.footer-section {
+  color: rgba(243, 245, 243, 0.7);
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.4rem;
+}
+
+.login-modal__container--form {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: rgba(82, 182, 154, 0.9);
+}
+@media (max-width: 37em) {
+  .login-modal__container--form {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .login-modal__container--form {
+    font-size: 1.5rem;
+  }
+}
+.login-modal__container--form--title {
+  font-size: 2.7rem;
+  font-weight: 700;
+}
+@media (max-width: 37em) {
+  .login-modal__container--form--title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .login-modal__container--form--title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 56em) {
+  .login-modal__container--form--inputs--label {
+    color: rgba(243, 245, 243, 0.7);
+  }
+  .login-modal__container--form--inputs--label--firstname, .login-modal__container--form--inputs--label--lastname {
+    color: rgba(42, 30, 56, 0.7);
+  }
+}
+.login-modal__container--form--inputs--button {
+  font-size: 2rem;
+}
+@media (max-width: 37em) {
+  .login-modal__container--form--inputs--button {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .login-modal__container--form--inputs--button {
+    font-size: 1.5rem;
+  }
+}
+.login-modal__container--form--inputs--button--login {
+  color: #F3F5F3;
+}
+.login-modal__container--form--inputs--button--signup {
+  color: #52b69a;
+}
+.login-modal__container--form--inputs--input {
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+@media (max-width: 37em) {
+  .login-modal__container--form--inputs--input {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .login-modal__container--form--inputs--input {
+    font-size: 1.2rem;
+  }
+}
+
+.user-info {
+  color: #F3F5F3;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.6rem;
+}
+.user-info__header--name {
+  font-weight: 500;
+}
+.user-info__header--name--firstname {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.user-info__details--detail--personal {
+  color: #c8c8c8;
+  font-size: 1.8rem;
+}
+.user-info__details--detail--personal:hover {
+  color: #F3F5F3;
+}
+.user-info__mobile {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.5rem;
+  color: #F3F5F3;
+}
+.user-info__mobile-details--detail--personal {
+  text-decoration: none;
+  color: #F3F5F3;
+}
+
+.user-dashboard {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.5rem;
+}
+
+.promo-card {
+  font-size: 2rem;
+  color: rgba(243, 245, 243, 0.9);
+}
+.promo-card__information--expiration {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+}
+.promo-card__information--expiration--date {
+  font-size: 2.2rem;
+  font-weight: 900;
+}
+.promo-card__information--button {
+  text-transform: uppercase;
+  font-size: 2.7rem;
+  font-weight: 900;
+}
+.promo-card__image--title {
+  font-size: 3rem;
+  font-weight: 900;
+}
+.promo-card__image--title span {
+  font-size: 5rem;
+}
+.promo-card__touch {
+  color: rgba(243, 245, 243, 0.9);
+}
+.promo-card__touch-image--title {
+  font-size: 3rem;
+  font-weight: 900;
+}
+.promo-card__touch-image--title span {
+  font-size: 5rem;
+}
+.promo-card__touch-information--expiration {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+}
+.promo-card__touch-information--expiration--date {
+  font-size: 2.2rem;
+  font-weight: 900;
+}
+.promo-card__touch-information--button {
+  text-transform: uppercase;
+  font-size: 2.7rem;
+  font-weight: 900;
+}
+
+.promotions__title-content {
+  font-size: 5rem;
+  background-image: linear-gradient(to left, rgba(111, 45, 189, 0.8), rgba(166, 99, 204, 0.8));
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 900;
+}
+@media (max-width: 56em) {
+  .promotions__title-content {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 37em) {
+  .promotions__title-content {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 37em) {
+  .promotions__title-content {
+    font-size: 3rem;
+  }
+}
+.promotions__empty {
+  font-size: 6rem;
+  font-weight: 900;
+  background-image: linear-gradient(to left, rgba(111, 45, 189, 0.8), rgba(166, 99, 204, 0.8));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.rewards {
+  font-family: "Nunito Sans", sans-serif;
+}
+.rewards__title-content {
+  font-size: 5rem;
+  background-image: linear-gradient(to left, rgba(111, 45, 189, 0.8), rgba(166, 99, 204, 0.8));
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 900;
+}
+@media (max-width: 56em) {
+  .rewards__title-content {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 37em) {
+  .rewards__title-content {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 37em) {
+  .rewards__title-content {
+    font-size: 3rem;
+  }
+}
+.rewards__header-points-content, .rewards__header-code-content {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  color: #A663CC;
+  font-weight: 200;
+}
+@media (max-width: 75em) {
+  .rewards__header-points-content, .rewards__header-code-content {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .rewards__header-points-content, .rewards__header-code-content {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .rewards__header-points-content, .rewards__header-code-content {
+    font-size: 1.4rem;
+  }
+}
+.rewards__header-points-content span, .rewards__header-code-content span {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #6F2DBD;
+}
+@media (max-width: 75em) {
+  .rewards__header-points-content span, .rewards__header-code-content span {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .rewards__header-points-content span, .rewards__header-code-content span {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .rewards__header-points-content span, .rewards__header-code-content span {
+    font-size: 1.8rem;
+  }
+}
+
+.rewards-card__product-list {
+  color: #F3F5F3;
+  font-size: 2rem;
+}
+@media (max-width: 75em) {
+  .rewards-card__product-list {
+    font-size: 1.8rem;
+  }
+}
+.rewards-card__product-list--no-rewards {
+  font-size: 6rem;
+  font-weight: 900;
+}
+@media (max-width: 75em) {
+  .rewards-card__product-list--no-rewards {
+    font-size: 4rem;
+  }
+}
+.rewards-card__services-list-header {
+  font-weight: 900;
+  font-size: 4rem;
+}
+@media (max-width: 75em) {
+  .rewards-card__services-list-header {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 37em) {
+  .rewards-card__services-list-header {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .rewards-card__services-list-header {
+    font-size: 2rem;
+  }
+}
+.rewards-card__services-list-content-element {
+  font-weight: 200;
+}
+@media (max-width: 37em) {
+  .rewards-card__services-list-content-element {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .rewards-card__services-list-content-element {
+    font-size: 1.4rem;
+  }
+}
+.rewards-card__services-list-content--points {
+  text-transform: uppercase;
+  font-weight: 900;
+}
+.rewards-card__services-list-content--button {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.appointments {
+  color: #F3F5F3;
+}
+.appointments__title--content {
+  font-size: 5rem;
+  background-image: linear-gradient(to right, rgba(111, 45, 189, 0.8), rgba(166, 99, 204, 0.8));
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 900;
+}
+@media (max-width: 56em) {
+  .appointments__title--content {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointments__title--content {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointments__title--content {
+    font-size: 3rem;
+  }
+}
+.appointments__list-title {
+  text-transform: capitalize;
+  font-size: 4.5rem;
+  font-weight: 900;
+}
+@media (max-width: 75em) {
+  .appointments__list-title {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointments__list-title {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointments__list-title {
+    font-size: 2.5rem;
+  }
+}
+.appointments__list-title--content {
+  background-image: linear-gradient(to right, rgba(111, 45, 189, 0.8), rgba(166, 99, 204, 0.8));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.appointments__buttons--button {
+  color: #52b69a;
+  font-weight: 500;
+}
+.appointments__buttons--button--active {
+  color: #F3F5F3;
+}
+
+.appointment {
+  font-family: "Nunito Sans", sans-serif !important;
+  font-size: 2rem;
+  font-weight: 500;
+}
+@media (max-width: 75em) {
+  .appointment {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointment {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointment {
+    font-size: 1.4rem;
+  }
+}
+.appointment__employee--content {
+  font-weight: 900;
+}
+.appointment__rate--content {
+  text-transform: uppercase;
+  color: #F3F5F3 !important;
+  font-weight: 500;
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes moveInBottomModal {
+  0% {
+    opacity: 0;
+    transform: translate(50%, -30%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(50%, -50%);
+  }
+}
+@keyframes moveToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveToRight {
+  0% {
+    opacity: 0;
+    transform: translate(-50rem) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0) scale(1);
+  }
+}
+@keyframes moveToBottomPromo {
+  0% {
+    opacity: 0;
+    transform: translateX(-25rem) scale(0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+@keyframes moveToTopPromo {
+  0% {
+    opacity: 0;
+    transform: translateX(25rem) scale(0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+@keyframes bounceUp {
+  0% {
+    transform: scale(0.7);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.pricing-wrap {
+  background: url(../../../images/navigation-background-alternative.svg) top;
+  background-size: cover;
+}
+
+.pricing-section {
+  z-index: 5;
+  padding-top: 5%;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+}
+.pricing-section__cards {
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  margin: 5rem auto;
+  max-width: 250rem;
+  flex-wrap: wrap;
+}
+.pricing-section__title-container {
+  background-image: linear-gradient(to left, rgba(111, 45, 189, 0.6), rgba(178, 152, 220, 0.6));
+  margin: 5rem 0 0 -2rem;
+  min-width: 60rem;
+  max-width: 30%;
+  text-align: right;
+  padding-right: 5rem;
+  border-radius: 10px;
+  animation: moveToRight 0.6s ease-in 0.5s;
+  animation-fill-mode: backwards;
+}
+@media (max-width: 75em) {
+  .pricing-section__title-container {
+    text-align: center;
+    max-width: 100%;
+    border-radius: 0;
+  }
+}
+@media (max-width: 37em) {
+  .pricing-section__title-container {
+    margin: 3rem 0 -4rem -2rem;
+    min-width: 50%;
+    max-width: 100%;
+    border-radius: 0;
+  }
+}
+@media (max-width: 37em) {
+  .pricing-section__title-container {
+    margin: 3rem 0 -4rem -2rem;
+    min-width: 50%;
+    max-width: 100%;
+    border-radius: 0;
+  }
 }
 
 .user-side {
@@ -6702,6 +8821,13 @@
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 80%);
   }
 }
+@media (max-width: 37em) {
+  .rewards-card__product-list-image {
+    width: 100%;
+    height: 60%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 80%);
+  }
+}
 .rewards-card__product-list-image--color-red {
   background-image: linear-gradient(0deg, rgba(42, 30, 56, 0.4), rgba(42, 30, 56, 0.1)), url("/images/hair-care-reward.jpg");
 }
@@ -6745,6 +8871,15 @@
     height: 50rem;
   }
 }
+@media (max-width: 37em) {
+  .rewards-card__product-list-content {
+    background-image: linear-gradient(to bottom, #6f2dbd 0%, #a663cc 55%, rgba(166, 99, 204, 0.5) 100%);
+    flex-direction: column;
+    width: 90%;
+    min-width: unset;
+    height: 50rem;
+  }
+}
 .rewards-card__product-list-content:hover {
   transform: translateY(-1rem);
   box-shadow: 2rem 2rem 4rem rgba(42, 30, 56, 0.3);
@@ -6767,12 +8902,23 @@
     padding: unset;
   }
 }
+@media (max-width: 37em) {
+  .rewards-card__services-list {
+    width: 100%;
+    padding: unset;
+  }
+}
 .rewards-card__services-list-header {
   width: 100%;
   height: 10rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+@media (max-width: 37em) {
+  .rewards-card__services-list-header {
+    justify-content: center;
+  }
 }
 @media (max-width: 37em) {
   .rewards-card__services-list-header {
@@ -6792,6 +8938,11 @@
     padding: 1rem 0.4rem 1rem 0;
   }
 }
+@media (max-width: 37em) {
+  .rewards-card__services-list-content {
+    padding: 1rem 0.4rem 1rem 0;
+  }
+}
 .rewards-card__services-list-content-element {
   height: 100%;
   padding: 1rem 0;
@@ -6799,6 +8950,11 @@
   justify-content: space-around;
   align-items: center;
   display: flex;
+}
+@media (max-width: 37em) {
+  .rewards-card__services-list-content-element {
+    padding: unset;
+  }
 }
 @media (max-width: 37em) {
   .rewards-card__services-list-content-element {
@@ -6819,6 +8975,12 @@
   width: 12rem;
   border-radius: 50px;
   background-image: linear-gradient(45deg, rgba(0, 124, 119, 0.9), #52b69a);
+}
+@media (max-width: 37em) {
+  .rewards-card__services-list-content--button, .rewards-card__services-list-content--button:link {
+    height: 3rem;
+    width: 7rem;
+  }
 }
 @media (max-width: 37em) {
   .rewards-card__services-list-content--button, .rewards-card__services-list-content--button:link {
@@ -6944,6 +9106,11 @@
     font-size: 1.3rem;
   }
 }
+@media (max-width: 37em) {
+  .mobile-navigation__login-button {
+    font-size: 1.3rem;
+  }
+}
 .mobile-navigation__bottom {
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.5rem;
@@ -6964,12 +9131,23 @@
     font-size: 1.8rem;
   }
 }
+@media (max-width: 37em) {
+  .mobile-navigation__header {
+    font-size: 1.8rem;
+  }
+}
 .mobile-navigation__header-link {
   color: inherit;
   text-decoration: none;
 }
 .mobile-navigation__menu {
   font-size: 2rem;
+}
+@media (max-width: 37em) {
+  .mobile-navigation__menu {
+    font-size: 1.5rem;
+    line-height: 2.5;
+  }
 }
 @media (max-width: 37em) {
   .mobile-navigation__menu {
@@ -6998,6 +9176,11 @@
     font-size: 1.4rem;
   }
 }
+@media (max-width: 37em) {
+  .header {
+    font-size: 1.4rem;
+  }
+}
 .header-link, .header-link:visited, .header-link:link {
   text-decoration: none;
   color: #F3F5F3;
@@ -7005,6 +9188,12 @@
 .header-middle .header-link {
   font-weight: 700;
   letter-spacing: 0.8rem;
+}
+@media (max-width: 37em) {
+  .header-middle .header-link {
+    padding: 0 1rem;
+    letter-spacing: 0.2rem;
+  }
 }
 @media (max-width: 37em) {
   .header-middle .header-link {
@@ -7030,6 +9219,11 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .hero-section__title {
+    font-size: 2rem;
+  }
+}
 .hero-section__button {
   font-family: "Nunito Sans", sans-serif;
   font-size: 2rem;
@@ -7039,6 +9233,11 @@
 @media (max-width: 56em) {
   .hero-section__button {
     font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .hero-section__button {
+    font-size: 1.5rem;
   }
 }
 @media (max-width: 37em) {
@@ -7137,6 +9336,11 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .pricing-section__title {
+    font-size: 2rem;
+  }
+}
 
 .review-card__person {
   font-family: "Nunito Sans", sans-serif;
@@ -7156,6 +9360,11 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .review-card__person--name {
+    font-size: 2rem;
+  }
+}
 .review-card__person--review {
   font-size: 1.6rem;
   font-weight: 200;
@@ -7164,6 +9373,11 @@
 @media (max-width: 56em) {
   .review-card__person--review {
     font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .review-card__person--review {
+    font-size: 1.3rem;
   }
 }
 @media (max-width: 37em) {
@@ -7230,9 +9444,19 @@
     font-size: 1.5rem;
   }
 }
+@media (max-width: 37em) {
+  .login-modal__container--form {
+    font-size: 1.5rem;
+  }
+}
 .login-modal__container--form--title {
   font-size: 2.7rem;
   font-weight: 700;
+}
+@media (max-width: 37em) {
+  .login-modal__container--form--title {
+    font-size: 2rem;
+  }
 }
 @media (max-width: 37em) {
   .login-modal__container--form--title {
@@ -7255,6 +9479,11 @@
     font-size: 1.5rem;
   }
 }
+@media (max-width: 37em) {
+  .login-modal__container--form--inputs--button {
+    font-size: 1.5rem;
+  }
+}
 .login-modal__container--form--inputs--button--login {
   color: #F3F5F3;
 }
@@ -7264,6 +9493,11 @@
 .login-modal__container--form--inputs--input {
   font-size: 1.5rem;
   font-weight: 200;
+}
+@media (max-width: 37em) {
+  .login-modal__container--form--inputs--input {
+    font-size: 1.2rem;
+  }
 }
 @media (max-width: 37em) {
   .login-modal__container--form--inputs--input {
@@ -7370,6 +9604,11 @@
     font-size: 3rem;
   }
 }
+@media (max-width: 37em) {
+  .promotions__title-content {
+    font-size: 3rem;
+  }
+}
 .promotions__empty {
   font-size: 6rem;
   font-weight: 900;
@@ -7398,6 +9637,11 @@
     font-size: 3rem;
   }
 }
+@media (max-width: 37em) {
+  .rewards__title-content {
+    font-size: 3rem;
+  }
+}
 .rewards__header-points-content, .rewards__header-code-content {
   text-transform: uppercase;
   font-size: 2.5rem;
@@ -7407,6 +9651,11 @@
 @media (max-width: 75em) {
   .rewards__header-points-content, .rewards__header-code-content {
     font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .rewards__header-points-content, .rewards__header-code-content {
+    font-size: 1.4rem;
   }
 }
 @media (max-width: 37em) {
@@ -7429,6 +9678,11 @@
     font-size: 1.8rem;
   }
 }
+@media (max-width: 37em) {
+  .rewards__header-points-content span, .rewards__header-code-content span {
+    font-size: 1.8rem;
+  }
+}
 
 .rewards-card__product-list {
   color: #F3F5F3;
@@ -7436,7 +9690,7 @@
 }
 @media (max-width: 75em) {
   .rewards-card__product-list {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 }
 .rewards-card__product-list--no-rewards {
@@ -7462,12 +9716,22 @@
     font-size: 2rem;
   }
 }
+@media (max-width: 37em) {
+  .rewards-card__services-list-header {
+    font-size: 2rem;
+  }
+}
 .rewards-card__services-list-content-element {
   font-weight: 200;
 }
 @media (max-width: 37em) {
   .rewards-card__services-list-content-element {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .rewards-card__services-list-content-element {
+    font-size: 1.4rem;
   }
 }
 .rewards-card__services-list-content--points {
@@ -7476,11 +9740,10 @@
 }
 .rewards-card__services-list-content--button {
   text-transform: uppercase;
-  font-weight: 200;
+  font-weight: 500;
 }
 
 .appointments {
-  text-transform: uppercase;
   color: #F3F5F3;
 }
 .appointments__title--content {
@@ -7500,10 +9763,30 @@
     font-size: 3rem;
   }
 }
+@media (max-width: 37em) {
+  .appointments__title--content {
+    font-size: 3rem;
+  }
+}
 .appointments__list-title {
   text-transform: capitalize;
   font-size: 4.5rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .appointments__list-title {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointments__list-title {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointments__list-title {
+    font-size: 2.5rem;
+  }
 }
 .appointments__list-title--content {
   background-image: linear-gradient(to right, rgba(111, 45, 189, 0.8), rgba(166, 99, 204, 0.8));
@@ -7512,7 +9795,7 @@
 }
 .appointments__buttons--button {
   color: #52b69a;
-  font-weight: 700;
+  font-weight: 500;
 }
 .appointments__buttons--button--active {
   color: #F3F5F3;
@@ -7523,12 +9806,28 @@
   font-size: 2rem;
   font-weight: 500;
 }
+@media (max-width: 75em) {
+  .appointment {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointment {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .appointment {
+    font-size: 1.4rem;
+  }
+}
 .appointment__employee--content {
   font-weight: 900;
 }
 .appointment__rate--content {
+  text-transform: uppercase;
   color: #F3F5F3 !important;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .row {

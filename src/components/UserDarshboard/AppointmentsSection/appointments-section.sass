@@ -1,5 +1,6 @@
 @import '../../sharedStyles/utils/variables'
 @import '../../sharedStyles/base/animations'
+@import '../../sharedStyles/utils/mixins'
 
 .appointments
     display: flex
@@ -7,8 +8,13 @@
     justify-content: flex-start
     width: 100%
     height: 100%
-    overflow-x: scroll
     padding-bottom: 5rem
+
+    @include respond($tablet-landscape)
+        padding: unset
+
+    @include respond($tablet-portrait)
+        overflow-y: scroll
 
     &--wrap
         width: 100%
@@ -27,12 +33,12 @@
         animation: moveToLeft 1s ease-in
 
     &__list
-        width: 90rem
+        width: 70rem
         max-height: 45rem
         height: fit-content
         display: flex
         flex-direction: column
-        padding: 4rem 8.5rem 4rem 4rem
+        padding: 4rem
         align-items: center
         gap: 5rem
         overflow-y: scroll
@@ -41,21 +47,40 @@
         box-shadow: 0 1rem 2rem rgba($color-black, .4)
         transition: all .4s
 
-        &::-webkit-scrollbar
-            background: transparent
-
         &:hover
             background-image: linear-gradient(to right bottom, rgba($color-primary-dark, 1), rgba($color-primary, .7))
             transform: translateY(-2rem)
             box-shadow: 0 3rem 4rem rgba($color-black, .6)
 
+        @include respond($tablet-landscape)
+            width: 75rem
+            max-height: 30rem
+
+        @include respond($tablet-portrait)
+            overflow-y: hidden
+            width: 95vw
+            max-height: 100%
+            padding: 3rem 1rem
+            margin-bottom:  10%
+
+        @include respond($phone)
+            margin-bottom:  20%
+
         &-title
             margin: 6rem
+
+            @include respond($phone)
+                margin: 1rem 1rem 1rem 2rem
 
     &__buttons
         display: flex
         justify-content: center
         gap: 5rem
+
+        @include respond($phone)
+            gap: 2rem
+            margin-right: 1rem
+            justify-content: flex-end
 
         &--button
             border-radius: 30rem
@@ -64,6 +89,14 @@
             border: .2rem solid $color-secondary
             cursor: pointer
             transition: all .3s
+
+            @include respond($tablet-portrait)
+                padding: 1rem 2rem
+
+            @include respond($phone)
+                gap: 2rem
+                padding: .5rem 1rem
+
 
             &:hover
                 box-shadow: 0 2rem 4rem rgba($color-black, .3)
@@ -87,8 +120,12 @@
     height: 3rem
     width: 90%
 
+    @include respond($tablet-landscape)
+        height: 4.5rem
+
     &__title
         width: 25%
+        height: fit-content
 
         &--content
             width: 100%
@@ -97,6 +134,7 @@
 
     &__employee
         width: 25%
+        height: fit-content
 
         &--content
             width: 100%
@@ -104,31 +142,44 @@
             justify-content: center
 
     &__date
-        width: 35%
+        height: fit-content
+        width: 30%
+        display: flex
+        justify-content: center
 
         &--content
             width: 100%
-            display: flex
-            justify-content: center
 
     &__rate
-        width: 15%
+        height: 4.5rem
+        width: 20%
+        display: flex
+        align-items: center
+        justify-content: center
+
+        @include respond($phone)
+            margin-left: 2rem
 
         &--content
-            width: 100%
             display: flex
-            align-items: center
-            justify-content: center
             border-radius: 30rem
-            padding: 1rem 1.6rem
+            padding: .6rem 2rem
             background-image: linear-gradient(to right bottom, rgba($color-secondary-dark, 1), rgba($color-secondary, 1))
             box-shadow: 0 1rem 2rem rgba($color-black, .3)
             transition: all .3s
 
+            @include respond($tablet-portrait)
+                margin-right: 15%
+                padding: .7rem 1.5rem
+
+            @include respond($phone)
+                margin-right: 15%
+                padding: .5rem 1.2rem
+
             &,
             &:link
                 text-decoration: none
-                letter-spacing: .4rem
+                letter-spacing: .2rem
 
                 &:hover
                     transform: translateY(-1rem)
