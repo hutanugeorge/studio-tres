@@ -10,6 +10,7 @@ type RenderRewardServices = (props: IRewardService[]) => JSX.Element[]
 const RewardCard: RewardService = ({ title, services }: IReward): JSX.Element => {
    const cardColor = title as keyof typeof promoCardsColors
    const { [cardColor]: color } = promoCardsColors
+
    return <>
       <div className="rewards-card__product-list-content">
          <div className={`rewards-card__product-list-image rewards-card__product-list-image${color}`}/>

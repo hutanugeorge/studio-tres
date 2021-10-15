@@ -1,14 +1,10 @@
+import { Action } from "../../shared/interfaces/api"
 import { IAppointment } from "../../shared/interfaces/userDashboard";
 import { Actions, defaultValues } from "../../utils/constants";
 import { Reducer } from "../../shared/types"
 
 
-interface IAppointmentsReducerAction {
-   type: string
-   payload: IAppointment[]
-}
-
-const appointmentReducer: Reducer<IAppointment[], IAppointmentsReducerAction> = (state: IAppointment[] = [ defaultValues.APPOINTMENT ], action: IAppointmentsReducerAction): IAppointment[] => {
+const appointmentReducer: Reducer<IAppointment[], Action<IAppointment[]>> = (state: IAppointment[] = [ defaultValues.APPOINTMENT ], action: Action<IAppointment[]>): IAppointment[] => {
    const { type, payload } = action;
    switch (type) {
       case Actions.APPOINTMENTS:

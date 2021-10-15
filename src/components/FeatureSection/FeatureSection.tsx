@@ -11,8 +11,9 @@ import FeatureCard from "./FeatureCard";
 type RenderCards = (features: IFeature[]) => JSX.Element[]
 
 const FeatureSection: FC = (): JSX.Element => {
-   const features = useSelector((state: RootState) => state.features)
    const dispatch = useDispatch()
+
+   const features: IFeature[] = useSelector((state: RootState) => state.features)
 
    useEffect(() => {
       dispatch(fetchFeatures())
@@ -31,7 +32,7 @@ const renderCards: RenderCards = (features: IFeature[]): JSX.Element[] =>
    features.length === 0
       ? [ <div key={'1'}>Loading...</div> ]
       : features.map(({ image, title, description }: IFeature, index: number) =>
-         <FeatureCard index={index} image={image} title={title} description={description}/>)
+         <FeatureCard key={index} index={index} image={image} title={title} description={description}/>)
 
 
 export default FeatureSection

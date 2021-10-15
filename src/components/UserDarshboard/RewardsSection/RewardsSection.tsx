@@ -2,6 +2,8 @@ import * as React from 'react'
 import { FC, useEffect } from 'react'
 
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom"
+import { IUserData } from "../../../../shared/interfaces/user"
 
 import RewardCard from "./RewardsCard";
 import { RootState } from "../../../reducers";
@@ -12,11 +14,16 @@ import { IReward } from "../../../../shared/interfaces/userDashboard";
 type RenderRewardCard = (props: IReward[]) => JSX.Element[]
 
 const RewardsSection: FC = (): JSX.Element => {
+   const history = useHistory()
    const dispatch = useDispatch()
+
    const rewards: IReward[] = useSelector((state: RootState) => state.rewards)
+   const userData: IUserData = useSelector((state: RootState) => state.isUserAuthenticated)
+
+   const isAuthenticated = userData.name !== ''
 
    useEffect(() => {
-      dispatch(fetchRewards())
+      !isAuthenticated ? history.push('/') : dispatch(fetchRewards())
    }, [])
    return (
       <div className="rewards--wrap">

@@ -10,6 +10,7 @@ const PromoCard: PromoCard = ({ title, saleType, amount }: IPromotion): JSX.Elem
    const saleAmount = saleType === 'percentage' ? `${amount}% OFF` : `${amount} ROM`
    const cardColor = title as keyof typeof promoCardsColors
    const { [cardColor]: color } = promoCardsColors
+
    return <>
       <div className="promo-card--wrapper promo-card">
          <div className="promo-card">

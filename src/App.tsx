@@ -31,7 +31,7 @@ const App: FC = (): JSX.Element =>
           <Program/>
           <FooterSection />
         </Route>
-        <Route path="/login">
+        <Route path="/userDashboard">
           <UserSide />
         </Route>
       </Switch>

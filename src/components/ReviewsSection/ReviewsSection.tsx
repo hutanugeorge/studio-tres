@@ -17,6 +17,7 @@ SwiperCore.use([ Navigation, Autoplay, Pagination ])
 
 const ReviewsSection: FC = (): JSX.Element => {
    const dispatch = useDispatch()
+
    const reviews: IReview[] = useSelector((state: RootState) => state.reviews)
 
    useEffect(() => {

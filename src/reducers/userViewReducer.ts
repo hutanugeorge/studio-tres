@@ -1,16 +1,12 @@
+import { Action } from "../../shared/interfaces/api"
 import { Actions, defaultValues } from '../../utils/constants'
 import { Reducer } from "../../shared/types";
 
 
-interface IUserViewReducerAction {
-   type: string
-   payload: string
-}
-
 const { DISCOUNTS, REWARDS, VISITS } = Actions
 const { USER_VIEW } = defaultValues
 
-const userViewReducer: Reducer<string, IUserViewReducerAction> = (state: string = USER_VIEW, action: IUserViewReducerAction): string => {
+const userViewReducer: Reducer<string, Action<string>> = (state: string = USER_VIEW, action: Action<string>): string => {
    const {type, payload} = action
    switch (type) {
       case DISCOUNTS:

@@ -1,18 +1,14 @@
+import { Action } from "../../shared/interfaces/api"
 import { Actions, defaultValues } from '../../utils/constants'
 import { IPromotion } from '../../shared/interfaces/userDashboard'
 import { Reducer } from '../../shared/types'
-import { ILandingInfo } from "../../shared/interfaces/presentationPage";
 
 
-interface IPromotionsReducerAction {
-   type: string
-   payload: IPromotion[]
-}
 
 const { FETCH_PROMOTIONS } = Actions
 const { PROMOTION } = defaultValues
 
-const promotionReducer: Reducer<IPromotion[], IPromotionsReducerAction> = (state: IPromotion[] = [ PROMOTION ], action: IPromotionsReducerAction): IPromotion[] => {
+const promotionReducer: Reducer<IPromotion[], Action<IPromotion[]>> = (state: IPromotion[] = [ PROMOTION ], action: Action<IPromotion[]>): IPromotion[] => {
    const { type, payload } = action
    switch (type) {
       case FETCH_PROMOTIONS:

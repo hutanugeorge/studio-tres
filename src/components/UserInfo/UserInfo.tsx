@@ -9,9 +9,8 @@ import LogoutIcon from '../Icons/LogoutIcon'
 import LocationIcon from '../Icons/LocationIcon'
 import DiscountIcon from "../Icons/DiscountIcon";
 import RewardIcon from "../Icons/RewardIcon";
-import HomeIcon from "../Icons/HomeIcon";
 import { RootState } from "../../reducers";
-import { toggleSettingsMenu } from "../../actions";
+import { logoutUser, toggleSettingsMenu } from "../../actions";
 import { userUpperTabs } from "../../../utils/constants";
 import { JSXArrayElements } from "../../../shared/types";
 import { IUserViewAction } from "../../../shared/interfaces/userView";
@@ -21,9 +20,12 @@ type DispatchOnClick = (action: IUserViewAction | undefined, dispatch: Dispatch<
 type RenderIcon = (title: string, active: boolean) => JSX.Element
 
 const UserInfo: FC = (): JSX.Element => {
-   const isMenuOpen: boolean = useSelector((state: RootState) => state.isMenuOpen)
-   const openUserClassName = 'user-info__mobile--open'
    const dispatch = useDispatch()
+
+   const isMenuOpen: boolean = useSelector((state: RootState) => state.isMenuOpen)
+   const userName: string = useSelector((state: RootState) => state.isUserAuthenticated.name)
+
+   const openUserClassName = 'user-info__mobile--open'
 
    return (
       <>
@@ -39,17 +41,11 @@ const UserInfo: FC = (): JSX.Element => {
                      <p className="user-info__header--name">
                         Hello,
                         <span className="user-info__header--name--firstname">
-                        &nbsp;John!
+                        &nbsp;{userName}!
                      </span>
                      </p>
                   </div>
                   <div className="user-info__details">
-                     <Link className="user-info__details--detail" to={'/'}>
-                        <div className="user-info__details--detail--icon">
-                           <HomeIcon/>
-                        </div>
-                        <p className="user-info__details--detail--personal">Home</p>
-                     </Link>
                      {renderUserUpperTabs()}
                   </div>
                </div>
@@ -60,7 +56,9 @@ const UserInfo: FC = (): JSX.Element => {
                      </div>
                      <p className="user-info__details--detail--personal">Settings</p>
                   </div>
-                  <Link className="user-info__details--detail" to={'/'}>
+                  <Link className="user-info__details--detail"
+                        to={'/'}
+                        onClick={() => dispatch(logoutUser())}>
                      <div className="user-info__details--detail--icon">
                         <LogoutIcon/>
                      </div>
@@ -103,10 +101,11 @@ const dispatchOnClick: DispatchOnClick = (action: IUserViewAction | undefined, d
 
 const renderUserUpperTabs: JSXArrayElements = (): JSX.Element[] => {
    const dispatch = useDispatch()
-   const [activeTab, setActiveTab] = useState<SetStateAction<string>>('Discounts')
+   const [ activeTab, setActiveTab ] = useState<SetStateAction<string>>('Discounts')
 
    return (userUpperTabs.map(({ title, action }, index: number) =>
-      <div key={index} className={`user-info__details--detail ${activeTab === title ? 'user-info__details--detail--active' : ''}`}
+      <div key={index}
+           className={`user-info__details--detail ${activeTab === title ? 'user-info__details--detail--active' : ''}`}
            onClick={() => {
               dispatchOnClick(action, dispatch)
               setActiveTab(title)

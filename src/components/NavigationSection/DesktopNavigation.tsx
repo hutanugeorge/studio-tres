@@ -14,8 +14,8 @@ const DesktopNavigation: FC = (): JSX.Element => {
 
   return(
     <>
-      <LoginModal showModal={showModal} toggleModal={() => {
-        setShowModal(prev => !prev)
+      <LoginModal showModal={showModal} toggleModal={(state: boolean) => {
+        setShowModal(state)
       }}/>
       <div className="desktop-navigation">
         <div className="desktop-navigation__lower">

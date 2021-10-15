@@ -2,6 +2,8 @@ import * as React from 'react'
 import { FC, useEffect } from 'react'
 
 import { useDispatch, useSelector } from "react-redux"
+import { useHistory } from "react-router-dom"
+import { IUserData } from "../../../../shared/interfaces/user"
 
 import PromoCard from "./PromoCard"
 import { RootState } from "../../../reducers"
@@ -12,10 +14,16 @@ import { fetchPromotions } from "../../../actions"
 type RenderCards = (props: IPromotion[]) => JSX.Element[]
 
 const PromotionSection: FC = (): JSX.Element => {
+   const history = useHistory()
    const dispatch = useDispatch()
+
    const promotions: IPromotion[] = useSelector((state: RootState) => state.promotions)
+   const userData: IUserData = useSelector((state: RootState) => state.isUserAuthenticated)
+
+   const isAuthenticated = userData.name !== ''
+
    useEffect(() => {
-      dispatch(fetchPromotions())
+      !isAuthenticated ? history.push('/') : dispatch(fetchPromotions())
    }, [])
 
    return (

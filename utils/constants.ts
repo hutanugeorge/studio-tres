@@ -1,9 +1,9 @@
-import { setUserViewDiscounts, setUserViewRewards, setUserViewVisits } from "../src/actions";
+import { IUserData } from "../shared/interfaces/user"
+import { setUserView } from "../src/actions";
 import { IFeature, ILandingInfo, IReview } from '../shared/interfaces/presentationPage'
 import { IUserViewAction } from "../shared/interfaces/userView";
 import { IAppointment, IReward, IPromotion } from "../shared/interfaces/userDashboard";
-import { Dispatch } from "redux";
-import { Action } from "../shared/interfaces/api";
+import getToken from "./getToken"
 
 
 export interface Link {
@@ -39,9 +39,14 @@ interface IDefaultValues {
    PROMOTION: IPromotion
    REWARD: IReward
    APPOINTMENT: IAppointment
+   USER: IUserData
 }
 
 export const otherPageLinks: Link[] = [
+   {
+      name: 'Tres Studio',
+      link: '/'
+   },
    {
       name: 'Home',
       link: '/'
@@ -216,6 +221,8 @@ export enum tresStudioAPIRoutes {
    promotions = 'http://localhost:3001/promotions',
    rewards = 'http://localhost:3001/rewards',
    appointments = 'http://localhost:3001/appointments',
+   login = 'http://localhost:3001/login',
+   signup = 'http://localhost:3001/signup'
 }
 
 export enum Actions {
@@ -227,8 +234,19 @@ export enum Actions {
    DISCOUNTS = 'DISCOUNTS',
    REWARDS = 'REWARDS',
    VISITS = 'VISITS',
+   LOGIN = 'LOGIN',
+   SIGNUP = 'SIGNUP',
+   LOGIN_ERROR = 'LOGIN_ERROR',
+   SIGNUP_ERROR = 'SIGNUP_ERROR',
+   LOGOUT =  'LOGOUT',
    TOGGLE_MENU = 'TOGGLE_MENU',
    APPOINTMENTS = 'APPOINTMENTS'
+}
+
+export const Headers = {
+   contentTypeJsonHeader: { 'Content-Type': 'application/json' },
+   authorizationHeader : { authorization: `Bearer ${getToken()}` }
+
 }
 
 export const defaultValues: IDefaultValues = {
@@ -267,21 +285,26 @@ export const defaultValues: IDefaultValues = {
       employeeName: 'No employee',
       date: 'No date',
       status: 'No status'
+   },
+   USER: {
+      name: '',
+      token: '',
+      userId: ''
    }
 }
 
 export const userUpperTabs: IUpperTab[] = [
    {
       title: 'Discounts',
-      action: setUserViewDiscounts(),
+      action: setUserView(Actions.DISCOUNTS),
    },
    {
       title: 'Rewards',
-      action: setUserViewRewards()
+      action: setUserView(Actions.REWARDS)
    },
    {
       title: 'Last visits',
-      action: setUserViewVisits()
+      action: setUserView(Actions.VISITS)
    }
 ]
 

@@ -8,6 +8,7 @@ import promotionsReducer from "./promotionsReducer";
 import rewardsReducer from "./rewardsReducer";
 import toggleMenuReducer from "./toggleMenuReducer";
 import appointmentsReducer from "./appointmentReducer";
+import authenticationReducer from "./authenticationReducer";
 
 
 export const rootReducer = combineReducers({
@@ -18,7 +19,8 @@ export const rootReducer = combineReducers({
   rewards: rewardsReducer,
   appointments: appointmentsReducer,
   userView: userViewReducer,
-  isMenuOpen: toggleMenuReducer
+  isMenuOpen: toggleMenuReducer,
+  isUserAuthenticated: authenticationReducer
 })
 
 export type RootState = ReturnType<typeof rootReducer>

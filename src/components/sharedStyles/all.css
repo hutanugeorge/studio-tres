@@ -2960,6 +2960,9 @@
   box-shadow: 0 1rem 2rem rgba(42, 30, 56, 0.2);
   transition: all 0.4s;
 }
+.login-modal__container--form--inputs--input--wrong-password, .login-modal__container--form--inputs--input--wrong-email {
+  border: 3px solid red;
+}
 @media (max-width: 37em) {
   .login-modal__container--form--inputs--input {
     padding: 0.6rem 1.6rem;
@@ -2969,6 +2972,9 @@
   .login-modal__container--form--inputs--input {
     padding: 0.6rem 1.6rem;
   }
+}
+.login-modal__container--form--inputs--input:active .login-modal__container--form--inputs--input--wrong {
+  border: 2px solid red;
 }
 .login-modal__container--form--inputs--input:focus {
   transform: translateY(-0.4rem);

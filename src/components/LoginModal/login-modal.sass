@@ -80,9 +80,16 @@
                     height: 3rem
                     box-shadow: 0 1rem 2rem rgba($color-black, .2)
                     transition: all .4s
-    
+
+                    &--wrong-password, &--wrong-email
+                        border: 3px solid red
+
                     @include respond($phone)
                         padding: .6rem 1.6rem
+
+                    &:active
+                        .login-modal__container--form--inputs--input--wrong
+                            border: 2px solid red
                     
                     &:focus
                         transform: translateY(-.4rem)

@@ -2,83 +2,73 @@ import { Dispatch } from 'redux'
 
 import { getFeatures, getLandingInfo, getReviews } from "../../api/tresStudio/presentationPage";
 import { getAppointments, getPromotions, getRewards } from "../../api/tresStudio/userDashboard";
+import { postLogin } from "../../api/tresStudio/authentication";
 import { IFeature, ILandingInfo, IReview } from '../../shared/interfaces/presentationPage'
+import { IUserData } from "../../shared/interfaces/user"
 import { IAppointment, IReward, IPromotion } from "../../shared/interfaces/userDashboard";
 import { IToggleSettingsMenu, IUserViewAction } from "../../shared/interfaces/userView";
-import { Actions } from '../../utils/constants'
 import { Action } from "../../shared/interfaces/api";
+import { Actions, defaultValues } from '../../utils/constants'
 
 
 type FetchActionType<T> = () => (dispatch: Dispatch<Action<T>>) => void
 type ToggleSettingsMenu = (isOpen: boolean) => IToggleSettingsMenu
-type SetUserView = () => IUserViewAction
+type SetUserView = (view: string) => IUserViewAction
+type LogoutUser = () => Action<IUserData>
+type LoginUser<T> = (email: string, password: string) => (dispatch: Dispatch<Action<T>>) => Promise<void>
 
-export const fetchLanding: FetchActionType<{ landingPhrase: string, landingButtonPhrase: string }> = () => async (dispatch: Dispatch<Action<{ landingPhrase: string, landingButtonPhrase: string }>>): Promise<void> => {
-   const { landingPhrase, landingButtonPhrase }: ILandingInfo = await getLandingInfo()
-   dispatch({
-      type: Actions.FETCH_HERO_SECTION,
-      payload: { landingPhrase, landingButtonPhrase }
-   })
-}
-
-export const fetchFeatures: FetchActionType<IFeature[]> = () => async (dispatch: Dispatch<Action<IFeature[]>>): Promise<void> => {
-   const features: IFeature[] = await getFeatures()
-   dispatch({
-      type: Actions.FETCH_FEATURES,
-      payload: features
-   })
-}
-
-export const fetchReviews: FetchActionType<IReview[]> = () => async (dispatch: Dispatch<Action<IReview[]>>): Promise<void> => {
-   const reviews: IReview[] = await getReviews()
-   dispatch({
-      type: Actions.FETCH_REVIEWS,
-      payload: reviews
-   })
-}
-
-export const fetchPromotions: FetchActionType<IPromotion[]> = () => async (dispatch: Dispatch<Action<IPromotion[]>>): Promise<void> => {
-   const promotions: IPromotion[] = await getPromotions()
-   dispatch({
-      type: Actions.FETCH_PROMOTIONS,
-      payload: promotions
-   })
-}
-
-export const fetchRewards: FetchActionType<IReward[]> = () => async (dispatch: Dispatch<Action<IReward[]>>): Promise<void> => {
-   const rewards: IReward[] = await getRewards()
-   dispatch({
-      type: Actions.FETCH_REWARDS,
-      payload: rewards
-   })
-}
-
-export const fetchAppointments: FetchActionType<IAppointment[]> = () => async (dispatch: Dispatch<Action<IAppointment[]>>): Promise<void> => {
-   const appointments: IAppointment[] = await getAppointments()
-   dispatch({
-      type: Actions.APPOINTMENTS,
-      payload: appointments
-   })
-}
-
-export const setUserViewDiscounts: SetUserView = (): IUserViewAction => {
-   return {
-      type: Actions.DISCOUNTS,
-      payload: Actions.DISCOUNTS
+export const fetchLanding: FetchActionType<{ landingPhrase: string, landingButtonPhrase: string }> = () =>
+   async (dispatch: Dispatch<Action<ILandingInfo>>): Promise<void> => {
+      dispatch({
+         type: Actions.FETCH_HERO_SECTION,
+         payload: await getLandingInfo()
+      })
    }
-}
 
-export const setUserViewRewards: SetUserView = (): IUserViewAction => {
-   return {
-      type: Actions.REWARDS,
-      payload: Actions.REWARDS
+export const fetchFeatures: FetchActionType<IFeature[]> = () =>
+   async (dispatch: Dispatch<Action<IFeature[]>>): Promise<void> => {
+      dispatch({
+         type: Actions.FETCH_FEATURES,
+         payload: await getFeatures()
+      })
    }
-}
 
-export const setUserViewVisits: SetUserView = (): IUserViewAction => {
+export const fetchReviews: FetchActionType<IReview[]> = () =>
+   async (dispatch: Dispatch<Action<IReview[]>>): Promise<void> => {
+      dispatch({
+         type: Actions.FETCH_REVIEWS,
+         payload: await getReviews()
+      })
+   }
+
+export const fetchPromotions: FetchActionType<IPromotion[]> = () =>
+   async (dispatch: Dispatch<Action<IPromotion[]>>): Promise<void> => {
+      dispatch({
+         type: Actions.FETCH_PROMOTIONS,
+         payload: await getPromotions()
+      })
+   }
+
+export const fetchRewards: FetchActionType<IReward[]> = () =>
+   async (dispatch: Dispatch<Action<IReward[]>>): Promise<void> => {
+      dispatch({
+         type: Actions.FETCH_REWARDS,
+         payload: await getRewards()
+      })
+   }
+
+export const fetchAppointments: FetchActionType<IAppointment[]> = () =>
+   async (dispatch: Dispatch<Action<IAppointment[]>>): Promise<void> => {
+      dispatch({
+         type: Actions.APPOINTMENTS,
+         payload: await getAppointments()
+      })
+   }
+
+export const setUserView: SetUserView = (view: string): IUserViewAction => {
    return {
-      type: Actions.VISITS,
-      payload: Actions.VISITS
+      type: view,
+      payload: view
    }
 }
 
@@ -86,5 +76,29 @@ export const toggleSettingsMenu: ToggleSettingsMenu = (isOpen: boolean): IToggle
    return {
       type: Actions.TOGGLE_MENU,
       payload: isOpen
+   }
+}
+
+export const loginUser: LoginUser<IUserData> = (email: string, password: string) =>
+   async (dispatch: Dispatch<Action<IUserData>>): Promise<void> => {
+      try {
+         const user = await postLogin(email, password)
+         user.status === 200 && dispatch({
+            type: Actions.LOGIN,
+            payload: user.data
+         })
+         user.status === 401 && dispatch({
+            type: Actions.LOGIN_ERROR,
+            payload: user.data
+         })
+      } catch (err: any) {
+         console.log(err)
+      }
+   }
+
+export const logoutUser: LogoutUser = (): Action<IUserData> => {
+   return {
+      type: Actions.LOGOUT,
+      payload: defaultValues.USER
    }
 }
