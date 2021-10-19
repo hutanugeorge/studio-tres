@@ -1,44 +1,33 @@
-import * as React from 'react'
-import { Dispatch, SetStateAction, useEffect, useState } from 'react'
+import React, { Dispatch, FormEvent, SetStateAction, useEffect, useState } from 'react'
 
-import { useHistory } from "react-router-dom"
+import { useHistory, Link } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
-import { signupUser } from "../../../api/tresStudio/authentication"
-import { IUserData } from "../../../shared/interfaces/user"
 
+import { signupUser } from "../../../api/tresStudio/authentication"
+import { IUser } from "../../../shared/interfaces/user"
 import { loginUser } from "../../actions"
 import { RootState } from "../../reducers"
 
-
-interface ILoginModalProps {
-   showModal: boolean
-   toggleModal: (state: boolean) => void
-}
 
 interface IFormComponent {
    setForm: Dispatch<SetStateAction<string>>
 }
 
-type LoginModal = ({ showModal }: ILoginModalProps) => JSX.Element
 type FormComponent = ({ setForm }: IFormComponent) => JSX.Element
 
-const LoginModal: LoginModal = ({ showModal, toggleModal }): JSX.Element => {
+const LoginModal = (): JSX.Element => {
    const [ form, setForm ] = useState<string>('login')
 
    return (
       <>
          <div
-            onClick={() => toggleModal(false)}
-            className={`login-modal__wrap ${showModal ? '' : 'hidden'}`}/>
-         <div className={`login-modal__container ${showModal ? '' : 'hidden'}`}>
-            <a
-               onClick={() => toggleModal(false)}
-               className="login-modal__container--close">
-               <img
-                  src="/images/cancel.svg" alt="close"
-                  className="login-modal__container--close--icon"/>
-            </a>
-            <div className={`login-modal__container--form ${showModal ? '' : 'hidden'}`}>
+            className={`login-modal__wrap `}/>
+         <Link to='/'
+               className="login-modal__wrap-back">
+            Back to home
+         </Link>
+         <div className={`login-modal__container `}>
+            <div className={`login-modal__container--form `}>
                {
                   form === 'login'
                      ? <LoginForm setForm={setForm}/>
@@ -50,13 +39,11 @@ const LoginModal: LoginModal = ({ showModal, toggleModal }): JSX.Element => {
 }
 
 
-const LoginForm: FormComponent = (props: IFormComponent): JSX.Element => {
-   const { setForm } = props
-
+const LoginForm: FormComponent = ({ setForm }: IFormComponent): JSX.Element => {
    const history = useHistory()
    const dispatch = useDispatch()
 
-   const userData: IUserData & { message: string } = useSelector((state: RootState) => state.isUserAuthenticated)
+   const userData: IUser & { message?: string } = useSelector((state: RootState) => state.isUserAuthenticated)
 
    const [ email, setEmail ] = useState<string>('')
    const [ password, setPassword ] = useState<string>('')
@@ -64,17 +51,18 @@ const LoginForm: FormComponent = (props: IFormComponent): JSX.Element => {
    const [ errorMessage, setErrorMessage ] = useState<string>('')
 
    useEffect(() => {
-      console.log(userData)
-      if (userData.message === 'Wrong password')
+      const token = localStorage.getItem('token')
+      if (userData.message === 'Wrong password') {
          setWrongCredentials('--wrong-password')
-
-      else if (userData.message === 'A user with this email couldn\'t be found')
+         setErrorMessage(userData.message)
+      }
+      else if (userData.message === 'A user with this email couldn\'t be found') {
          setWrongCredentials('--wrong-email')
-
-      else if (userData.name !== '')
+         setErrorMessage(userData.message)
+      }
+      else if (userData.token !== '' || token !== null){
          history.push('/userDashboard')
-
-      setErrorMessage(userData.message)
+      }
    }, [ userData ])
 
    return (
@@ -82,7 +70,7 @@ const LoginForm: FormComponent = (props: IFormComponent): JSX.Element => {
          <p className="login-modal__container--form--title">Login</p>
          <form
             className="login-modal__container--form--inputs"
-            onSubmit={(event: React.FormEvent<HTMLElement>): void => {
+            onSubmit={(event: FormEvent<HTMLElement>): void => {
                event.preventDefault()
                dispatch(loginUser(email, password))
             }}>
@@ -91,7 +79,7 @@ const LoginForm: FormComponent = (props: IFormComponent): JSX.Element => {
                placeholder="Email"
                type="email"
                name="email"
-               onChange={(event: React.FormEvent<HTMLInputElement>): void => {
+               onChange={(event: FormEvent<HTMLInputElement>): void => {
                   setEmail(event.currentTarget.value)
                }}/>
             <label
@@ -103,7 +91,7 @@ const LoginForm: FormComponent = (props: IFormComponent): JSX.Element => {
                placeholder="Password"
                type="password"
                name="password"
-               onChange={(event: React.FormEvent<HTMLInputElement>): void => {
+               onChange={(event: FormEvent<HTMLInputElement>): void => {
                   setPassword(event.currentTarget.value)
                }}/>
             <label
@@ -114,7 +102,7 @@ const LoginForm: FormComponent = (props: IFormComponent): JSX.Element => {
             <div className="login-modal__container--form--inputs--buttons">
                <p>{errorMessage}</p>
                <button
-                  onChange={(event: React.FormEvent<HTMLElement>): void => {
+                  onChange={(event: FormEvent<HTMLElement>): void => {
                      event.preventDefault()
                   }}
                   type='submit'
@@ -134,8 +122,7 @@ const LoginForm: FormComponent = (props: IFormComponent): JSX.Element => {
 }
 
 
-const SignupForm: FormComponent = (props: IFormComponent): JSX.Element => {
-   const { setForm } = props
+const SignupForm: FormComponent = ({ setForm }: IFormComponent): JSX.Element => {
    const [ firstName, setFirstName ] = useState<string>('')
    const [ lastName, setLastName ] = useState<string>('')
    const [ email, setEmail ] = useState<string>('')
@@ -147,8 +134,8 @@ const SignupForm: FormComponent = (props: IFormComponent): JSX.Element => {
          <p className="login-modal__container--form--title">Sign Up</p>
          <form
             className="login-modal__container--form--inputs"
-            onSubmit={async (e) => {
-               e.preventDefault()
+            onSubmit={async (event: FormEvent<HTMLElement>) => {
+               event.preventDefault()
                const { status, data } = await signupUser(firstName, lastName, email, password)
                status === 405 && setFormMessage(data.message)
                status === 200 && setFormMessage(data.message) && setTimeout(() => setForm('login'), 2000)
@@ -158,7 +145,7 @@ const SignupForm: FormComponent = (props: IFormComponent): JSX.Element => {
                placeholder="First Name"
                type="text"
                name="firstname"
-               onChange={(event: React.FormEvent<HTMLInputElement>): void => {
+               onChange={(event: FormEvent<HTMLInputElement>): void => {
                   setFirstName(event.currentTarget.value)
                }}/>
             <label
@@ -170,7 +157,7 @@ const SignupForm: FormComponent = (props: IFormComponent): JSX.Element => {
                    placeholder="Last Name"
                    type="text"
                    name="lastname"
-                   onChange={(event: React.FormEvent<HTMLInputElement>): void => {
+                   onChange={(event: FormEvent<HTMLInputElement>): void => {
                       setLastName(event.currentTarget.value)
                    }}/>
             <label
@@ -183,7 +170,7 @@ const SignupForm: FormComponent = (props: IFormComponent): JSX.Element => {
                placeholder="Email"
                type="email"
                name="email"
-               onChange={(event: React.FormEvent<HTMLInputElement>): void => {
+               onChange={(event: FormEvent<HTMLInputElement>): void => {
                   setEmail(event.currentTarget.value)
                }}/>
             <label
@@ -196,7 +183,7 @@ const SignupForm: FormComponent = (props: IFormComponent): JSX.Element => {
                placeholder="Password"
                type="password"
                name="password"
-               onChange={(event: React.FormEvent<HTMLInputElement>): void => {
+               onChange={(event: FormEvent<HTMLInputElement>): void => {
                   setPassword(event.currentTarget.value)
                }}/>
             <label
@@ -215,7 +202,7 @@ const SignupForm: FormComponent = (props: IFormComponent): JSX.Element => {
                   Login
                </a>
                <button
-                  onChange={(event: React.FormEvent<HTMLElement>): void => {
+                  onChange={(event: FormEvent<HTMLElement>): void => {
                      event.preventDefault()
                   }}
                   type='submit'

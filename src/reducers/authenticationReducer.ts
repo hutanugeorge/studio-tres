@@ -1,18 +1,19 @@
 import { Action } from "../../shared/interfaces/api"
-import { IUserData } from "../../shared/interfaces/user"
+import { IUser } from "../../shared/interfaces/user"
 import { Reducer } from "../../shared/types"
 import { Actions, defaultValues } from "../../utils/constants";
 
 
-
-const authenticationReducer: Reducer<IUserData, Action<IUserData>> = (state: IUserData = defaultValues.USER, action: Action<IUserData>): IUserData => {
+const authenticationReducer: Reducer<IUser, Action<IUser>> = (state: IUser = defaultValues.USER, action: Action<IUser>): IUser => {
    const { type, payload } = action
    switch (type) {
       case Actions.LOGIN:
          localStorage.setItem('token', payload.token)
+         localStorage.setItem('userId', payload.userId)
          return { ...payload }
       case Actions.LOGOUT:
          localStorage.removeItem('token')
+         localStorage.setItem('userId', payload.userId)
          return { ...payload }
       case Actions.LOGIN_ERROR:
          return { ...payload }

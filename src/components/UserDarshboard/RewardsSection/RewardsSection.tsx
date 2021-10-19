@@ -1,9 +1,8 @@
-import * as React from 'react'
-import { FC, useEffect } from 'react'
+import React, { FC, useEffect } from 'react'
 
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom"
-import { IUserData } from "../../../../shared/interfaces/user"
+import { IUserInfo } from "../../../../shared/interfaces/user"
 
 import RewardCard from "./RewardsCard";
 import { RootState } from "../../../reducers";
@@ -18,12 +17,13 @@ const RewardsSection: FC = (): JSX.Element => {
    const dispatch = useDispatch()
 
    const rewards: IReward[] = useSelector((state: RootState) => state.rewards)
-   const userData: IUserData = useSelector((state: RootState) => state.isUserAuthenticated)
+   const userInfo: IUserInfo = useSelector((state: RootState) => state.userInfo)
 
-   const isAuthenticated = userData.name !== ''
+   const { rewardsPoints, promotionCode } = userInfo
+   const token = localStorage.getItem('token')
 
    useEffect(() => {
-      !isAuthenticated ? history.push('/') : dispatch(fetchRewards())
+      !token ? history.push('/') : dispatch(fetchRewards())
    }, [])
    return (
       <div className="rewards--wrap">
@@ -35,10 +35,10 @@ const RewardsSection: FC = (): JSX.Element => {
          <div className="rewards">
             <div className="rewards__header">
                <div className="rewards__header-points">
-                  <p className="rewards__header-points-content">Points <span>1200</span></p>
+                  <p className="rewards__header-points-content">Points <span>{rewardsPoints}</span></p>
                </div>
                <div className="rewards__header-code">
-                  <p className="rewards__header-code-content">Promotion Code <span>GeorgeHutanu</span></p>
+                  <p className="rewards__header-code-content">Promotion Code <span>{promotionCode}</span></p>
                </div>
             </div>
             <div className="rewards-card__product-list">

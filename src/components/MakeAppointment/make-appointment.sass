@@ -1,0 +1,415 @@
+
+.make-appointment
+    display: flex
+    flex-direction: column
+    width: 100%
+    height: fit-content
+    align-items: center
+    justify-content: center
+    padding: 10rem 0 20rem
+
+    &--wrap
+        overflow-y: scroll
+        background-color: $color-white-ghost
+        height: 100vh
+        width: 100vw
+        position: fixed
+        top: 0
+        bottom: 0
+        right: 0
+        left: 0
+
+    &__header
+        width: 70%
+        height: 15rem
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+
+        &--title
+            height: 7rem
+
+    &__container
+        padding: 3rem
+        background-color: #fff
+        border-radius: 20px
+        width: 70%
+        max-width: 120rem
+        height: fit-content
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+
+        &__upper-side
+            width: 100%
+            height: fit-content
+            display: flex
+            justify-content: space-evenly
+
+            &__contact
+                box-shadow: 0 1rem 3rem rgba($color-black, .3)
+                border-radius: 20px
+                background-color: $color-primary-dark
+                width: 35%
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+
+                &--header
+                    height: 35%
+                    width: 100%
+                    display: flex
+                    flex-direction: column
+                    align-items: center
+                    justify-content: center
+                    padding: 2rem 0
+
+                    &--title
+                        width: 70%
+                        display: flex
+                        justify-content: center
+                        height: 5rem
+
+                    &--sub-title
+                        width: 70%
+                        display: flex
+                        justify-content: center
+                        padding: 0 2rem
+
+                        &--content
+                            width: 100%
+                            text-align: center
+
+                &--in-touch
+                    height: 45%
+                    width: 100%
+                    display: flex
+                    flex-direction: column
+                    justify-content: flex-start
+
+                    &--address
+                        margin-left: 20%
+                        width: 60%
+                        display: flex
+                        justify-content: flex-start
+
+                &--links
+                    display: flex
+                    justify-content: space-evenly
+                    height: 20%
+                    width: 100%
+
+            &__form
+                width: 65%
+                display: flex
+                height: fit-content
+                flex-direction: column
+                justify-content: center
+                padding-left: 3rem
+                align-items: center
+                gap: 3rem
+
+                &__employee
+                    display: flex
+                    gap: 2rem
+                    flex-direction: column
+
+                    &-services
+                        display: flex
+                        gap: 2rem
+
+                        &--label
+                            height: 100%
+                            display: flex
+                            align-items: center
+
+                    &-sub-services
+                        display: none
+                        gap: 2rem
+
+                        &--label
+                            height: 100%
+                            display: flex
+                            align-items: center
+
+
+                &__upper-inputs,
+                &__lower-inputs
+                    display: flex
+                    gap: 2rem
+
+                    &--input
+                        padding: 1.5rem 2.75rem
+                        border-radius: 20px
+                        box-shadow: 0 1rem 2rem rgba($color-black, .1)
+                        border-color: transparent
+                        background-color: $color-white-ghost
+                        transition: all .3s
+                        text-align: center
+
+                        &--hidden
+                            display: none
+
+                        &::placeholder
+                            text-align: center
+
+                        &:focus
+                            outline-color: transparent
+                            transform: translateY(-.5rem)
+                            box-shadow: 0 2rem 2rem rgba($color-black, .1)
+
+                            &::placeholder
+                                color: transparent
+
+                        &:focus + &--label
+                            transition: all .3s
+                            transform: translateY(0)
+                            z-index: unset
+                            opacity: 1
+                            height: unset
+                            visibility: visible
+
+                        &--label
+                            transition: all .4s
+                            opacity: 0
+                            height: 1rem
+                            z-index: -1
+                            width: 100%
+                            visibility: hidden
+                            display: flex
+                            justify-content: center
+                            transform: translateY(-3rem)
+
+                            &--content
+                                display: flex
+                                justify-content: center
+                                width: 100%
+
+                    &--group
+                        display: flex
+                        flex-direction: column
+
+                &__employee
+                    display: flex
+                    flex-direction: column
+
+                    &-list
+                        display: flex
+                        justify-content: space-evenly
+                        width: 100%
+                        gap: 5rem
+
+                        &--image
+                            clip-path: circle()
+                            background: $color-primary-light
+                            box-sizing: border-box
+                            border: 3px solid $color-primary-light
+                            width: 15rem
+                            height: 20rem
+
+                            &--name
+                                height: 100%
+                                display: flex
+                                align-items: center
+                                justify-content: center
+
+                            &--wrap
+                                display: flex
+                                transition: all .3s
+                                cursor: pointer
+                                gap: 2rem
+                                flex-direction: column
+                                filter: drop-shadow(0 1rem 2rem rgba($color-black, .4))
+
+                                &:hover
+                                    transform: translateY(-1rem)
+                                    filter: drop-shadow(0 2rem 4rem rgba($color-black, .4))
+
+                                &:active
+                                    transform: translateY(0rem)
+                                    filter: drop-shadow(0 1rem 2rem rgba($color-black, .4))
+
+                            &--content
+                                clip-path: circle()
+                                width: 100%
+                                height: 100%
+
+                &__message
+                    display: flex
+                    width: 100%
+                    flex-direction: column
+                    justify-content: center
+
+                    &--label
+                        display: flex
+                        justify-content: center
+                        transition: all .3s
+                        opacity: 0
+                        z-index: -1
+                        height: 25%
+                        width: 100%
+                        align-items: center
+                        transform: translateY(-3rem)
+
+                    &--content
+                        padding: 1.5rem 2.75rem
+                        border-radius: 20px
+                        box-shadow: 0 1rem 2rem rgba($color-black, .2)
+                        border-color: transparent
+                        background-color: $color-white-ghost
+                        width: 60%
+                        margin: 0 auto
+                        transition: all .3s
+                        text-align: center
+
+                        &:focus
+                            transform: translateY(0rem)
+                            box-shadow: 0 2rem 2rem rgba($color-black, .2)
+
+                            &::placeholder
+                                color: transparent
+
+                        &::placeholder
+                            text-align: center
+
+                        &:focus + .make-appointment__container__upper-side__form__message--label
+                            transform: translateY(0)
+                            z-index: unset
+                            opacity: 1
+
+
+        &__lower-side
+            display: flex
+            width: 100%
+            flex-direction: column
+
+            &__submit-button
+                padding-top: 2rem
+                width: 95%
+                display: flex
+                justify-content: flex-end
+
+                &--content
+                    border-radius: 30px
+                    background-image: linear-gradient(to right, rgba($color-secondary-dark, .8), rgba($color-secondary, .8))
+                    padding: 2rem
+                    box-shadow: 1rem 1rem 2rem rgba($color-black, .3)
+                    cursor: pointer
+                    transition: all .2s
+
+                    &:hover
+                        transform: translateY(-.3rem)
+                        box-shadow: 1rem 2rem 3rem rgba($color-black, .3)
+
+                    &:active
+                        transform: translateY(0)
+                        box-shadow: 1rem 1rem 2rem rgba($color-black, .3)
+
+            &--hidden
+                display: none
+                visibility: hidden
+                opacity: 0
+
+            &__employee-info
+                display: flex
+                gap: 3rem
+                width: 100%
+                justify-content: center
+                filter: drop-shadow(0 1rem 2rem rgba($color-black, .4))
+
+
+                &--photo
+                    clip-path: circle()
+                    width: 20rem
+                    height: 30rem
+
+                    &--content
+                        height: 100%
+                        width: 100%
+
+                &--identification
+                    display: flex
+                    flex-direction: column
+                    align-items: center
+                    justify-content: center
+                    margin-left: 2rem
+
+                    &--name
+                        height: 7rem
+
+            &__employee-program
+                height: fit-content
+                max-width: 100%
+                display: flex
+                justify-content: space-evenly
+                padding: 1rem 2rem
+                gap: 5rem
+                overflow-x: scroll
+
+
+                &__element
+                    border: 1px solid $color-white-smoke
+                    box-shadow: inset .2rem .3rem 2rem rgba($color-black, .2)
+                    display: flex
+                    border-radius: 15px
+                    flex-direction: column
+                    width: 15rem
+                    height: 50rem
+                    padding: 4rem 0 0 0
+                    margin-bottom: 1rem
+                    gap: 2rem
+                    overflow-x: scroll
+                    overflow-y: scroll
+                    transition: all .3s
+
+                    &:hover
+                        background-image: linear-gradient($color-white-ghost 20%, white)
+
+                    &:hover &__hours &__hours--hour
+                        border: 1px solid #d4d4d4
+
+                    &__day
+                        margin-top: 2rem
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        flex-direction: column
+                        height: 10rem
+
+                    &__hours
+                        display: flex
+                        align-items: center
+                        flex-direction: column
+                        gap: 2rem
+                        height: 85%
+                        cursor: pointer
+
+                        &--hour
+                            display: flex
+                            align-items: center
+                            height: 4rem
+                            width: 6rem
+                            justify-content: center
+                            background-color: #fff
+                            border-radius: 15px
+                            transition: all .2s
+
+                            &--content
+                                width: 100%
+                                height: 100%
+                                display: flex
+                                justify-content: center
+                                align-items: center
+                                border-radius: 15px
+
+                                &--active
+                                    border: unset
+                                    background-color: $color-primary-dark
+
+                            &:hover
+                                border: unset
+                                background-color: $color-primary-dark
+

@@ -1,13 +1,11 @@
-import * as React from 'react';
-import { FC, useEffect, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router-dom"
-import { IUserData } from "../../../../shared/interfaces/user"
 
-import { fetchAppointments } from "../../../actions";
-import { RootState } from "../../../reducers";
-import { IAppointment } from "../../../../shared/interfaces/userDashboard";
+import { RootState } from "../../../reducers"
+import { fetchAppointments } from "../../../actions"
+import { IAppointment } from "../../../../shared/interfaces/userDashboard"
 
 
 const AppointmentsSection: FC = (): JSX.Element => {
@@ -15,14 +13,13 @@ const AppointmentsSection: FC = (): JSX.Element => {
    const dispatch = useDispatch()
 
    const appointments: IAppointment[] = useSelector((state: RootState) => state.appointments)
-   const userData: IUserData = useSelector((state: RootState) => state.isUserAuthenticated)
 
    const [ appointmentsType, setAppointmentsType ] = useState<string>('future')
 
-   const isAuthenticated = userData.name !== ''
+   const token = localStorage.getItem('token')
 
    useEffect(() => {
-      !isAuthenticated ? history.push('/') : dispatch(fetchAppointments())
+      !token ? history.push('/') : dispatch(fetchAppointments())
    }, [])
 
    return (

@@ -363,6 +363,13 @@
   font-size: 1.4rem;
 }
 
+.login-modal__wrap-back {
+  text-decoration: none;
+  font-size: 2.6rem;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 900;
+  color: #52b69a;
+}
 .login-modal__container--form {
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.7rem;
@@ -758,6 +765,78 @@
   text-transform: uppercase;
   color: #F3F5F3 !important;
   font-weight: 500;
+}
+
+.make-appointment {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.6rem;
+}
+.make-appointment__header--title {
+  text-transform: uppercase;
+  color: #6F2DBD;
+  font-size: 3.5rem;
+  font-weight: 900;
+}
+.make-appointment__header--sub-title {
+  color: rgba(166, 99, 204, 0.8);
+}
+.make-appointment__container {
+  color: rgba(42, 30, 56, 0.7);
+}
+.make-appointment__container__upper-side__form {
+  color: #6F2DBD;
+  font-weight: 700;
+}
+.make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__form__message--content {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__form__message--content::placeholder {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__contact {
+  color: #F3F5F3;
+}
+.make-appointment__container__upper-side__contact--header--title {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+.make-appointment__container__lower-side__submit-button {
+  text-transform: uppercase;
+  color: #fff;
+}
+.make-appointment__container__lower-side__employee-program__element:hover .make-appointment__container__lower-side__employee-program__element__day {
+  color: #6F2DBD;
+}
+.make-appointment__container__lower-side__employee-program__element__day {
+  font-size: 1.8rem;
+}
+.make-appointment__container__lower-side__employee-program__element__day--day-number {
+  font-size: 3rem;
+  font-weight: 900;
+}
+.make-appointment__container__lower-side__employee-program__element__hours--hour--content--active {
+  color: #fff;
+}
+.make-appointment__container__lower-side__employee-program__element__hours--hour:hover {
+  color: #fff;
+}
+.make-appointment__container__lower-side__employee-info--identification--name {
+  font-size: 4rem;
+  font-weight: 700;
+  color: rgba(111, 45, 189, 0.8);
+}
+.make-appointment__container__lower-side__employee-info--identification--job-title {
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgba(111, 45, 189, 0.7);
 }
 
 .section-program__wrap {

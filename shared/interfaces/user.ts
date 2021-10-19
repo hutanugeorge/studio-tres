@@ -1,5 +1,11 @@
-export interface IUserData {
+export interface IUser {
    token: string
-   name: string
+   firstName: string
    userId: string
+}
+
+export interface IUserInfo {
+   firstName: string
+   rewardsPoints: number
+   promotionCode: string
 }

@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux'
+import employeesReducer from "./employeesReducer"
 
 import landingReducer from './landingReducer'
 import featuresReducer from './featureReducer'
 import reviewsReducer from './reviewsReducer'
+import userReducer from "./userReducer"
 import userViewReducer from "./userViewReducer"
 import promotionsReducer from "./promotionsReducer";
 import rewardsReducer from "./rewardsReducer";
@@ -20,7 +22,11 @@ export const rootReducer = combineReducers({
   appointments: appointmentsReducer,
   userView: userViewReducer,
   isMenuOpen: toggleMenuReducer,
-  isUserAuthenticated: authenticationReducer
+  isUserAuthenticated: authenticationReducer,
+  userInfo: userReducer,
+  employees: employeesReducer
 })
+
+
 
 export type RootState = ReturnType<typeof rootReducer>

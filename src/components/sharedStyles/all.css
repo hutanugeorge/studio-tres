@@ -363,6 +363,13 @@
   font-size: 1.4rem;
 }
 
+.login-modal__wrap-back {
+  text-decoration: none;
+  font-size: 2.6rem;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 900;
+  color: #52b69a;
+}
 .login-modal__container--form {
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.7rem;
@@ -758,6 +765,78 @@
   text-transform: uppercase;
   color: #F3F5F3 !important;
   font-weight: 500;
+}
+
+.make-appointment {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.6rem;
+}
+.make-appointment__header--title {
+  text-transform: uppercase;
+  color: #6F2DBD;
+  font-size: 3.5rem;
+  font-weight: 900;
+}
+.make-appointment__header--sub-title {
+  color: rgba(166, 99, 204, 0.8);
+}
+.make-appointment__container {
+  color: rgba(42, 30, 56, 0.7);
+}
+.make-appointment__container__upper-side__form {
+  color: #6F2DBD;
+  font-weight: 700;
+}
+.make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__form__message--content {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__form__message--content::placeholder {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__contact {
+  color: #F3F5F3;
+}
+.make-appointment__container__upper-side__contact--header--title {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+.make-appointment__container__lower-side__submit-button {
+  text-transform: uppercase;
+  color: #fff;
+}
+.make-appointment__container__lower-side__employee-program__element:hover .make-appointment__container__lower-side__employee-program__element__day {
+  color: #6F2DBD;
+}
+.make-appointment__container__lower-side__employee-program__element__day {
+  font-size: 1.8rem;
+}
+.make-appointment__container__lower-side__employee-program__element__day--day-number {
+  font-size: 3rem;
+  font-weight: 900;
+}
+.make-appointment__container__lower-side__employee-program__element__hours--hour--content--active {
+  color: #fff;
+}
+.make-appointment__container__lower-side__employee-program__element__hours--hour:hover {
+  color: #fff;
+}
+.make-appointment__container__lower-side__employee-info--identification--name {
+  font-size: 4rem;
+  font-weight: 700;
+  color: rgba(111, 45, 189, 0.8);
+}
+.make-appointment__container__lower-side__employee-info--identification--job-title {
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgba(111, 45, 189, 0.7);
 }
 
 .footer-section {
@@ -1211,6 +1290,13 @@
   font-size: 1.4rem;
 }
 
+.login-modal__wrap-back {
+  text-decoration: none;
+  font-size: 2.6rem;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 900;
+  color: #52b69a;
+}
 .login-modal__container--form {
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.7rem;
@@ -1606,6 +1692,78 @@
   text-transform: uppercase;
   color: #F3F5F3 !important;
   font-weight: 500;
+}
+
+.make-appointment {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.6rem;
+}
+.make-appointment__header--title {
+  text-transform: uppercase;
+  color: #6F2DBD;
+  font-size: 3.5rem;
+  font-weight: 900;
+}
+.make-appointment__header--sub-title {
+  color: rgba(166, 99, 204, 0.8);
+}
+.make-appointment__container {
+  color: rgba(42, 30, 56, 0.7);
+}
+.make-appointment__container__upper-side__form {
+  color: #6F2DBD;
+  font-weight: 700;
+}
+.make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__form__message--content {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__form__message--content::placeholder {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__contact {
+  color: #F3F5F3;
+}
+.make-appointment__container__upper-side__contact--header--title {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+.make-appointment__container__lower-side__submit-button {
+  text-transform: uppercase;
+  color: #fff;
+}
+.make-appointment__container__lower-side__employee-program__element:hover .make-appointment__container__lower-side__employee-program__element__day {
+  color: #6F2DBD;
+}
+.make-appointment__container__lower-side__employee-program__element__day {
+  font-size: 1.8rem;
+}
+.make-appointment__container__lower-side__employee-program__element__day--day-number {
+  font-size: 3rem;
+  font-weight: 900;
+}
+.make-appointment__container__lower-side__employee-program__element__hours--hour--content--active {
+  color: #fff;
+}
+.make-appointment__container__lower-side__employee-program__element__hours--hour:hover {
+  color: #fff;
+}
+.make-appointment__container__lower-side__employee-info--identification--name {
+  font-size: 4rem;
+  font-weight: 700;
+  color: rgba(111, 45, 189, 0.8);
+}
+.make-appointment__container__lower-side__employee-info--identification--job-title {
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgba(111, 45, 189, 0.7);
 }
 
 .btn-navigation {
@@ -2404,6 +2562,13 @@
   font-size: 1.4rem;
 }
 
+.login-modal__wrap-back {
+  text-decoration: none;
+  font-size: 2.6rem;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 900;
+  color: #52b69a;
+}
 .login-modal__container--form {
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.7rem;
@@ -2801,6 +2966,78 @@
   font-weight: 500;
 }
 
+.make-appointment {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.6rem;
+}
+.make-appointment__header--title {
+  text-transform: uppercase;
+  color: #6F2DBD;
+  font-size: 3.5rem;
+  font-weight: 900;
+}
+.make-appointment__header--sub-title {
+  color: rgba(166, 99, 204, 0.8);
+}
+.make-appointment__container {
+  color: rgba(42, 30, 56, 0.7);
+}
+.make-appointment__container__upper-side__form {
+  color: #6F2DBD;
+  font-weight: 700;
+}
+.make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__form__message--content {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__form__message--content::placeholder {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__contact {
+  color: #F3F5F3;
+}
+.make-appointment__container__upper-side__contact--header--title {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+.make-appointment__container__lower-side__submit-button {
+  text-transform: uppercase;
+  color: #fff;
+}
+.make-appointment__container__lower-side__employee-program__element:hover .make-appointment__container__lower-side__employee-program__element__day {
+  color: #6F2DBD;
+}
+.make-appointment__container__lower-side__employee-program__element__day {
+  font-size: 1.8rem;
+}
+.make-appointment__container__lower-side__employee-program__element__day--day-number {
+  font-size: 3rem;
+  font-weight: 900;
+}
+.make-appointment__container__lower-side__employee-program__element__hours--hour--content--active {
+  color: #fff;
+}
+.make-appointment__container__lower-side__employee-program__element__hours--hour:hover {
+  color: #fff;
+}
+.make-appointment__container__lower-side__employee-info--identification--name {
+  font-size: 4rem;
+  font-weight: 700;
+  color: rgba(111, 45, 189, 0.8);
+}
+.make-appointment__container__lower-side__employee-info--identification--job-title {
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgba(111, 45, 189, 0.7);
+}
+
 @keyframes moveInBottom {
   0% {
     opacity: 0;
@@ -2877,13 +3114,20 @@
 }
 
 .login-modal__wrap {
-  background-color: rgba(178, 152, 220, 0.7);
+  background-image: linear-gradient(to right bottom, #f4f4f4, #e6e3f1, #d8d2ed, #ccc0e9, #c0afe4, #b59fdf, #ab8fda, #a17fd5, #956cd0, #8858ca, #7c44c4, #6f2dbd);
+  background-size: cover;
+  background-position: center;
   height: 100%;
   width: 100%;
   position: fixed;
   top: 0;
   z-index: 60;
-  animation: moveInBottom 0.7s ease-in backwards;
+}
+.login-modal__wrap-back {
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+  z-index: 1000;
 }
 .login-modal__container {
   z-index: 60;
@@ -2895,6 +3139,7 @@
   animation: moveInBottomModal 0.7s ease-in 0.2s backwards;
   margin: 0 auto;
   background: url(../../../images/modal-background.svg);
+  box-shadow: 2rem 2rem 2rem rgba(42, 30, 56, 0.3);
   background-size: cover;
   height: fit-content;
   width: 80rem;
@@ -3471,6 +3716,13 @@
   font-size: 1.4rem;
 }
 
+.login-modal__wrap-back {
+  text-decoration: none;
+  font-size: 2.6rem;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 900;
+  color: #52b69a;
+}
 .login-modal__container--form {
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.7rem;
@@ -3868,6 +4120,78 @@
   font-weight: 500;
 }
 
+.make-appointment {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.6rem;
+}
+.make-appointment__header--title {
+  text-transform: uppercase;
+  color: #6F2DBD;
+  font-size: 3.5rem;
+  font-weight: 900;
+}
+.make-appointment__header--sub-title {
+  color: rgba(166, 99, 204, 0.8);
+}
+.make-appointment__container {
+  color: rgba(42, 30, 56, 0.7);
+}
+.make-appointment__container__upper-side__form {
+  color: #6F2DBD;
+  font-weight: 700;
+}
+.make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__form__message--content {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__form__message--content::placeholder {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__contact {
+  color: #F3F5F3;
+}
+.make-appointment__container__upper-side__contact--header--title {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+.make-appointment__container__lower-side__submit-button {
+  text-transform: uppercase;
+  color: #fff;
+}
+.make-appointment__container__lower-side__employee-program__element:hover .make-appointment__container__lower-side__employee-program__element__day {
+  color: #6F2DBD;
+}
+.make-appointment__container__lower-side__employee-program__element__day {
+  font-size: 1.8rem;
+}
+.make-appointment__container__lower-side__employee-program__element__day--day-number {
+  font-size: 3rem;
+  font-weight: 900;
+}
+.make-appointment__container__lower-side__employee-program__element__hours--hour--content--active {
+  color: #fff;
+}
+.make-appointment__container__lower-side__employee-program__element__hours--hour:hover {
+  color: #fff;
+}
+.make-appointment__container__lower-side__employee-info--identification--name {
+  font-size: 4rem;
+  font-weight: 700;
+  color: rgba(111, 45, 189, 0.8);
+}
+.make-appointment__container__lower-side__employee-info--identification--job-title {
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgba(111, 45, 189, 0.7);
+}
+
 .navigation-section {
   position: relative;
   background-image: linear-gradient(#6f2dbd 10%, rgba(178, 152, 220, 0.4) 75%, #F3F5F3 100%), url(../../../images/new-hero.jpg);
@@ -3900,10 +4224,11 @@
 }
 .desktop-navigation__login {
   background-image: linear-gradient(to bottom right, #007C77, #52b69a);
-  padding: 1.6rem 2.4rem !important;
+  padding: 1.2rem 2rem !important;
   border-radius: 50px;
   box-shadow: 0 1rem 2rem rgba(42, 30, 56, 0.3);
   border: 0;
+  margin-right: 1rem;
 }
 .desktop-navigation__login:hover {
   box-shadow: 0 2rem 4rem rgba(42, 30, 56, 0.3);
@@ -4298,6 +4623,13 @@
   font-size: 1.4rem;
 }
 
+.login-modal__wrap-back {
+  text-decoration: none;
+  font-size: 2.6rem;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 900;
+  color: #52b69a;
+}
 .login-modal__container--form {
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.7rem;
@@ -4693,6 +5025,78 @@
   text-transform: uppercase;
   color: #F3F5F3 !important;
   font-weight: 500;
+}
+
+.make-appointment {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.6rem;
+}
+.make-appointment__header--title {
+  text-transform: uppercase;
+  color: #6F2DBD;
+  font-size: 3.5rem;
+  font-weight: 900;
+}
+.make-appointment__header--sub-title {
+  color: rgba(166, 99, 204, 0.8);
+}
+.make-appointment__container {
+  color: rgba(42, 30, 56, 0.7);
+}
+.make-appointment__container__upper-side__form {
+  color: #6F2DBD;
+  font-weight: 700;
+}
+.make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__form__message--content {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__form__message--content::placeholder {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__contact {
+  color: #F3F5F3;
+}
+.make-appointment__container__upper-side__contact--header--title {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+.make-appointment__container__lower-side__submit-button {
+  text-transform: uppercase;
+  color: #fff;
+}
+.make-appointment__container__lower-side__employee-program__element:hover .make-appointment__container__lower-side__employee-program__element__day {
+  color: #6F2DBD;
+}
+.make-appointment__container__lower-side__employee-program__element__day {
+  font-size: 1.8rem;
+}
+.make-appointment__container__lower-side__employee-program__element__day--day-number {
+  font-size: 3rem;
+  font-weight: 900;
+}
+.make-appointment__container__lower-side__employee-program__element__hours--hour--content--active {
+  color: #fff;
+}
+.make-appointment__container__lower-side__employee-program__element__hours--hour:hover {
+  color: #fff;
+}
+.make-appointment__container__lower-side__employee-info--identification--name {
+  font-size: 4rem;
+  font-weight: 700;
+  color: rgba(111, 45, 189, 0.8);
+}
+.make-appointment__container__lower-side__employee-info--identification--job-title {
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgba(111, 45, 189, 0.7);
 }
 
 .wrap-navigation {
@@ -5311,6 +5715,281 @@
   }
 }
 
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes moveInBottomModal {
+  0% {
+    opacity: 0;
+    transform: translate(50%, -30%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(50%, -50%);
+  }
+}
+@keyframes moveToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveToRight {
+  0% {
+    opacity: 0;
+    transform: translate(-50rem) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0) scale(1);
+  }
+}
+@keyframes moveToBottomPromo {
+  0% {
+    opacity: 0;
+    transform: translateX(-25rem) scale(0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+@keyframes moveToTopPromo {
+  0% {
+    opacity: 0;
+    transform: translateX(25rem) scale(0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+@keyframes bounceUp {
+  0% {
+    transform: scale(0.7);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.rewards-card__product-list {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10rem;
+  padding-top: 5rem;
+  padding-bottom: 20rem;
+}
+.rewards-card__product-list-image {
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 40%;
+  clip-path: polygon(0 0, 100% 0, 77% 100%, 0% 100%);
+}
+@media (max-width: 37em) {
+  .rewards-card__product-list-image {
+    width: 100%;
+    height: 60%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 80%);
+  }
+}
+@media (max-width: 37em) {
+  .rewards-card__product-list-image {
+    width: 100%;
+    height: 60%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 80%);
+  }
+}
+.rewards-card__product-list-image--color-red {
+  background-image: linear-gradient(0deg, rgba(42, 30, 56, 0.4), rgba(42, 30, 56, 0.1)), url("/images/hair-care-reward.jpg");
+}
+.rewards-card__product-list-image--color-green {
+  background-image: linear-gradient(0deg, rgba(42, 30, 56, 0.4), rgba(42, 30, 56, 0.1)), url("/images/hair-removal-reward.jpg");
+}
+.rewards-card__product-list-image--color-yellow {
+  background-image: linear-gradient(0deg, rgba(42, 30, 56, 0.4), rgba(42, 30, 56, 0.1)), url("/images/nails-care-reward.jpg");
+}
+.rewards-card__product-list-image--color-pink {
+  background-image: linear-gradient(0deg, rgba(42, 30, 56, 0.4), rgba(42, 30, 56, 0.1)), url("/images/makeup-services-reward.jpg");
+}
+.rewards-card__product-list-image--color-teal {
+  background-image: linear-gradient(0deg, rgba(42, 30, 56, 0.4), rgba(42, 30, 56, 0.1)), url("/images/facial-treatments-reward.jpg");
+}
+.rewards-card__product-list-image--color-light-purple {
+  background-image: linear-gradient(0deg, rgba(42, 30, 56, 0.4), rgba(42, 30, 56, 0.1)), url("/images/body-massage-reward.jpg");
+}
+.rewards-card__product-list-content {
+  overflow: hidden;
+  display: flex;
+  height: 50rem;
+  min-width: 70rem;
+  width: 100rem;
+  background-image: linear-gradient(to right, #6f2dbd 0%, #a663cc 55%, rgba(166, 99, 204, 0.5) 100%);
+  border-radius: 20px;
+  box-shadow: 1rem 1rem 2rem rgba(42, 30, 56, 0.3);
+  transition: all 0.4s;
+}
+@media (max-width: 75em) {
+  .rewards-card__product-list-content {
+    max-width: 50rem;
+  }
+}
+@media (max-width: 37em) {
+  .rewards-card__product-list-content {
+    background-image: linear-gradient(to bottom, #6f2dbd 0%, #a663cc 55%, rgba(166, 99, 204, 0.5) 100%);
+    flex-direction: column;
+    width: 90%;
+    min-width: unset;
+    height: 50rem;
+  }
+}
+@media (max-width: 37em) {
+  .rewards-card__product-list-content {
+    background-image: linear-gradient(to bottom, #6f2dbd 0%, #a663cc 55%, rgba(166, 99, 204, 0.5) 100%);
+    flex-direction: column;
+    width: 90%;
+    min-width: unset;
+    height: 50rem;
+  }
+}
+.rewards-card__product-list-content:hover {
+  transform: translateY(-1rem);
+  box-shadow: 2rem 2rem 4rem rgba(42, 30, 56, 0.3);
+}
+.rewards-card__product-list--no-rewards {
+  background-image: linear-gradient(to left, rgba(111, 45, 189, 0.8), rgba(166, 99, 204, 0.8));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.rewards-card__services-list {
+  width: 60%;
+  display: flex;
+  height: fit-content;
+  flex-direction: column;
+  padding: 5rem 3rem;
+}
+@media (max-width: 37em) {
+  .rewards-card__services-list {
+    width: 100%;
+    padding: unset;
+  }
+}
+@media (max-width: 37em) {
+  .rewards-card__services-list {
+    width: 100%;
+    padding: unset;
+  }
+}
+.rewards-card__services-list-header {
+  width: 100%;
+  height: 10rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+@media (max-width: 37em) {
+  .rewards-card__services-list-header {
+    justify-content: center;
+  }
+}
+@media (max-width: 37em) {
+  .rewards-card__services-list-header {
+    justify-content: center;
+  }
+}
+.rewards-card__services-list-content {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 37em) {
+  .rewards-card__services-list-content {
+    padding: 1rem 0.4rem 1rem 0;
+  }
+}
+@media (max-width: 37em) {
+  .rewards-card__services-list-content {
+    padding: 1rem 0.4rem 1rem 0;
+  }
+}
+.rewards-card__services-list-content-element {
+  height: 100%;
+  padding: 1rem 0;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+}
+@media (max-width: 37em) {
+  .rewards-card__services-list-content-element {
+    padding: unset;
+  }
+}
+@media (max-width: 37em) {
+  .rewards-card__services-list-content-element {
+    padding: unset;
+  }
+}
+.rewards-card__services-list-content--button {
+  transition: all 0.4s;
+}
+.rewards-card__services-list-content--button, .rewards-card__services-list-content--button:link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1rem 1rem 2rem rgba(42, 30, 56, 0.3);
+  padding: 0;
+  cursor: pointer;
+  height: 5rem;
+  width: 12rem;
+  border-radius: 50px;
+  background-image: linear-gradient(45deg, rgba(0, 124, 119, 0.9), #52b69a);
+}
+@media (max-width: 37em) {
+  .rewards-card__services-list-content--button, .rewards-card__services-list-content--button:link {
+    height: 3rem;
+    width: 7rem;
+  }
+}
+@media (max-width: 37em) {
+  .rewards-card__services-list-content--button, .rewards-card__services-list-content--button:link {
+    height: 3rem;
+    width: 7rem;
+  }
+}
+.rewards-card__services-list-content--button--disable {
+  visibility: hidden;
+  opacity: 0;
+}
+.rewards-card__services-list-content--button:hover {
+  box-shadow: 2rem 2rem 4rem rgba(42, 30, 56, 0.3);
+  transform: translateY(-1rem);
+}
+.rewards-card__services-list-content--button:active {
+  transform: translateY(0);
+  box-shadow: 1rem 1rem 2rem rgba(42, 30, 56, 0.3);
+}
+
 .desktop-navigation {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 500;
@@ -5676,6 +6355,13 @@
   font-size: 1.4rem;
 }
 
+.login-modal__wrap-back {
+  text-decoration: none;
+  font-size: 2.6rem;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 900;
+  color: #52b69a;
+}
 .login-modal__container--form {
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.7rem;
@@ -6071,6 +6757,78 @@
   text-transform: uppercase;
   color: #F3F5F3 !important;
   font-weight: 500;
+}
+
+.make-appointment {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.6rem;
+}
+.make-appointment__header--title {
+  text-transform: uppercase;
+  color: #6F2DBD;
+  font-size: 3.5rem;
+  font-weight: 900;
+}
+.make-appointment__header--sub-title {
+  color: rgba(166, 99, 204, 0.8);
+}
+.make-appointment__container {
+  color: rgba(42, 30, 56, 0.7);
+}
+.make-appointment__container__upper-side__form {
+  color: #6F2DBD;
+  font-weight: 700;
+}
+.make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__form__message--content {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__form__message--content::placeholder {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__contact {
+  color: #F3F5F3;
+}
+.make-appointment__container__upper-side__contact--header--title {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+.make-appointment__container__lower-side__submit-button {
+  text-transform: uppercase;
+  color: #fff;
+}
+.make-appointment__container__lower-side__employee-program__element:hover .make-appointment__container__lower-side__employee-program__element__day {
+  color: #6F2DBD;
+}
+.make-appointment__container__lower-side__employee-program__element__day {
+  font-size: 1.8rem;
+}
+.make-appointment__container__lower-side__employee-program__element__day--day-number {
+  font-size: 3rem;
+  font-weight: 900;
+}
+.make-appointment__container__lower-side__employee-program__element__hours--hour--content--active {
+  color: #fff;
+}
+.make-appointment__container__lower-side__employee-program__element__hours--hour:hover {
+  color: #fff;
+}
+.make-appointment__container__lower-side__employee-info--identification--name {
+  font-size: 4rem;
+  font-weight: 700;
+  color: rgba(111, 45, 189, 0.8);
+}
+.make-appointment__container__lower-side__employee-info--identification--job-title {
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgba(111, 45, 189, 0.7);
 }
 
 @keyframes moveInBottom {
@@ -7386,6 +8144,13 @@
   font-size: 1.4rem;
 }
 
+.login-modal__wrap-back {
+  text-decoration: none;
+  font-size: 2.6rem;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 900;
+  color: #52b69a;
+}
 .login-modal__container--form {
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.7rem;
@@ -7781,6 +8546,78 @@
   text-transform: uppercase;
   color: #F3F5F3 !important;
   font-weight: 500;
+}
+
+.make-appointment {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.6rem;
+}
+.make-appointment__header--title {
+  text-transform: uppercase;
+  color: #6F2DBD;
+  font-size: 3.5rem;
+  font-weight: 900;
+}
+.make-appointment__header--sub-title {
+  color: rgba(166, 99, 204, 0.8);
+}
+.make-appointment__container {
+  color: rgba(42, 30, 56, 0.7);
+}
+.make-appointment__container__upper-side__form {
+  color: #6F2DBD;
+  font-weight: 700;
+}
+.make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__form__message--content {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__form__message--content::placeholder {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__contact {
+  color: #F3F5F3;
+}
+.make-appointment__container__upper-side__contact--header--title {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+.make-appointment__container__lower-side__submit-button {
+  text-transform: uppercase;
+  color: #fff;
+}
+.make-appointment__container__lower-side__employee-program__element:hover .make-appointment__container__lower-side__employee-program__element__day {
+  color: #6F2DBD;
+}
+.make-appointment__container__lower-side__employee-program__element__day {
+  font-size: 1.8rem;
+}
+.make-appointment__container__lower-side__employee-program__element__day--day-number {
+  font-size: 3rem;
+  font-weight: 900;
+}
+.make-appointment__container__lower-side__employee-program__element__hours--hour--content--active {
+  color: #fff;
+}
+.make-appointment__container__lower-side__employee-program__element__hours--hour:hover {
+  color: #fff;
+}
+.make-appointment__container__lower-side__employee-info--identification--name {
+  font-size: 4rem;
+  font-weight: 700;
+  color: rgba(111, 45, 189, 0.8);
+}
+.make-appointment__container__lower-side__employee-info--identification--job-title {
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgba(111, 45, 189, 0.7);
 }
 
 .pricing-card {
@@ -8204,6 +9041,13 @@
   font-size: 1.4rem;
 }
 
+.login-modal__wrap-back {
+  text-decoration: none;
+  font-size: 2.6rem;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 900;
+  color: #52b69a;
+}
 .login-modal__container--form {
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.7rem;
@@ -8601,6 +9445,78 @@
   font-weight: 500;
 }
 
+.make-appointment {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.6rem;
+}
+.make-appointment__header--title {
+  text-transform: uppercase;
+  color: #6F2DBD;
+  font-size: 3.5rem;
+  font-weight: 900;
+}
+.make-appointment__header--sub-title {
+  color: rgba(166, 99, 204, 0.8);
+}
+.make-appointment__container {
+  color: rgba(42, 30, 56, 0.7);
+}
+.make-appointment__container__upper-side__form {
+  color: #6F2DBD;
+  font-weight: 700;
+}
+.make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__form__message--content {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__form__message--content::placeholder {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__contact {
+  color: #F3F5F3;
+}
+.make-appointment__container__upper-side__contact--header--title {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+.make-appointment__container__lower-side__submit-button {
+  text-transform: uppercase;
+  color: #fff;
+}
+.make-appointment__container__lower-side__employee-program__element:hover .make-appointment__container__lower-side__employee-program__element__day {
+  color: #6F2DBD;
+}
+.make-appointment__container__lower-side__employee-program__element__day {
+  font-size: 1.8rem;
+}
+.make-appointment__container__lower-side__employee-program__element__day--day-number {
+  font-size: 3rem;
+  font-weight: 900;
+}
+.make-appointment__container__lower-side__employee-program__element__hours--hour--content--active {
+  color: #fff;
+}
+.make-appointment__container__lower-side__employee-program__element__hours--hour:hover {
+  color: #fff;
+}
+.make-appointment__container__lower-side__employee-info--identification--name {
+  font-size: 4rem;
+  font-weight: 700;
+  color: rgba(111, 45, 189, 0.8);
+}
+.make-appointment__container__lower-side__employee-info--identification--job-title {
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgba(111, 45, 189, 0.7);
+}
+
 @keyframes moveInBottom {
   0% {
     opacity: 0;
@@ -8727,280 +9643,419 @@
   }
 }
 
+.make-appointment {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+  align-items: center;
+  justify-content: center;
+  padding: 10rem 0 20rem;
+}
+.make-appointment--wrap {
+  overflow-y: scroll;
+  background-color: #F3F5F3;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+.make-appointment__header {
+  width: 70%;
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.make-appointment__header--title {
+  height: 7rem;
+}
+.make-appointment__container {
+  padding: 3rem;
+  background-color: #fff;
+  border-radius: 20px;
+  width: 70%;
+  max-width: 120rem;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.make-appointment__container__upper-side {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-evenly;
+}
+.make-appointment__container__upper-side__contact {
+  box-shadow: 0 1rem 3rem rgba(42, 30, 56, 0.3);
+  border-radius: 20px;
+  background-color: #6F2DBD;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.make-appointment__container__upper-side__contact--header {
+  height: 35%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+.make-appointment__container__upper-side__contact--header--title {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  height: 5rem;
+}
+.make-appointment__container__upper-side__contact--header--sub-title {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  padding: 0 2rem;
+}
+.make-appointment__container__upper-side__contact--header--sub-title--content {
+  width: 100%;
+  text-align: center;
+}
+.make-appointment__container__upper-side__contact--in-touch {
+  height: 45%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.make-appointment__container__upper-side__contact--in-touch--address {
+  margin-left: 20%;
+  width: 60%;
+  display: flex;
+  justify-content: flex-start;
+}
+.make-appointment__container__upper-side__contact--links {
+  display: flex;
+  justify-content: space-evenly;
+  height: 20%;
+  width: 100%;
+}
+.make-appointment__container__upper-side__form {
+  width: 65%;
+  display: flex;
+  height: fit-content;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 3rem;
+  align-items: center;
+  gap: 3rem;
+}
+.make-appointment__container__upper-side__form__employee {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+}
+.make-appointment__container__upper-side__form__employee-services {
+  display: flex;
+  gap: 2rem;
+}
+.make-appointment__container__upper-side__form__employee-services--label {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.make-appointment__container__upper-side__form__employee-sub-services {
+  display: none;
+  gap: 2rem;
+}
+.make-appointment__container__upper-side__form__employee-sub-services--label {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.make-appointment__container__upper-side__form__upper-inputs, .make-appointment__container__upper-side__form__lower-inputs {
+  display: flex;
+  gap: 2rem;
+}
+.make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+  padding: 1.5rem 2.75rem;
+  border-radius: 20px;
+  box-shadow: 0 1rem 2rem rgba(42, 30, 56, 0.1);
+  border-color: transparent;
+  background-color: #F3F5F3;
+  transition: all 0.3s;
+  text-align: center;
+}
+.make-appointment__container__upper-side__form__upper-inputs--input--hidden, .make-appointment__container__upper-side__form__lower-inputs--input--hidden {
+  display: none;
+}
+.make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+  text-align: center;
+}
+.make-appointment__container__upper-side__form__upper-inputs--input:focus, .make-appointment__container__upper-side__form__lower-inputs--input:focus {
+  outline-color: transparent;
+  transform: translateY(-0.5rem);
+  box-shadow: 0 2rem 2rem rgba(42, 30, 56, 0.1);
+}
+.make-appointment__container__upper-side__form__upper-inputs--input:focus::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input:focus::placeholder {
+  color: transparent;
+}
+.make-appointment__container__upper-side__form__upper-inputs--input:focus + .make-appointment__container__upper-side__form__upper-inputs--input--label, .make-appointment__container__upper-side__form__upper-inputs--input:focus + .make-appointment__container__upper-side__form__lower-inputs--input--label, .make-appointment__container__upper-side__form__lower-inputs--input:focus + .make-appointment__container__upper-side__form__upper-inputs--input--label, .make-appointment__container__upper-side__form__lower-inputs--input:focus + .make-appointment__container__upper-side__form__lower-inputs--input--label {
+  transition: all 0.3s;
+  transform: translateY(0);
+  z-index: unset;
+  opacity: 1;
+  height: unset;
+  visibility: visible;
+}
+.make-appointment__container__upper-side__form__upper-inputs--input--label, .make-appointment__container__upper-side__form__lower-inputs--input--label {
+  transition: all 0.4s;
+  opacity: 0;
+  height: 1rem;
+  z-index: -1;
+  width: 100%;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  transform: translateY(-3rem);
+}
+.make-appointment__container__upper-side__form__upper-inputs--input--label--content, .make-appointment__container__upper-side__form__lower-inputs--input--label--content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.make-appointment__container__upper-side__form__upper-inputs--group, .make-appointment__container__upper-side__form__lower-inputs--group {
+  display: flex;
+  flex-direction: column;
+}
+.make-appointment__container__upper-side__form__employee {
+  display: flex;
+  flex-direction: column;
+}
+.make-appointment__container__upper-side__form__employee-list {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  gap: 5rem;
+}
+.make-appointment__container__upper-side__form__employee-list--image {
+  clip-path: circle();
+  background: #B298DC;
+  box-sizing: border-box;
+  border: 3px solid #B298DC;
+  width: 15rem;
+  height: 20rem;
+}
+.make-appointment__container__upper-side__form__employee-list--image--name {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.make-appointment__container__upper-side__form__employee-list--image--wrap {
+  display: flex;
+  transition: all 0.3s;
+  cursor: pointer;
+  gap: 2rem;
+  flex-direction: column;
+  filter: drop-shadow(0 1rem 2rem rgba(42, 30, 56, 0.4));
+}
+.make-appointment__container__upper-side__form__employee-list--image--wrap:hover {
+  transform: translateY(-1rem);
+  filter: drop-shadow(0 2rem 4rem rgba(42, 30, 56, 0.4));
+}
+.make-appointment__container__upper-side__form__employee-list--image--wrap:active {
+  transform: translateY(0rem);
+  filter: drop-shadow(0 1rem 2rem rgba(42, 30, 56, 0.4));
+}
+.make-appointment__container__upper-side__form__employee-list--image--content {
+  clip-path: circle();
+  width: 100%;
+  height: 100%;
+}
+.make-appointment__container__upper-side__form__message {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+.make-appointment__container__upper-side__form__message--label {
+  display: flex;
+  justify-content: center;
+  transition: all 0.3s;
+  opacity: 0;
+  z-index: -1;
+  height: 25%;
+  width: 100%;
+  align-items: center;
+  transform: translateY(-3rem);
+}
+.make-appointment__container__upper-side__form__message--content {
+  padding: 1.5rem 2.75rem;
+  border-radius: 20px;
+  box-shadow: 0 1rem 2rem rgba(42, 30, 56, 0.2);
+  border-color: transparent;
+  background-color: #F3F5F3;
+  width: 60%;
+  margin: 0 auto;
+  transition: all 0.3s;
+  text-align: center;
+}
+.make-appointment__container__upper-side__form__message--content:focus {
+  transform: translateY(0rem);
+  box-shadow: 0 2rem 2rem rgba(42, 30, 56, 0.2);
+}
+.make-appointment__container__upper-side__form__message--content:focus::placeholder {
+  color: transparent;
+}
+.make-appointment__container__upper-side__form__message--content::placeholder {
+  text-align: center;
+}
+.make-appointment__container__upper-side__form__message--content:focus + .make-appointment__container__upper-side__form__message--label {
+  transform: translateY(0);
+  z-index: unset;
+  opacity: 1;
+}
+.make-appointment__container__lower-side {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.make-appointment__container__lower-side__submit-button {
+  padding-top: 2rem;
+  width: 95%;
+  display: flex;
+  justify-content: flex-end;
+}
+.make-appointment__container__lower-side__submit-button--content {
+  border-radius: 30px;
+  background-image: linear-gradient(to right, rgba(0, 124, 119, 0.8), rgba(82, 182, 154, 0.8));
+  padding: 2rem;
+  box-shadow: 1rem 1rem 2rem rgba(42, 30, 56, 0.3);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.make-appointment__container__lower-side__submit-button--content:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 1rem 2rem 3rem rgba(42, 30, 56, 0.3);
+}
+.make-appointment__container__lower-side__submit-button--content:active {
+  transform: translateY(0);
+  box-shadow: 1rem 1rem 2rem rgba(42, 30, 56, 0.3);
+}
+.make-appointment__container__lower-side--hidden {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+.make-appointment__container__lower-side__employee-info {
+  display: flex;
+  gap: 3rem;
+  width: 100%;
+  justify-content: center;
+  filter: drop-shadow(0 1rem 2rem rgba(42, 30, 56, 0.4));
+}
+.make-appointment__container__lower-side__employee-info--photo {
+  clip-path: circle();
+  width: 20rem;
+  height: 30rem;
+}
+.make-appointment__container__lower-side__employee-info--photo--content {
+  height: 100%;
+  width: 100%;
+}
+.make-appointment__container__lower-side__employee-info--identification {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2rem;
+}
+.make-appointment__container__lower-side__employee-info--identification--name {
+  height: 7rem;
+}
+.make-appointment__container__lower-side__employee-program {
+  height: fit-content;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem 2rem;
+  gap: 5rem;
+  overflow-x: scroll;
+}
+.make-appointment__container__lower-side__employee-program__element {
+  border: 1px solid #f5f5f5;
+  box-shadow: inset 0.2rem 0.3rem 2rem rgba(42, 30, 56, 0.2);
+  display: flex;
+  border-radius: 15px;
+  flex-direction: column;
+  width: 15rem;
+  height: 50rem;
+  padding: 4rem 0 0 0;
+  margin-bottom: 1rem;
+  gap: 2rem;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  transition: all 0.3s;
+}
+.make-appointment__container__lower-side__employee-program__element:hover {
+  background-image: linear-gradient(#F3F5F3 20%, white);
+}
+.make-appointment__container__lower-side__employee-program__element:hover .make-appointment__container__lower-side__employee-program__element__hours .make-appointment__container__lower-side__employee-program__element__hours--hour {
+  border: 1px solid #d4d4d4;
+}
+.make-appointment__container__lower-side__employee-program__element__day {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 10rem;
+}
+.make-appointment__container__lower-side__employee-program__element__hours {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  height: 85%;
+  cursor: pointer;
+}
+.make-appointment__container__lower-side__employee-program__element__hours--hour {
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  width: 6rem;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 15px;
+  transition: all 0.2s;
+}
+.make-appointment__container__lower-side__employee-program__element__hours--hour--content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+}
+.make-appointment__container__lower-side__employee-program__element__hours--hour--content--active {
+  border: unset;
+  background-color: #6F2DBD;
+}
+.make-appointment__container__lower-side__employee-program__element__hours--hour:hover {
+  border: unset;
+  background-color: #6F2DBD;
+}
+
 .user-side {
   display: flex;
   flex-direction: row;
-}
-
-@keyframes moveInBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(3rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes moveInBottomModal {
-  0% {
-    opacity: 0;
-    transform: translate(50%, -30%);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(50%, -50%);
-  }
-}
-@keyframes moveToLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(10rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-@keyframes moveToRight {
-  0% {
-    opacity: 0;
-    transform: translate(-50rem) scale(0);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0) scale(1);
-  }
-}
-@keyframes moveToBottomPromo {
-  0% {
-    opacity: 0;
-    transform: translateX(-25rem) scale(0.1);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-  }
-}
-@keyframes moveToTopPromo {
-  0% {
-    opacity: 0;
-    transform: translateX(25rem) scale(0.1);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-  }
-}
-@keyframes bounceUp {
-  0% {
-    transform: scale(0.7);
-  }
-  25% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-.rewards-card__product-list {
-  width: 100%;
-  height: fit-content;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10rem;
-  padding-top: 5rem;
-  padding-bottom: 20rem;
-}
-.rewards-card__product-list-image {
-  background-size: cover;
-  background-position: center;
-  height: 100%;
-  width: 40%;
-  clip-path: polygon(0 0, 100% 0, 77% 100%, 0% 100%);
-}
-@media (max-width: 37em) {
-  .rewards-card__product-list-image {
-    width: 100%;
-    height: 60%;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 80%);
-  }
-}
-@media (max-width: 37em) {
-  .rewards-card__product-list-image {
-    width: 100%;
-    height: 60%;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 80%);
-  }
-}
-.rewards-card__product-list-image--color-red {
-  background-image: linear-gradient(0deg, rgba(42, 30, 56, 0.4), rgba(42, 30, 56, 0.1)), url("/images/hair-care-reward.jpg");
-}
-.rewards-card__product-list-image--color-green {
-  background-image: linear-gradient(0deg, rgba(42, 30, 56, 0.4), rgba(42, 30, 56, 0.1)), url("/images/hair-removal-reward.jpg");
-}
-.rewards-card__product-list-image--color-yellow {
-  background-image: linear-gradient(0deg, rgba(42, 30, 56, 0.4), rgba(42, 30, 56, 0.1)), url("/images/nails-care-reward.jpg");
-}
-.rewards-card__product-list-image--color-pink {
-  background-image: linear-gradient(0deg, rgba(42, 30, 56, 0.4), rgba(42, 30, 56, 0.1)), url("/images/makeup-services-reward.jpg");
-}
-.rewards-card__product-list-image--color-teal {
-  background-image: linear-gradient(0deg, rgba(42, 30, 56, 0.4), rgba(42, 30, 56, 0.1)), url("/images/facial-treatments-reward.jpg");
-}
-.rewards-card__product-list-image--color-light-purple {
-  background-image: linear-gradient(0deg, rgba(42, 30, 56, 0.4), rgba(42, 30, 56, 0.1)), url("/images/body-massage-reward.jpg");
-}
-.rewards-card__product-list-content {
-  overflow: hidden;
-  display: flex;
-  height: 50rem;
-  min-width: 70rem;
-  width: 100rem;
-  background-image: linear-gradient(to right, #6f2dbd 0%, #a663cc 55%, rgba(166, 99, 204, 0.5) 100%);
-  border-radius: 20px;
-  box-shadow: 1rem 1rem 2rem rgba(42, 30, 56, 0.3);
-  transition: all 0.4s;
-}
-@media (max-width: 75em) {
-  .rewards-card__product-list-content {
-    max-width: 50rem;
-  }
-}
-@media (max-width: 37em) {
-  .rewards-card__product-list-content {
-    background-image: linear-gradient(to bottom, #6f2dbd 0%, #a663cc 55%, rgba(166, 99, 204, 0.5) 100%);
-    flex-direction: column;
-    width: 90%;
-    min-width: unset;
-    height: 50rem;
-  }
-}
-@media (max-width: 37em) {
-  .rewards-card__product-list-content {
-    background-image: linear-gradient(to bottom, #6f2dbd 0%, #a663cc 55%, rgba(166, 99, 204, 0.5) 100%);
-    flex-direction: column;
-    width: 90%;
-    min-width: unset;
-    height: 50rem;
-  }
-}
-.rewards-card__product-list-content:hover {
-  transform: translateY(-1rem);
-  box-shadow: 2rem 2rem 4rem rgba(42, 30, 56, 0.3);
-}
-.rewards-card__product-list--no-rewards {
-  background-image: linear-gradient(to left, rgba(111, 45, 189, 0.8), rgba(166, 99, 204, 0.8));
-  -webkit-background-clip: text;
-  color: transparent;
-}
-.rewards-card__services-list {
-  width: 60%;
-  display: flex;
-  height: fit-content;
-  flex-direction: column;
-  padding: 5rem 3rem;
-}
-@media (max-width: 37em) {
-  .rewards-card__services-list {
-    width: 100%;
-    padding: unset;
-  }
-}
-@media (max-width: 37em) {
-  .rewards-card__services-list {
-    width: 100%;
-    padding: unset;
-  }
-}
-.rewards-card__services-list-header {
-  width: 100%;
-  height: 10rem;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-@media (max-width: 37em) {
-  .rewards-card__services-list-header {
-    justify-content: center;
-  }
-}
-@media (max-width: 37em) {
-  .rewards-card__services-list-header {
-    justify-content: center;
-  }
-}
-.rewards-card__services-list-content {
-  width: 100%;
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-@media (max-width: 37em) {
-  .rewards-card__services-list-content {
-    padding: 1rem 0.4rem 1rem 0;
-  }
-}
-@media (max-width: 37em) {
-  .rewards-card__services-list-content {
-    padding: 1rem 0.4rem 1rem 0;
-  }
-}
-.rewards-card__services-list-content-element {
-  height: 100%;
-  padding: 1rem 0;
-  width: 100%;
-  justify-content: space-around;
-  align-items: center;
-  display: flex;
-}
-@media (max-width: 37em) {
-  .rewards-card__services-list-content-element {
-    padding: unset;
-  }
-}
-@media (max-width: 37em) {
-  .rewards-card__services-list-content-element {
-    padding: unset;
-  }
-}
-.rewards-card__services-list-content--button {
-  transition: all 0.4s;
-}
-.rewards-card__services-list-content--button, .rewards-card__services-list-content--button:link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 1rem 1rem 2rem rgba(42, 30, 56, 0.3);
-  padding: 0;
-  cursor: pointer;
-  height: 5rem;
-  width: 12rem;
-  border-radius: 50px;
-  background-image: linear-gradient(45deg, rgba(0, 124, 119, 0.9), #52b69a);
-}
-@media (max-width: 37em) {
-  .rewards-card__services-list-content--button, .rewards-card__services-list-content--button:link {
-    height: 3rem;
-    width: 7rem;
-  }
-}
-@media (max-width: 37em) {
-  .rewards-card__services-list-content--button, .rewards-card__services-list-content--button:link {
-    height: 3rem;
-    width: 7rem;
-  }
-}
-.rewards-card__services-list-content--button:hover {
-  box-shadow: 2rem 2rem 4rem rgba(42, 30, 56, 0.3);
-  transform: translateY(-1rem);
-}
-.rewards-card__services-list-content--button:active {
-  transform: translateY(0);
-  box-shadow: 1rem 1rem 2rem rgba(42, 30, 56, 0.3);
 }
 
 @keyframes moveInBottom {
@@ -9439,6 +10494,13 @@
   font-size: 1.4rem;
 }
 
+.login-modal__wrap-back {
+  text-decoration: none;
+  font-size: 2.6rem;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 900;
+  color: #52b69a;
+}
 .login-modal__container--form {
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.7rem;
@@ -9834,6 +10896,78 @@
   text-transform: uppercase;
   color: #F3F5F3 !important;
   font-weight: 500;
+}
+
+.make-appointment {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.6rem;
+}
+.make-appointment__header--title {
+  text-transform: uppercase;
+  color: #6F2DBD;
+  font-size: 3.5rem;
+  font-weight: 900;
+}
+.make-appointment__header--sub-title {
+  color: rgba(166, 99, 204, 0.8);
+}
+.make-appointment__container {
+  color: rgba(42, 30, 56, 0.7);
+}
+.make-appointment__container__upper-side__form {
+  color: #6F2DBD;
+  font-weight: 700;
+}
+.make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__form__message--content {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__form__message--content::placeholder {
+  font-size: 1.4rem;
+}
+.make-appointment__container__upper-side__contact {
+  color: #F3F5F3;
+}
+.make-appointment__container__upper-side__contact--header--title {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+.make-appointment__container__lower-side__submit-button {
+  text-transform: uppercase;
+  color: #fff;
+}
+.make-appointment__container__lower-side__employee-program__element:hover .make-appointment__container__lower-side__employee-program__element__day {
+  color: #6F2DBD;
+}
+.make-appointment__container__lower-side__employee-program__element__day {
+  font-size: 1.8rem;
+}
+.make-appointment__container__lower-side__employee-program__element__day--day-number {
+  font-size: 3rem;
+  font-weight: 900;
+}
+.make-appointment__container__lower-side__employee-program__element__hours--hour--content--active {
+  color: #fff;
+}
+.make-appointment__container__lower-side__employee-program__element__hours--hour:hover {
+  color: #fff;
+}
+.make-appointment__container__lower-side__employee-info--identification--name {
+  font-size: 4rem;
+  font-weight: 700;
+  color: rgba(111, 45, 189, 0.8);
+}
+.make-appointment__container__lower-side__employee-info--identification--job-title {
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgba(111, 45, 189, 0.7);
 }
 
 .row {

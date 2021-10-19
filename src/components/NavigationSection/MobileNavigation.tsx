@@ -20,9 +20,6 @@ const MobileNavigation: FC = (): JSX.Element => {
 
   return (
     <>
-      <LoginModal showModal={showModal} toggleModal={() => {
-        setShowModal(prev => !prev)
-      }}/>
       <div className="wrap-navigation">
         <div className="btn-navigation"
              onClick={onClickNavigationHandler}>
@@ -39,14 +36,16 @@ const MobileNavigation: FC = (): JSX.Element => {
             {generateNavigationLinks(setNavigation)}
           </div>
           <div className="mobile-navigation__bottom">
-            <a
+            <Link
+               to="login"
               onClick={() => {
                 setNavigation('')
                 setShowModal(true)
               }}
+
               className="mobile-navigation__login-button ">
               Login
-            </a>
+            </Link>
           </div>
         </div>
       </div>

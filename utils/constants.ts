@@ -1,9 +1,10 @@
-import { IUserData } from "../shared/interfaces/user"
+import dayjs from "dayjs"
+import { IUser, IUserInfo } from "../shared/interfaces/user"
 import { setUserView } from "../src/actions";
 import { IFeature, ILandingInfo, IReview } from '../shared/interfaces/presentationPage'
 import { IUserViewAction } from "../shared/interfaces/userView";
-import { IAppointment, IReward, IPromotion } from "../shared/interfaces/userDashboard";
-import getToken from "./getToken"
+import { IAppointment, IReward, IPromotion, IEmployee } from "../shared/interfaces/userDashboard";
+import { rootReducer } from "../src/reducers"
 
 
 export interface Link {
@@ -39,7 +40,10 @@ interface IDefaultValues {
    PROMOTION: IPromotion
    REWARD: IReward
    APPOINTMENT: IAppointment
-   USER: IUserData
+   USER: IUser
+   USER_DATA: IUserInfo
+   EMPLOYEE: IEmployee,
+
 }
 
 export const otherPageLinks: Link[] = [
@@ -210,11 +214,19 @@ export const prices: Price[] = [
 
 ]
 
-export const services = [ 'Hair Care', 'Facial Treatments', 'Body Massage', 'Makeup' +
-' Services', 'Nails Care', 'Hair Removal' ]
+export const services = [ "Service", "Hair_Care", 'Facial_Treatments', 'Body_Massage', 'Makeup_Services', 'Nails_Care', 'Hair_Removal' ]
+
+export const subServices = {
+   Hair_Care : ["Subservice", 'Short hrhghghaircut', 'Long haircut', 'Medium haircut'],
+   Facial_Treatments : ["Subservice",'Short haircut', 'Long haircugert', 'Medium haircut'],
+   Body_Massage : ["Subservice", 'Short haircut', 'Long haircutgerg', 'Medium hgreaircut'],
+   Makeup_Services : ["Subservice", 'Short gregerhaircut', 'Long hgeraircut', 'Medium haircut'],
+   Nails_Care : ["Subservice", 'Short haircut', 'haircut', 'Medium haircut'],
+   Hair_Removal : ["Subservice", 'Short hagfdgircut', 'Long haircut', 'Medium haircut']
+}
 
 export enum tresStudioAPIRoutes {
-   root = 'http://localhost:3001',
+   root = 'http://localhost:3001/',
    landing = 'http://localhost:3001/landing',
    features = 'http://localhost:3001/features',
    reviews = 'http://localhost:3001/reviews',
@@ -222,7 +234,9 @@ export enum tresStudioAPIRoutes {
    rewards = 'http://localhost:3001/rewards',
    appointments = 'http://localhost:3001/appointments',
    login = 'http://localhost:3001/login',
-   signup = 'http://localhost:3001/signup'
+   signup = 'http://localhost:3001/signup',
+   user = 'http://localhost:3001/user',
+   getEmployees = 'http://localhost:3001/employees'
 }
 
 export enum Actions {
@@ -235,18 +249,16 @@ export enum Actions {
    REWARDS = 'REWARDS',
    VISITS = 'VISITS',
    LOGIN = 'LOGIN',
-   SIGNUP = 'SIGNUP',
    LOGIN_ERROR = 'LOGIN_ERROR',
-   SIGNUP_ERROR = 'SIGNUP_ERROR',
    LOGOUT =  'LOGOUT',
    TOGGLE_MENU = 'TOGGLE_MENU',
-   APPOINTMENTS = 'APPOINTMENTS'
+   APPOINTMENTS = 'APPOINTMENTS',
+   USER_INFO = 'USER_INFO',
+   FETCH_EMPLOYEES = 'FETCH_EMPLOYEES'
 }
 
 export const Headers = {
    contentTypeJsonHeader: { 'Content-Type': 'application/json' },
-   authorizationHeader : { authorization: `Bearer ${getToken()}` }
-
 }
 
 export const defaultValues: IDefaultValues = {
@@ -287,9 +299,20 @@ export const defaultValues: IDefaultValues = {
       status: 'No status'
    },
    USER: {
-      name: '',
+      firstName: '',
       token: '',
       userId: ''
+   },
+   USER_DATA: {
+      firstName: '',
+      rewardsPoints: 0,
+      promotionCode: ''
+   },
+   EMPLOYEE: {
+      firstName: '',
+      lastName: '',
+      jobTitle: '',
+      field: ''
    }
 }
 
@@ -318,6 +341,17 @@ export enum promoCardsColors {
 }
 
 export const weekDays = [ 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday' ]
+
+export const weekDaysShort = [ 'SUN', 'MON', 'TUE', 'WEN', 'THU', 'FRY', 'SAT' ]
+
+export enum ServicesDuration {
+   Hair_Care = 40,
+   Facial_Treatments = 30,
+   Hair_Removal = 90,
+   Nails_Care = 120,
+   Body_Massage = 60,
+   Makeup_Services = 90
+}
 
 export enum IconColor {
    DEFAULT = '#f4f4f4',

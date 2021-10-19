@@ -1,20 +1,21 @@
 import { Dispatch } from 'redux'
 
 import { getFeatures, getLandingInfo, getReviews } from "../../api/tresStudio/presentationPage";
-import { getAppointments, getPromotions, getRewards } from "../../api/tresStudio/userDashboard";
+import { getAppointments, getEmployees, getPromotions, getRewards } from "../../api/tresStudio/userDashboard";
 import { postLogin } from "../../api/tresStudio/authentication";
+import { getUserInfo } from "../../api/tresStudio/userSide"
 import { IFeature, ILandingInfo, IReview } from '../../shared/interfaces/presentationPage'
-import { IUserData } from "../../shared/interfaces/user"
-import { IAppointment, IReward, IPromotion } from "../../shared/interfaces/userDashboard";
+import { IUser, IUserInfo } from "../../shared/interfaces/user"
+import { IAppointment, IReward, IPromotion, IEmployee } from "../../shared/interfaces/userDashboard";
 import { IToggleSettingsMenu, IUserViewAction } from "../../shared/interfaces/userView";
 import { Action } from "../../shared/interfaces/api";
 import { Actions, defaultValues } from '../../utils/constants'
 
 
-type FetchActionType<T> = () => (dispatch: Dispatch<Action<T>>) => void
+type FetchActionType<T> = () => (dispatch: Dispatch<Action<T>>) => Promise<void>
 type ToggleSettingsMenu = (isOpen: boolean) => IToggleSettingsMenu
 type SetUserView = (view: string) => IUserViewAction
-type LogoutUser = () => Action<IUserData>
+type LogoutUser = () => Action<IUser>
 type LoginUser<T> = (email: string, password: string) => (dispatch: Dispatch<Action<T>>) => Promise<void>
 
 export const fetchLanding: FetchActionType<{ landingPhrase: string, landingButtonPhrase: string }> = () =>
@@ -79,8 +80,8 @@ export const toggleSettingsMenu: ToggleSettingsMenu = (isOpen: boolean): IToggle
    }
 }
 
-export const loginUser: LoginUser<IUserData> = (email: string, password: string) =>
-   async (dispatch: Dispatch<Action<IUserData>>): Promise<void> => {
+export const loginUser: LoginUser<IUser> = (email: string, password: string) =>
+   async (dispatch: Dispatch<Action<IUser>>): Promise<void> => {
       try {
          const user = await postLogin(email, password)
          user.status === 200 && dispatch({
@@ -96,9 +97,26 @@ export const loginUser: LoginUser<IUserData> = (email: string, password: string)
       }
    }
 
-export const logoutUser: LogoutUser = (): Action<IUserData> => {
+export const logoutUser: LogoutUser = (): Action<IUser> => {
    return {
       type: Actions.LOGOUT,
       payload: defaultValues.USER
    }
 }
+
+export const fetchUserInfo: FetchActionType<IUserInfo> = () =>
+   async (dispatch: Dispatch<Action<IUserInfo>>): Promise<void> => {
+      dispatch({
+         type: Actions.USER_INFO,
+         payload: await getUserInfo()
+      })
+   }
+
+
+export const fetchEmployees: FetchActionType<IEmployee[]> = () =>
+   async(dispatch: Dispatch<Action<IEmployee[]>>): Promise<void> => {
+    dispatch({
+       type: Actions.FETCH_EMPLOYEES,
+       payload: await getEmployees()
+    })
+   }

@@ -1,19 +1,20 @@
-import * as React from 'react'
-import { Dispatch, FC, SetStateAction, useState } from 'react'
+import React, { Dispatch, FC, SetStateAction, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux"
+import { IUser, IUserInfo } from "../../../shared/interfaces/user"
+import HomeIcon from "../Icons/HomeIcon"
 
 import SettingsIcon from '../Icons/SettingsIcon'
 import LogoutIcon from '../Icons/LogoutIcon'
 import LocationIcon from '../Icons/LocationIcon'
-import DiscountIcon from "../Icons/DiscountIcon";
-import RewardIcon from "../Icons/RewardIcon";
-import { RootState } from "../../reducers";
-import { logoutUser, toggleSettingsMenu } from "../../actions";
-import { userUpperTabs } from "../../../utils/constants";
-import { JSXArrayElements } from "../../../shared/types";
-import { IUserViewAction } from "../../../shared/interfaces/userView";
+import DiscountIcon from "../Icons/DiscountIcon"
+import RewardIcon from "../Icons/RewardIcon"
+import { RootState } from "../../reducers"
+import { fetchUserInfo, logoutUser, setUserView, toggleSettingsMenu } from "../../actions"
+import { Actions, userUpperTabs } from "../../../utils/constants"
+import { JSXArrayElements } from "../../../shared/types"
+import { IUserViewAction } from "../../../shared/interfaces/userView"
 
 
 type DispatchOnClick = (action: IUserViewAction | undefined, dispatch: Dispatch<IUserViewAction>) => void
@@ -23,10 +24,12 @@ const UserInfo: FC = (): JSX.Element => {
    const dispatch = useDispatch()
 
    const isMenuOpen: boolean = useSelector((state: RootState) => state.isMenuOpen)
-   const userName: string = useSelector((state: RootState) => state.isUserAuthenticated.name)
-
+   const userInfo: IUserInfo = useSelector((state: RootState) => state.userInfo)
    const openUserClassName = 'user-info__mobile--open'
 
+   useEffect(() => {
+      dispatch(fetchUserInfo())
+   }, [])
    return (
       <>
          <div className="user-info-wrap">
@@ -41,11 +44,17 @@ const UserInfo: FC = (): JSX.Element => {
                      <p className="user-info__header--name">
                         Hello,
                         <span className="user-info__header--name--firstname">
-                        &nbsp;{userName}!
+                        &nbsp;{userInfo.firstName}!
                      </span>
                      </p>
                   </div>
                   <div className="user-info__details">
+                     <Link className="user-info__details--detail" to={'/'}>
+                        <div className="user-info__details--detail--icon">
+                           <HomeIcon/>
+                        </div>
+                        <p className="user-info__details--detail--personal">Home</p>
+                     </Link>
                      {renderUserUpperTabs()}
                   </div>
                </div>
@@ -101,7 +110,11 @@ const dispatchOnClick: DispatchOnClick = (action: IUserViewAction | undefined, d
 
 const renderUserUpperTabs: JSXArrayElements = (): JSX.Element[] => {
    const dispatch = useDispatch()
-   const [ activeTab, setActiveTab ] = useState<SetStateAction<string>>('Discounts')
+   const [ activeTab, setActiveTab ] = useState<string>('Discounts')
+
+   useEffect(() => {
+      dispatchOnClick(setUserView(Actions.DISCOUNTS), dispatch)
+   }, [])
 
    return (userUpperTabs.map(({ title, action }, index: number) =>
       <div key={index}

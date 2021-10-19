@@ -22,7 +22,7 @@ const HeroSection: FC = (): JSX.Element => {
          <div className="hero-section__text-container">
             <h1 className="hero-section__title"> {landingPhrase} </h1>
             <div className="hero-section__button-wrap">
-               <a href="#" className="hero-section__button">
+               <a href="/appointment" className="hero-section__button">
                   {landingButtonPhrase}
                </a>
             </div>

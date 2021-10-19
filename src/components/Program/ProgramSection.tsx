@@ -1,5 +1,4 @@
-import * as React from 'react'
-import { FC } from 'react'
+import React, { FC } from 'react'
 import { JSXArrayElements } from '../../../shared/types'
 
 import { weekDays } from '../../../utils/constants'

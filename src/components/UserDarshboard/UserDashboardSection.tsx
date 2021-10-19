@@ -1,14 +1,13 @@
-import * as React from 'react'
-import { FC } from 'react'
+import React, { FC } from 'react'
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux"
 
 import PromotionSection from './PromotionsSection/PromotionSection'
 import RewardsSection from './RewardsSection/RewardsSection'
 import AppointmentsSection from './AppointmentsSection/AppointmentsSection'
-import { RootState } from "../../reducers";
+import { RootState } from "../../reducers"
 import { Actions } from '../../../utils/constants'
-import { toggleSettingsMenu } from "../../actions";
+import { toggleSettingsMenu } from "../../actions"
 
 
 type RenderUserView = (userView: string) => JSX.Element
@@ -16,17 +15,18 @@ type RenderUserView = (userView: string) => JSX.Element
 const { REWARDS, VISITS } = Actions
 
 const UserDashboardSection: FC = (): JSX.Element => {
+   const dispatch = useDispatch()
+
    const userView: string = useSelector((state: RootState) => state.userView)
    const isMenuOpen: boolean = useSelector((state: RootState) => state.isMenuOpen)
-   const dispatch = useDispatch()
 
    return (
       <div className="user-dashboard">
          <div className="user-dashboard__toggle-menu--wrap"
-         onClick={() => {
-            dispatch(toggleSettingsMenu(isMenuOpen))
-         }}>
-            <div className="user-dashboard__toggle-menu" />
+              onClick={() => {
+                 dispatch(toggleSettingsMenu(isMenuOpen))
+              }}>
+            <div className="user-dashboard__toggle-menu"/>
          </div>
          <div className="user-dashboard__mobile-menu--wrap">
             <div className="user-dashboard__mobile-menu">
@@ -41,11 +41,11 @@ const UserDashboardSection: FC = (): JSX.Element => {
 const renderUserView: RenderUserView = (userView: string): JSX.Element => {
    switch (userView) {
       case REWARDS:
-         return <RewardsSection />
+         return <RewardsSection/>
       case VISITS:
-         return <AppointmentsSection />
+         return <AppointmentsSection/>
       default:
-         return <PromotionSection />
+         return <PromotionSection/>
    }
 }
 

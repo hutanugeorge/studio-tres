@@ -253,50 +253,58 @@
     font-family: 'Nunito Sans', sans-serif
     font-size: 1.4rem
 
-.login-modal__container--form
-    font-family: 'Nunito Sans', sans-serif
-    font-size: 1.7rem
-    font-weight: 500
-    color: rgba($color-secondary, .9)
+.login-modal
+    &__wrap-back
+        text-decoration: none
+        font-size: 2.6rem
+        font-family: 'Nunito Sans', sans-serif
+        font-weight: 900
+        color: $color-secondary
 
-    @include respond($phone)
-        font-size: 1.5rem
-
-    &--title
-        font-size: 2.7rem
-        font-weight: 700
+    &__container--form
+        font-family: 'Nunito Sans', sans-serif
+        font-size: 1.7rem
+        font-weight: 500
+        color: rgba($color-secondary, .9)
 
         @include respond($phone)
-            font-size: 2rem
-
-
-    &--inputs
-
-        &--label
-            @include respond($tablet-portrait)
-                color: rgba($color-white-ghost, .7)
-
-                &--firstname, &--lastname
-                    color: rgba($color-black, .7)
-
-        &--button
-            font-size: 2rem
-
-            @include respond($phone)
-                font-size: 1.5rem
-
-            &--login
-                color: $color-white-ghost
-
-            &--signup
-                color: $color-secondary
-
-        &--input
             font-size: 1.5rem
-            font-weight: 200
+
+        &--title
+            font-size: 2.7rem
+            font-weight: 700
 
             @include respond($phone)
-                font-size: 1.2rem
+                font-size: 2rem
+
+
+        &--inputs
+
+            &--label
+                @include respond($tablet-portrait)
+                    color: rgba($color-white-ghost, .7)
+
+                    &--firstname, &--lastname
+                        color: rgba($color-black, .7)
+
+            &--button
+                font-size: 2rem
+
+                @include respond($phone)
+                    font-size: 1.5rem
+
+                &--login
+                    color: $color-white-ghost
+
+                &--signup
+                    color: $color-secondary
+
+            &--input
+                font-size: 1.5rem
+                font-weight: 200
+
+                @include respond($phone)
+                    font-size: 1.2rem
 
 .user-info
     color: $color-white-ghost
@@ -547,4 +555,87 @@
         text-transform: uppercase
         color: $color-white-ghost !important
         font-weight: 500
+
+.make-appointment
+    font-family: 'Nunito Sans', sans-serif
+    font-size: 1.6rem
+
+    &__header
+        &--title
+            text-transform: uppercase
+            color: $color-primary-dark
+            font-size: 3.5rem
+            font-weight: 900
+
+        &--sub-title
+            color: rgba($color-primary, .8)
+
+    &__container
+        color: rgba($color-black, .7)
+
+        &__upper-side
+            &__form
+                color: $color-primary-dark
+                font-weight: 700
+
+                &__upper-inputs, &__lower-inputs
+                    &--input
+                        font-size: 1.4rem
+
+                        &::placeholder
+                            font-size: 1.4rem
+
+                &__message--content
+                    font-size: 1.4rem
+
+                    &::placeholder
+                        font-size: 1.4rem
+
+
+            &__contact
+                color: $color-white-ghost
+
+                &--header
+                    &--title
+                        text-transform: uppercase
+                        font-size: 2.5rem
+                        font-weight: 900
+        &__lower-side
+            &__submit-button
+                text-transform: uppercase
+                color: #fff
+
+            &__employee-program__element
+                &:hover &__day
+                    color: $color-primary-dark
+
+                &__day
+                    font-size: 1.8rem
+
+                    &--day-number
+                        font-size: 3rem
+                        font-weight: 900
+
+                &__hours--hour
+
+                    &--content--active
+                        color: #fff
+
+                    &:hover
+                        color: #fff
+
+            &__employee-info
+                &--identification
+                    &--name
+                        font-size: 4rem
+                        font-weight: 700
+                        color: rgba($color-primary-dark, .8)
+
+                    &--job-title
+                        font-size: 2.2rem
+                        text-transform: uppercase
+                        font-weight: 500
+                        color: rgba($color-primary-dark, .7)
+
+
 

@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { IPromotion } from "../../../../shared/interfaces/userDashboard";
-import { promoCardsColors } from "../../../../utils/constants";
+import { IPromotion } from "../../../../shared/interfaces/userDashboard"
+import { promoCardsColors } from "../../../../utils/constants"
 
 
 type PromoCard = (props: IPromotion) => JSX.Element
@@ -43,7 +43,6 @@ const PromoCard: PromoCard = ({ title, saleType, amount }: IPromotion): JSX.Elem
          </div>
       </div>
    </>
-
 }
 
 

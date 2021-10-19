@@ -1,7 +1,10 @@
 import * as React from "react"
+import { useSelector } from "react-redux"
+import { IUserInfo } from "../../../../shared/interfaces/user"
 
 import { promoCardsColors } from "../../../../utils/constants"
 import { IReward, IRewardService } from "../../../../shared/interfaces/userDashboard";
+import { RootState } from "../../../reducers"
 
 
 type RewardService = (props: IReward) => JSX.Element
@@ -26,12 +29,19 @@ const RewardCard: RewardService = ({ title, services }: IReward): JSX.Element =>
    </>
 }
 
-const renderRewardServices: RenderRewardServices = (services: IRewardService[]): JSX.Element[] =>
-   services.map(({ title, points }: IRewardService, index: number): JSX.Element =>
-      <div className="rewards-card__services-list-content-element" key={index}>
-         <p className="rewards-card__services-list-content--title">{title}</p>
-         <p className="rewards-card__services-list-content--points"> {points} points </p>
-         <a className="rewards-card__services-list-content--button"> Take it </a>
-      </div>
+const renderRewardServices: RenderRewardServices = (services: IRewardService[]): JSX.Element[] => {
+   const { rewardsPoints }: IUserInfo = useSelector((state: RootState) => state.userInfo)
+   return services.map(({ title, points }: IRewardService, index: number): JSX.Element => {
+      console.log(points < rewardsPoints, points, rewardsPoints)
+      console.log()
+      return (
+         <div className="rewards-card__services-list-content-element" key={index}>
+            <p className="rewards-card__services-list-content--title">{title}</p>
+            <p className="rewards-card__services-list-content--points"> {points} points </p>
+            <a className={`rewards-card__services-list-content--button${rewardsPoints < Number(points) ? '--disable' : ''}`}> Take
+               it </a>
+         </div>)
+      }
    )
+}
 export default RewardCard
