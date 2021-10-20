@@ -62,20 +62,22 @@ const renderAppointmentsList = (appointmentType: string, appointments: IAppointm
 const renderAppointments = (appointmentType: string, appointments: IAppointment[]) =>
    appointments.map((appointment: IAppointment, index: number) =>
       appointment.status === appointmentType
-         ? <div key={index} className="appointment">
-            <div className="appointment__title">
-               <p className="appointment__title--content">{appointment.serviceTitle}</p>
-            </div>
-            <div className="appointment__employee">
-               <p className="appointment__employee--content">{appointment.employeeName}</p>
-            </div>
-            <div className="appointment__date">
-               <p className="appointment__date--content">{appointment.date}</p>
-            </div>
-            <div className="appointment__rate">
-               <a href="#" className="appointment__rate--content">Rate</a>
-            </div>
-         </div>
+         //TODO refactor appointment render to be in line with new Appointment structure
+         ? null
+         // <div key={index} className="appointment">
+         //    <div className="appointment__title">
+         //       <p className="appointment__title--content">{appointment.serviceTitle}</p>
+         //    </div>
+         //    <div className="appointment__employee">
+         //       <p className="appointment__employee--content">{appointment.employeeName}</p>
+         //    </div>
+         //    <div className="appointment__date">
+         //       <p className="appointment__date--content">{appointment.date}</p>
+         //    </div>
+         //    <div className="appointment__rate">
+         //       <a href="#" className="appointment__rate--content">Rate</a>
+         //    </div>
+         // </div>
          : null
    )
 

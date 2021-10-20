@@ -8,6 +8,6 @@ export interface IToggleSettingsMenu {
    payload: boolean
 }
 
-export interface IProps{
+export interface IIconProps {
    active: boolean
 }

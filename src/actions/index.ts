@@ -1,12 +1,12 @@
 import { Dispatch } from 'redux'
 
-import { getFeatures, getLandingInfo, getReviews } from "../../api/tresStudio/presentationPage";
-import { getAppointments, getEmployees, getPromotions, getRewards } from "../../api/tresStudio/userDashboard";
+import { getFeatures, getLandingInfo, getReviews, getEmployees } from "../../api/tresStudio/presentationPage";
+import { getAppointments, getPromotions, getRewards } from "../../api/tresStudio/userDashboard";
 import { postLogin } from "../../api/tresStudio/authentication";
 import { getUserInfo } from "../../api/tresStudio/userSide"
 import { IFeature, ILandingInfo, IReview } from '../../shared/interfaces/presentationPage'
 import { IUser, IUserInfo } from "../../shared/interfaces/user"
-import { IAppointment, IReward, IPromotion, IEmployee } from "../../shared/interfaces/userDashboard";
+import { IAppointment, IReward, IPromotion, IEmployee, ILoginUserArgs } from "../../shared/interfaces/userDashboard";
 import { IToggleSettingsMenu, IUserViewAction } from "../../shared/interfaces/userView";
 import { Action } from "../../shared/interfaces/api";
 import { Actions, defaultValues } from '../../utils/constants'
@@ -16,7 +16,7 @@ type FetchActionType<T> = () => (dispatch: Dispatch<Action<T>>) => Promise<void>
 type ToggleSettingsMenu = (isOpen: boolean) => IToggleSettingsMenu
 type SetUserView = (view: string) => IUserViewAction
 type LogoutUser = () => Action<IUser>
-type LoginUser<T> = (email: string, password: string) => (dispatch: Dispatch<Action<T>>) => Promise<void>
+type LoginUser<T> = (args: ILoginUserArgs) => (dispatch: Dispatch<Action<T>>) => Promise<void>
 
 export const fetchLanding: FetchActionType<{ landingPhrase: string, landingButtonPhrase: string }> = () =>
    async (dispatch: Dispatch<Action<ILandingInfo>>): Promise<void> => {
@@ -80,10 +80,10 @@ export const toggleSettingsMenu: ToggleSettingsMenu = (isOpen: boolean): IToggle
    }
 }
 
-export const loginUser: LoginUser<IUser> = (email: string, password: string) =>
+export const loginUser: LoginUser<IUser> = (args: ILoginUserArgs) =>
    async (dispatch: Dispatch<Action<IUser>>): Promise<void> => {
       try {
-         const user = await postLogin(email, password)
+         const user = await postLogin(args)
          user.status === 200 && dispatch({
             type: Actions.LOGIN,
             payload: user.data

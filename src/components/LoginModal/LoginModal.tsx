@@ -72,7 +72,7 @@ const LoginForm: FormComponent = ({ setForm }: IFormComponent): JSX.Element => {
             className="login-modal__container--form--inputs"
             onSubmit={(event: FormEvent<HTMLElement>): void => {
                event.preventDefault()
-               dispatch(loginUser(email, password))
+               dispatch(loginUser({ email, password }))
             }}>
             <input
                className={`login-modal__container--form--inputs--input login-modal__container--form--inputs--input${wrongCredentials === '--wrong-email' ? wrongCredentials : ''}`}
@@ -136,7 +136,7 @@ const SignupForm: FormComponent = ({ setForm }: IFormComponent): JSX.Element => 
             className="login-modal__container--form--inputs"
             onSubmit={async (event: FormEvent<HTMLElement>) => {
                event.preventDefault()
-               const { status, data } = await signupUser(firstName, lastName, email, password)
+               const { status, data } = await signupUser({ firstName, lastName, email, password })
                status === 405 && setFormMessage(data.message)
                status === 200 && setFormMessage(data.message) && setTimeout(() => setForm('login'), 2000)
             }}>

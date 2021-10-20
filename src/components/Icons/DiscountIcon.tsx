@@ -1,11 +1,11 @@
 import * as React from "react"
 
-import { IProps } from "../../../shared/interfaces/userView";
+import { IIconProps } from "../../../shared/interfaces/userView";
 import { Icon } from "../../../shared/types";
 import { IconColor } from "../../../utils/constants";
 
 
-const DiscountIcon: Icon = ({ active }: IProps): JSX.Element => {
+const DiscountIcon: Icon = ({ active }: IIconProps): JSX.Element => {
    const { ACTIVE, DEFAULT } = IconColor
    return (
       <svg className="user-info__details--detail--icon--content"

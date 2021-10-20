@@ -2,6 +2,7 @@ import dayjs from "dayjs"
 import React, { useEffect, useState } from "react"
 
 import { useDispatch, useSelector } from "react-redux"
+import { postAppointments } from "../../../api/tresStudio/makeAppointment"
 
 import { IEmployee, IEmployeeAppointment } from "../../../shared/interfaces/userDashboard"
 import { defaultValues, weekDaysShort } from "../../../utils/constants"
@@ -39,6 +40,7 @@ const MakeAppointment = (): JSX.Element => {
    const [ subService, setSubService ] = useState<string>('')
    const [ employee, setEmployee ] = useState<IEmployee>(defaultValues.EMPLOYEE)
    const [ appointmentsDates, setAppointmentsDates ] = useState<IEmployeeAppointment[] | undefined>(undefined)
+   const [appointmentServerMessage, setAppointmentServerMessage ] = useState<string>('')
 
    const scheduleDates = {
       firstName,
@@ -48,7 +50,7 @@ const MakeAppointment = (): JSX.Element => {
       message,
       mainService,
       subService,
-      employee,
+      employee: employee._id,
       hour: appointmentHour,
       day: appointmentDay
    }
@@ -144,7 +146,7 @@ const MakeAppointment = (): JSX.Element => {
                         const day = dayjs(new Date(newDate.setDate(date))).day()
                         const weekday = day % 7
                         let hasBusyHours = false;
-                        let busyWorkingHours: number | void | any[] = []
+                        let busyWorkingHours: number | (string | void)[]
                         getBusyHoursByDay(appointmentsDates).map((busyDay: (number | (string | void)[])[]) => {
                            hasBusyHours = busyDay.includes(date)
                            if (hasBusyHours)
@@ -195,12 +197,15 @@ const MakeAppointment = (): JSX.Element => {
                      })}
                   </div>
                   <div className="make-appointment__container__lower-side__submit-button">
-                     <p onClick={() => {
-                        //TODO call postMethod here
-                        console.log(scheduleDates)
+                     <p>{appointmentServerMessage}</p>
+                     <p onClick={async () => {
+                        const response = await postAppointments(scheduleDates)
+                        response.status === 200
+                        && setAppointmentServerMessage(`${response.data.userFirstName}, ${response.data.message}`)
                      }}
-                        className="make-appointment__container__lower-side__submit-button--content">Submit
-                        appointment</p>
+                        className="make-appointment__container__lower-side__submit-button--content">
+                        Submit appointment
+                     </p>
                   </div>
                </div>
             </div>

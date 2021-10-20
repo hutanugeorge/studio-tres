@@ -26,7 +26,3 @@ export const getAppointments: AxiosRequest<IAppointment[]> = async (): Promise<I
    return status === 200 ? data.appointments : [ defaultValues.APPOINTMENT ]
 }
 
-export const getEmployees: AxiosRequest<IEmployee[]> = async (): Promise<IEmployee[]> => {
-   const {status, data}: AxiosResponse = await axios.get(tresStudioAPIRoutes.getEmployees)
-   return status === 200 ? data.employees : [ defaultValues.EMPLOYEE]
-}

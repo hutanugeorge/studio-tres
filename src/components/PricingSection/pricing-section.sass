@@ -5,14 +5,14 @@
 .pricing-wrap
     background: url(../../../images/navigation-background-alternative.svg) top
     background-size: cover
-    
+
 .pricing-section
     z-index: 5
     padding-top: 5%
     scroll-behavior: smooth
     display: flex
     flex-direction: column
-    
+
     &__cards
         z-index: 50
         display: flex
@@ -20,7 +20,7 @@
         margin: 5rem auto
         max-width: 250rem
         flex-wrap: wrap
-        
+
     &__title-container
         background-image: linear-gradient(to left, rgba($color-primary-dark, .6), rgba($color-primary-light, .6))
         margin: 5rem 0 0 -2rem
@@ -31,15 +31,14 @@
         border-radius: 10px
         animation: moveToRight .6s ease-in .5s
         animation-fill-mode: backwards
-    
+
         @include respond($tablet-landscape)
             text-align: center
             max-width: 100%
             border-radius: 0
-            
+
         @include respond($phone)
             margin: 3rem 0 -4rem -2rem
             min-width: 50%
             max-width: 100%
             border-radius: 0
-            

@@ -309,6 +309,7 @@ export const defaultValues: IDefaultValues = {
       promotionCode: ''
    },
    EMPLOYEE: {
+      _id: '',
       firstName: '',
       lastName: '',
       jobTitle: '',

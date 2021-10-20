@@ -9800,7 +9800,6 @@
 }
 .make-appointment__container__upper-side__form__upper-inputs--input:focus, .make-appointment__container__upper-side__form__lower-inputs--input:focus {
   outline-color: transparent;
-  transform: translateY(-0.5rem);
   box-shadow: 0 2rem 2rem rgba(42, 30, 56, 0.1);
 }
 .make-appointment__container__upper-side__form__upper-inputs--input:focus::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input:focus::placeholder {

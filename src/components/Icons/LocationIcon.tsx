@@ -1,11 +1,11 @@
 import * as React from 'react'
 
-import { IProps } from "../../../shared/interfaces/userView";
+import { IIconProps } from "../../../shared/interfaces/userView";
 import { Icon } from "../../../shared/types";
 import { IconColor } from "../../../utils/constants";
 
 
-const LocationIcon: Icon = ({ active }: IProps): JSX.Element =>
+const LocationIcon: Icon = ({ active }: IIconProps): JSX.Element =>
   <svg className="user-info__details--detail--icon--content" fill={`${active ? IconColor.ACTIVE  : IconColor.DEFAULT}`}
        version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
        xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

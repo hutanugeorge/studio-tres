@@ -2,6 +2,7 @@ import axios, { AxiosResponse } from "axios"
 
 import { AxiosRequest } from "../../shared/interfaces/api"
 import { IFeature, ILandingInfo, IReview } from "../../shared/interfaces/presentationPage"
+import { IEmployee } from "../../shared/interfaces/userDashboard"
 import { defaultValues, tresStudioAPIRoutes } from "../../utils/constants"
 
 
@@ -18,4 +19,9 @@ export const getFeatures: AxiosRequest<IFeature[]> = async (): Promise<IFeature[
 export const getReviews: AxiosRequest<IReview[]> = async (): Promise<IReview[]> => {
    const { status, data }: AxiosResponse = await axios.get(tresStudioAPIRoutes.reviews)
    return status === 200 ? data.reviews : [ defaultValues.REVIEW ]
+}
+
+export const getEmployees: AxiosRequest<IEmployee[]> = async (): Promise<IEmployee[]> => {
+   const {status, data}: AxiosResponse = await axios.get(tresStudioAPIRoutes.getEmployees)
+   return status === 200 ? data.employees : [ defaultValues.EMPLOYEE]
 }

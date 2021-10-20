@@ -24,6 +24,7 @@ export interface IAppointment {
 }
 
 export interface IEmployee {
+   _id: string
    firstName: string
    lastName: string
    jobTitle: string
@@ -37,4 +38,16 @@ export type IEmployeeAppointment =  Pick<IAppointment, 'serviceTitle' | 'date' |
 interface IUnavailabilityPeriod {
    startDate: string
    endDate: string
+}
+
+export interface ILoginUserArgs {
+   email: string
+   password: string
+}
+
+export interface ISignupArgs {
+   firstName: string
+   lastName: string
+   email: string
+   password: string
 }
