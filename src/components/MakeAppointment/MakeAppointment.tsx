@@ -2,9 +2,15 @@ import dayjs from "dayjs"
 import React, { useEffect, useState } from "react"
 
 import { useDispatch, useSelector } from "react-redux"
+import { useHistory } from "react-router-dom"
 import { postAppointments } from "../../../api/tresStudio/makeAppointment"
 
-import { IEmployee, IEmployeeAppointment } from "../../../shared/interfaces/userDashboard"
+import {
+   IEmployee,
+   IEmployeeAppointment,
+   IEmployeeUnavailability,
+   IUnavailabilityPeriod
+} from "../../../shared/interfaces/userDashboard"
 import { defaultValues, weekDaysShort } from "../../../utils/constants"
 import { fetchEmployees } from "../../actions"
 import { RootState } from "../../reducers"
@@ -26,6 +32,7 @@ import {
 
 const MakeAppointment = (): JSX.Element => {
    const dispatch = useDispatch()
+   const history = useHistory()
 
    const employees: IEmployee[] = useSelector((state: RootState) => state.employees)
 
@@ -40,7 +47,8 @@ const MakeAppointment = (): JSX.Element => {
    const [ subService, setSubService ] = useState<string>('')
    const [ employee, setEmployee ] = useState<IEmployee>(defaultValues.EMPLOYEE)
    const [ appointmentsDates, setAppointmentsDates ] = useState<IEmployeeAppointment[] | undefined>(undefined)
-   const [appointmentServerMessage, setAppointmentServerMessage ] = useState<string>('')
+   const [ unavailability, setUnavailability ] = useState<IUnavailabilityPeriod[]>([ { startDate: '', endDate: '' } ])
+   const [ appointmentServerMessage, setAppointmentServerMessage ] = useState<string>('')
 
    const scheduleDates = {
       firstName,
@@ -100,6 +108,9 @@ const MakeAppointment = (): JSX.Element => {
                                          onClick={() => {
                                             setEmployee(employee)
                                             setAppointmentsDates(getEmployeeDayAppointments(employee.appointments))
+                                            if (employee.unavailability)
+                                               if (employee.unavailability.length)
+                                                  setUnavailability(employee.unavailability)
                                          }}>
                                        <img
                                           className="make-appointment__container__upper-side__form__employee-list--image--content"
@@ -142,12 +153,24 @@ const MakeAppointment = (): JSX.Element => {
                   </div>
                   <div className="make-appointment__container__lower-side__employee-program">
                      {getAWeekDatesByNow().map((date: number, index: number) => {
+                        const unavailableDays: string[] = []
+                        if (unavailability !== undefined)
+                           if (unavailability[0].startDate !== '') {
+                              unavailability.forEach((unavailabilityDate: IUnavailabilityPeriod) => {
+                                 const arrayStartDate = unavailabilityDate.startDate.split('/')
+                                 const arrayEndDate = unavailabilityDate.endDate.split('/')
+                                 const startDate = arrayStartDate[1] === String(dayjs().month() + 1) ? arrayStartDate[0] : []
+                                 const endDate = arrayEndDate[1] === String(dayjs().month() + 1) ? arrayEndDate[0] : []
+                                 if (typeof startDate === 'string') unavailableDays.push(startDate)
+                                 if (typeof endDate === 'string') unavailableDays.push(endDate)
+                              })
+                           }
                         const newDate = new Date()
                         const day = dayjs(new Date(newDate.setDate(date))).day()
                         const weekday = day % 7
                         let hasBusyHours = false;
                         let busyWorkingHours: number | (string | void)[]
-                        getBusyHoursByDay(appointmentsDates).map((busyDay: (number | (string | void)[])[]) => {
+                        getBusyHoursByDay(appointmentsDates, unavailableDays, employee.jobTitle).map((busyDay: (number | (string | void)[])[]) => {
                            hasBusyHours = busyDay.includes(date)
                            if (hasBusyHours)
                               busyWorkingHours = busyDay[1]
@@ -169,13 +192,16 @@ const MakeAppointment = (): JSX.Element => {
                            </div>
                            <div className="make-appointment__container__lower-side__employee-program__element__hours">
                               {getDailyProgram(getServiceDuration(employee.jobTitle)).map((dayProgram: string, index: number) => {
-                                    const hour = dayProgram.split(':')[0].length === 1 ? `0${dayProgram.split(':')[0]}` : dayProgram.split(':')[0]
-                                    const minute = dayProgram.split(':')[1].length === 1 ? `${dayProgram.split(':')[1]}0` : dayProgram.split(':')[1]
+                                    const hour = dayProgram.split(':')[0]
+                                    const minute = dayProgram.split(':')[1]
                                     let exactTime: {} | null | undefined | string;
                                     if (typeof busyWorkingHours !== "number") {
-                                       busyWorkingHours
-                                          ? exactTime = busyWorkingHours?.includes(`${hour}:${minute}`) ? '-' : `${hour}:${minute}`
-                                          : exactTime = `${hour}:${minute}`
+                                       if (busyWorkingHours) {
+                                          busyWorkingHours?.includes(`${hour}:${minute}`)
+                                             ? exactTime = '-'
+                                             : exactTime = `${hour}:${minute}`
+                                       } else
+                                          exactTime = `${hour}:${minute}`
                                     }
                                     return (
                                        <div key={index}
@@ -197,11 +223,13 @@ const MakeAppointment = (): JSX.Element => {
                      })}
                   </div>
                   <div className="make-appointment__container__lower-side__submit-button">
-                     <p>{appointmentServerMessage}</p>
+                     <p className="make-appointment__container__lower-side__submit-button--message">{appointmentServerMessage}</p>
                      <p onClick={async () => {
                         const response = await postAppointments(scheduleDates)
-                        response.status === 200
-                        && setAppointmentServerMessage(`${response.data.userFirstName}, ${response.data.message}`)
+                        if (response.status === 200) {
+                           setAppointmentServerMessage(`${response.data.userFirstName}, ${response.data.message}`)
+                           setTimeout(() => history.push('/'), 2000)
+                        }
                      }}
                         className="make-appointment__container__lower-side__submit-button--content">
                         Submit appointment

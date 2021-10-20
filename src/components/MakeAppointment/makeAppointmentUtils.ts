@@ -9,7 +9,10 @@ export const getDailyProgram = (duration: number, openHour: number = 9, openMinu
    let date = dayjs(`${today} ${openHour}:${openMinute}`)
    const hours: string[] = []
    while (closingTime.diff(date, 'minute') > duration) {
-      hours.push(`${dayjs(date).hour()}:${dayjs(date).minute()}`)
+      const hour = String(dayjs(date).hour()).length === 1 ? `0${dayjs(date).hour()}` :`${dayjs(date).hour()}`
+      const minute = String(dayjs(date).minute()).length === 1 ?  `${dayjs(date).minute()}0` :`${dayjs(date).minute()}`
+      hours.push(`${hour}:${minute}`)
+      console.log(`${hour}:${minute}`)
       date = dayjs(date).add(duration, 'minute')
    }
    return hours
@@ -20,9 +23,15 @@ export const getEmployeeDayAppointments = (appointments: IEmployeeAppointment[] 
       dayjs(new Date(appointment.date)).month() === dayjs().month() ? dayjs(new Date(appointment.date)).date() : null)
 }
 
-export const getBusyDays = (appointmentsDates: IEmployeeAppointment[] | undefined) =>
-   appointmentsDates?.map((appointment: IEmployeeAppointment) =>
-      dayjs(appointment.date).date())
+export const getBusyDays = (appointmentsDates: IEmployeeAppointment[] | undefined) => {
+   const busyDays: number[] = []
+   appointmentsDates?.map((appointment: IEmployeeAppointment) => {
+         if(!busyDays.includes(dayjs(appointment.date).date()))
+            busyDays.push(dayjs(appointment.date).date())
+      }
+   )
+   return busyDays
+}
 
 export const getAWeekDatesByNow = (): number[] => {
    const aWeekDates = []
@@ -34,14 +43,20 @@ export const getAWeekDatesByNow = (): number[] => {
    return aWeekDates
 }
 
-export const getBusyHoursByDay = (appointmentsDates: IEmployeeAppointment[] | undefined) => {
+export const getBusyHoursByDay = (appointmentsDates: IEmployeeAppointment[] | undefined, unavailabilityDates: string[], jobTitle: string) => {
    const days = getBusyDays(appointmentsDates)
    let hours: (string | void)[] = []
    const hoursByDay: (number | (string | void)[])[][] = []
+   unavailabilityDates.forEach((date) => {
+      hoursByDay.push([ Number(date), getDailyProgram(getServiceDuration(jobTitle)) ])
+   })
    days?.forEach((day: number) => {
-      appointmentsDates?.forEach((appointment: IEmployeeAppointment) =>
-         (dayjs(appointment.date).date() === day ? hours.push(`${appointment.hour}`) : null))
-      hoursByDay.push([ day, hours ])
+      appointmentsDates?.forEach((appointment: IEmployeeAppointment) => {
+         if (!unavailabilityDates.includes(String(day)))
+            dayjs(appointment.date).date() === day ? hours.push(`${appointment.hour}`) : null
+      })
+      if (!unavailabilityDates.includes(String(day)))
+         hoursByDay.push([ day, hours ])
       hours = []
    })
    return hoursByDay

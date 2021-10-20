@@ -35,7 +35,7 @@ export interface IEmployee {
 
 export type IEmployeeAppointment =  Pick<IAppointment, 'serviceTitle' | 'date' | 'hour'>
 
-interface IUnavailabilityPeriod {
+export interface IUnavailabilityPeriod {
    startDate: string
    endDate: string
 }
