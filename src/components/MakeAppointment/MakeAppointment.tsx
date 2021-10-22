@@ -4,16 +4,16 @@ import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router-dom"
 import { postAppointments } from "../../../api/tresStudio/makeAppointment"
+import { IUserInfo } from "../../../shared/interfaces/user"
 
-import {
-   IEmployee,
-   IEmployeeAppointment,
-   IEmployeeUnavailability,
-   IUnavailabilityPeriod
-} from "../../../shared/interfaces/userDashboard"
 import { defaultValues, weekDaysShort } from "../../../utils/constants"
 import { fetchEmployees } from "../../actions"
 import { RootState } from "../../reducers"
+import {
+   IEmployee,
+   IEmployeeAppointment,
+   IUnavailabilityPeriod
+} from "../../../shared/interfaces/userDashboard"
 import {
    renderMakeAppointmentHeader,
    renderMakeAppointmentUpperSideContact,
@@ -35,6 +35,7 @@ const MakeAppointment = (): JSX.Element => {
    const history = useHistory()
 
    const employees: IEmployee[] = useSelector((state: RootState) => state.employees)
+   const userInfo: IUserInfo = useSelector((state: RootState) => state.userInfo)
 
    const [ firstName, setFirsName ] = useState<string>('')
    const [ lastName, setLastName ] = useState<string>('')
@@ -49,23 +50,27 @@ const MakeAppointment = (): JSX.Element => {
    const [ appointmentsDates, setAppointmentsDates ] = useState<IEmployeeAppointment[] | undefined>(undefined)
    const [ unavailability, setUnavailability ] = useState<IUnavailabilityPeriod[]>([ { startDate: '', endDate: '' } ])
    const [ appointmentServerMessage, setAppointmentServerMessage ] = useState<string>('')
+   const [ isLoggedIn, setIsLoggedIn ] = useState<boolean>(false)
+
+   const token = localStorage.getItem('token')
 
    const scheduleDates = {
-      firstName,
-      lastName,
-      email,
+      firstName: isLoggedIn ? userInfo.firstName : firstName,
+      lastName: isLoggedIn ? userInfo.lastName : lastName,
+      email: isLoggedIn ? userInfo.email : email,
       phone,
       message,
-      mainService,
+      serviceTitle: mainService,
       subService,
+      employeeName: `${employee.firstName} ${employee.lastName}`,
       employee: employee._id,
       hour: appointmentHour,
       day: appointmentDay
    }
-   const inputsArgs = { setFirsName, setLastName, setEmail, setPhone }
-
+   const inputsArgs = { setFirsName, setLastName, setEmail, setPhone, isLoggedIn }
 
    useEffect(() => {
+      token && setIsLoggedIn((prev: boolean) => !prev)
       dispatch(fetchEmployees())
    }, [])
 
@@ -161,8 +166,8 @@ const MakeAppointment = (): JSX.Element => {
                                  const arrayEndDate = unavailabilityDate.endDate.split('/')
                                  const startDate = arrayStartDate[1] === String(dayjs().month() + 1) ? arrayStartDate[0] : []
                                  const endDate = arrayEndDate[1] === String(dayjs().month() + 1) ? arrayEndDate[0] : []
-                                 if (typeof startDate === 'string') unavailableDays.push(startDate)
-                                 if (typeof endDate === 'string') unavailableDays.push(endDate)
+                                 typeof startDate === 'string' && unavailableDays.push(startDate)
+                                 typeof endDate === 'string' && !endDate.includes(endDate) && unavailableDays.push(endDate)
                               })
                            }
                         const newDate = new Date()

@@ -13,12 +13,12 @@ const authenticationReducer: Reducer<IUser, Action<IUser>> = (state: IUser = def
          return { ...payload }
       case Actions.LOGOUT:
          localStorage.removeItem('token')
-         localStorage.setItem('userId', payload.userId)
+         localStorage.removeItem('userId')
          return { ...payload }
       case Actions.LOGIN_ERROR:
          return { ...payload }
       default:
-         return { ...state }
+         return state
    }
 }
 

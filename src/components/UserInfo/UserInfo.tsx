@@ -135,7 +135,7 @@ const renderIcon: RenderIcon = (title: string, active: boolean): JSX.Element => 
    switch (title) {
       case 'Rewards':
          return <RewardIcon active={active}/>
-      case 'Last visits':
+      case 'Appointments':
          return <LocationIcon active={active}/>
       default:
          return <DiscountIcon active={active}/>

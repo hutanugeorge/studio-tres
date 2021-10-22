@@ -851,14 +851,14 @@
 }
 
 .schedule-section {
-  scroll-behavior: smooth;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-behavior: smooth;
   flex-wrap: wrap;
   max-width: 120rem;
   padding: 3% 7rem 5% 7rem;
   gap: 10rem;
-  justify-content: center;
-  align-items: center;
 }
 @media (max-width: 56em) {
   .schedule-section {
@@ -885,12 +885,12 @@
   box-shadow: 0 2rem 4rem rgba(42, 30, 56, 0.4);
 }
 .schedule-card__title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 6rem;
-  display: flex;
   margin: 3rem auto;
-  justify-content: center;
-  align-items: center;
 }
 .schedule-card__hours {
   width: 100%;

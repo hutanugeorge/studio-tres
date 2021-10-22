@@ -1,6 +1,7 @@
 import React, { FC, useEffect } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
+import { Link } from "react-router-dom"
 import { ILandingInfo } from "../../../shared/interfaces/presentationPage"
 
 import { RootState } from '../../reducers'
@@ -22,9 +23,9 @@ const HeroSection: FC = (): JSX.Element => {
          <div className="hero-section__text-container">
             <h1 className="hero-section__title"> {landingPhrase} </h1>
             <div className="hero-section__button-wrap">
-               <a href="/appointment" className="hero-section__button">
+               <Link to="/appointment" className="hero-section__button">
                   {landingButtonPhrase}
-               </a>
+               </Link>
             </div>
          </div>
       </section>

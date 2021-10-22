@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from "axios"
 
 import { AxiosRequest } from "../../shared/interfaces/api"
-import { IAppointment, IEmployee, IPromotion, IReward } from "../../shared/interfaces/userDashboard"
+import { IAppointment, IPromotion, IReward } from "../../shared/interfaces/userDashboard"
 import { defaultValues, tresStudioAPIRoutes } from "../../utils/constants"
 
 

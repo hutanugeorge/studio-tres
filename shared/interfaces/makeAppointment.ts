@@ -1,10 +1,10 @@
-export interface IAppointment2 {
+export interface IAppointment {
    firstName: string
    lastName: string
    email: string
    phone: string
    message: string
-   mainService: string
+   serviceTitle: string
    subService: string
    employee: string
    hour: string

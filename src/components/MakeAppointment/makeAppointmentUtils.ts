@@ -12,7 +12,6 @@ export const getDailyProgram = (duration: number, openHour: number = 9, openMinu
       const hour = String(dayjs(date).hour()).length === 1 ? `0${dayjs(date).hour()}` :`${dayjs(date).hour()}`
       const minute = String(dayjs(date).minute()).length === 1 ?  `${dayjs(date).minute()}0` :`${dayjs(date).minute()}`
       hours.push(`${hour}:${minute}`)
-      console.log(`${hour}:${minute}`)
       date = dayjs(date).add(duration, 'minute')
    }
    return hours

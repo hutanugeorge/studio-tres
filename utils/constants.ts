@@ -293,10 +293,10 @@ export const defaultValues: IDefaultValues = {
       ]
    },
    APPOINTMENT: {
-      serviceTitle: 'No appointment',
+      subService: 'No appointment',
       employeeName: 'No employee',
       date: 'No date',
-      status: 'No status'
+      hour: 'No hour'
    },
    USER: {
       firstName: '',
@@ -305,8 +305,10 @@ export const defaultValues: IDefaultValues = {
    },
    USER_DATA: {
       firstName: '',
+      lastName: '',
       rewardsPoints: 0,
-      promotionCode: ''
+      promotionCode: '',
+      email: ''
    },
    EMPLOYEE: {
       _id: '',
@@ -327,7 +329,7 @@ export const userUpperTabs: IUpperTab[] = [
       action: setUserView(Actions.REWARDS)
    },
    {
-      title: 'Last visits',
+      title: 'Appointments',
       action: setUserView(Actions.VISITS)
    }
 ]

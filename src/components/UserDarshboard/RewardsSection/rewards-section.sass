@@ -43,12 +43,10 @@
             flex-direction: row-reverse
 
         &-points, &-code
+            @include displayFlexCenterCenter
             padding: 0 3rem
             width: fit-content
             height: 100%
-            display: flex
-            justify-content: center
-            align-items: center
 
             @include respond($tablet-landscape)
                 width: fit-content

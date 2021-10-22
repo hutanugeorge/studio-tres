@@ -1,9 +1,9 @@
 import axios from "axios"
-import { IAppointment2 } from "../../shared/interfaces/makeAppointment"
+import { IAppointment } from "../../shared/interfaces/makeAppointment"
 import { tresStudioAPIRoutes } from "../../utils/constants"
 
 
-export const postAppointments = async (args: IAppointment2) => {
+export const postAppointments = async (args: IAppointment) => {
    try {
       const appointmentData = { ...args }
       const token = localStorage.getItem('token')

@@ -7,6 +7,7 @@ export interface IInputsArgs {
    setLastName: Dispatch<SetStateAction<string>>
    setEmail: Dispatch<SetStateAction<string>>
    setPhone: Dispatch<SetStateAction<string>>
+   isLoggedIn: boolean
 }
 
 export const renderMakeAppointmentHeader = (): JSX.Element =>
@@ -73,11 +74,11 @@ export const renderMakeAppointmentUpperSideContact = () =>
 
 
 export const renderMakeAppointmentUpperSideFormInputs = (args: IInputsArgs) => {
-   const { setPhone, setEmail, setLastName, setFirsName } = args
+   const { setPhone, setEmail, setLastName, setFirsName, isLoggedIn } = args
    return (
       <>
          <div className="make-appointment__container__upper-side__form__upper-inputs">
-            <div className="make-appointment__container__upper-side__form__upper-inputs--group">
+            <div className={`make-appointment__container__upper-side__form__upper-inputs--group make-appointment__container__upper-side__form__upper-inputs--group${isLoggedIn ? '--hidden' : ''}`}>
                <input type="text"
                       onChange={(e) => {
                          setFirsName(e.currentTarget.value)
@@ -92,7 +93,7 @@ export const renderMakeAppointmentUpperSideFormInputs = (args: IInputsArgs) => {
                   </p>
                </label>
             </div>
-            <div className="make-appointment__container__upper-side__form__upper-inputs--group">
+            <div className={`make-appointment__container__upper-side__form__upper-inputs--group make-appointment__container__upper-side__form__upper-inputs--group${isLoggedIn ? '--hidden' : ''}`}>
                <input type="text" name="lastName" placeholder="Last Name"
                       onChange={(e) => {
                          setLastName(e.currentTarget.value)
@@ -107,7 +108,7 @@ export const renderMakeAppointmentUpperSideFormInputs = (args: IInputsArgs) => {
             </div>
          </div>
          <div className="make-appointment__container__upper-side__form__lower-inputs">
-            <div className="make-appointment__container__upper-side__form__lower-inputs--group">
+            <div className={`make-appointment__container__upper-side__form__lower-inputs--group make-appointment__container__upper-side__form__lower-inputs--group${isLoggedIn ? '--hidden' : ''}`}>
                <input type="email" name="email" placeholder="Email"
                       onChange={(e) => {
                          setEmail(e.currentTarget.value)

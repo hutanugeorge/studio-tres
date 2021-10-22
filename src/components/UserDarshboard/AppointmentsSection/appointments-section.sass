@@ -119,43 +119,15 @@
     display: flex
     height: 3rem
     width: 90%
+    justify-content: space-between
+    align-items: center
 
     @include respond($tablet-landscape)
         height: 4.5rem
 
-    &__title
-        width: 25%
-        height: fit-content
-
-        &--content
-            width: 100%
-            display: flex
-            justify-content: center
-
-    &__employee
-        width: 25%
-        height: fit-content
-
-        &--content
-            width: 100%
-            display: flex
-            justify-content: center
-
-    &__date
-        height: fit-content
-        width: 30%
-        display: flex
-        justify-content: center
-
-        &--content
-            width: 100%
-
     &__rate
+        @include displayFlexCenterCenter
         height: 4.5rem
-        width: 20%
-        display: flex
-        align-items: center
-        justify-content: center
 
         @include respond($phone)
             margin-left: 2rem

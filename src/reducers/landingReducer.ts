@@ -8,13 +8,13 @@ const { FETCH_HERO_SECTION } = Actions
 const { LANDING_INFO } = defaultValues
 
 const landingReducer: Reducer<ILandingInfo, Action<ILandingInfo>> = (state: ILandingInfo = LANDING_INFO, action: Action<ILandingInfo>): ILandingInfo => {
-  const {type, payload} = action
-  switch (type) {
-    case FETCH_HERO_SECTION:
-      return { ...state, landingPhrase: payload.landingPhrase, landingButtonPhrase: payload.landingButtonPhrase}
-    default:
-      return { ...state }
-  }
+   const { type, payload } = action
+   switch (type) {
+      case FETCH_HERO_SECTION:
+         return { ...state, landingPhrase: payload.landingPhrase, landingButtonPhrase: payload.landingButtonPhrase }
+      default:
+         return state
+   }
 }
 
 export default landingReducer

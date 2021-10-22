@@ -75,10 +75,8 @@
                 width: 6rem
 
         &--name
+            @include displayFlexCenterCenter
             opacity: 0
-            display: flex
-            align-items: center
-            justify-content: center
             width: 0
             height: 100%
 
@@ -135,6 +133,7 @@
             display: none
 
     &__mobile
+        @include displayFlexCenterCenter
         z-index: -1
         position: absolute
         top: 0
@@ -142,9 +141,6 @@
         left: 0
         right: 0
         height: 100vh
-        display: flex
-        justify-content: center
-        align-items: center
         background-color: rgba($color-black, .7)
         visibility: hidden
         opacity: 0
@@ -157,16 +153,14 @@
             opacity: 1
 
         &-settings
+            @include displayFlexCenterCenter
             background-image: linear-gradient(to top, rgba($color-primary-dark, .95), rgba($color-primary, .95))
             height: 20%
             min-height: 30rem
             width: 90%
             max-width: 36rem
             border-radius: 50px
-            display: flex
             flex-direction: column
-            justify-content: center
-            align-items: center
             gap: 5rem
             visibility: visible
             opacity: 1

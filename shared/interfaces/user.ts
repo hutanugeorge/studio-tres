@@ -6,6 +6,8 @@ export interface IUser {
 
 export interface IUserInfo {
    firstName: string
+   lastName: string
    rewardsPoints: number
    promotionCode: string
+   email: string
 }

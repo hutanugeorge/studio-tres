@@ -16,11 +16,10 @@ export interface IPromotion {
 }
 
 export interface IAppointment {
-   serviceTitle: string
+   subService: string
    employeeName: string
    date: string
-   status: string
-   hour?: string
+   hour: string
 }
 
 export interface IEmployee {
@@ -33,7 +32,7 @@ export interface IEmployee {
    appointments?: IEmployeeAppointment[]
 }
 
-export type IEmployeeAppointment =  Pick<IAppointment, 'serviceTitle' | 'date' | 'hour'>
+export type IEmployeeAppointment =  Pick<IAppointment, 'subService' | 'date' | 'hour'>
 
 export interface IUnavailabilityPeriod {
    startDate: string

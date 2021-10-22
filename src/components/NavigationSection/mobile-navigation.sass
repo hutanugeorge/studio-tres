@@ -27,7 +27,7 @@
     visibility: hidden
     opacity: 0
     align-items: center
-    
+
     
     &__login-button
         box-shadow: 0 1rem 2rem rgba($color-black, .4)
@@ -36,12 +36,10 @@
         background-image: linear-gradient(to bottom right, $color-secondary-dark, $color-secondary)
         
     &__bottom
+        @include displayFlexCenterCenter
         height: 15%
         position: relative
-        display: flex
-        justify-content: center
-        align-items: center
-        
+
         &-button
             position: absolute
             bottom: 30%
@@ -86,15 +84,13 @@
         opacity: 1
 
     &__header
+        @include displayFlexCenterCenter
         margin-top: 5rem
-        display: flex
         width: 100%
         gap: 1rem
         flex-direction: column
         height: 20%
-        justify-content: center
-        align-items: center
-        
+
         @include respond($phone)
             height: 15%
             

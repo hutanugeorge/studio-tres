@@ -2,14 +2,12 @@
 @import '../sharedStyles/utils/mixins'
 
 .feature-section
-    display: flex
+    @include displayFlexCenterCenter
     gap: 10rem
     height: fit-content
     margin: 0 auto
     padding-top: 10rem
     flex-wrap: wrap
-    justify-content: center
-    align-items: center
     max-width: 180rem
     
     &--wrap

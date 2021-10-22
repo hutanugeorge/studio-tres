@@ -7,7 +7,7 @@ const { DISCOUNTS, REWARDS, VISITS } = Actions
 const { USER_VIEW } = defaultValues
 
 const userViewReducer: Reducer<string, Action<string>> = (state: string = USER_VIEW, action: Action<string>): string => {
-   const {type, payload} = action
+   const { type, payload } = action
    switch (type) {
       case DISCOUNTS:
          return payload

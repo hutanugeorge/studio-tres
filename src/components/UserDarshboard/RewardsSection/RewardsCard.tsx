@@ -32,8 +32,6 @@ const RewardCard: RewardService = ({ title, services }: IReward): JSX.Element =>
 const renderRewardServices: RenderRewardServices = (services: IRewardService[]): JSX.Element[] => {
    const { rewardsPoints }: IUserInfo = useSelector((state: RootState) => state.userInfo)
    return services.map(({ title, points }: IRewardService, index: number): JSX.Element => {
-      console.log(points < rewardsPoints, points, rewardsPoints)
-      console.log()
       return (
          <div className="rewards-card__services-list-content-element" key={index}>
             <p className="rewards-card__services-list-content--title">{title}</p>
