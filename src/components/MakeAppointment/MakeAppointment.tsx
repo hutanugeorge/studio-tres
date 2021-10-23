@@ -4,10 +4,11 @@ import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router-dom"
 import { postAppointments } from "../../../api/tresStudio/makeAppointment"
+import { IFormError } from "../../../shared/interfaces/foms"
 import { IUserInfo } from "../../../shared/interfaces/user"
 
 import { defaultValues, weekDaysShort } from "../../../utils/constants"
-import { fetchEmployees } from "../../actions"
+import { fetchEmployees, fetchUserInfo } from "../../actions"
 import { RootState } from "../../reducers"
 import {
    IEmployee,
@@ -17,7 +18,6 @@ import {
 import {
    renderMakeAppointmentHeader,
    renderMakeAppointmentUpperSideContact,
-   renderMakeAppointmentUpperSideFormInputs,
    renderMakeAppointmentUpperSideFormMessage,
    renderServices,
    renderSubServices
@@ -51,9 +51,14 @@ const MakeAppointment = (): JSX.Element => {
    const [ unavailability, setUnavailability ] = useState<IUnavailabilityPeriod[]>([ { startDate: '', endDate: '' } ])
    const [ appointmentServerMessage, setAppointmentServerMessage ] = useState<string>('')
    const [ isLoggedIn, setIsLoggedIn ] = useState<boolean>(false)
+   const [ firstNameError, setFirstNameError ] = useState<string>('')
+   const [ lastNameError, setLastNameError ] = useState<string>('')
+   const [ emailError, setEmailError ] = useState<string>('')
+   const [ phoneError, setPhoneError ] = useState<string>('')
+   const [ serviceError, setServiceError ] = useState<string>('')
+   const [ subServiceError, setSubServiceError ] = useState<string>('')
 
    const token = localStorage.getItem('token')
-
    const scheduleDates = {
       firstName: isLoggedIn ? userInfo.firstName : firstName,
       lastName: isLoggedIn ? userInfo.lastName : lastName,
@@ -67,12 +72,12 @@ const MakeAppointment = (): JSX.Element => {
       hour: appointmentHour,
       day: appointmentDay
    }
-   const inputsArgs = { setFirsName, setLastName, setEmail, setPhone, isLoggedIn }
 
    useEffect(() => {
       token && setIsLoggedIn((prev: boolean) => !prev)
       dispatch(fetchEmployees())
-   }, [])
+      isLoggedIn && dispatch(fetchUserInfo())
+   }, [ firstNameError ])
 
    return (
       <div className="make-appointment--wrap">
@@ -84,24 +89,104 @@ const MakeAppointment = (): JSX.Element => {
                <div className="make-appointment__container__upper-side">
                   {renderMakeAppointmentUpperSideContact()}
                   <div className="make-appointment__container__upper-side__form">
-                     {renderMakeAppointmentUpperSideFormInputs(inputsArgs)}
+                     <div className="make-appointment__container__upper-side__form__upper-inputs">
+                        <div
+                           className={`make-appointment__container__upper-side__form__upper-inputs--group 
+                           make-appointment__container__upper-side__form__upper-inputs--group${isLoggedIn ? '--hidden' : ''}`}>
+                           <input type="text"
+                                  onChange={(e) => {
+                                     setFirsName(e.currentTarget.value)
+                                  }}
+                                  name="firstName"
+                                  placeholder="First Name"
+                                  className={`make-appointment__container__upper-side__form__upper-inputs--input 
+                                  make-appointment__container__upper-side__form__upper-inputs--input${firstNameError ? '--error' : ''}`}/>
+                           <label htmlFor="firstName"
+                                  className={`make-appointment__container__upper-side__form__upper-inputs--input--label${firstNameError ? '--error' : ''}`}>
+                              <p className="make-appointment__container__upper-side__form__upper-inputs--input--label--content">
+                                 {firstNameError ? firstNameError : 'First name'}
+                              </p>
+                           </label>
+                        </div>
+                        <div
+                           className={`make-appointment__container__upper-side__form__upper-inputs--group make-appointment__container__upper-side__form__upper-inputs--group${isLoggedIn ? '--hidden' : ''}`}>
+                           <input type="text" name="lastName" placeholder="Last Name"
+                                  onChange={(e) => {
+                                     setLastName(e.currentTarget.value)
+                                  }}
+                                  className={`make-appointment__container__upper-side__form__upper-inputs--input 
+                                  make-appointment__container__upper-side__form__upper-inputs--input${lastNameError ? '--error' : ''}`}/>
+                           <label htmlFor="lastName"
+                                  className={`make-appointment__container__upper-side__form__upper-inputs--input--label${lastNameError ? '--error' : ''}`}>
+                              <p className="make-appointment__container__upper-side__form__upper-inputs--input--label--content">
+                                 {lastNameError ? lastNameError : 'Last name'}
+                              </p>
+                           </label>
+                        </div>
+                     </div>
+                     <div className="make-appointment__container__upper-side__form__lower-inputs">
+                        <div
+                           className={`make-appointment__container__upper-side__form__lower-inputs--group make-appointment__container__upper-side__form__lower-inputs--group${isLoggedIn ? '--hidden' : ''}`}>
+                           <input type="email" name="email" placeholder="Email"
+                                  onChange={(e) => {
+                                     setEmail(e.currentTarget.value)
+                                  }}
+                                  className={`make-appointment__container__upper-side__form__upper-inputs--input 
+                                  make-appointment__container__upper-side__form__upper-inputs--input${emailError ? '--error' : ''}`}/>
+                           <label htmlFor="email"
+                                  className={`make-appointment__container__upper-side__form__lower-inputs--input--label${emailError ? '--error' : ''}`}>
+                              <p className="make-appointment__container__upper-side__form__lower-inputs--input--label--content">
+                                 {emailError ? emailError : 'Email'}
+                              </p>
+                           </label>
+                        </div>
+                        <div className="make-appointment__container__upper-side__form__lower-inputs--group">
+                           <input type="tel" name="phone" placeholder="Phone"
+                                  onChange={(e) => {
+                                     setPhone(e.currentTarget.value)
+                                  }}
+                                  className={`make-appointment__container__upper-side__form__upper-inputs--input 
+                                  make-appointment__container__upper-side__form__upper-inputs--input${phoneError ? '--error' : ''}`}/>
+                           <label htmlFor="phone"
+                                  className={`make-appointment__container__upper-side__form__lower-inputs--input--label${phoneError ? '--error': ''}`}>
+                              <p className="make-appointment__container__upper-side__form__lower-inputs--input--label--content">
+                                 {phoneError ? phoneError : 'Phone'}
+                              </p>
+                           </label>
+                        </div>
+                     </div>
                      <div className="make-appointment__container__upper-side__form__employee">
                         <div className="make-appointment__container__upper-side__form__employee-services">
-                           <select id="services"
-                                   onChange={(e) => {
-                                      setMainService(e.currentTarget.value)
-                                      setEmployee(defaultValues.EMPLOYEE)
-                                   }}
-                                   className="make-appointment__container__upper-side__form__lower-inputs--input">
-                              {renderServices()}
-                           </select>
-                           <select id="services"
-                                   onChange={(e) => {
-                                      e.currentTarget.value !== 'Subservice' ? setSubService(e.currentTarget.value) : null
-                                   }}
-                                   className={`make-appointment__container__upper-side__form__lower-inputs--input${mainService === 'Service' ? '--hidden' : ''}`}>
-                              {renderSubServices(mainService)}
-                           </select>
+                           <div className="make-appointment__container__upper-side__form__employee-services--group">
+                              <select id="services"
+                                      onChange={(e) => {
+                                         setMainService(e.currentTarget.value)
+                                         setEmployee(defaultValues.EMPLOYEE)
+                                      }}
+                                      className={`make-appointment__container__upper-side__form__lower-inputs--input 
+                                      make-appointment__container__upper-side__form__lower-inputs--input${serviceError ? '--error' : ''}`}>
+                                 {renderServices()}
+                              </select>
+                              <input type="hidden" name="services" value={mainService}/>
+                              <p className={`make-appointment__container__upper-side__form--error`}>
+                                 {serviceError ? serviceError : null}
+                              </p>
+                           </div>
+                           <div className="make-appointment__container__upper-side__form__employee-services--group">
+                              <select id="subServices"
+                                      onChange={(e) => {
+                                         e.currentTarget.value !== 'Sub Service' ? setSubService(e.currentTarget.value) : ''
+                                      }}
+                                      className={`make-appointment__container__upper-side__form__lower-inputs--input${mainService === 'Service' ? '--hidden' : ''} 
+                                      make-appointment__container__upper-side__form__lower-inputs--input${mainService === 'Service' ? '--hidden' : ''}${subServiceError ? '--error' : ''}`}>
+                                 {renderSubServices(mainService)}
+                              </select>
+                              <input type="hidden" name="subService"
+                                     value={`${subService.split(' ')[0]}_${subService.split(' ')[1]}`}/>
+                              <p className={`make-appointment__container__upper-side__form--error`}>
+                                 {subServiceError ? subServiceError : null}
+                              </p>
+                           </div>
                         </div>
                         <div className="make-appointment__container__upper-side__form__employee-list">
                            {employees.map((employee: IEmployee, index: number) => {
@@ -113,9 +198,7 @@ const MakeAppointment = (): JSX.Element => {
                                          onClick={() => {
                                             setEmployee(employee)
                                             setAppointmentsDates(getEmployeeDayAppointments(employee.appointments))
-                                            if (employee.unavailability)
-                                               if (employee.unavailability.length)
-                                                  setUnavailability(employee.unavailability)
+                                            employee.unavailability && employee.unavailability.length && setUnavailability(employee.unavailability)
                                          }}>
                                        <img
                                           className="make-appointment__container__upper-side__form__employee-list--image--content"
@@ -134,7 +217,8 @@ const MakeAppointment = (): JSX.Element => {
                   </div>
                </div>
                <div
-                  className={`make-appointment__container__lower-side ${employee.jobTitle === '' || mainService === 'Service' ? 'make-appointment__container__lower-side--hidden' : ''}`}>
+                  className={`make-appointment__container__lower-side 
+                  ${employee.jobTitle === '' || mainService === 'Service' ? 'make-appointment__container__lower-side--hidden' : ''}`}>
                   <div className="make-appointment__container__lower-side__employee-info">
                      <div className="make-appointment__container__lower-side__employee-info--photo">
                         <img
@@ -159,17 +243,16 @@ const MakeAppointment = (): JSX.Element => {
                   <div className="make-appointment__container__lower-side__employee-program">
                      {getAWeekDatesByNow().map((date: number, index: number) => {
                         const unavailableDays: string[] = []
-                        if (unavailability !== undefined)
-                           if (unavailability[0].startDate !== '') {
-                              unavailability.forEach((unavailabilityDate: IUnavailabilityPeriod) => {
-                                 const arrayStartDate = unavailabilityDate.startDate.split('/')
-                                 const arrayEndDate = unavailabilityDate.endDate.split('/')
-                                 const startDate = arrayStartDate[1] === String(dayjs().month() + 1) ? arrayStartDate[0] : []
-                                 const endDate = arrayEndDate[1] === String(dayjs().month() + 1) ? arrayEndDate[0] : []
-                                 typeof startDate === 'string' && unavailableDays.push(startDate)
-                                 typeof endDate === 'string' && !endDate.includes(endDate) && unavailableDays.push(endDate)
-                              })
-                           }
+                        if (unavailability !== undefined && unavailability[0].startDate !== '') {
+                           unavailability.forEach((unavailabilityDate: IUnavailabilityPeriod) => {
+                              const arrayStartDate = unavailabilityDate.startDate.split('/')
+                              const arrayEndDate = unavailabilityDate.endDate.split('/')
+                              const startDate = arrayStartDate[1] === String(dayjs().month() + 1) ? arrayStartDate[0] : []
+                              const endDate = arrayEndDate[1] === String(dayjs().month() + 1) ? arrayEndDate[0] : []
+                              typeof startDate === 'string' && unavailableDays.push(startDate)
+                              typeof endDate === 'string' && !endDate.includes(endDate) && unavailableDays.push(endDate)
+                           })
+                        }
                         const newDate = new Date()
                         const day = dayjs(new Date(newDate.setDate(date))).day()
                         const weekday = day % 7
@@ -234,8 +317,17 @@ const MakeAppointment = (): JSX.Element => {
                         if (response.status === 200) {
                            setAppointmentServerMessage(`${response.data.userFirstName}, ${response.data.message}`)
                            setTimeout(() => history.push('/'), 2000)
+                        } else if (response.status === 403) {
+                           const { errors } = response.data
+                           errors?.firstName ? setFirstNameError(errors.firstName) : setFirstNameError('')
+                           errors?.lastName ? setLastNameError(errors.lastName) : setLastNameError('')
+                           errors?.email ? setEmailError(errors.email) : setEmailError('')
+                           errors?.phone ? setPhoneError(errors.phone) : setPhoneError('')
+                           errors?.service ? setServiceError(errors.service) : setServiceError('')
+                           errors?.subService ? setSubServiceError(errors.subService) : setSubServiceError('')
                         }
-                     }}
+                     }
+                     }
                         className="make-appointment__container__lower-side__submit-button--content">
                         Submit appointment
                      </p>

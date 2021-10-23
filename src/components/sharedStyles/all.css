@@ -9734,6 +9734,12 @@
   padding-left: 3rem;
   gap: 3rem;
 }
+.make-appointment__container__upper-side__form--error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
 .make-appointment__container__upper-side__form__employee {
   display: flex;
   gap: 2rem;
@@ -9773,6 +9779,14 @@
 .make-appointment__container__upper-side__form__upper-inputs--input--hidden, .make-appointment__container__upper-side__form__lower-inputs--input--hidden {
   display: none;
 }
+.make-appointment__container__upper-side__form__upper-inputs--input--hidden--error, .make-appointment__container__upper-side__form__lower-inputs--input--hidden--error {
+  border: 1px solid red;
+  height: fit-content;
+}
+.make-appointment__container__upper-side__form__upper-inputs--input--error, .make-appointment__container__upper-side__form__lower-inputs--input--error {
+  border: 1px solid red;
+  height: fit-content;
+}
 .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
   text-align: center;
 }
@@ -9799,8 +9813,16 @@
   width: 100%;
   visibility: hidden;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   transform: translateY(-3rem);
+}
+.make-appointment__container__upper-side__form__upper-inputs--input--label--error, .make-appointment__container__upper-side__form__lower-inputs--input--label--error {
+  transform: translateY(0rem);
+  z-index: 1;
+  opacity: 1;
+  height: unset;
+  visibility: visible;
 }
 .make-appointment__container__upper-side__form__upper-inputs--input--label--content, .make-appointment__container__upper-side__form__lower-inputs--input--label--content {
   display: flex;
@@ -9911,13 +9933,13 @@
   padding-top: 2rem;
   width: 95%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
 }
 .make-appointment__container__lower-side__submit-button--message {
   display: flex;
   align-items: center;
-  width: 30%;
+  width: 40%;
   height: 100%;
   margin-right: 2rem;
   text-transform: unset !important;

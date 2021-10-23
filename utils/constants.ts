@@ -1,4 +1,5 @@
 import dayjs from "dayjs"
+import { IFormError } from "../shared/interfaces/foms"
 import { IUser, IUserInfo } from "../shared/interfaces/user"
 import { setUserView } from "../src/actions";
 import { IFeature, ILandingInfo, IReview } from '../shared/interfaces/presentationPage'
@@ -42,7 +43,8 @@ interface IDefaultValues {
    APPOINTMENT: IAppointment
    USER: IUser
    USER_DATA: IUserInfo
-   EMPLOYEE: IEmployee,
+   EMPLOYEE: IEmployee
+   FORM_ERRORS: IFormError
 
 }
 
@@ -217,16 +219,15 @@ export const prices: Price[] = [
 export const services = [ "Service", "Hair_Care", 'Facial_Treatments', 'Body_Massage', 'Makeup_Services', 'Nails_Care', 'Hair_Removal' ]
 
 export const subServices = {
-   Hair_Care : ["Subservice", 'Short hrhghghaircut', 'Long haircut', 'Medium haircut'],
-   Facial_Treatments : ["Subservice",'Short haircut', 'Long haircugert', 'Medium haircut'],
-   Body_Massage : ["Subservice", 'Short haircut', 'Long haircutgerg', 'Medium hgreaircut'],
-   Makeup_Services : ["Subservice", 'Short gregerhaircut', 'Long hgeraircut', 'Medium haircut'],
-   Nails_Care : ["Subservice", 'Short haircut', 'haircut', 'Medium haircut'],
-   Hair_Removal : ["Subservice", 'Short hagfdgircut', 'Long haircut', 'Medium haircut']
+   Hair_Care : ["Sub Service", 'Short haircut', 'Long haircut', 'Medium haircut'],
+   Facial_Treatments : ["Sub Service",'Short haircut', 'Long haircut', 'Medium haircut'],
+   Body_Massage : ["Sub Service", 'Short haircut', 'Long haircut', 'Medium haircut'],
+   Makeup_Services : ["Sub Service", 'Short haircut', 'Long haircut', 'Medium haircut'],
+   Nails_Care : ["Sub Service", 'Short haircut', 'haircut', 'Medium haircut'],
+   Hair_Removal : ["Sub Service", 'Short haircut', 'Long haircut', 'Medium haircut']
 }
 
 export enum tresStudioAPIRoutes {
-   root = 'http://localhost:3001/',
    landing = 'http://localhost:3001/landing',
    features = 'http://localhost:3001/features',
    reviews = 'http://localhost:3001/reviews',
@@ -254,7 +255,8 @@ export enum Actions {
    TOGGLE_MENU = 'TOGGLE_MENU',
    APPOINTMENTS = 'APPOINTMENTS',
    USER_INFO = 'USER_INFO',
-   FETCH_EMPLOYEES = 'FETCH_EMPLOYEES'
+   FETCH_EMPLOYEES = 'FETCH_EMPLOYEES',
+   FORM_ERRORS = 'FORM_ERRORS'
 }
 
 export const Headers = {
@@ -316,6 +318,12 @@ export const defaultValues: IDefaultValues = {
       lastName: '',
       jobTitle: '',
       field: ''
+   },
+   FORM_ERRORS: {
+      location: '',
+      msg: '',
+      param: '',
+      value: ''
    }
 }
 

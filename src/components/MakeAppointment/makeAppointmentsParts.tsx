@@ -1,14 +1,8 @@
-import React, { Dispatch, SetStateAction } from "react"
+import React, { Dispatch, SetStateAction, useEffect } from "react"
+import { useSelector } from "react-redux"
 import { services, subServices } from "../../../utils/constants"
+import { RootState } from "../../reducers"
 
-
-export interface IInputsArgs {
-   setFirsName: Dispatch<SetStateAction<string>>
-   setLastName: Dispatch<SetStateAction<string>>
-   setEmail: Dispatch<SetStateAction<string>>
-   setPhone: Dispatch<SetStateAction<string>>
-   isLoggedIn: boolean
-}
 
 export const renderMakeAppointmentHeader = (): JSX.Element =>
    <>
@@ -71,72 +65,6 @@ export const renderMakeAppointmentUpperSideContact = () =>
          <div className="make-appointment__container__upper-side__contact--links--content">T</div>
       </div>
    </div>
-
-
-export const renderMakeAppointmentUpperSideFormInputs = (args: IInputsArgs) => {
-   const { setPhone, setEmail, setLastName, setFirsName, isLoggedIn } = args
-   return (
-      <>
-         <div className="make-appointment__container__upper-side__form__upper-inputs">
-            <div className={`make-appointment__container__upper-side__form__upper-inputs--group make-appointment__container__upper-side__form__upper-inputs--group${isLoggedIn ? '--hidden' : ''}`}>
-               <input type="text"
-                      onChange={(e) => {
-                         setFirsName(e.currentTarget.value)
-                      }}
-                      name="firstName"
-                      placeholder="First Name"
-                      className="make-appointment__container__upper-side__form__upper-inputs--input"/>
-               <label htmlFor="firstName"
-                      className="make-appointment__container__upper-side__form__upper-inputs--input--label">
-                  <p className="make-appointment__container__upper-side__form__upper-inputs--input--label--content">
-                     First name
-                  </p>
-               </label>
-            </div>
-            <div className={`make-appointment__container__upper-side__form__upper-inputs--group make-appointment__container__upper-side__form__upper-inputs--group${isLoggedIn ? '--hidden' : ''}`}>
-               <input type="text" name="lastName" placeholder="Last Name"
-                      onChange={(e) => {
-                         setLastName(e.currentTarget.value)
-                      }}
-                      className="make-appointment__container__upper-side__form__upper-inputs--input"/>
-               <label htmlFor="lastName"
-                      className="make-appointment__container__upper-side__form__upper-inputs--input--label">
-                  <p className="make-appointment__container__upper-side__form__upper-inputs--input--label--content">
-                     Last name
-                  </p>
-               </label>
-            </div>
-         </div>
-         <div className="make-appointment__container__upper-side__form__lower-inputs">
-            <div className={`make-appointment__container__upper-side__form__lower-inputs--group make-appointment__container__upper-side__form__lower-inputs--group${isLoggedIn ? '--hidden' : ''}`}>
-               <input type="email" name="email" placeholder="Email"
-                      onChange={(e) => {
-                         setEmail(e.currentTarget.value)
-                      }}
-                      className="make-appointment__container__upper-side__form__lower-inputs--input"/>
-               <label htmlFor="email"
-                      className="make-appointment__container__upper-side__form__lower-inputs--input--label">
-                  <p className="make-appointment__container__upper-side__form__lower-inputs--input--label--content">
-                     Email
-                  </p>
-               </label>
-            </div>
-            <div className="make-appointment__container__upper-side__form__lower-inputs--group">
-               <input type="tel" name="phone" placeholder="Phone"
-                      onChange={(e) => {
-                         setPhone(e.currentTarget.value)
-                      }}
-                      className="make-appointment__container__upper-side__form__lower-inputs--input"/>
-               <label htmlFor="phone"
-                      className="make-appointment__container__upper-side__form__lower-inputs--input--label">
-                  <p className="make-appointment__container__upper-side__form__lower-inputs--input--label--content">
-                     Phone
-                  </p>
-               </label>
-            </div>
-         </div>
-      </>)
-}
 
 export const renderMakeAppointmentUpperSideFormMessage = (setMessage: Dispatch<SetStateAction<string>>) =>
    <>

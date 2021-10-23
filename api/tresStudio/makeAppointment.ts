@@ -10,6 +10,7 @@ export const postAppointments = async (args: IAppointment) => {
       const headers = { authorization: `Bearer ${token}` }
       return await axios.post(tresStudioAPIRoutes.appointments, appointmentData, { headers })
    } catch (error: any) {
+      console.log(error)
       return error.response
    }
 }

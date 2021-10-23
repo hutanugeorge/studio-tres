@@ -4,6 +4,7 @@ import { getFeatures, getLandingInfo, getReviews, getEmployees } from "../../api
 import { getAppointments, getPromotions, getRewards } from "../../api/tresStudio/userDashboard";
 import { postLogin } from "../../api/tresStudio/authentication";
 import { getUserInfo } from "../../api/tresStudio/userSide"
+import { IFormError } from "../../shared/interfaces/foms"
 import { IFeature, ILandingInfo, IReview } from '../../shared/interfaces/presentationPage'
 import { IUser, IUserInfo } from "../../shared/interfaces/user"
 import { IAppointment, IReward, IPromotion, IEmployee, ILoginUserArgs } from "../../shared/interfaces/userDashboard";
@@ -120,3 +121,4 @@ export const fetchEmployees: FetchActionType<IEmployee[]> = () =>
        payload: await getEmployees()
     })
    }
+

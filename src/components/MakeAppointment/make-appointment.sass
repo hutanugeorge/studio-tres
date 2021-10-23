@@ -103,6 +103,10 @@
                 padding-left: 3rem
                 gap: 3rem
 
+                &--error
+                    @include displayFlexCenterCenter
+                    width: 100%
+
                 &__employee
                     display: flex
                     gap: 2rem
@@ -144,6 +148,14 @@
                         &--hidden
                             display: none
 
+                            &--error
+                                border: 1px solid red
+                                height: fit-content
+
+                        &--error
+                            border: 1px solid red
+                            height: fit-content
+
                         &::placeholder
                             text-align: center
 
@@ -170,8 +182,16 @@
                             width: 100%
                             visibility: hidden
                             display: flex
+                            flex-direction: column
                             justify-content: center
                             transform: translateY(-3rem)
+
+                            &--error
+                                transform: translateY(0rem)
+                                z-index: 1
+                                opacity: 1
+                                height: unset
+                                visibility: visible
 
                             &--content
                                 display: flex
@@ -281,13 +301,13 @@
                 padding-top: 2rem
                 width: 95%
                 display: flex
-                justify-content: flex-end
+                justify-content: space-between
                 align-items: center
 
                 &--message
                     display: flex
                     align-items: center
-                    width: 30%
+                    width: 40%
                     height: 100%
                     margin-right: 2rem
                     text-transform: unset !important
