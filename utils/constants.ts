@@ -256,7 +256,6 @@ export enum Actions {
    APPOINTMENTS = 'APPOINTMENTS',
    USER_INFO = 'USER_INFO',
    FETCH_EMPLOYEES = 'FETCH_EMPLOYEES',
-   FORM_ERRORS = 'FORM_ERRORS'
 }
 
 export const Headers = {

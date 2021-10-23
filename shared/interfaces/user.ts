@@ -1,7 +1,7 @@
 export interface IUser {
-   token: string
-   firstName: string
-   userId: string
+   token?: string
+   firstName?: string
+   userId?: string
 }
 
 export interface IUserInfo {

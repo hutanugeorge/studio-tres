@@ -3208,8 +3208,15 @@
   box-shadow: 0 1rem 2rem rgba(42, 30, 56, 0.2);
   transition: all 0.4s;
 }
-.login-modal__container--form--inputs--input--wrong-password, .login-modal__container--form--inputs--input--wrong-email {
-  border: 3px solid red;
+.login-modal__container--form--inputs--input--error {
+  text-align: center;
+  border: 2px solid red;
+  border-radius: 40px;
+  padding: 1rem 2rem;
+  width: 20rem;
+  height: 3rem;
+  box-shadow: 0 1rem 2rem rgba(42, 30, 56, 0.2);
+  transition: all 0.4s;
 }
 @media (max-width: 37em) {
   .login-modal__container--form--inputs--input {
@@ -3236,14 +3243,24 @@
   transform: translateY(0);
   margin-bottom: 3rem;
 }
-.login-modal__container--form--inputs--input--buttons {
+.login-modal__container--form--inputs--buttons {
   display: flex;
+  flex-direction: column;
+}
+.login-modal__container--form--inputs--buttons--form-message {
+  width: 100%;
+  text-align: center;
 }
 .login-modal__container--form--inputs--label {
   transition: all 0.6s;
   margin-top: 1rem;
   opacity: 0;
   transform: translateY(-1.5rem);
+}
+.login-modal__container--form--inputs--label--error {
+  margin: 2rem;
+  opacity: 1;
+  transform: translate(0);
 }
 .login-modal__container--form--inputs--button {
   box-shadow: 0 1rem 2rem rgba(42, 30, 56, 0.3);

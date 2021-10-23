@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router-dom"
 import { postAppointments } from "../../../api/tresStudio/makeAppointment"
-import { IFormError } from "../../../shared/interfaces/foms"
 import { IUserInfo } from "../../../shared/interfaces/user"
 
 import { defaultValues, weekDaysShort } from "../../../utils/constants"

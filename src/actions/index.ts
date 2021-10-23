@@ -4,7 +4,6 @@ import { getFeatures, getLandingInfo, getReviews, getEmployees } from "../../api
 import { getAppointments, getPromotions, getRewards } from "../../api/tresStudio/userDashboard";
 import { postLogin } from "../../api/tresStudio/authentication";
 import { getUserInfo } from "../../api/tresStudio/userSide"
-import { IFormError } from "../../shared/interfaces/foms"
 import { IFeature, ILandingInfo, IReview } from '../../shared/interfaces/presentationPage'
 import { IUser, IUserInfo } from "../../shared/interfaces/user"
 import { IAppointment, IReward, IPromotion, IEmployee, ILoginUserArgs } from "../../shared/interfaces/userDashboard";
@@ -89,7 +88,11 @@ export const loginUser: LoginUser<IUser> = (args: ILoginUserArgs) =>
             type: Actions.LOGIN,
             payload: user.data
          })
-         user.status === 401 && dispatch({
+         user.status === 401  && dispatch({
+            type: Actions.LOGIN_ERROR,
+            payload: user.data
+         })
+         user.status === 403 && dispatch({
             type: Actions.LOGIN_ERROR,
             payload: user.data
          })

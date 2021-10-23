@@ -20,10 +20,8 @@ const LoginModal = (): JSX.Element => {
 
    return (
       <>
-         <div
-            className={`login-modal__wrap `}/>
-         <Link to='/'
-               className="login-modal__wrap-back">
+         <div className={`login-modal__wrap `}/>
+         <Link to='/' className="login-modal__wrap-back">
             Back to home
          </Link>
          <div className={`login-modal__container `}>
@@ -43,26 +41,19 @@ const LoginForm: FormComponent = ({ setForm }: IFormComponent): JSX.Element => {
    const history = useHistory()
    const dispatch = useDispatch()
 
-   const userData: IUser & { message?: string } = useSelector((state: RootState) => state.isUserAuthenticated)
+   const userData: IUser & { errors?: { password: string, email: string } } = useSelector((state: RootState) => state.isUserAuthenticated)
 
    const [ email, setEmail ] = useState<string>('')
    const [ password, setPassword ] = useState<string>('')
-   const [ wrongCredentials, setWrongCredentials ] = useState<string>('')
-   const [ errorMessage, setErrorMessage ] = useState<string>('')
+   const [ passwordErrorMessage, setPasswordErrorMessage ] = useState<string>('')
+   const [ emailErrorMessage, setEmailErrorMessage ] = useState<string>('')
+
 
    useEffect(() => {
       const token = localStorage.getItem('token')
-      if (userData.message === 'Wrong password') {
-         setWrongCredentials('--wrong-password')
-         setErrorMessage(userData.message)
-      }
-      else if (userData.message === 'A user with this email couldn\'t be found') {
-         setWrongCredentials('--wrong-email')
-         setErrorMessage(userData.message)
-      }
-      else if (userData.token !== '' || token !== null){
-         history.push('/userDashboard')
-      }
+      userData.errors?.password ? setPasswordErrorMessage(userData.errors?.password) : setPasswordErrorMessage('')
+      userData.errors?.email ? setEmailErrorMessage(userData.errors?.email) : setEmailErrorMessage('')
+      token !== null && history.push('/userDashboard')
    }, [ userData ])
 
    return (
@@ -75,19 +66,18 @@ const LoginForm: FormComponent = ({ setForm }: IFormComponent): JSX.Element => {
                dispatch(loginUser({ email, password }))
             }}>
             <input
-               className={`login-modal__container--form--inputs--input login-modal__container--form--inputs--input${wrongCredentials === '--wrong-email' ? wrongCredentials : ''}`}
+               className={`login-modal__container--form--inputs--input login-modal__container--form--inputs--input${emailErrorMessage ? '--error' : ''}`}
                placeholder="Email"
                type="email"
                name="email"
                onChange={(event: FormEvent<HTMLInputElement>): void => {
                   setEmail(event.currentTarget.value)
                }}/>
-            <label
-               className="login-modal__container--form--inputs--label">
-               Email
+            <label className={`login-modal__container--form--inputs--label${emailErrorMessage ? '--error' : ''}`}>
+               {emailErrorMessage ? emailErrorMessage : 'Email'}
             </label>
             <input
-               className={`login-modal__container--form--inputs--input login-modal__container--form--inputs--input${wrongCredentials === '--wrong-password' ? wrongCredentials : ''}`}
+               className={`login-modal__container--form--inputs--input login-modal__container--form--inputs--input${passwordErrorMessage ? '--error' : ''}`}
                placeholder="Password"
                type="password"
                name="password"
@@ -95,27 +85,28 @@ const LoginForm: FormComponent = ({ setForm }: IFormComponent): JSX.Element => {
                   setPassword(event.currentTarget.value)
                }}/>
             <label
-               className="login-modal__container--form--inputs--label"
+               className={`login-modal__container--form--inputs--label${passwordErrorMessage ? '--error' : ''}`}
                htmlFor="password">
-               Password
+               {passwordErrorMessage ? passwordErrorMessage : 'Password'}
             </label>
             <div className="login-modal__container--form--inputs--buttons">
-               <p>{errorMessage}</p>
-               <button
-                  onChange={(event: FormEvent<HTMLElement>): void => {
-                     event.preventDefault()
-                  }}
-                  type='submit'
-                  className="login-modal__container--form--inputs--button login-modal__container--form--inputs--button--login">
-                  Login
-               </button>
-               <a
-                  onClick={(): void => {
-                     setForm('signup')
-                  }}
-                  className="login-modal__container--form--inputs--button login-modal__container--form--inputs--button--signup">
-                  Sign Up
-               </a>
+               <div>
+                  <button
+                     onChange={(event: FormEvent<HTMLElement>): void => {
+                        event.preventDefault()
+                     }}
+                     type='submit'
+                     className="login-modal__container--form--inputs--button login-modal__container--form--inputs--button--login">
+                     Login
+                  </button>
+                  <a
+                     onClick={(): void => {
+                        setForm('signup')
+                     }}
+                     className="login-modal__container--form--inputs--button login-modal__container--form--inputs--button--signup">
+                     Sign Up
+                  </a>
+               </div>
             </div>
          </form>
       </>)
@@ -123,11 +114,26 @@ const LoginForm: FormComponent = ({ setForm }: IFormComponent): JSX.Element => {
 
 
 const SignupForm: FormComponent = ({ setForm }: IFormComponent): JSX.Element => {
+
+   interface IFormErrors {
+      firstName?: string
+      lastName?: string
+      email?: string
+      password?: string
+      repeatPassword?: string
+   }
+
    const [ firstName, setFirstName ] = useState<string>('')
    const [ lastName, setLastName ] = useState<string>('')
    const [ email, setEmail ] = useState<string>('')
    const [ password, setPassword ] = useState<string>('')
+   const [ repeatPassword, setRepeatPassword ] = useState<string>('')
    const [ formMessage, setFormMessage ] = useState<string>('')
+   const [ formErrors, setFormErrors ] = useState<IFormErrors>({})
+
+   useEffect(() => {
+      console.log(formErrors)
+   }, [ formErrors ])
 
    return (
       <>
@@ -136,12 +142,15 @@ const SignupForm: FormComponent = ({ setForm }: IFormComponent): JSX.Element => 
             className="login-modal__container--form--inputs"
             onSubmit={async (event: FormEvent<HTMLElement>) => {
                event.preventDefault()
-               const { status, data } = await signupUser({ firstName, lastName, email, password })
-               status === 405 && setFormMessage(data.message)
-               status === 200 && setFormMessage(data.message) && setTimeout(() => setForm('login'), 2000)
+               const { status, data } = await signupUser({ firstName, lastName, email, password, repeatPassword })
+               status === 403 && setFormErrors(data?.errors)
+               if (status === 200) {
+                  setFormMessage(data.message)
+                  setTimeout(() => setForm('login'), 2000)
+               }
             }}>
             <input
-               className="login-modal__container--form--inputs--input"
+               className={`login-modal__container--form--inputs--input${formErrors?.firstName ? '--error' : ''}`}
                placeholder="First Name"
                type="text"
                name="firstname"
@@ -149,11 +158,11 @@ const SignupForm: FormComponent = ({ setForm }: IFormComponent): JSX.Element => 
                   setFirstName(event.currentTarget.value)
                }}/>
             <label
-               className="login-modal__container--form--inputs--label login-modal__container--form--inputs--label--firstname"
+               className={`login-modal__container--form--inputs--label${formErrors?.firstName ? '--error' : ''}`}
                htmlFor="input">
-               First name
+               {formErrors?.firstName ? formErrors?.firstName : 'First name'}
             </label>
-            <input className="login-modal__container--form--inputs--input"
+            <input className={`login-modal__container--form--inputs--input${formErrors?.lastName ? '--error' : ''}`}
                    placeholder="Last Name"
                    type="text"
                    name="lastname"
@@ -161,12 +170,12 @@ const SignupForm: FormComponent = ({ setForm }: IFormComponent): JSX.Element => 
                       setLastName(event.currentTarget.value)
                    }}/>
             <label
-               className="login-modal__container--form--inputs--label login-modal__container--form--inputs--label--lastname"
+               className={`login-modal__container--form--inputs--label${formErrors?.lastName ? '--error' : ''}`}
                htmlFor="input">
-               Last name
+               {formErrors?.lastName ? formErrors?.lastName : 'Last name'}
             </label>
             <input
-               className="login-modal__container--form--inputs--input"
+               className={`login-modal__container--form--inputs--input${formErrors?.email ? '--error' : ''}`}
                placeholder="Email"
                type="email"
                name="email"
@@ -174,12 +183,12 @@ const SignupForm: FormComponent = ({ setForm }: IFormComponent): JSX.Element => 
                   setEmail(event.currentTarget.value)
                }}/>
             <label
-               className="login-modal__container--form--inputs--label"
+               className={`login-modal__container--form--inputs--label${formErrors?.email ? '--error' : ''}`}
                htmlFor="email">
-               Email
+               {formErrors?.email ? formErrors?.email : 'Email'}
             </label>
             <input
-               className="login-modal__container--form--inputs--input"
+               className={`login-modal__container--form--inputs--input${formErrors?.password ? '--error' : ''}`}
                placeholder="Password"
                type="password"
                name="password"
@@ -187,28 +196,44 @@ const SignupForm: FormComponent = ({ setForm }: IFormComponent): JSX.Element => 
                   setPassword(event.currentTarget.value)
                }}/>
             <label
-               className="login-modal__container--form--inputs--label"
+               className={`login-modal__container--form--inputs--label${formErrors?.password ? '--error' : ''}`}
                htmlFor="password">
-               Password
+               {formErrors?.password ? formErrors?.password : 'Password'}
+            </label>
+            <input
+               className={`login-modal__container--form--inputs--input${formErrors?.repeatPassword ? '--error' : ''}`}
+               placeholder="Repeat Password"
+               type="password"
+               name="repeatPassword"
+               onChange={(event: FormEvent<HTMLInputElement>): void => {
+                  setRepeatPassword(event.currentTarget.value)
+               }}/>
+            <label
+               className={`login-modal__container--form--inputs--label${formErrors?.repeatPassword ? '--error' : ''}`}
+               htmlFor="repeatPassword">
+               {formErrors?.repeatPassword ? formErrors?.repeatPassword : 'Repeat Password'}
             </label>
             <div className="login-modal__container--form--inputs--buttons">
-               <p>{}</p>
-               <p>{formMessage}</p>
-               <a
-                  onClick={(): void => {
-                     setForm('login')
-                  }}
-                  className="login-modal__container--form--inputs--button login-modal__container--form--inputs--button--signup">
-                  Login
-               </a>
-               <button
-                  onChange={(event: FormEvent<HTMLElement>): void => {
-                     event.preventDefault()
-                  }}
-                  type='submit'
-                  className="login-modal__container--form--inputs--button login-modal__container--form--inputs--button--login">
-                  Sign Up
-               </button>
+               <p className="login-modal__container--form--inputs--buttons--form-message">
+                  {formMessage}
+               </p>
+               <div>
+                  <a
+                     onClick={(): void => {
+                        setForm('login')
+                     }}
+                     className="login-modal__container--form--inputs--button login-modal__container--form--inputs--button--signup">
+                     Login
+                  </a>
+                  <button
+                     onChange={(event: FormEvent<HTMLElement>): void => {
+                        event.preventDefault()
+                     }}
+                     type='submit'
+                     className="login-modal__container--form--inputs--button login-modal__container--form--inputs--button--login">
+                     Sign Up
+                  </button>
+               </div>
             </div>
          </form>
       </>)

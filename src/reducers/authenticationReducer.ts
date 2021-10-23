@@ -8,14 +8,15 @@ const authenticationReducer: Reducer<IUser, Action<IUser>> = (state: IUser = def
    const { type, payload } = action
    switch (type) {
       case Actions.LOGIN:
-         localStorage.setItem('token', payload.token)
-         localStorage.setItem('userId', payload.userId)
+         payload.token && localStorage.setItem('token', payload.token)
+         payload.userId && localStorage.setItem('userId', payload.userId)
          return { ...payload }
       case Actions.LOGOUT:
          localStorage.removeItem('token')
          localStorage.removeItem('userId')
          return { ...payload }
       case Actions.LOGIN_ERROR:
+         console.log('reducer', payload)
          return { ...payload }
       default:
          return state

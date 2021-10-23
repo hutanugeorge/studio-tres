@@ -85,8 +85,15 @@
                     box-shadow: 0 1rem 2rem rgba($color-black, .2)
                     transition: all .4s
 
-                    &--wrong-password, &--wrong-email
-                        border: 3px solid red
+                    &--error
+                        text-align: center
+                        border: 2px solid red
+                        border-radius: 40px
+                        padding: 1rem 2rem
+                        width: 20rem
+                        height: 3rem
+                        box-shadow: 0 1rem 2rem rgba($color-black, .2)
+                        transition: all .4s
 
                     @include respond($phone)
                         padding: .6rem 1.6rem
@@ -107,15 +114,25 @@
                         transform: translateY(0)
                         margin-bottom: 3rem
                         
-                    &--buttons
-                        display: flex
-                    
+                &--buttons
+                    display: flex
+                    flex-direction: column
+
+                    &--form-message
+                        width: 100%
+                        text-align: center
+
                 &--label
                     transition: all .6s
                     margin-top: 1rem
                     opacity: 0
                     transform: translateY(-1.5rem)
-                    
+
+                    &--error
+                        margin: 2rem
+                        opacity: 1
+                        transform: translate(0)
+
                 &--button
                     box-shadow: 0 1rem 2rem rgba($color-black, .3)
                     cursor: pointer

@@ -1,8 +1,8 @@
-import React, { Dispatch, FC, SetStateAction, useEffect, useState } from 'react'
+import React, { Dispatch, FC, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { useDispatch, useSelector } from "react-redux"
-import { IUser, IUserInfo } from "../../../shared/interfaces/user"
+import { IUserInfo } from "../../../shared/interfaces/user"
 import HomeIcon from "../Icons/HomeIcon"
 
 import SettingsIcon from '../Icons/SettingsIcon'

@@ -49,4 +49,5 @@ export interface ISignupArgs {
    lastName: string
    email: string
    password: string
+   repeatPassword: string
 }
