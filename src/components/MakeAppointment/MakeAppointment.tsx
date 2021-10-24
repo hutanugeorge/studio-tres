@@ -147,7 +147,7 @@ const MakeAppointment = (): JSX.Element => {
                                   className={`make-appointment__container__upper-side__form__upper-inputs--input 
                                   make-appointment__container__upper-side__form__upper-inputs--input${phoneError ? '--error' : ''}`}/>
                            <label htmlFor="phone"
-                                  className={`make-appointment__container__upper-side__form__lower-inputs--input--label${phoneError ? '--error': ''}`}>
+                                  className={`make-appointment__container__upper-side__form__lower-inputs--input--label${phoneError ? '--error' : ''}`}>
                               <p className="make-appointment__container__upper-side__form__lower-inputs--input--label--content">
                                  {phoneError ? phoneError : 'Phone'}
                               </p>
@@ -189,7 +189,7 @@ const MakeAppointment = (): JSX.Element => {
                         </div>
                         <div className="make-appointment__container__upper-side__form__employee-list">
                            {employees.map((employee: IEmployee, index: number) => {
-                              if (mainService !== '' && mainService === employee.field)
+                              if (mainService !== '' && mainService === employee.field) {
                                  return <div
                                     className="make-appointment__container__upper-side__form__employee-list--image--wrap"
                                     key={index}>
@@ -209,6 +209,7 @@ const MakeAppointment = (): JSX.Element => {
                                        {`${employee.firstName}  ${employee.lastName}`}
                                     </div>
                                  </div>
+                              }
                            })}
                         </div>
                      </div>

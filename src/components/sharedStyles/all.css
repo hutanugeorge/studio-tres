@@ -771,11 +771,41 @@
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.6rem;
 }
+@media (max-width: 75em) {
+  .make-appointment {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment {
+    font-size: 1.2rem;
+  }
+}
 .make-appointment__header--title {
   text-transform: uppercase;
   color: #6F2DBD;
   font-size: 3.5rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .make-appointment__header--title {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__header--title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__header--title {
+    font-size: 2rem;
+  }
 }
 .make-appointment__header--sub-title {
   color: rgba(166, 99, 204, 0.8);
@@ -790,14 +820,74 @@
 .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
   font-size: 1.4rem;
 }
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+    font-size: 1rem;
+  }
+}
 .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
   font-size: 1.4rem;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+    font-size: 1rem;
+  }
 }
 .make-appointment__container__upper-side__form__message--content {
   font-size: 1.4rem;
 }
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__message--content {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content {
+    font-size: 1rem;
+  }
+}
 .make-appointment__container__upper-side__form__message--content::placeholder {
   font-size: 1.4rem;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__message--content::placeholder {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content::placeholder {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content::placeholder {
+    font-size: 1rem;
+  }
 }
 .make-appointment__container__upper-side__contact {
   color: #F3F5F3;
@@ -806,6 +896,21 @@
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__contact--header--title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__contact--header--title {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__contact--header--title {
+    font-size: 1.5rem;
+  }
 }
 .make-appointment__container__lower-side__submit-button {
   text-transform: uppercase;
@@ -817,9 +922,39 @@
 .make-appointment__container__lower-side__employee-program__element__day {
   font-size: 1.8rem;
 }
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-program__element__day {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day {
+    font-size: 1.4rem;
+  }
+}
 .make-appointment__container__lower-side__employee-program__element__day--day-number {
   font-size: 3rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-program__element__day--day-number {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day--day-number {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day--day-number {
+    font-size: 1.5rem;
+  }
 }
 .make-appointment__container__lower-side__employee-program__element__hours--hour--content--active {
   color: #fff;
@@ -832,11 +967,41 @@
   font-weight: 700;
   color: rgba(111, 45, 189, 0.8);
 }
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-info--identification--name {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--name {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--name {
+    font-size: 2rem;
+  }
+}
 .make-appointment__container__lower-side__employee-info--identification--job-title {
   font-size: 2.2rem;
   text-transform: uppercase;
   font-weight: 500;
   color: rgba(111, 45, 189, 0.7);
+}
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-info--identification--job-title {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--job-title {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--job-title {
+    font-size: 1.4rem;
+  }
 }
 
 .footer-section {
@@ -1698,11 +1863,41 @@
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.6rem;
 }
+@media (max-width: 75em) {
+  .make-appointment {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment {
+    font-size: 1.2rem;
+  }
+}
 .make-appointment__header--title {
   text-transform: uppercase;
   color: #6F2DBD;
   font-size: 3.5rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .make-appointment__header--title {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__header--title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__header--title {
+    font-size: 2rem;
+  }
 }
 .make-appointment__header--sub-title {
   color: rgba(166, 99, 204, 0.8);
@@ -1717,14 +1912,74 @@
 .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
   font-size: 1.4rem;
 }
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+    font-size: 1rem;
+  }
+}
 .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
   font-size: 1.4rem;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+    font-size: 1rem;
+  }
 }
 .make-appointment__container__upper-side__form__message--content {
   font-size: 1.4rem;
 }
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__message--content {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content {
+    font-size: 1rem;
+  }
+}
 .make-appointment__container__upper-side__form__message--content::placeholder {
   font-size: 1.4rem;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__message--content::placeholder {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content::placeholder {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content::placeholder {
+    font-size: 1rem;
+  }
 }
 .make-appointment__container__upper-side__contact {
   color: #F3F5F3;
@@ -1733,6 +1988,21 @@
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__contact--header--title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__contact--header--title {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__contact--header--title {
+    font-size: 1.5rem;
+  }
 }
 .make-appointment__container__lower-side__submit-button {
   text-transform: uppercase;
@@ -1744,9 +2014,39 @@
 .make-appointment__container__lower-side__employee-program__element__day {
   font-size: 1.8rem;
 }
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-program__element__day {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day {
+    font-size: 1.4rem;
+  }
+}
 .make-appointment__container__lower-side__employee-program__element__day--day-number {
   font-size: 3rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-program__element__day--day-number {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day--day-number {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day--day-number {
+    font-size: 1.5rem;
+  }
 }
 .make-appointment__container__lower-side__employee-program__element__hours--hour--content--active {
   color: #fff;
@@ -1759,11 +2059,41 @@
   font-weight: 700;
   color: rgba(111, 45, 189, 0.8);
 }
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-info--identification--name {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--name {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--name {
+    font-size: 2rem;
+  }
+}
 .make-appointment__container__lower-side__employee-info--identification--job-title {
   font-size: 2.2rem;
   text-transform: uppercase;
   font-weight: 500;
   color: rgba(111, 45, 189, 0.7);
+}
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-info--identification--job-title {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--job-title {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--job-title {
+    font-size: 1.4rem;
+  }
 }
 
 .btn-navigation {
@@ -2973,11 +3303,41 @@
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.6rem;
 }
+@media (max-width: 75em) {
+  .make-appointment {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment {
+    font-size: 1.2rem;
+  }
+}
 .make-appointment__header--title {
   text-transform: uppercase;
   color: #6F2DBD;
   font-size: 3.5rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .make-appointment__header--title {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__header--title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__header--title {
+    font-size: 2rem;
+  }
 }
 .make-appointment__header--sub-title {
   color: rgba(166, 99, 204, 0.8);
@@ -2992,14 +3352,74 @@
 .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
   font-size: 1.4rem;
 }
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+    font-size: 1rem;
+  }
+}
 .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
   font-size: 1.4rem;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+    font-size: 1rem;
+  }
 }
 .make-appointment__container__upper-side__form__message--content {
   font-size: 1.4rem;
 }
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__message--content {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content {
+    font-size: 1rem;
+  }
+}
 .make-appointment__container__upper-side__form__message--content::placeholder {
   font-size: 1.4rem;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__message--content::placeholder {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content::placeholder {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content::placeholder {
+    font-size: 1rem;
+  }
 }
 .make-appointment__container__upper-side__contact {
   color: #F3F5F3;
@@ -3008,6 +3428,21 @@
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__contact--header--title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__contact--header--title {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__contact--header--title {
+    font-size: 1.5rem;
+  }
 }
 .make-appointment__container__lower-side__submit-button {
   text-transform: uppercase;
@@ -3019,9 +3454,39 @@
 .make-appointment__container__lower-side__employee-program__element__day {
   font-size: 1.8rem;
 }
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-program__element__day {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day {
+    font-size: 1.4rem;
+  }
+}
 .make-appointment__container__lower-side__employee-program__element__day--day-number {
   font-size: 3rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-program__element__day--day-number {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day--day-number {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day--day-number {
+    font-size: 1.5rem;
+  }
 }
 .make-appointment__container__lower-side__employee-program__element__hours--hour--content--active {
   color: #fff;
@@ -3034,11 +3499,41 @@
   font-weight: 700;
   color: rgba(111, 45, 189, 0.8);
 }
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-info--identification--name {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--name {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--name {
+    font-size: 2rem;
+  }
+}
 .make-appointment__container__lower-side__employee-info--identification--job-title {
   font-size: 2.2rem;
   text-transform: uppercase;
   font-weight: 500;
   color: rgba(111, 45, 189, 0.7);
+}
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-info--identification--job-title {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--job-title {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--job-title {
+    font-size: 1.4rem;
+  }
 }
 
 @keyframes moveInBottom {
@@ -4144,11 +4639,41 @@
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.6rem;
 }
+@media (max-width: 75em) {
+  .make-appointment {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment {
+    font-size: 1.2rem;
+  }
+}
 .make-appointment__header--title {
   text-transform: uppercase;
   color: #6F2DBD;
   font-size: 3.5rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .make-appointment__header--title {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__header--title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__header--title {
+    font-size: 2rem;
+  }
 }
 .make-appointment__header--sub-title {
   color: rgba(166, 99, 204, 0.8);
@@ -4163,14 +4688,74 @@
 .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
   font-size: 1.4rem;
 }
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+    font-size: 1rem;
+  }
+}
 .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
   font-size: 1.4rem;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+    font-size: 1rem;
+  }
 }
 .make-appointment__container__upper-side__form__message--content {
   font-size: 1.4rem;
 }
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__message--content {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content {
+    font-size: 1rem;
+  }
+}
 .make-appointment__container__upper-side__form__message--content::placeholder {
   font-size: 1.4rem;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__message--content::placeholder {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content::placeholder {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content::placeholder {
+    font-size: 1rem;
+  }
 }
 .make-appointment__container__upper-side__contact {
   color: #F3F5F3;
@@ -4179,6 +4764,21 @@
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__contact--header--title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__contact--header--title {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__contact--header--title {
+    font-size: 1.5rem;
+  }
 }
 .make-appointment__container__lower-side__submit-button {
   text-transform: uppercase;
@@ -4190,9 +4790,39 @@
 .make-appointment__container__lower-side__employee-program__element__day {
   font-size: 1.8rem;
 }
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-program__element__day {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day {
+    font-size: 1.4rem;
+  }
+}
 .make-appointment__container__lower-side__employee-program__element__day--day-number {
   font-size: 3rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-program__element__day--day-number {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day--day-number {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day--day-number {
+    font-size: 1.5rem;
+  }
 }
 .make-appointment__container__lower-side__employee-program__element__hours--hour--content--active {
   color: #fff;
@@ -4205,11 +4835,41 @@
   font-weight: 700;
   color: rgba(111, 45, 189, 0.8);
 }
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-info--identification--name {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--name {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--name {
+    font-size: 2rem;
+  }
+}
 .make-appointment__container__lower-side__employee-info--identification--job-title {
   font-size: 2.2rem;
   text-transform: uppercase;
   font-weight: 500;
   color: rgba(111, 45, 189, 0.7);
+}
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-info--identification--job-title {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--job-title {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--job-title {
+    font-size: 1.4rem;
+  }
 }
 
 .navigation-section {
@@ -5051,11 +5711,41 @@
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.6rem;
 }
+@media (max-width: 75em) {
+  .make-appointment {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment {
+    font-size: 1.2rem;
+  }
+}
 .make-appointment__header--title {
   text-transform: uppercase;
   color: #6F2DBD;
   font-size: 3.5rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .make-appointment__header--title {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__header--title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__header--title {
+    font-size: 2rem;
+  }
 }
 .make-appointment__header--sub-title {
   color: rgba(166, 99, 204, 0.8);
@@ -5070,14 +5760,74 @@
 .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
   font-size: 1.4rem;
 }
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+    font-size: 1rem;
+  }
+}
 .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
   font-size: 1.4rem;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+    font-size: 1rem;
+  }
 }
 .make-appointment__container__upper-side__form__message--content {
   font-size: 1.4rem;
 }
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__message--content {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content {
+    font-size: 1rem;
+  }
+}
 .make-appointment__container__upper-side__form__message--content::placeholder {
   font-size: 1.4rem;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__message--content::placeholder {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content::placeholder {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content::placeholder {
+    font-size: 1rem;
+  }
 }
 .make-appointment__container__upper-side__contact {
   color: #F3F5F3;
@@ -5086,6 +5836,21 @@
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__contact--header--title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__contact--header--title {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__contact--header--title {
+    font-size: 1.5rem;
+  }
 }
 .make-appointment__container__lower-side__submit-button {
   text-transform: uppercase;
@@ -5097,9 +5862,39 @@
 .make-appointment__container__lower-side__employee-program__element__day {
   font-size: 1.8rem;
 }
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-program__element__day {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day {
+    font-size: 1.4rem;
+  }
+}
 .make-appointment__container__lower-side__employee-program__element__day--day-number {
   font-size: 3rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-program__element__day--day-number {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day--day-number {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day--day-number {
+    font-size: 1.5rem;
+  }
 }
 .make-appointment__container__lower-side__employee-program__element__hours--hour--content--active {
   color: #fff;
@@ -5112,11 +5907,41 @@
   font-weight: 700;
   color: rgba(111, 45, 189, 0.8);
 }
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-info--identification--name {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--name {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--name {
+    font-size: 2rem;
+  }
+}
 .make-appointment__container__lower-side__employee-info--identification--job-title {
   font-size: 2.2rem;
   text-transform: uppercase;
   font-weight: 500;
   color: rgba(111, 45, 189, 0.7);
+}
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-info--identification--job-title {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--job-title {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--job-title {
+    font-size: 1.4rem;
+  }
 }
 
 .wrap-navigation {
@@ -6783,11 +7608,41 @@
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.6rem;
 }
+@media (max-width: 75em) {
+  .make-appointment {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment {
+    font-size: 1.2rem;
+  }
+}
 .make-appointment__header--title {
   text-transform: uppercase;
   color: #6F2DBD;
   font-size: 3.5rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .make-appointment__header--title {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__header--title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__header--title {
+    font-size: 2rem;
+  }
 }
 .make-appointment__header--sub-title {
   color: rgba(166, 99, 204, 0.8);
@@ -6802,14 +7657,74 @@
 .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
   font-size: 1.4rem;
 }
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+    font-size: 1rem;
+  }
+}
 .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
   font-size: 1.4rem;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+    font-size: 1rem;
+  }
 }
 .make-appointment__container__upper-side__form__message--content {
   font-size: 1.4rem;
 }
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__message--content {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content {
+    font-size: 1rem;
+  }
+}
 .make-appointment__container__upper-side__form__message--content::placeholder {
   font-size: 1.4rem;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__message--content::placeholder {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content::placeholder {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content::placeholder {
+    font-size: 1rem;
+  }
 }
 .make-appointment__container__upper-side__contact {
   color: #F3F5F3;
@@ -6818,6 +7733,21 @@
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__contact--header--title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__contact--header--title {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__contact--header--title {
+    font-size: 1.5rem;
+  }
 }
 .make-appointment__container__lower-side__submit-button {
   text-transform: uppercase;
@@ -6829,9 +7759,39 @@
 .make-appointment__container__lower-side__employee-program__element__day {
   font-size: 1.8rem;
 }
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-program__element__day {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day {
+    font-size: 1.4rem;
+  }
+}
 .make-appointment__container__lower-side__employee-program__element__day--day-number {
   font-size: 3rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-program__element__day--day-number {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day--day-number {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day--day-number {
+    font-size: 1.5rem;
+  }
 }
 .make-appointment__container__lower-side__employee-program__element__hours--hour--content--active {
   color: #fff;
@@ -6844,11 +7804,41 @@
   font-weight: 700;
   color: rgba(111, 45, 189, 0.8);
 }
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-info--identification--name {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--name {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--name {
+    font-size: 2rem;
+  }
+}
 .make-appointment__container__lower-side__employee-info--identification--job-title {
   font-size: 2.2rem;
   text-transform: uppercase;
   font-weight: 500;
   color: rgba(111, 45, 189, 0.7);
+}
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-info--identification--job-title {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--job-title {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--job-title {
+    font-size: 1.4rem;
+  }
 }
 
 @keyframes moveInBottom {
@@ -8546,11 +9536,41 @@
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.6rem;
 }
+@media (max-width: 75em) {
+  .make-appointment {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment {
+    font-size: 1.2rem;
+  }
+}
 .make-appointment__header--title {
   text-transform: uppercase;
   color: #6F2DBD;
   font-size: 3.5rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .make-appointment__header--title {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__header--title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__header--title {
+    font-size: 2rem;
+  }
 }
 .make-appointment__header--sub-title {
   color: rgba(166, 99, 204, 0.8);
@@ -8565,14 +9585,74 @@
 .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
   font-size: 1.4rem;
 }
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+    font-size: 1rem;
+  }
+}
 .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
   font-size: 1.4rem;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+    font-size: 1rem;
+  }
 }
 .make-appointment__container__upper-side__form__message--content {
   font-size: 1.4rem;
 }
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__message--content {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content {
+    font-size: 1rem;
+  }
+}
 .make-appointment__container__upper-side__form__message--content::placeholder {
   font-size: 1.4rem;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__message--content::placeholder {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content::placeholder {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content::placeholder {
+    font-size: 1rem;
+  }
 }
 .make-appointment__container__upper-side__contact {
   color: #F3F5F3;
@@ -8581,6 +9661,21 @@
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__contact--header--title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__contact--header--title {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__contact--header--title {
+    font-size: 1.5rem;
+  }
 }
 .make-appointment__container__lower-side__submit-button {
   text-transform: uppercase;
@@ -8592,9 +9687,39 @@
 .make-appointment__container__lower-side__employee-program__element__day {
   font-size: 1.8rem;
 }
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-program__element__day {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day {
+    font-size: 1.4rem;
+  }
+}
 .make-appointment__container__lower-side__employee-program__element__day--day-number {
   font-size: 3rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-program__element__day--day-number {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day--day-number {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day--day-number {
+    font-size: 1.5rem;
+  }
 }
 .make-appointment__container__lower-side__employee-program__element__hours--hour--content--active {
   color: #fff;
@@ -8607,11 +9732,41 @@
   font-weight: 700;
   color: rgba(111, 45, 189, 0.8);
 }
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-info--identification--name {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--name {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--name {
+    font-size: 2rem;
+  }
+}
 .make-appointment__container__lower-side__employee-info--identification--job-title {
   font-size: 2.2rem;
   text-transform: uppercase;
   font-weight: 500;
   color: rgba(111, 45, 189, 0.7);
+}
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-info--identification--job-title {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--job-title {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--job-title {
+    font-size: 1.4rem;
+  }
 }
 
 .pricing-card {
@@ -9443,11 +10598,41 @@
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.6rem;
 }
+@media (max-width: 75em) {
+  .make-appointment {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment {
+    font-size: 1.2rem;
+  }
+}
 .make-appointment__header--title {
   text-transform: uppercase;
   color: #6F2DBD;
   font-size: 3.5rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .make-appointment__header--title {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__header--title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__header--title {
+    font-size: 2rem;
+  }
 }
 .make-appointment__header--sub-title {
   color: rgba(166, 99, 204, 0.8);
@@ -9462,14 +10647,74 @@
 .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
   font-size: 1.4rem;
 }
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+    font-size: 1rem;
+  }
+}
 .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
   font-size: 1.4rem;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+    font-size: 1rem;
+  }
 }
 .make-appointment__container__upper-side__form__message--content {
   font-size: 1.4rem;
 }
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__message--content {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content {
+    font-size: 1rem;
+  }
+}
 .make-appointment__container__upper-side__form__message--content::placeholder {
   font-size: 1.4rem;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__message--content::placeholder {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content::placeholder {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content::placeholder {
+    font-size: 1rem;
+  }
 }
 .make-appointment__container__upper-side__contact {
   color: #F3F5F3;
@@ -9478,6 +10723,21 @@
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__contact--header--title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__contact--header--title {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__contact--header--title {
+    font-size: 1.5rem;
+  }
 }
 .make-appointment__container__lower-side__submit-button {
   text-transform: uppercase;
@@ -9489,9 +10749,39 @@
 .make-appointment__container__lower-side__employee-program__element__day {
   font-size: 1.8rem;
 }
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-program__element__day {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day {
+    font-size: 1.4rem;
+  }
+}
 .make-appointment__container__lower-side__employee-program__element__day--day-number {
   font-size: 3rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-program__element__day--day-number {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day--day-number {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day--day-number {
+    font-size: 1.5rem;
+  }
 }
 .make-appointment__container__lower-side__employee-program__element__hours--hour--content--active {
   color: #fff;
@@ -9504,11 +10794,41 @@
   font-weight: 700;
   color: rgba(111, 45, 189, 0.8);
 }
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-info--identification--name {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--name {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--name {
+    font-size: 2rem;
+  }
+}
 .make-appointment__container__lower-side__employee-info--identification--job-title {
   font-size: 2.2rem;
   text-transform: uppercase;
   font-weight: 500;
   color: rgba(111, 45, 189, 0.7);
+}
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-info--identification--job-title {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--job-title {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--job-title {
+    font-size: 1.4rem;
+  }
 }
 
 @keyframes moveInBottom {
@@ -9646,6 +10966,21 @@
   height: fit-content;
   padding: 10rem 0 20rem;
 }
+@media (max-width: 75em) {
+  .make-appointment {
+    padding: 5rem 0;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment {
+    padding: 0;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment {
+    padding: 0;
+  }
+}
 .make-appointment--wrap {
   overflow-y: scroll;
   background-color: #F3F5F3;
@@ -9665,8 +11000,18 @@
   height: 15rem;
   flex-direction: column;
 }
+@media (max-width: 75em) {
+  .make-appointment__header {
+    height: 10rem;
+  }
+}
 .make-appointment__header--title {
   height: 7rem;
+}
+@media (max-width: 75em) {
+  .make-appointment__header--title {
+    height: 4rem;
+  }
 }
 .make-appointment__container {
   display: flex;
@@ -9681,11 +11026,33 @@
   height: fit-content;
   flex-direction: column;
 }
+@media (max-width: 75em) {
+  .make-appointment__container {
+    padding: 1.5rem;
+    width: 90%;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container {
+    padding: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container {
+    padding: 1rem;
+  }
+}
 .make-appointment__container__upper-side {
   width: 100%;
   min-height: 45rem;
   display: flex;
   justify-content: space-evenly;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side {
+    flex-direction: column;
+    gap: 5rem;
+  }
 }
 .make-appointment__container__upper-side__contact {
   display: flex;
@@ -9696,6 +11063,12 @@
   background-color: #6F2DBD;
   width: 35%;
   flex-direction: column;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__contact {
+    flex-direction: row;
+    width: 100%;
+  }
 }
 .make-appointment__container__upper-side__contact--header {
   display: flex;
@@ -9741,6 +11114,18 @@
   height: 20%;
   width: 100%;
 }
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__contact--links {
+    gap: 2rem;
+    height: 100%;
+    align-items: center;
+  }
+}
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__contact--links {
+    flex-direction: column;
+  }
+}
 .make-appointment__container__upper-side__form {
   display: flex;
   align-items: center;
@@ -9750,6 +11135,23 @@
   flex-direction: column;
   padding-left: 3rem;
   gap: 3rem;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form {
+    width: 100%;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form {
+    padding: 0;
+    gap: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form {
+    padding: 0;
+    gap: 1rem;
+  }
 }
 .make-appointment__container__upper-side__form--error {
   display: flex;
@@ -9765,6 +11167,16 @@
 .make-appointment__container__upper-side__form__employee-services {
   display: flex;
   gap: 2rem;
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__employee-services {
+    flex-direction: column;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__employee-services {
+    flex-direction: column;
+  }
 }
 .make-appointment__container__upper-side__form__employee-services--label {
   height: 100%;
@@ -9783,6 +11195,18 @@
 .make-appointment__container__upper-side__form__upper-inputs, .make-appointment__container__upper-side__form__lower-inputs {
   display: flex;
   gap: 2rem;
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs, .make-appointment__container__upper-side__form__lower-inputs {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs, .make-appointment__container__upper-side__form__lower-inputs {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }
 .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
   padding: 1.5rem 2.75rem;
@@ -9870,6 +11294,18 @@
   border: 3px solid #B298DC;
   width: 15rem;
   height: 20rem;
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__employee-list--image {
+    width: 10rem;
+    height: 15rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__employee-list--image {
+    width: 10rem;
+    height: 15rem;
+  }
 }
 .make-appointment__container__upper-side__form__employee-list--image--name {
   display: flex;
@@ -9995,6 +11431,18 @@
   width: 20rem;
   height: 30rem;
 }
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--photo {
+    width: 15rem;
+    height: 25rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--photo {
+    width: 15rem;
+    height: 25rem;
+  }
+}
 .make-appointment__container__lower-side__employee-info--photo--content {
   height: 100%;
   width: 100%;
@@ -10016,7 +11464,17 @@
   justify-content: space-evenly;
   padding: 1rem 2rem;
   gap: 5rem;
-  overflow-x: scroll;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-program {
+    max-width: unset;
+    width: fit-content;
+    justify-content: center;
+    flex-wrap: wrap;
+    display: flex;
+    max-height: 50rem;
+    overflow-y: scroll;
+  }
 }
 .make-appointment__container__lower-side__employee-program__element {
   border: 1px solid #f5f5f5;
@@ -10029,9 +11487,27 @@
   padding: 4rem 0 0 0;
   margin-bottom: 1rem;
   gap: 2rem;
-  overflow-x: scroll;
   overflow-y: scroll;
   transition: all 0.3s;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-program__element {
+    width: 10rem;
+    height: 45rem;
+    padding: 3rem 0 0 0;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element {
+    width: 12rem;
+    padding: 2rem 0 0 0;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element {
+    width: 12rem;
+    padding: 2rem 0 0 0;
+  }
 }
 .make-appointment__container__lower-side__employee-program__element:hover {
   background-image: linear-gradient(#F3F5F3 20%, white);
@@ -10064,6 +11540,16 @@
   background-color: #fff;
   border-radius: 15px;
   transition: all 0.2s;
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__hours--hour {
+    border: 1px solid #d4d4d4;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__hours--hour {
+    border: 1px solid #d4d4d4;
+  }
 }
 .make-appointment__container__lower-side__employee-program__element__hours--hour--content {
   display: flex;
@@ -10931,11 +12417,41 @@
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.6rem;
 }
+@media (max-width: 75em) {
+  .make-appointment {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment {
+    font-size: 1.2rem;
+  }
+}
 .make-appointment__header--title {
   text-transform: uppercase;
   color: #6F2DBD;
   font-size: 3.5rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .make-appointment__header--title {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__header--title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__header--title {
+    font-size: 2rem;
+  }
 }
 .make-appointment__header--sub-title {
   color: rgba(166, 99, 204, 0.8);
@@ -10950,14 +12466,74 @@
 .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
   font-size: 1.4rem;
 }
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input, .make-appointment__container__upper-side__form__lower-inputs--input {
+    font-size: 1rem;
+  }
+}
 .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
   font-size: 1.4rem;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__upper-inputs--input::placeholder, .make-appointment__container__upper-side__form__lower-inputs--input::placeholder {
+    font-size: 1rem;
+  }
 }
 .make-appointment__container__upper-side__form__message--content {
   font-size: 1.4rem;
 }
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__message--content {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content {
+    font-size: 1rem;
+  }
+}
 .make-appointment__container__upper-side__form__message--content::placeholder {
   font-size: 1.4rem;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__form__message--content::placeholder {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content::placeholder {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__form__message--content::placeholder {
+    font-size: 1rem;
+  }
 }
 .make-appointment__container__upper-side__contact {
   color: #F3F5F3;
@@ -10966,6 +12542,21 @@
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__upper-side__contact--header--title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__contact--header--title {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__upper-side__contact--header--title {
+    font-size: 1.5rem;
+  }
 }
 .make-appointment__container__lower-side__submit-button {
   text-transform: uppercase;
@@ -10977,9 +12568,39 @@
 .make-appointment__container__lower-side__employee-program__element__day {
   font-size: 1.8rem;
 }
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-program__element__day {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day {
+    font-size: 1.4rem;
+  }
+}
 .make-appointment__container__lower-side__employee-program__element__day--day-number {
   font-size: 3rem;
   font-weight: 900;
+}
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-program__element__day--day-number {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day--day-number {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-program__element__day--day-number {
+    font-size: 1.5rem;
+  }
 }
 .make-appointment__container__lower-side__employee-program__element__hours--hour--content--active {
   color: #fff;
@@ -10992,11 +12613,41 @@
   font-weight: 700;
   color: rgba(111, 45, 189, 0.8);
 }
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-info--identification--name {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--name {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--name {
+    font-size: 2rem;
+  }
+}
 .make-appointment__container__lower-side__employee-info--identification--job-title {
   font-size: 2.2rem;
   text-transform: uppercase;
   font-weight: 500;
   color: rgba(111, 45, 189, 0.7);
+}
+@media (max-width: 75em) {
+  .make-appointment__container__lower-side__employee-info--identification--job-title {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--job-title {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 37em) {
+  .make-appointment__container__lower-side__employee-info--identification--job-title {
+    font-size: 1.4rem;
+  }
 }
 
 .row {
