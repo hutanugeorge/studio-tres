@@ -563,12 +563,24 @@
     font-family: 'Nunito Sans', sans-serif
     font-size: 1.6rem
 
+    @include respond($tablet-landscape)
+        font-size: 1.4rem
+
+    @include respond($phone)
+        font-size: 1.2rem
+
     &__header
         &--title
             text-transform: uppercase
             color: $color-primary-dark
             font-size: 3.5rem
             font-weight: 900
+
+            @include respond($tablet-landscape)
+                font-size: 2.5rem
+
+            @include respond($phone)
+                font-size: 2rem
 
         &--sub-title
             color: rgba($color-primary, .8)
@@ -585,14 +597,38 @@
                     &--input
                         font-size: 1.4rem
 
+                        @include respond($tablet-landscape)
+                            font-size: 1.2rem
+
+                        @include respond($phone)
+                            font-size: 1rem
+
                         &::placeholder
                             font-size: 1.4rem
+
+                            @include respond($tablet-landscape)
+                                font-size: 1.2rem
+
+                            @include respond($phone)
+                                font-size: 1rem
 
                 &__message--content
                     font-size: 1.4rem
 
+                    @include respond($tablet-landscape)
+                        font-size: 1.2rem
+
+                    @include respond($phone)
+                        font-size: 1rem
+
                     &::placeholder
                         font-size: 1.4rem
+
+                        @include respond($tablet-landscape)
+                            font-size: 1.2rem
+
+                        @include respond($phone)
+                            font-size: 1rem
 
 
             &__contact
@@ -603,6 +639,13 @@
                         text-transform: uppercase
                         font-size: 2.5rem
                         font-weight: 900
+
+                        @include respond($tablet-landscape)
+                            font-size: 2rem
+
+                        @include respond($phone)
+                            font-size: 1.5rem
+
         &__lower-side
             &__submit-button
                 text-transform: uppercase
@@ -615,9 +658,21 @@
                 &__day
                     font-size: 1.8rem
 
+                    @include respond($tablet-landscape)
+                        font-size: 1.6rem
+
+                    @include respond($phone)
+                        font-size: 1.4rem
+
                     &--day-number
                         font-size: 3rem
                         font-weight: 900
+
+                        @include respond($tablet-landscape)
+                            font-size: 2rem
+
+                        @include respond($phone)
+                            font-size: 1.5rem
 
                 &__hours--hour
 
@@ -634,11 +689,23 @@
                         font-weight: 700
                         color: rgba($color-primary-dark, .8)
 
+                        @include respond($tablet-landscape)
+                            font-size: 3rem
+
+                        @include respond($phone)
+                            font-size: 2rem
+
                     &--job-title
                         font-size: 2.2rem
                         text-transform: uppercase
                         font-weight: 500
                         color: rgba($color-primary-dark, .7)
+
+                        @include respond($tablet-landscape)
+                            font-size: 1.8rem
+
+                        @include respond($phone)
+                            font-size: 1.4rem
 
 
 
