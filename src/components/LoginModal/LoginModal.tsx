@@ -1,6 +1,6 @@
-import React, { Dispatch, FormEvent, SetStateAction, useEffect, useState } from 'react'
+import React, { Dispatch, FC, FormEvent, SetStateAction, useEffect, useState } from 'react'
 
-import { useHistory, Link } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 
 import { signupUser } from "../../../api/tresStudio/authentication"
@@ -10,20 +10,17 @@ import { RootState } from "../../reducers"
 
 
 interface IFormComponent {
-   setForm: Dispatch<SetStateAction<string>>
+   readonly setForm: Dispatch<SetStateAction<string>>
 }
 
 type FormComponent = ({ setForm }: IFormComponent) => JSX.Element
 
-const LoginModal = (): JSX.Element => {
+const LoginModal: FC = (): JSX.Element => {
    const [ form, setForm ] = useState<string>('login')
 
    return (
       <>
          <div className={`login-modal__wrap `}/>
-         <Link to='/' className="login-modal__wrap-back">
-            Back to home
-         </Link>
          <div className={`login-modal__container `}>
             <div className={`login-modal__container--form `}>
                {
@@ -49,7 +46,7 @@ const LoginForm: FormComponent = ({ setForm }: IFormComponent): JSX.Element => {
    const [ emailErrorMessage, setEmailErrorMessage ] = useState<string>('')
 
 
-   useEffect(() => {
+   useEffect((): void => {
       const token = localStorage.getItem('token')
       userData.errors?.password ? setPasswordErrorMessage(userData.errors?.password) : setPasswordErrorMessage('')
       userData.errors?.email ? setEmailErrorMessage(userData.errors?.email) : setEmailErrorMessage('')
@@ -74,7 +71,7 @@ const LoginForm: FormComponent = ({ setForm }: IFormComponent): JSX.Element => {
                   setEmail(event.currentTarget.value)
                }}/>
             <label className={`login-modal__container--form--inputs--label${emailErrorMessage ? '--error' : ''}`}>
-               {emailErrorMessage ? emailErrorMessage : 'Email'}
+               {emailErrorMessage ?? 'Email'}
             </label>
             <input
                className={`login-modal__container--form--inputs--input login-modal__container--form--inputs--input${passwordErrorMessage ? '--error' : ''}`}
@@ -87,7 +84,7 @@ const LoginForm: FormComponent = ({ setForm }: IFormComponent): JSX.Element => {
             <label
                className={`login-modal__container--form--inputs--label${passwordErrorMessage ? '--error' : ''}`}
                htmlFor="password">
-               {passwordErrorMessage ? passwordErrorMessage : 'Password'}
+               {passwordErrorMessage ?? 'Password'}
             </label>
             <div className="login-modal__container--form--inputs--buttons">
                <div>
@@ -116,11 +113,11 @@ const LoginForm: FormComponent = ({ setForm }: IFormComponent): JSX.Element => {
 const SignupForm: FormComponent = ({ setForm }: IFormComponent): JSX.Element => {
 
    interface IFormErrors {
-      firstName?: string
-      lastName?: string
-      email?: string
-      password?: string
-      repeatPassword?: string
+      readonly firstName?: string
+      readonly lastName?: string
+      readonly email?: string
+      readonly password?: string
+      readonly repeatPassword?: string
    }
 
    const [ firstName, setFirstName ] = useState<string>('')
@@ -131,16 +128,12 @@ const SignupForm: FormComponent = ({ setForm }: IFormComponent): JSX.Element => 
    const [ formMessage, setFormMessage ] = useState<string>('')
    const [ formErrors, setFormErrors ] = useState<IFormErrors>({})
 
-   useEffect(() => {
-      console.log(formErrors)
-   }, [ formErrors ])
-
    return (
       <>
          <p className="login-modal__container--form--title">Sign Up</p>
          <form
             className="login-modal__container--form--inputs"
-            onSubmit={async (event: FormEvent<HTMLElement>) => {
+            onSubmit={async (event: FormEvent<HTMLElement>): Promise<void> => {
                event.preventDefault()
                const { status, data } = await signupUser({ firstName, lastName, email, password, repeatPassword })
                status === 403 && setFormErrors(data?.errors)
@@ -160,7 +153,7 @@ const SignupForm: FormComponent = ({ setForm }: IFormComponent): JSX.Element => 
             <label
                className={`login-modal__container--form--inputs--label${formErrors?.firstName ? '--error' : ''}`}
                htmlFor="input">
-               {formErrors?.firstName ? formErrors?.firstName : 'First name'}
+               {formErrors?.firstName ?? 'First name'}
             </label>
             <input className={`login-modal__container--form--inputs--input${formErrors?.lastName ? '--error' : ''}`}
                    placeholder="Last Name"
@@ -172,7 +165,7 @@ const SignupForm: FormComponent = ({ setForm }: IFormComponent): JSX.Element => 
             <label
                className={`login-modal__container--form--inputs--label${formErrors?.lastName ? '--error' : ''}`}
                htmlFor="input">
-               {formErrors?.lastName ? formErrors?.lastName : 'Last name'}
+               {formErrors?.lastName ?? 'Last name'}
             </label>
             <input
                className={`login-modal__container--form--inputs--input${formErrors?.email ? '--error' : ''}`}
@@ -185,7 +178,7 @@ const SignupForm: FormComponent = ({ setForm }: IFormComponent): JSX.Element => 
             <label
                className={`login-modal__container--form--inputs--label${formErrors?.email ? '--error' : ''}`}
                htmlFor="email">
-               {formErrors?.email ? formErrors?.email : 'Email'}
+               {formErrors?.email ?? 'Email'}
             </label>
             <input
                className={`login-modal__container--form--inputs--input${formErrors?.password ? '--error' : ''}`}
@@ -198,7 +191,7 @@ const SignupForm: FormComponent = ({ setForm }: IFormComponent): JSX.Element => 
             <label
                className={`login-modal__container--form--inputs--label${formErrors?.password ? '--error' : ''}`}
                htmlFor="password">
-               {formErrors?.password ? formErrors?.password : 'Password'}
+               {formErrors?.password ?? 'Password'}
             </label>
             <input
                className={`login-modal__container--form--inputs--input${formErrors?.repeatPassword ? '--error' : ''}`}
@@ -211,7 +204,7 @@ const SignupForm: FormComponent = ({ setForm }: IFormComponent): JSX.Element => 
             <label
                className={`login-modal__container--form--inputs--label${formErrors?.repeatPassword ? '--error' : ''}`}
                htmlFor="repeatPassword">
-               {formErrors?.repeatPassword ? formErrors?.repeatPassword : 'Repeat Password'}
+               {formErrors?.repeatPassword ?? 'Repeat Password'}
             </label>
             <div className="login-modal__container--form--inputs--buttons">
                <p className="login-modal__container--form--inputs--buttons--form-message">

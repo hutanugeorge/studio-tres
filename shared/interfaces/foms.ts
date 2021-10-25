@@ -1,6 +1,6 @@
 export interface IFormError{
-   location: string
-   msg: string
-   param: string
-   value: string
+   readonly location: string
+   readonly msg: string
+   readonly param: string
+   readonly value: string
 }

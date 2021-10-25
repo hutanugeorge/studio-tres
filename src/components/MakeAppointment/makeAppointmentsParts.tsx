@@ -1,10 +1,13 @@
-import React, { Dispatch, SetStateAction, useEffect } from "react"
-import { useSelector } from "react-redux"
+import React, { Dispatch, FC, SetStateAction } from "react"
+import { JSXArrayElements, JSXElement } from "../../../shared/types"
+
 import { services, subServices } from "../../../utils/constants"
-import { RootState } from "../../reducers"
 
 
-export const renderMakeAppointmentHeader = (): JSX.Element =>
+type RenderSubServices = (mainService: string) => (JSX.Element[] | undefined)
+type RenderMakeAppointmentUpperSideFormMessage = (setMessage: React.Dispatch<React.SetStateAction<string>>) => JSX.Element
+
+export const renderMakeAppointmentHeader: JSXElement = (): JSX.Element =>
    <>
       <div className="make-appointment__header--title">
          <p className="make-appointment__header--title--content">
@@ -18,7 +21,7 @@ export const renderMakeAppointmentHeader = (): JSX.Element =>
       </div>
    </>
 
-export const renderMakeAppointmentUpperSideContact = () =>
+export const renderMakeAppointmentUpperSideContact: JSXElement = (): JSX.Element =>
    <div className="make-appointment__container__upper-side__contact">
       <div className="make-appointment__container__upper-side__contact--header">
          <div className="make-appointment__container__upper-side__contact--header--title">
@@ -66,11 +69,11 @@ export const renderMakeAppointmentUpperSideContact = () =>
       </div>
    </div>
 
-export const renderMakeAppointmentUpperSideFormMessage = (setMessage: Dispatch<SetStateAction<string>>) =>
+export const renderMakeAppointmentUpperSideFormMessage: RenderMakeAppointmentUpperSideFormMessage = (setMessage: Dispatch<SetStateAction<string>>): JSX.Element =>
    <>
       <div className="make-appointment__container__upper-side__form__message">
          <textarea rows={1}
-                   onChange={(e) => {
+                   onChange={(e): void => {
                       setMessage(e.currentTarget.value)
                    }}
                    placeholder="Send us a message"
@@ -80,36 +83,33 @@ export const renderMakeAppointmentUpperSideFormMessage = (setMessage: Dispatch<S
          </p>
       </div>
    </>
+export const renderServices: JSXArrayElements = (): JSX.Element[] => services.map((service: string, index: number): JSX.Element => {
+      const serviceValue = service.includes("_") ? `${service.split(('_')) [0]} ${service.split(('_')) [1]}` : service
+      return <option key={index} value={service}>{serviceValue}</option>
+   }
+)
 
-export const renderServices = () => {
-   return services.map((service: string, index: number) => {
-         const serviceValue = service.includes("_") ? `${service.split(('_')) [0]} ${service.split(('_')) [1]}` : service
-         return <option key={index} value={service}>{serviceValue}</option>
-      }
-   )
-}
-
-export const renderSubServices = (mainService: string) => {
+export const renderSubServices: RenderSubServices = (mainService: string): JSX.Element[] | undefined => {
    switch (mainService) {
       case 'Hair_Care':
-         return subServices["Hair_Care"].map((subService: string, index: number) => <option key={index}
+         return subServices["Hair_Care"].map((subService: string, index: number): JSX.Element => <option key={index}
                                                                                             value={subService}>{subService}</option>)
       case 'Facial_Treatments':
-         return subServices["Facial_Treatments"].map((subService: string, index: number) => <option key={index}
+         return subServices["Facial_Treatments"].map((subService: string, index: number): JSX.Element => <option key={index}
                                                                                                     value={subService}>{subService}</option>)
       case 'Body_Massage':
-         return subServices["Body_Massage"].map((subService: string, index: number) => <option key={index}
+         return subServices["Body_Massage"].map((subService: string, index: number): JSX.Element => <option key={index}
                                                                                                value={subService}>{subService}</option>)
       case 'Makeup_Services':
-         return subServices["Makeup_Services"].map((subService: string, index: number) => <option key={index}
+         return subServices["Makeup_Services"].map((subService: string, index: number): JSX.Element => <option key={index}
                                                                                                   value={subService}>{subService}</option>)
       case 'Nails_Care':
-         return subServices["Nails_Care"].map((subService: string, index: number) => <option key={index}
+         return subServices["Nails_Care"].map((subService: string, index: number): JSX.Element => <option key={index}
                                                                                              value={subService}>{subService}</option>)
       case 'Hair_Removal':
-         return subServices["Hair_Removal"].map((subService: string, index: number) => <option key={index}
+         return subServices["Hair_Removal"].map((subService: string, index: number): JSX.Element => <option key={index}
                                                                                                value={subService}>{subService}</option>)
       default:
-         null
+         undefined
    }
 }

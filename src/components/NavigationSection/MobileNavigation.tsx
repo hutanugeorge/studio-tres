@@ -2,7 +2,6 @@ import React, { Dispatch, FC, SetStateAction, useState } from 'react'
 
 import { Link } from 'react-router-dom'
 
-import LoginModal from '../LoginModal/LoginModal'
 import { navigationLinks, otherPageLinks } from '../../../utils/constants'
 import { Link as ScrollLink } from 'react-scroll/modules'
 
@@ -11,8 +10,8 @@ type GenerateNavigationLinks = (setShowModal: Dispatch<SetStateAction<string>>) 
 
 
 const MobileNavigation: FC = (): JSX.Element => {
-  const [ showModal, setShowModal ] = useState<boolean>(false)
   const [ navigation, setNavigation ] = useState<string>('')
+
   const onClickNavigationHandler = (): void => {
     navigation === '' && setNavigation('mobile-navigation-open')
     navigation === 'mobile-navigation-open' && setNavigation('')
@@ -38,9 +37,8 @@ const MobileNavigation: FC = (): JSX.Element => {
           <div className="mobile-navigation__bottom">
             <Link
                to="login"
-              onClick={() => {
+              onClick={(): void => {
                 setNavigation('')
-                setShowModal(true)
               }}
 
               className="mobile-navigation__login-button ">

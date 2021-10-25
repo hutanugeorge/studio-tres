@@ -13,7 +13,7 @@ const HeroSection: FC = (): JSX.Element => {
 
    const landingInfo: ILandingInfo = useSelector((state: RootState) => state.landingInfo)
 
-   useEffect(() => {
+   useEffect((): void => {
       dispatch(fetchLanding() )
    }, [])
 

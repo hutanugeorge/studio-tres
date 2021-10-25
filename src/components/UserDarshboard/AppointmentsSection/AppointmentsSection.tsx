@@ -10,6 +10,9 @@ import { fetchAppointments } from "../../../actions"
 import { IAppointment } from "../../../../shared/interfaces/userDashboard"
 
 
+type RenderAppointmentsList = (appointmentType: string, appointments: IAppointment[]) => JSX.Element
+type RenderAppointments = (appointmentType: string, appointments: IAppointment[]) => (JSX.Element | null)[]
+
 const AppointmentsSection: FC = (): JSX.Element => {
    dayjs.extend(relativeTime)
    const history = useHistory()
@@ -21,7 +24,7 @@ const AppointmentsSection: FC = (): JSX.Element => {
 
    const token = localStorage.getItem('token')
 
-   useEffect(() => {
+   useEffect((): void => {
       !token ? history.push('/') : dispatch(fetchAppointments())
       setAppointmentsType('future')
    }, [])
@@ -36,11 +39,11 @@ const AppointmentsSection: FC = (): JSX.Element => {
          <div className="appointments">
             <div className="appointments__buttons">
                <p className={`appointments__buttons--button appointments__buttons--button--${appointmentsType === 'previous' ? 'active' : ''}`}
-                  onClick={() => setAppointmentsType('previous')}>
+                  onClick={(): void => setAppointmentsType('previous')}>
                   Previous
                </p>
                <p className={`appointments__buttons--button appointments__buttons--button--${appointmentsType === 'future' ? 'active' : ''}`}
-                  onClick={() => setAppointmentsType('future')}>
+                  onClick={(): void => setAppointmentsType('future')}>
                   Future
                </p>
             </div>
@@ -51,7 +54,7 @@ const AppointmentsSection: FC = (): JSX.Element => {
       </div>)
 }
 
-const renderAppointmentsList = (appointmentType: string, appointments: IAppointment[]) =>
+const renderAppointmentsList: RenderAppointmentsList = (appointmentType: string, appointments: IAppointment[]): JSX.Element =>
    <div className="appointments__last">
       <div className="appointments__list-title">
          <p className="appointments__list-title--content">
@@ -63,10 +66,10 @@ const renderAppointmentsList = (appointmentType: string, appointments: IAppointm
       </div>
    </div>
 
-const renderAppointments = (appointmentType: string, appointments: IAppointment[]) =>
-   appointments.map((appointment: IAppointment, index: number) =>
-      appointmentType === 'future' && dayjs(new Date(appointment.date)).fromNow().includes('in')
-      || appointmentType === 'previous' && dayjs(new Date(appointment.date)).fromNow().includes('ago')
+const renderAppointments: RenderAppointments = (appointmentType: string, appointments: IAppointment[]): (JSX.Element | null)[] =>
+   appointments.map((appointment: IAppointment, index: number): JSX.Element | null =>
+      (appointmentType === 'future' && dayjs(new Date(appointment.date)).fromNow().includes('in')
+         || appointmentType === 'previous' && dayjs(new Date(appointment.date)).fromNow().includes('ago'))
          ? <div key={index} className="appointment">
             <div className="appointment__title">
                <p className="appointment__title--content">{appointment.subService}</p>

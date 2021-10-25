@@ -9,9 +9,10 @@
 
 .login-modal
     &__wrap
-        background-image: linear-gradient(to right bottom, #f4f4f4, #e6e3f1, #d8d2ed, #ccc0e9, #c0afe4, #b59fdf, #ab8fda, #a17fd5, #956cd0, #8858ca, #7c44c4, #6f2dbd)
+        background-image:  url(../../../images/login-background.svg)
+        filter: blur(3px)
+        background-position: center
         background-size: cover
-        background-position:  center
         height: 100%
         width: 100%
         position: fixed
@@ -26,7 +27,7 @@
 
     &__container
         z-index: 60
-        border-radius: 10px
+        border-radius: 20px
         position: fixed
         top: 50%
         right: 50%
@@ -42,6 +43,12 @@
         flex-direction: column
         align-items: flex-end
         padding-bottom: 5rem
+        transition: all .3s
+
+        &:hover
+            transform: translate(50%, -55%)
+            box-shadow: 4rem 4rem 4rem rgba($color-black, .4)
+
 
         @include respond($tablet-portrait)
             background: url(../../../images/modal-background-vertical.svg) bottom

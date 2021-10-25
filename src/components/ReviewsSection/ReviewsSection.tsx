@@ -13,6 +13,7 @@ import { RootState } from '../../reducers'
 import { IReview } from '../../../shared/interfaces/presentationPage'
 
 
+type RenderSlides = (reviews: IReview[]) => JSX.Element[]
 SwiperCore.use([ Navigation, Autoplay, Pagination ])
 
 const ReviewsSection: FC = (): JSX.Element => {
@@ -20,7 +21,7 @@ const ReviewsSection: FC = (): JSX.Element => {
 
    const reviews: IReview[] = useSelector((state: RootState) => state.reviews)
 
-   useEffect(() => {
+   useEffect((): void => {
       dispatch(fetchReviews())
    }, [])
 
@@ -40,7 +41,7 @@ const ReviewsSection: FC = (): JSX.Element => {
       </div>)
 }
 
-const renderSlides = (reviews: IReview[]): JSX.Element[] =>
+const renderSlides: RenderSlides = (reviews: IReview[]): JSX.Element[] =>
    reviews.length === 0
       ? [ <div key={'1'}>Loading...</div> ]
       : (reviews.map((review: IReview, index: number) =>

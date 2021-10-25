@@ -15,7 +15,7 @@ const ProgramSection: FC = (): JSX.Element =>
 
 
 const generateScheduleCards: JSXArrayElements = (): JSX.Element[] =>
-   weekDays.map((day: string, index: number) =>
+   weekDays.map((day: string, index: number): JSX.Element =>
       <ProgramCard index={index} day={day} />)
 
 export default ProgramSection

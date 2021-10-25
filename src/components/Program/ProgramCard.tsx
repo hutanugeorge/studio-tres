@@ -4,11 +4,11 @@ import { services } from "../../../utils/constants"
 
 
 interface IProgramCard {
-   index: number
-   day: string
+   readonly index: number
+   readonly day: string
 }
 
-const ProgramCard: FC<IProgramCard> = ({index, day}: IProgramCard): JSX.Element =>
+const ProgramCard: FC<IProgramCard> = ({ index, day }: IProgramCard): JSX.Element =>
    <div key={index} className="schedule-card">
       <div className="schedule-card__title-container">
          <p className="schedule-card__title">
@@ -22,7 +22,7 @@ const ProgramCard: FC<IProgramCard> = ({index, day}: IProgramCard): JSX.Element 
 
 
 const servicesHours = (): JSX.Element[] =>
-   services.map((service: string) =>
+   services.map((service: string): JSX.Element =>
       <div className="schedule-card__hours-service">
          <p className="schedule-card__hours-service--title">
             {service}

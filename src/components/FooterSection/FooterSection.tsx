@@ -3,7 +3,6 @@ import { FC } from 'react'
 
 
 const FooterSection: FC = (): JSX.Element =>
-  <>
     <footer id="footer" className="footer-section">
       <div className="footer-section__contact--wrap">
         <div className="footer-section__contact">
@@ -45,7 +44,6 @@ const FooterSection: FC = (): JSX.Element =>
         <p>Copyright © 2021 George Hutanu. All rights reserved.</p>
       </div>
     </footer>
-  </>
 
 
 export default FooterSection

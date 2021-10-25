@@ -387,17 +387,22 @@
   }
 }
 .login-modal__container--form--title {
-  font-size: 2.7rem;
-  font-weight: 700;
+  font-size: 4rem;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 @media (max-width: 37em) {
   .login-modal__container--form--title {
     font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
   }
 }
 @media (max-width: 37em) {
   .login-modal__container--form--title {
     font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
   }
 }
 @media (max-width: 56em) {
@@ -1314,17 +1319,22 @@
   }
 }
 .login-modal__container--form--title {
-  font-size: 2.7rem;
-  font-weight: 700;
+  font-size: 4rem;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 @media (max-width: 37em) {
   .login-modal__container--form--title {
     font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
   }
 }
 @media (max-width: 37em) {
   .login-modal__container--form--title {
     font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
   }
 }
 @media (max-width: 56em) {
@@ -2589,17 +2599,22 @@
   }
 }
 .login-modal__container--form--title {
-  font-size: 2.7rem;
-  font-weight: 700;
+  font-size: 4rem;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 @media (max-width: 37em) {
   .login-modal__container--form--title {
     font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
   }
 }
 @media (max-width: 37em) {
   .login-modal__container--form--title {
     font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
   }
 }
 @media (max-width: 56em) {
@@ -3117,9 +3132,10 @@
 }
 
 .login-modal__wrap {
-  background-image: linear-gradient(to right bottom, #f4f4f4, #e6e3f1, #d8d2ed, #ccc0e9, #c0afe4, #b59fdf, #ab8fda, #a17fd5, #956cd0, #8858ca, #7c44c4, #6f2dbd);
-  background-size: cover;
+  background-image: url(../../../images/login-background.svg);
+  filter: blur(3px);
   background-position: center;
+  background-size: cover;
   height: 100%;
   width: 100%;
   position: fixed;
@@ -3134,7 +3150,7 @@
 }
 .login-modal__container {
   z-index: 60;
-  border-radius: 10px;
+  border-radius: 20px;
   position: fixed;
   top: 50%;
   right: 50%;
@@ -3150,6 +3166,11 @@
   flex-direction: column;
   align-items: flex-end;
   padding-bottom: 5rem;
+  transition: all 0.3s;
+}
+.login-modal__container:hover {
+  transform: translate(50%, -55%);
+  box-shadow: 4rem 4rem 4rem rgba(42, 30, 56, 0.4);
 }
 @media (max-width: 56em) {
   .login-modal__container {
@@ -3760,17 +3781,22 @@
   }
 }
 .login-modal__container--form--title {
-  font-size: 2.7rem;
-  font-weight: 700;
+  font-size: 4rem;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 @media (max-width: 37em) {
   .login-modal__container--form--title {
     font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
   }
 }
 @media (max-width: 37em) {
   .login-modal__container--form--title {
     font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
   }
 }
 @media (max-width: 56em) {
@@ -4667,17 +4693,22 @@
   }
 }
 .login-modal__container--form--title {
-  font-size: 2.7rem;
-  font-weight: 700;
+  font-size: 4rem;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 @media (max-width: 37em) {
   .login-modal__container--form--title {
     font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
   }
 }
 @media (max-width: 37em) {
   .login-modal__container--form--title {
     font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
   }
 }
 @media (max-width: 56em) {
@@ -6399,17 +6430,22 @@
   }
 }
 .login-modal__container--form--title {
-  font-size: 2.7rem;
-  font-weight: 700;
+  font-size: 4rem;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 @media (max-width: 37em) {
   .login-modal__container--form--title {
     font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
   }
 }
 @media (max-width: 37em) {
   .login-modal__container--form--title {
     font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
   }
 }
 @media (max-width: 56em) {
@@ -8162,17 +8198,22 @@
   }
 }
 .login-modal__container--form--title {
-  font-size: 2.7rem;
-  font-weight: 700;
+  font-size: 4rem;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 @media (max-width: 37em) {
   .login-modal__container--form--title {
     font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
   }
 }
 @media (max-width: 37em) {
   .login-modal__container--form--title {
     font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
   }
 }
 @media (max-width: 56em) {
@@ -9059,17 +9100,22 @@
   }
 }
 .login-modal__container--form--title {
-  font-size: 2.7rem;
-  font-weight: 700;
+  font-size: 4rem;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 @media (max-width: 37em) {
   .login-modal__container--form--title {
     font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
   }
 }
 @media (max-width: 37em) {
   .login-modal__container--form--title {
     font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
   }
 }
 @media (max-width: 56em) {
@@ -10547,17 +10593,22 @@
   }
 }
 .login-modal__container--form--title {
-  font-size: 2.7rem;
-  font-weight: 700;
+  font-size: 4rem;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 @media (max-width: 37em) {
   .login-modal__container--form--title {
     font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
   }
 }
 @media (max-width: 37em) {
   .login-modal__container--form--title {
     font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
   }
 }
 @media (max-width: 56em) {

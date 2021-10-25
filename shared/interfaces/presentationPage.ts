@@ -1,18 +1,18 @@
 export interface ILandingInfo {
-  landingPhrase: string
-  landingButtonPhrase: string
+  readonly landingPhrase: string
+  readonly landingButtonPhrase: string
 }
 
 export interface IFeature {
-  image: string
-  title: string
-  description: string
+  readonly image: string
+  readonly title: string
+  readonly description: string
 }
 
 export interface IReview {
-  image: string
-  fullName: string
-  review: string
+  readonly image: string
+  readonly fullName: string
+  readonly review: string
 }
 
 

@@ -16,7 +16,6 @@ const authenticationReducer: Reducer<IUser, Action<IUser>> = (state: IUser = def
          localStorage.removeItem('userId')
          return { ...payload }
       case Actions.LOGIN_ERROR:
-         console.log('reducer', payload)
          return { ...payload }
       default:
          return state

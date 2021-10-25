@@ -1,13 +1,13 @@
 export interface IUser {
-   token?: string
-   firstName?: string
-   userId?: string
+   readonly token?: string
+   readonly  firstName?: string
+   readonly  userId?: string
 }
 
 export interface IUserInfo {
-   firstName: string
-   lastName: string
-   rewardsPoints: number
-   promotionCode: string
-   email: string
+   readonly firstName: string
+   readonly lastName: string
+   readonly rewardsPoints: number
+   readonly  promotionCode: string
+   readonly  email: string
 }

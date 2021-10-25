@@ -387,17 +387,22 @@
   }
 }
 .login-modal__container--form--title {
-  font-size: 2.7rem;
-  font-weight: 700;
+  font-size: 4rem;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 @media (max-width: 37em) {
   .login-modal__container--form--title {
     font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
   }
 }
 @media (max-width: 37em) {
   .login-modal__container--form--title {
     font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
   }
 }
 @media (max-width: 56em) {

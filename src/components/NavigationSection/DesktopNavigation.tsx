@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from 'react'
-import { useDispatch } from "react-redux"
 
+import { useDispatch } from "react-redux"
 import { Link as ScrollLink } from 'react-scroll'
 import { Link } from 'react-router-dom'
 
@@ -15,8 +15,8 @@ const DesktopNavigation: FC = (): JSX.Element => {
    const token = localStorage.getItem('token')
    const [ isAuth, setIsAuth ] = useState<boolean>(false)
 
-   useEffect(() => {
-      token ? setIsAuth(true) : null
+   useEffect((): void => {
+      token && setIsAuth(true)
    }, [ isAuth ])
 
    return (
@@ -37,7 +37,7 @@ const DesktopNavigation: FC = (): JSX.Element => {
                               className="desktop-navigation__lower-link desktop-navigation__login">
                            User Dashboard
                         </Link>
-                        <a onClick={() => {
+                        <a onClick={(): void => {
                            dispatch(logoutUser())
                            setIsAuth(false)
                         }}

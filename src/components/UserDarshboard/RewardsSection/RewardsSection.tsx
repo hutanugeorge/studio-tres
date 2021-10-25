@@ -22,7 +22,7 @@ const RewardsSection: FC = (): JSX.Element => {
    const { rewardsPoints, promotionCode } = userInfo
    const token = localStorage.getItem('token')
 
-   useEffect(() => {
+   useEffect((): void => {
       !token ? history.push('/') : dispatch(fetchRewards())
    }, [])
    return (

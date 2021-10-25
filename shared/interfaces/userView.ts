@@ -1,13 +1,13 @@
 export interface IUserViewAction {
-   type: string
-   payload: string
+   readonly type: string
+   readonly  payload: string
 }
 
 export interface IToggleSettingsMenu {
-   type: string
-   payload: boolean
+   readonly  type: string
+   readonly payload: boolean
 }
 
 export interface IIconProps {
-   active: boolean
+   readonly active: boolean
 }

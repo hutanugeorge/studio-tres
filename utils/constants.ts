@@ -1,50 +1,48 @@
-import dayjs from "dayjs"
+import { setUserView } from "../src/actions"
 import { IFormError } from "../shared/interfaces/foms"
 import { IUser, IUserInfo } from "../shared/interfaces/user"
-import { setUserView } from "../src/actions";
 import { IFeature, ILandingInfo, IReview } from '../shared/interfaces/presentationPage'
-import { IUserViewAction } from "../shared/interfaces/userView";
+import { IUserViewAction } from "../shared/interfaces/userView"
 import { IAppointment, IReward, IPromotion, IEmployee } from "../shared/interfaces/userDashboard";
-import { rootReducer } from "../src/reducers"
 
 
 export interface Link {
-   name?: string,
-   link: string,
-   image?: string,
-   position?: string
+   readonly name?: string,
+   readonly link: string,
+   readonly image?: string,
+   readonly position?: string
 }
 
 export interface Price {
-   title: String,
-   subServices: {
-      title: String,
-      price: Number
+   readonly title: String,
+   readonly subServices: {
+      readonly title: String,
+      readonly price: Number
    }[]
 }
 
 export interface SubService {
-   title: String,
-   price: Number
+   readonly  title: String,
+   readonly  price: Number
 }
 
 interface IUpperTab {
-   title: string
-   action?: IUserViewAction
+   readonly title: string
+   readonly action?: IUserViewAction
 }
 
 interface IDefaultValues {
-   LANDING_INFO: ILandingInfo
-   FEATURE: IFeature
-   REVIEW: IReview
-   USER_VIEW: string
-   PROMOTION: IPromotion
-   REWARD: IReward
-   APPOINTMENT: IAppointment
-   USER: IUser
-   USER_DATA: IUserInfo
-   EMPLOYEE: IEmployee
-   FORM_ERRORS: IFormError
+   readonly  LANDING_INFO: ILandingInfo
+   readonly  FEATURE: IFeature
+   readonly REVIEW: IReview
+   readonly USER_VIEW: string
+   readonly PROMOTION: IPromotion
+   readonly REWARD: IReward
+   readonly APPOINTMENT: IAppointment
+   readonly USER: IUser
+   readonly USER_DATA: IUserInfo
+   readonly EMPLOYEE: IEmployee
+   readonly FORM_ERRORS: IFormError
 
 }
 

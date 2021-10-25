@@ -15,7 +15,7 @@ const FeatureSection: FC = (): JSX.Element => {
 
    const features: IFeature[] = useSelector((state: RootState) => state.features)
 
-   useEffect(() => {
+   useEffect((): void => {
       dispatch(fetchFeatures())
    }, [])
 

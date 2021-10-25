@@ -1,7 +1,6 @@
 import React, { FC } from 'react'
+
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import DesktopNavigation from "./components/NavigationSection/DesktopNavigation"
-import MobileNavigation from "./components/NavigationSection/MobileNavigation"
 
 import NavigationSection from './components/NavigationSection/NavigationSection'
 import FeatureSection from './components/FeatureSection/FeatureSection'

@@ -18,7 +18,7 @@ type SetUserView = (view: string) => IUserViewAction
 type LogoutUser = () => Action<IUser>
 type LoginUser<T> = (args: ILoginUserArgs) => (dispatch: Dispatch<Action<T>>) => Promise<void>
 
-export const fetchLanding: FetchActionType<{ landingPhrase: string, landingButtonPhrase: string }> = () =>
+export const fetchLanding: FetchActionType<{ landingPhrase: string, landingButtonPhrase: string }> = (): (dispatch: Dispatch<Action<ILandingInfo>>) => Promise<void> =>
    async (dispatch: Dispatch<Action<ILandingInfo>>): Promise<void> => {
       dispatch({
          type: Actions.FETCH_HERO_SECTION,
@@ -26,7 +26,7 @@ export const fetchLanding: FetchActionType<{ landingPhrase: string, landingButto
       })
    }
 
-export const fetchFeatures: FetchActionType<IFeature[]> = () =>
+export const fetchFeatures: FetchActionType<IFeature[]> = (): (dispatch: Dispatch<Action<IFeature[]>>) => Promise<void> =>
    async (dispatch: Dispatch<Action<IFeature[]>>): Promise<void> => {
       dispatch({
          type: Actions.FETCH_FEATURES,
@@ -34,7 +34,7 @@ export const fetchFeatures: FetchActionType<IFeature[]> = () =>
       })
    }
 
-export const fetchReviews: FetchActionType<IReview[]> = () =>
+export const fetchReviews: FetchActionType<IReview[]> = (): (dispatch: Dispatch<Action<IReview[]>>) => Promise<void> =>
    async (dispatch: Dispatch<Action<IReview[]>>): Promise<void> => {
       dispatch({
          type: Actions.FETCH_REVIEWS,
@@ -42,7 +42,7 @@ export const fetchReviews: FetchActionType<IReview[]> = () =>
       })
    }
 
-export const fetchPromotions: FetchActionType<IPromotion[]> = () =>
+export const fetchPromotions: FetchActionType<IPromotion[]> = (): (dispatch: Dispatch<Action<IPromotion[]>>) => Promise<void> =>
    async (dispatch: Dispatch<Action<IPromotion[]>>): Promise<void> => {
       dispatch({
          type: Actions.FETCH_PROMOTIONS,
@@ -50,7 +50,7 @@ export const fetchPromotions: FetchActionType<IPromotion[]> = () =>
       })
    }
 
-export const fetchRewards: FetchActionType<IReward[]> = () =>
+export const fetchRewards: FetchActionType<IReward[]> = (): (dispatch: Dispatch<Action<IReward[]>>) => Promise<void> =>
    async (dispatch: Dispatch<Action<IReward[]>>): Promise<void> => {
       dispatch({
          type: Actions.FETCH_REWARDS,
@@ -58,7 +58,7 @@ export const fetchRewards: FetchActionType<IReward[]> = () =>
       })
    }
 
-export const fetchAppointments: FetchActionType<IAppointment[]> = () =>
+export const fetchAppointments: FetchActionType<IAppointment[]> = (): (dispatch: Dispatch<Action<IAppointment[]>>) => Promise<void> =>
    async (dispatch: Dispatch<Action<IAppointment[]>>): Promise<void> => {
       dispatch({
          type: Actions.APPOINTMENTS,
@@ -80,7 +80,7 @@ export const toggleSettingsMenu: ToggleSettingsMenu = (isOpen: boolean): IToggle
    }
 }
 
-export const loginUser: LoginUser<IUser> = (args: ILoginUserArgs) =>
+export const loginUser: LoginUser<IUser> = (args: ILoginUserArgs): (dispatch: Dispatch<Action<IUser>>) => Promise<void> =>
    async (dispatch: Dispatch<Action<IUser>>): Promise<void> => {
       try {
          const user = await postLogin(args)
@@ -108,7 +108,7 @@ export const logoutUser: LogoutUser = (): Action<IUser> => {
    }
 }
 
-export const fetchUserInfo: FetchActionType<IUserInfo> = () =>
+export const fetchUserInfo: FetchActionType<IUserInfo> = (): (dispatch: Dispatch<Action<IUserInfo>>) => Promise<void> =>
    async (dispatch: Dispatch<Action<IUserInfo>>): Promise<void> => {
       dispatch({
          type: Actions.USER_INFO,
@@ -117,7 +117,7 @@ export const fetchUserInfo: FetchActionType<IUserInfo> = () =>
    }
 
 
-export const fetchEmployees: FetchActionType<IEmployee[]> = () =>
+export const fetchEmployees: FetchActionType<IEmployee[]> = (): (dispatch: Dispatch<Action<IEmployee[]>>) => Promise<void> =>
    async(dispatch: Dispatch<Action<IEmployee[]>>): Promise<void> => {
     dispatch({
        type: Actions.FETCH_EMPLOYEES,

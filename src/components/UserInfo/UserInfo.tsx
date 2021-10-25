@@ -27,7 +27,7 @@ const UserInfo: FC = (): JSX.Element => {
    const userInfo: IUserInfo = useSelector((state: RootState) => state.userInfo)
    const openUserClassName = 'user-info__mobile--open'
 
-   useEffect(() => {
+   useEffect((): void => {
       dispatch(fetchUserInfo())
    }, [])
    return (
@@ -67,7 +67,9 @@ const UserInfo: FC = (): JSX.Element => {
                   </div>
                   <Link className="user-info__details--detail"
                         to={'/'}
-                        onClick={() => dispatch(logoutUser())}>
+                        onClick={(): void => {
+                           dispatch(logoutUser())
+                        }}>
                      <div className="user-info__details--detail--icon">
                         <LogoutIcon/>
                      </div>
@@ -77,12 +79,12 @@ const UserInfo: FC = (): JSX.Element => {
             </div>
          </div>
          <div
-            onClick={() => {
+            onClick={(): void => {
                dispatch(toggleSettingsMenu(isMenuOpen))
             }}
             className={`user-info__mobile ${isMenuOpen ? openUserClassName : ''}`}>
             <div
-               onClick={(e) => {
+               onClick={(e): void => {
                   e.stopPropagation()
                }}
                className="user-info__mobile-settings">
@@ -112,14 +114,14 @@ const renderUserUpperTabs: JSXArrayElements = (): JSX.Element[] => {
    const dispatch = useDispatch()
    const [ activeTab, setActiveTab ] = useState<string>('Discounts')
 
-   useEffect(() => {
+   useEffect((): void => {
       dispatchOnClick(setUserView(Actions.DISCOUNTS), dispatch)
    }, [])
 
-   return (userUpperTabs.map(({ title, action }, index: number) =>
+   return (userUpperTabs.map(({ title, action }, index: number): JSX.Element =>
       <div key={index}
            className={`user-info__details--detail ${activeTab === title ? 'user-info__details--detail--active' : ''}`}
-           onClick={() => {
+           onClick={(): void => {
               dispatchOnClick(action, dispatch)
               setActiveTab(title)
            }}>

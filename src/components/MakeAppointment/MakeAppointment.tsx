@@ -1,5 +1,5 @@
 import dayjs from "dayjs"
-import React, { useEffect, useState } from "react"
+import React, { FC, useEffect, useState } from "react"
 
 import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router-dom"
@@ -29,7 +29,7 @@ import {
 } from "./makeAppointmentUtils"
 
 
-const MakeAppointment = (): JSX.Element => {
+const MakeAppointment: FC = (): JSX.Element => {
    const dispatch = useDispatch()
    const history = useHistory()
 
@@ -72,7 +72,7 @@ const MakeAppointment = (): JSX.Element => {
       day: appointmentDay
    }
 
-   useEffect(() => {
+   useEffect((): void => {
       token && setIsLoggedIn((prev: boolean) => !prev)
       dispatch(fetchEmployees())
       isLoggedIn && dispatch(fetchUserInfo())
@@ -93,7 +93,7 @@ const MakeAppointment = (): JSX.Element => {
                            className={`make-appointment__container__upper-side__form__upper-inputs--group 
                            make-appointment__container__upper-side__form__upper-inputs--group${isLoggedIn ? '--hidden' : ''}`}>
                            <input type="text"
-                                  onChange={(e) => {
+                                  onChange={(e): void => {
                                      setFirsName(e.currentTarget.value)
                                   }}
                                   name="firstName"
@@ -103,14 +103,14 @@ const MakeAppointment = (): JSX.Element => {
                            <label htmlFor="firstName"
                                   className={`make-appointment__container__upper-side__form__upper-inputs--input--label${firstNameError ? '--error' : ''}`}>
                               <p className="make-appointment__container__upper-side__form__upper-inputs--input--label--content">
-                                 {firstNameError ? firstNameError : 'First name'}
+                                 {firstNameError ?? 'First name'}
                               </p>
                            </label>
                         </div>
                         <div
                            className={`make-appointment__container__upper-side__form__upper-inputs--group make-appointment__container__upper-side__form__upper-inputs--group${isLoggedIn ? '--hidden' : ''}`}>
                            <input type="text" name="lastName" placeholder="Last Name"
-                                  onChange={(e) => {
+                                  onChange={(e): void => {
                                      setLastName(e.currentTarget.value)
                                   }}
                                   className={`make-appointment__container__upper-side__form__upper-inputs--input 
@@ -118,7 +118,7 @@ const MakeAppointment = (): JSX.Element => {
                            <label htmlFor="lastName"
                                   className={`make-appointment__container__upper-side__form__upper-inputs--input--label${lastNameError ? '--error' : ''}`}>
                               <p className="make-appointment__container__upper-side__form__upper-inputs--input--label--content">
-                                 {lastNameError ? lastNameError : 'Last name'}
+                                 {lastNameError ?? 'Last name'}
                               </p>
                            </label>
                         </div>
@@ -127,7 +127,7 @@ const MakeAppointment = (): JSX.Element => {
                         <div
                            className={`make-appointment__container__upper-side__form__lower-inputs--group make-appointment__container__upper-side__form__lower-inputs--group${isLoggedIn ? '--hidden' : ''}`}>
                            <input type="email" name="email" placeholder="Email"
-                                  onChange={(e) => {
+                                  onChange={(e): void => {
                                      setEmail(e.currentTarget.value)
                                   }}
                                   className={`make-appointment__container__upper-side__form__upper-inputs--input 
@@ -135,21 +135,21 @@ const MakeAppointment = (): JSX.Element => {
                            <label htmlFor="email"
                                   className={`make-appointment__container__upper-side__form__lower-inputs--input--label${emailError ? '--error' : ''}`}>
                               <p className="make-appointment__container__upper-side__form__lower-inputs--input--label--content">
-                                 {emailError ? emailError : 'Email'}
+                                 {emailError ?? 'Email'}
                               </p>
                            </label>
                         </div>
                         <div className="make-appointment__container__upper-side__form__lower-inputs--group">
                            <input type="tel" name="phone" placeholder="Phone"
-                                  onChange={(e) => {
+                                  onChange={(e): void => {
                                      setPhone(e.currentTarget.value)
                                   }}
                                   className={`make-appointment__container__upper-side__form__upper-inputs--input 
                                   make-appointment__container__upper-side__form__upper-inputs--input${phoneError ? '--error' : ''}`}/>
                            <label htmlFor="phone"
-                                  className={`make-appointment__container__upper-side__form__lower-inputs--input--label${phoneError ? '--error': ''}`}>
+                                  className={`make-appointment__container__upper-side__form__lower-inputs--input--label${phoneError ? '--error' : ''}`}>
                               <p className="make-appointment__container__upper-side__form__lower-inputs--input--label--content">
-                                 {phoneError ? phoneError : 'Phone'}
+                                 {phoneError ?? 'Phone'}
                               </p>
                            </label>
                         </div>
@@ -158,7 +158,7 @@ const MakeAppointment = (): JSX.Element => {
                         <div className="make-appointment__container__upper-side__form__employee-services">
                            <div className="make-appointment__container__upper-side__form__employee-services--group">
                               <select id="services"
-                                      onChange={(e) => {
+                                      onChange={(e): void => {
                                          setMainService(e.currentTarget.value)
                                          setEmployee(defaultValues.EMPLOYEE)
                                       }}
@@ -168,13 +168,13 @@ const MakeAppointment = (): JSX.Element => {
                               </select>
                               <input type="hidden" name="services" value={mainService}/>
                               <p className={`make-appointment__container__upper-side__form--error`}>
-                                 {serviceError ? serviceError : null}
+                                 {serviceError ?? null}
                               </p>
                            </div>
                            <div className="make-appointment__container__upper-side__form__employee-services--group">
                               <select id="subServices"
-                                      onChange={(e) => {
-                                         e.currentTarget.value !== 'Sub Service' ? setSubService(e.currentTarget.value) : ''
+                                      onChange={(e): void => {
+                                         e.currentTarget.value !== 'Sub Service' && setSubService(e.currentTarget.value)
                                       }}
                                       className={`make-appointment__container__upper-side__form__lower-inputs--input${mainService === 'Service' ? '--hidden' : ''} 
                                       make-appointment__container__upper-side__form__lower-inputs--input${mainService === 'Service' ? '--hidden' : ''}${subServiceError ? '--error' : ''}`}>
@@ -183,18 +183,18 @@ const MakeAppointment = (): JSX.Element => {
                               <input type="hidden" name="subService"
                                      value={`${subService.split(' ')[0]}_${subService.split(' ')[1]}`}/>
                               <p className={`make-appointment__container__upper-side__form--error`}>
-                                 {subServiceError ? subServiceError : null}
+                                 {subServiceError ?? null}
                               </p>
                            </div>
                         </div>
                         <div className="make-appointment__container__upper-side__form__employee-list">
-                           {employees.map((employee: IEmployee, index: number) => {
+                           {employees.map((employee: IEmployee, index: number): JSX.Element | undefined => {
                               if (mainService !== '' && mainService === employee.field)
                                  return <div
                                     className="make-appointment__container__upper-side__form__employee-list--image--wrap"
                                     key={index}>
                                     <div className="make-appointment__container__upper-side__form__employee-list--image"
-                                         onClick={() => {
+                                         onClick={(): void => {
                                             setEmployee(employee)
                                             setAppointmentsDates(getEmployeeDayAppointments(employee.appointments))
                                             employee.unavailability && employee.unavailability.length && setUnavailability(employee.unavailability)
@@ -240,10 +240,10 @@ const MakeAppointment = (): JSX.Element => {
                      </div>
                   </div>
                   <div className="make-appointment__container__lower-side__employee-program">
-                     {getAWeekDatesByNow().map((date: number, index: number) => {
+                     {getAWeekDatesByNow().map((date: number, index: number): JSX.Element => {
                         const unavailableDays: string[] = []
                         if (unavailability !== undefined && unavailability[0].startDate !== '') {
-                           unavailability.forEach((unavailabilityDate: IUnavailabilityPeriod) => {
+                           unavailability.forEach((unavailabilityDate: IUnavailabilityPeriod): void => {
                               const arrayStartDate = unavailabilityDate.startDate.split('/')
                               const arrayEndDate = unavailabilityDate.endDate.split('/')
                               const startDate = arrayStartDate[1] === String(dayjs().month() + 1) ? arrayStartDate[0] : []
@@ -257,13 +257,13 @@ const MakeAppointment = (): JSX.Element => {
                         const weekday = day % 7
                         let hasBusyHours = false;
                         let busyWorkingHours: number | (string | void)[]
-                        getBusyHoursByDay(appointmentsDates, unavailableDays, employee.jobTitle).map((busyDay: (number | (string | void)[])[]) => {
+                        getBusyHoursByDay(appointmentsDates, unavailableDays, employee.jobTitle).map((busyDay: (number | (string | void)[])[]): void => {
                            hasBusyHours = busyDay.includes(date)
                            if (hasBusyHours)
                               busyWorkingHours = busyDay[1]
                         })
                         return <div key={index}
-                                    onClick={() => {
+                                    onClick={(): void => {
                                        setAppointmentDay(String(date))
                                     }}
                                     className="make-appointment__container__lower-side__employee-program__element">
@@ -278,7 +278,7 @@ const MakeAppointment = (): JSX.Element => {
                               </div>
                            </div>
                            <div className="make-appointment__container__lower-side__employee-program__element__hours">
-                              {getDailyProgram(getServiceDuration(employee.jobTitle)).map((dayProgram: string, index: number) => {
+                              {getDailyProgram(getServiceDuration(employee.jobTitle)).map((dayProgram: string, index: number): JSX.Element => {
                                     const hour = dayProgram.split(':')[0]
                                     const minute = dayProgram.split(':')[1]
                                     let exactTime: {} | null | undefined | string;
@@ -294,8 +294,7 @@ const MakeAppointment = (): JSX.Element => {
                                        <div key={index}
                                             className="make-appointment__container__lower-side__employee-program__element__hours--hour">
                                           <p onClick={() => {
-                                             if (typeof exactTime === "string")
-                                                setAppointmentHour(exactTime)
+                                             typeof exactTime === "string" && setAppointmentHour(exactTime)
                                           }}
                                              className={`make-appointment__container__lower-side__employee-program__element__hours--hour--content 
                                           make-appointment__container__lower-side__employee-program__element__hours--hour--content${String(date) === appointmentDay && String(exactTime) === appointmentHour ? '--active' : ''}`}>
@@ -311,11 +310,11 @@ const MakeAppointment = (): JSX.Element => {
                   </div>
                   <div className="make-appointment__container__lower-side__submit-button">
                      <p className="make-appointment__container__lower-side__submit-button--message">{appointmentServerMessage}</p>
-                     <p onClick={async () => {
+                     <p onClick={async (): Promise<void> => {
                         const response = await postAppointments(scheduleDates)
                         if (response.status === 200) {
                            setAppointmentServerMessage(`${response.data.userFirstName}, ${response.data.message}`)
-                           setTimeout(() => history.push('/'), 2000)
+                           setTimeout((): void => history.push('/'), 2000)
                         } else if (response.status === 403) {
                            const { errors } = response.data
                            errors?.firstName ? setFirstNameError(errors.firstName) : setFirstNameError('')

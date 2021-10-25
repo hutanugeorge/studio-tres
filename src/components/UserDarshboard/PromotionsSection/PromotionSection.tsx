@@ -19,7 +19,7 @@ const PromotionSection: FC = (): JSX.Element => {
 
    const token = localStorage.getItem('token')
 
-   useEffect(() => {
+   useEffect((): void => {
       !token ? history.push('/') : dispatch(fetchPromotions())
    }, [])
 

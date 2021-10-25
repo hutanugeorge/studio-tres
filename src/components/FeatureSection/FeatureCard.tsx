@@ -1,14 +1,14 @@
 import React, { FC } from "react";
 
 
-interface FeatureCard {
-   index: number
-   image: string
-   title: string
-   description: string
+interface IFeatureCard {
+   readonly index: number
+   readonly image: string
+   readonly title: string
+   readonly description: string
 }
 
-const FeatureCard: FC<FeatureCard> = ({index, image, title, description}: FeatureCard) =>
+const FeatureCard: FC<IFeatureCard> = ({index, image, title, description}: IFeatureCard): JSX.Element =>
    <div className="card" key={index}>
       <div className="card__image-container">
          <img className="card__image" src={`./images/${image}`} alt=""/>

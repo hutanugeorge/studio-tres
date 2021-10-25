@@ -8,7 +8,7 @@
     "start": "craco start"
   },
   "dependencies": {
-    "@react-google-maps/api": "^2.3.0",
+    "@react-google-maps/api": "^2.5.0",
     "@reduxjs/toolkit": "^1.6.1",
     "@types/react-scroll": "^1.8.3",
     "axios": "^0.21.4",
@@ -31,6 +31,8 @@
     "webpack": "^5.54.0"
   },
   "devDependencies": {
+    "@types/google.maps": "^3.46.0",
+    "@types/googlemaps": "^3.43.3",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-router-dom": "^5.1.9",

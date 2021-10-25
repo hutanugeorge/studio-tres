@@ -23,7 +23,7 @@ const UserDashboardSection: FC = (): JSX.Element => {
    return (
       <div className="user-dashboard">
          <div className="user-dashboard__toggle-menu--wrap"
-              onClick={() => {
+              onClick={(): void => {
                  dispatch(toggleSettingsMenu(isMenuOpen))
               }}>
             <div className="user-dashboard__toggle-menu"/>

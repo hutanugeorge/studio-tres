@@ -1,12 +1,12 @@
 export interface IAppointment {
-   firstName: string
-   lastName: string
-   email: string
-   phone: string
-   message: string
-   serviceTitle: string
-   subService: string
-   employee: string
-   hour: string
-   day: string
+   readonly firstName: string
+   readonly lastName: string
+   readonly email: string
+   readonly phone: string
+   readonly message: string
+   readonly serviceTitle: string
+   readonly subService: string
+   readonly employee: string
+   readonly hour: string
+   readonly day: string
 }

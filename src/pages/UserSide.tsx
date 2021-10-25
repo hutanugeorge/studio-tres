@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useEffect } from "react"
+import React, { Dispatch, FC, SetStateAction, useEffect } from "react"
 
 import { useDispatch } from "react-redux"
 import { useHistory } from "react-router-dom"
@@ -10,18 +10,17 @@ import UserDashboardSection from '../components/UserDarshboard/UserDashboardSect
 import { logoutUser } from "../actions"
 
 
-const UserSide = () => {
+type AutoLogOut = (dispatch: Dispatch<SetStateAction<Action<IUser>>>) => void
+
+const UserSide: FC = (): JSX.Element => {
    const history = useHistory()
    const dispatch = useDispatch()
 
    const token = localStorage.getItem('token')
 
-   useEffect(() => {
-      if (!token)
-         history.push('/')
-      else
-         autoLogOut(dispatch)
-   }, [ ])
+   useEffect((): void => {
+      !token ? history.push('/') : autoLogOut(dispatch)
+   }, [])
 
    return (
       <div className="user-side">
@@ -30,8 +29,8 @@ const UserSide = () => {
       </div>)
 }
 
-const autoLogOut = (dispatch: Dispatch<SetStateAction<Action<IUser>>>) => {
-   setTimeout(() => {
+const autoLogOut: AutoLogOut = (dispatch: Dispatch<SetStateAction<Action<IUser>>>): void => {
+   setTimeout((): void => {
       dispatch(logoutUser())
    }, 1000 * 60 * 60)
 }
