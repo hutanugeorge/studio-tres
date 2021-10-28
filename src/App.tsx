@@ -1,6 +1,8 @@
 import React, { FC } from 'react'
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import ForgotPassword from "./components/LoginModal/ForgotPassword"
+import ResetPassword from "./components/LoginModal/ResetPassword"
 
 import NavigationSection from './components/NavigationSection/NavigationSection'
 import FeatureSection from './components/FeatureSection/FeatureSection'
@@ -21,6 +23,12 @@ const App: FC = (): JSX.Element =>
          <Switch>
             <Route path="/login">
                <LoginModal/>
+            </Route>
+            <Route path="/resetPassword">
+               <ResetPassword />
+            </Route>
+            <Route path="/resetPasswordEmail">
+               <ForgotPassword />
             </Route>
             <Route path="/" exact>
                <NavigationSection/>

@@ -51,3 +51,9 @@ export interface ISignupArgs {
    readonly password: string
    readonly repeatPassword: string
 }
+
+export interface IResetPasswordArgs {
+   readonly token: string | null
+   readonly password: string
+   readonly repeatPassword: string
+}

@@ -1,9 +1,10 @@
 import React, { Dispatch, FC, FormEvent, SetStateAction, useEffect, useState } from 'react'
 
-import { useHistory } from "react-router-dom"
+import { useHistory, Link } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 
 import { signupUser } from "../../../api/tresStudio/authentication"
+import { IFormErrors } from "../../../shared/interfaces/foms"
 import { IUser } from "../../../shared/interfaces/user"
 import { loginUser } from "../../actions"
 import { RootState } from "../../reducers"
@@ -43,7 +44,7 @@ const LoginForm: FormComponent = ({ setForm }: IFormComponent): JSX.Element => {
    const [ email, setEmail ] = useState<string>('')
    const [ password, setPassword ] = useState<string>('')
    const [ passwordErrorMessage, setPasswordErrorMessage ] = useState<string>('')
-   const [ emailErrorMessage, setEmailErrorMessage ] = useState<string>('')
+   const [ emailErrorMessage, setEmailErrorMessage ] = useState<string | undefined>(undefined)
 
 
    useEffect((): void => {
@@ -71,7 +72,7 @@ const LoginForm: FormComponent = ({ setForm }: IFormComponent): JSX.Element => {
                   setEmail(event.currentTarget.value)
                }}/>
             <label className={`login-modal__container--form--inputs--label${emailErrorMessage ? '--error' : ''}`}>
-               {emailErrorMessage ?? 'Email'}
+               {emailErrorMessage ? emailErrorMessage : 'Email'}
             </label>
             <input
                className={`login-modal__container--form--inputs--input login-modal__container--form--inputs--input${passwordErrorMessage ? '--error' : ''}`}
@@ -84,9 +85,10 @@ const LoginForm: FormComponent = ({ setForm }: IFormComponent): JSX.Element => {
             <label
                className={`login-modal__container--form--inputs--label${passwordErrorMessage ? '--error' : ''}`}
                htmlFor="password">
-               {passwordErrorMessage ?? 'Password'}
+               {passwordErrorMessage ? passwordErrorMessage : 'Password'}
             </label>
             <div className="login-modal__container--form--inputs--buttons">
+               <Link to="/resetPasswordEmail" className="login-modal__container--form--inputs--buttons--forgot-password">Forgot password?</Link>
                <div>
                   <button
                      onChange={(event: FormEvent<HTMLElement>): void => {
@@ -111,14 +113,6 @@ const LoginForm: FormComponent = ({ setForm }: IFormComponent): JSX.Element => {
 
 
 const SignupForm: FormComponent = ({ setForm }: IFormComponent): JSX.Element => {
-
-   interface IFormErrors {
-      readonly firstName?: string
-      readonly lastName?: string
-      readonly email?: string
-      readonly password?: string
-      readonly repeatPassword?: string
-   }
 
    const [ firstName, setFirstName ] = useState<string>('')
    const [ lastName, setLastName ] = useState<string>('')

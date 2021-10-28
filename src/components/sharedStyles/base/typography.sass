@@ -283,12 +283,21 @@
 
         &--inputs
 
+            &--buttons--forgot-password
+                text-decoration: none
+                margin-bottom: 1rem
+                color: $color-primary
+
             &--label
                 @include respond($tablet-portrait)
                     color: rgba($color-white-ghost, .7)
 
                     &--firstname, &--lastname
                         color: rgba($color-black, .7)
+
+            &--buttons--forgot-password
+                @include respond($tablet-portrait)
+                    color: $color-secondary
 
             &--button
                 font-size: 2rem

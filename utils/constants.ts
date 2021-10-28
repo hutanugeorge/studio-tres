@@ -235,7 +235,9 @@ export enum tresStudioAPIRoutes {
    login = 'http://localhost:3001/login',
    signup = 'http://localhost:3001/signup',
    user = 'http://localhost:3001/user',
-   getEmployees = 'http://localhost:3001/employees'
+   getEmployees = 'http://localhost:3001/employees',
+   resetPassword = 'http://localhost:3001/resetPassword',
+   resetPasswordEmail = 'http://localhost:3001/resetPasswordEmail'
 }
 
 export enum Actions {

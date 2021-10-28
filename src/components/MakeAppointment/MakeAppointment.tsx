@@ -188,13 +188,8 @@ const MakeAppointment: FC = (): JSX.Element => {
                            </div>
                         </div>
                         <div className="make-appointment__container__upper-side__form__employee-list">
-<<<<<<< HEAD
                            {employees.map((employee: IEmployee, index: number): JSX.Element | undefined => {
                               if (mainService !== '' && mainService === employee.field)
-=======
-                           {employees.map((employee: IEmployee, index: number) => {
-                              if (mainService !== '' && mainService === employee.field) {
->>>>>>> d9d98c70663d8dcd8838cac1215237f51ac72b09
                                  return <div
                                     className="make-appointment__container__upper-side__form__employee-list--image--wrap"
                                     key={index}>
@@ -214,7 +209,6 @@ const MakeAppointment: FC = (): JSX.Element => {
                                        {`${employee.firstName}  ${employee.lastName}`}
                                     </div>
                                  </div>
-                              }
                            })}
                         </div>
                      </div>
