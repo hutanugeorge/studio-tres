@@ -7,17 +7,17 @@ import './pricing-section.sass'
 
 
 const PricingSection: FC = (): JSX.Element => {
-  return (
-    <section className="pricing-section">
-      <div className="pricing-section__cards">
-        {renderCards()}
-      </div>
-    </section>
-  )
+   return (
+      <section className="pricing-section">
+         <div className="pricing-section__cards">
+            {renderCards()}
+         </div>
+      </section>
+   )
 }
 
 const renderCards: JSXArrayElements = (): JSX.Element[] => prices.map((price, index: number) => (
-  <PricingCard key={index} title={price.title} subServices={price.subServices}/>
+   <PricingCard key={index} title={price.title} subServices={price.subServices}/>
 ))
 
 export default PricingSection

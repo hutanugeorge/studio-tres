@@ -14,6 +14,13 @@ interface IFormComponent {
    readonly setForm: Dispatch<SetStateAction<string>>
 }
 
+interface IUserData extends IUser {
+   readonly errors?: {
+      readonly password: string,
+      readonly email: string
+   }
+}
+
 type FormComponent = ({ setForm }: IFormComponent) => JSX.Element
 
 const LoginModal: FC = (): JSX.Element => {
@@ -34,17 +41,16 @@ const LoginModal: FC = (): JSX.Element => {
       </>)
 }
 
-
 const LoginForm: FormComponent = ({ setForm }: IFormComponent): JSX.Element => {
    const history = useHistory()
    const dispatch = useDispatch()
 
-   const userData: IUser & { errors?: { password: string, email: string } } = useSelector((state: RootState) => state.isUserAuthenticated)
+   const userData: IUserData = useSelector((state: RootState) => state.isUserAuthenticated)
 
    const [ email, setEmail ] = useState<string>('')
    const [ password, setPassword ] = useState<string>('')
    const [ passwordErrorMessage, setPasswordErrorMessage ] = useState<string>('')
-   const [ emailErrorMessage, setEmailErrorMessage ] = useState<string | undefined>(undefined)
+   const [ emailErrorMessage, setEmailErrorMessage ] = useState<string>('')
 
 
    useEffect((): void => {
@@ -88,7 +94,8 @@ const LoginForm: FormComponent = ({ setForm }: IFormComponent): JSX.Element => {
                {passwordErrorMessage ? passwordErrorMessage : 'Password'}
             </label>
             <div className="login-modal__container--form--inputs--buttons">
-               <Link to="/resetPasswordEmail" className="login-modal__container--form--inputs--buttons--forgot-password">Forgot password?</Link>
+               <Link to="/resetPasswordEmail"
+                     className="login-modal__container--form--inputs--buttons--forgot-password">Forgot password?</Link>
                <div>
                   <button
                      onChange={(event: FormEvent<HTMLElement>): void => {

@@ -1,31 +1,40 @@
 import React, { FC, useEffect } from 'react'
 
-import { useDispatch, useSelector } from 'react-redux'
-
-import { fetchFeatures } from '../../actions'
-import { RootState } from '../../reducers'
+import { IUseFetchResponse } from "../../../shared/interfaces/api"
+import { tresStudioAPIRoutes } from "../../../utils/constants"
+import useFetch from "../../customHooks/useFetch"
 import { IFeature } from '../../../shared/interfaces/presentationPage'
 import FeatureCard from "./FeatureCard";
 
 
 type RenderCards = (features: IFeature[]) => JSX.Element[]
 
-const FeatureSection: FC = (): JSX.Element => {
-   const dispatch = useDispatch()
+interface IFeatures {
+   features: IFeature[]
+}
 
-   const features: IFeature[] = useSelector((state: RootState) => state.features)
+const FeatureSection: FC = (): JSX.Element => {
+
+   const features: IUseFetchResponse<IFeatures> = useFetch<IFeatures>(tresStudioAPIRoutes.features)
+   const { data, error, loading } = features
 
    useEffect((): void => {
-      dispatch(fetchFeatures())
-   }, [])
+   }, [ data ])
 
-   return (
-      <section className="feature-section--wrap" id="features">
-         <div className="feature-section">
-            {renderCards(features)}
-         </div>
-      </section>
-   )
+   if (data)
+      return (
+         <section className="feature-section--wrap" id="features">
+            <div className="feature-section">
+               {renderCards(data.features)}
+            </div>
+         </section>
+      )
+   else if (error)
+      return <div>Error</div>
+   else if (loading)
+      return <div>Just loading...</div>
+   else
+      return <div>Something else</div>
 }
 
 const renderCards: RenderCards = (features: IFeature[]): JSX.Element[] =>

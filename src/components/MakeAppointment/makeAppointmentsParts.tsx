@@ -1,6 +1,6 @@
-import React, { Dispatch, FC, SetStateAction } from "react"
-import { JSXArrayElements, JSXElement } from "../../../shared/types"
+import React, { Dispatch, SetStateAction } from "react"
 
+import { JSXArrayElements, JSXElement } from "../../../shared/types"
 import { services, subServices } from "../../../utils/constants"
 
 

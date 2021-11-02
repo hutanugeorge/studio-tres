@@ -1,6 +1,7 @@
-import { FormEvent, useState } from "react"
-import * as React from "react"
+import React, { FormEvent, useState } from "react"
+
 import { useHistory } from "react-router-dom"
+
 import { resetPasswordEmail } from "../../../api/tresStudio/authentication"
 import { IFormErrors } from "../../../shared/interfaces/foms"
 import { JSXElement } from "../../../shared/types"

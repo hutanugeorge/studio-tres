@@ -1,10 +1,10 @@
 import * as React from "react"
-import { useSelector } from "react-redux"
-import { IUserInfo } from "../../../../shared/interfaces/user"
 
-import { promoCardsColors } from "../../../../utils/constants"
+import { IUseFetchResponse } from "../../../../shared/interfaces/api"
+import { IUserInfo } from "../../../../shared/interfaces/user"
+import { promoCardsColors, tresStudioAPIRoutes } from "../../../../utils/constants"
 import { IReward, IRewardService } from "../../../../shared/interfaces/userDashboard";
-import { RootState } from "../../../reducers"
+import useFetch from "../../../customHooks/useFetch"
 
 
 type RewardService = (props: IReward) => JSX.Element
@@ -28,15 +28,23 @@ const RewardCard: RewardService = ({ title, services }: IReward): JSX.Element =>
 }
 
 const renderRewardServices: RenderRewardServices = (services: IRewardService[]): JSX.Element[] => {
-   const { rewardsPoints }: IUserInfo = useSelector((state: RootState) => state.userInfo)
-   return services.map(({ title, points }: IRewardService, index: number): JSX.Element => {
-         return <div className="rewards-card__services-list-content-element" key={index}>
+   const userInfo: IUseFetchResponse<{ userInfo: IUserInfo }> = useFetch<{ userInfo: IUserInfo }>(tresStudioAPIRoutes.user, true)
+   const { data, error, loading } = userInfo
+
+   if (data)
+      return services.map(({ title, points }: IRewardService, index: number): JSX.Element =>
+         <div className="rewards-card__services-list-content-element" key={index}>
             <p className="rewards-card__services-list-content--title">{title}</p>
             <p className="rewards-card__services-list-content--points"> {points} points </p>
-            <a className={`rewards-card__services-list-content--button${rewardsPoints < Number(points) ? '--disable' : ''}`}> Take
-               it </a>
+            {data.userInfo.rewardsPoints ?
+               <a className={`rewards-card__services-list-content--button`}> Take it </a> : null}
          </div>
-      }
-   )
+      )
+   else if (error)
+      return [ <div key={1}>Error</div> ]
+   else if (loading)
+      return [ <div key={1}>Just loading...</div> ]
+   else
+      return [ <div key={1}>Something else</div> ]
 }
 export default RewardCard

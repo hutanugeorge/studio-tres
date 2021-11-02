@@ -1,9 +1,9 @@
 import { Action } from "../../shared/interfaces/api"
 import { Actions, defaultValues } from '../../utils/constants'
-import { Reducer } from "../../shared/types";
+import { Reducer } from "../../shared/types"
 
 
-const { DISCOUNTS, REWARDS, VISITS } = Actions
+const { DISCOUNTS, REWARDS, VISITS, EMPLOYEES, STATISTICS } = Actions
 const { USER_VIEW } = defaultValues
 
 const userViewReducer: Reducer<string, Action<string>> = (state: string = USER_VIEW, action: Action<string>): string => {
@@ -14,6 +14,10 @@ const userViewReducer: Reducer<string, Action<string>> = (state: string = USER_V
       case REWARDS:
          return payload
       case VISITS:
+         return payload
+      case EMPLOYEES:
+         return payload
+      case STATISTICS:
          return payload
       default:
          return state

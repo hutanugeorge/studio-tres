@@ -1,12 +1,11 @@
 import axios, { AxiosResponse } from "axios"
+
 import { IAppointment } from "../../shared/interfaces/makeAppointment"
+import { PostRequest } from "../../shared/types"
 import { tresStudioAPIRoutes } from "../../utils/constants"
 
 
-
-type PostAppointment = (args: IAppointment) => Promise<AxiosResponse>
-
-export const postAppointments: PostAppointment = async (args: IAppointment): Promise<AxiosResponse> => {
+export const postAppointments: PostRequest<IAppointment> = async (args: IAppointment): Promise<AxiosResponse> => {
    try {
       const appointmentData = { ...args }
       const token = localStorage.getItem('token')

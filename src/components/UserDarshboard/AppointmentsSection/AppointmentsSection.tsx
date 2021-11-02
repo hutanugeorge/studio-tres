@@ -1,12 +1,12 @@
-import dayjs from "dayjs"
 import React, { FC, useEffect, useState } from 'react'
 
-import { useDispatch, useSelector } from "react-redux"
+import dayjs from "dayjs"
 import { useHistory } from "react-router-dom"
 import relativeTime from 'dayjs/plugin/relativeTime'
 
-import { RootState } from "../../../reducers"
-import { fetchAppointments } from "../../../actions"
+import { IUseFetchResponse } from "../../../../shared/interfaces/api"
+import { tresStudioAPIRoutes } from "../../../../utils/constants"
+import useFetch from "../../../customHooks/useFetch"
 import { IAppointment } from "../../../../shared/interfaces/userDashboard"
 
 
@@ -16,42 +16,49 @@ type RenderAppointments = (appointmentType: string, appointments: IAppointment[]
 const AppointmentsSection: FC = (): JSX.Element => {
    dayjs.extend(relativeTime)
    const history = useHistory()
-   const dispatch = useDispatch()
-
-   const appointments: IAppointment[] = useSelector((state: RootState) => state.appointments)
 
    const [ appointmentsType, setAppointmentsType ] = useState<string>('future')
+
+   const appointments: IUseFetchResponse<{ appointments: IAppointment[] }> = useFetch<{ appointments: IAppointment[] }>(tresStudioAPIRoutes.appointments, true)
+   const { data, error, loading } = appointments
 
    const token = localStorage.getItem('token')
 
    useEffect((): void => {
-      !token ? history.push('/') : dispatch(fetchAppointments())
+      !token && history.push('/')
       setAppointmentsType('future')
-   }, [])
+   }, [ data ])
 
-   return (
-      <div className="appointments--wrap">
-         <div className="appointments__title">
-            <p className="appointments__title--content">
-               Appointments
-            </p>
-         </div>
-         <div className="appointments">
-            <div className="appointments__buttons">
-               <p className={`appointments__buttons--button appointments__buttons--button--${appointmentsType === 'previous' ? 'active' : ''}`}
-                  onClick={(): void => setAppointmentsType('previous')}>
-                  Previous
-               </p>
-               <p className={`appointments__buttons--button appointments__buttons--button--${appointmentsType === 'future' ? 'active' : ''}`}
-                  onClick={(): void => setAppointmentsType('future')}>
-                  Future
+   if (data)
+      return (
+         <div className="appointments--wrap">
+            <div className="appointments__title">
+               <p className="appointments__title--content">
+                  Appointments
                </p>
             </div>
-            <div className="appointments__content">
-               {renderAppointmentsList(appointmentsType, appointments)}
+            <div className="appointments">
+               <div className="appointments__buttons">
+                  <p className={`appointments__buttons--button appointments__buttons--button--${appointmentsType === 'previous' ? 'active' : ''}`}
+                     onClick={(): void => setAppointmentsType('previous')}>
+                     Previous
+                  </p>
+                  <p className={`appointments__buttons--button appointments__buttons--button--${appointmentsType === 'future' ? 'active' : ''}`}
+                     onClick={(): void => setAppointmentsType('future')}>
+                     Future
+                  </p>
+               </div>
+               <div className="appointments__content">
+                  {renderAppointmentsList(appointmentsType, data.appointments)}
+               </div>
             </div>
-         </div>
-      </div>)
+         </div>)
+   else if (error)
+      return <div>Error</div>
+   else if (loading)
+      return <div>Just loading...</div>
+   else
+      return <div>Something else</div>
 }
 
 const renderAppointmentsList: RenderAppointmentsList = (appointmentType: string, appointments: IAppointment[]): JSX.Element =>

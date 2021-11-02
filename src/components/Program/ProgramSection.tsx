@@ -1,9 +1,9 @@
 import React, { FC } from 'react'
-import { JSXArrayElements } from '../../../shared/types'
 
+import { JSXArrayElements } from '../../../shared/types'
 import { weekDays } from '../../../utils/constants'
 import './program-section.sass'
-import ProgramCard from "./ProgramCard";
+import ProgramCard from "./ProgramCard"
 
 
 const ProgramSection: FC = (): JSX.Element =>
@@ -16,6 +16,6 @@ const ProgramSection: FC = (): JSX.Element =>
 
 const generateScheduleCards: JSXArrayElements = (): JSX.Element[] =>
    weekDays.map((day: string, index: number): JSX.Element =>
-      <ProgramCard index={index} day={day} />)
+      <ProgramCard index={index} day={day}/>)
 
 export default ProgramSection

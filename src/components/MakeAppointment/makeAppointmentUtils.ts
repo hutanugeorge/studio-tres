@@ -25,11 +25,10 @@ export const getDailyProgram: GetDailyProgram = (duration: number, openHour: num
    return hours
 }
 
-export const getEmployeeDayAppointments: GetEmployeeDayAppointments = (appointments: IEmployeeAppointment[] | undefined): IEmployeeAppointment[] | undefined =>
-   appointments?.filter((appointment: IEmployeeAppointment): number | null =>
+export const getEmployeeDayAppointments: GetEmployeeDayAppointments = (appointments: IEmployeeAppointment[] | undefined): IEmployeeAppointment[] | undefined => {
+   return appointments?.filter((appointment: IEmployeeAppointment): number | null =>
       dayjs(new Date(appointment.date)).month() === dayjs().month() ? dayjs(new Date(appointment.date)).date() : null)
-
-
+}
 
 
 export const getBusyDays: GetBusyDays = (appointmentsDates: IEmployeeAppointment[] | undefined): number[] => {
@@ -46,7 +45,7 @@ export const getAWeekDatesByNow: GetAWeekDatesByNow = (): number[] => {
    const aWeekDates = []
    let day = 0
    while (day !== 7) {
-      aWeekDates.push(dayjs().date() + day)
+      aWeekDates.push(dayjs(dayjs().add(day, 'd')).date())
       day++
    }
    return aWeekDates
@@ -61,7 +60,7 @@ export const getBusyHoursByDay: GetBusyHoursByDay = (appointmentsDates: IEmploye
    })
    days?.forEach((day: number): void => {
       appointmentsDates?.forEach((appointment: IEmployeeAppointment): void => {
-         if (!unavailabilityDates.includes(String(day)))
+         if (!unavailabilityDates.includes(String(day).length === 1 ? `0${String(day)}`: String(day)))
             dayjs(appointment.date).date() === day ? hours.push(`${appointment.hour}`) : null
       })
       !unavailabilityDates.includes(String(day)) && hoursByDay.push([ day, hours ])

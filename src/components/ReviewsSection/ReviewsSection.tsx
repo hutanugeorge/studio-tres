@@ -1,44 +1,51 @@
 import React, { FC, useEffect } from 'react'
 
-import { useDispatch, useSelector } from 'react-redux'
-
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { Autoplay, Navigation, Pagination } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/autoplay'
 
-import { fetchReviews } from '../../actions'
-import { RootState } from '../../reducers'
+import { IUseFetchResponse } from "../../../shared/interfaces/api"
 import { IReview } from '../../../shared/interfaces/presentationPage'
+import { tresStudioAPIRoutes } from "../../../utils/constants"
+import useFetch from "../../customHooks/useFetch"
 
 
 type RenderSlides = (reviews: IReview[]) => JSX.Element[]
 SwiperCore.use([ Navigation, Autoplay, Pagination ])
 
 const ReviewsSection: FC = (): JSX.Element => {
-   const dispatch = useDispatch()
-
-   const reviews: IReview[] = useSelector((state: RootState) => state.reviews)
+   const {
+      data,
+      error,
+      loading
+   }: IUseFetchResponse<{ reviews: IReview[] }> = useFetch<{ reviews: IReview[] }>(tresStudioAPIRoutes.reviews)
 
    useEffect((): void => {
-      dispatch(fetchReviews())
-   }, [])
+   }, [ data ])
 
-   return (
-      <div className="swiper-wrap">
-         <Swiper
-            className="swiper"
-            direction={'vertical'}
-            pagination={{ 'clickable': true }}
-            autoplay={{ delay: 5000 }}
-            grabCursor={true}
-            spaceBetween={50}
-            slidesPerView={1}
-            loop={true}>
-            {renderSlides(reviews)}
-         </Swiper>
-      </div>)
+   if (data)
+      return (
+         <div className="swiper-wrap">
+            <Swiper
+               className="swiper"
+               direction={'vertical'}
+               pagination={{ 'clickable': true }}
+               autoplay={{ delay: 5000 }}
+               grabCursor={true}
+               spaceBetween={50}
+               slidesPerView={1}
+               loop={true}>
+               {renderSlides(data.reviews)}
+            </Swiper>
+         </div>)
+   else if (error)
+      return <div>Error</div>
+   else if (loading)
+      return <div>Just loading...</div>
+   else
+      return <div>Something else</div>
 }
 
 const renderSlides: RenderSlides = (reviews: IReview[]): JSX.Element[] =>

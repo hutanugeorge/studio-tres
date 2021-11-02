@@ -2,22 +2,26 @@ import React, { FC, useEffect, useState } from 'react'
 
 import { useDispatch } from "react-redux"
 import { Link as ScrollLink } from 'react-scroll'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 import { navigationLinks, otherPageLinks } from '../../../utils/constants'
 import { JSXArrayElements } from '../../../shared/types'
 import { logoutUser } from "../../actions"
+import { autoLogOut } from "../../pages/UserSide"
 
 
 const DesktopNavigation: FC = (): JSX.Element => {
    const dispatch = useDispatch()
+   const history = useHistory()
 
    const token = localStorage.getItem('token')
    const [ isAuth, setIsAuth ] = useState<boolean>(false)
 
    useEffect((): void => {
       token && setIsAuth(true)
-   }, [ isAuth ])
+      !token && setIsAuth(false)
+      token && autoLogOut(dispatch, history)
+   }, [ isAuth, token ])
 
    return (
       <>
@@ -38,8 +42,8 @@ const DesktopNavigation: FC = (): JSX.Element => {
                            User Dashboard
                         </Link>
                         <a onClick={(): void => {
-                           dispatch(logoutUser())
                            setIsAuth(false)
+                           dispatch(logoutUser())
                         }}
                            className="desktop-navigation__lower-link desktop-navigation__login">
                            Log out

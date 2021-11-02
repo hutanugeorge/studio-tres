@@ -1,3 +1,4 @@
+import { IAdminEmployee } from "../shared/interfaces/adminDashboard"
 import { setUserView } from "../src/actions"
 import { IFormError } from "../shared/interfaces/foms"
 import { IUser, IUserInfo } from "../shared/interfaces/user"
@@ -26,24 +27,44 @@ export interface SubService {
    readonly  price: Number
 }
 
-interface IUpperTab {
+export interface IUpperTab {
    readonly title: string
    readonly action?: IUserViewAction
 }
 
 interface IDefaultValues {
-   readonly  LANDING_INFO: ILandingInfo
-   readonly  FEATURE: IFeature
-   readonly REVIEW: IReview
    readonly USER_VIEW: string
-   readonly PROMOTION: IPromotion
-   readonly REWARD: IReward
-   readonly APPOINTMENT: IAppointment
    readonly USER: IUser
-   readonly USER_DATA: IUserInfo
    readonly EMPLOYEE: IEmployee
-   readonly FORM_ERRORS: IFormError
 
+}
+
+export enum Actions {
+   DISCOUNTS = 'DISCOUNTS',
+   REWARDS = 'REWARDS',
+   VISITS = 'VISITS',
+   EMPLOYEES = 'EMPLOYEES',
+   LOGIN = 'LOGIN',
+   LOGIN_ERROR = 'LOGIN_ERROR',
+   LOGOUT = 'LOGOUT',
+   TOGGLE_MENU = 'TOGGLE_MENU',
+   STATISTICS = 'STATISTICS',
+}
+
+export const defaultValues: IDefaultValues = {
+   USER_VIEW: Actions.DISCOUNTS,
+   USER: {
+      firstName: '',
+      token: '',
+      userId: ''
+   },
+   EMPLOYEE: {
+      _id: '',
+      firstName: '',
+      lastName: '',
+      jobTitle: '',
+      field: ''
+   },
 }
 
 export const otherPageLinks: Link[] = [
@@ -217,12 +238,12 @@ export const prices: Price[] = [
 export const services = [ "Service", "Hair_Care", 'Facial_Treatments', 'Body_Massage', 'Makeup_Services', 'Nails_Care', 'Hair_Removal' ]
 
 export const subServices = {
-   Hair_Care : ["Sub Service", 'Short haircut', 'Long haircut', 'Medium haircut'],
-   Facial_Treatments : ["Sub Service",'Short haircut', 'Long haircut', 'Medium haircut'],
-   Body_Massage : ["Sub Service", 'Short haircut', 'Long haircut', 'Medium haircut'],
-   Makeup_Services : ["Sub Service", 'Short haircut', 'Long haircut', 'Medium haircut'],
-   Nails_Care : ["Sub Service", 'Short haircut', 'haircut', 'Medium haircut'],
-   Hair_Removal : ["Sub Service", 'Short haircut', 'Long haircut', 'Medium haircut']
+   Hair_Care: [ "Sub Service", 'Short haircut', 'Long haircut', 'Medium haircut' ],
+   Facial_Treatments: [ "Sub Service", 'Short haircut', 'Long haircut', 'Medium haircut' ],
+   Body_Massage: [ "Sub Service", 'Short haircut', 'Long haircut', 'Medium haircut' ],
+   Makeup_Services: [ "Sub Service", 'Short haircut', 'Long haircut', 'Medium haircut' ],
+   Nails_Care: [ "Sub Service", 'Short haircut', 'haircut', 'Medium haircut' ],
+   Hair_Removal: [ "Sub Service", 'Short haircut', 'Long haircut', 'Medium haircut' ]
 }
 
 export enum tresStudioAPIRoutes {
@@ -237,96 +258,14 @@ export enum tresStudioAPIRoutes {
    user = 'http://localhost:3001/user',
    getEmployees = 'http://localhost:3001/employees',
    resetPassword = 'http://localhost:3001/resetPassword',
-   resetPasswordEmail = 'http://localhost:3001/resetPasswordEmail'
-}
-
-export enum Actions {
-   FETCH_HERO_SECTION = 'FETCH_HERO_SECTION',
-   FETCH_FEATURES = 'FETCH_FEATURE_CARDS',
-   FETCH_REVIEWS = 'FETCH_REVIEWS',
-   FETCH_PROMOTIONS = 'FETCH_PROMOTIONS',
-   FETCH_REWARDS = 'FETCH_REWARDS',
-   DISCOUNTS = 'DISCOUNTS',
-   REWARDS = 'REWARDS',
-   VISITS = 'VISITS',
-   LOGIN = 'LOGIN',
-   LOGIN_ERROR = 'LOGIN_ERROR',
-   LOGOUT =  'LOGOUT',
-   TOGGLE_MENU = 'TOGGLE_MENU',
-   APPOINTMENTS = 'APPOINTMENTS',
-   USER_INFO = 'USER_INFO',
-   FETCH_EMPLOYEES = 'FETCH_EMPLOYEES',
+   resetPasswordEmail = 'http://localhost:3001/resetPasswordEmail',
 }
 
 export const Headers = {
    contentTypeJsonHeader: { 'Content-Type': 'application/json' },
 }
 
-export const defaultValues: IDefaultValues = {
-   LANDING_INFO: {
-      landingPhrase: 'Default',
-      landingButtonPhrase: 'Make an appointment'
-   },
-   FEATURE: {
-      image: '/loading',
-      title: 'Loading...',
-      description: 'Loading...'
-   },
-   REVIEW: {
-      image: 'loading',
-      fullName: 'Loading...',
-      review: 'Loading...'
-   },
-   USER_VIEW: Actions.DISCOUNTS,
-   PROMOTION: {
-      title: 'Not promotions yet',
-      saleType: 'percentage',
-      amount: 0,
-      description: ''
-   },
-   REWARD: {
-      title: 'No rewards yet',
-      services: [
-         {
-            title: 'No rewards',
-            points: 0
-         }
-      ]
-   },
-   APPOINTMENT: {
-      subService: 'No appointment',
-      employeeName: 'No employee',
-      date: 'No date',
-      hour: 'No hour'
-   },
-   USER: {
-      firstName: '',
-      token: '',
-      userId: ''
-   },
-   USER_DATA: {
-      firstName: '',
-      lastName: '',
-      rewardsPoints: 0,
-      promotionCode: '',
-      email: ''
-   },
-   EMPLOYEE: {
-      _id: '',
-      firstName: '',
-      lastName: '',
-      jobTitle: '',
-      field: ''
-   },
-   FORM_ERRORS: {
-      location: '',
-      msg: '',
-      param: '',
-      value: ''
-   }
-}
-
-export const userUpperTabs: IUpperTab[] = [
+export const customerUpperTabs: IUpperTab[] = [
    {
       title: 'Discounts',
       action: setUserView(Actions.DISCOUNTS),
@@ -339,6 +278,24 @@ export const userUpperTabs: IUpperTab[] = [
       title: 'Appointments',
       action: setUserView(Actions.VISITS)
    }
+]
+
+export const employeeUpperTabs: IUpperTab[] = [
+   {
+      title: 'Appointments',
+      action: setUserView(Actions.VISITS)
+   }
+]
+
+export const adminUpperTabs: IUpperTab[] = [
+   {
+      title: 'Employees',
+      action: setUserView(Actions.EMPLOYEES),
+   },
+   {
+      title: 'Statistics',
+      action: setUserView(Actions.STATISTICS),
+   },
 ]
 
 export enum promoCardsColors {
@@ -367,3 +324,5 @@ export enum IconColor {
    DEFAULT = '#f4f4f4',
    ACTIVE = '#52b69a'
 }
+
+export const logOutTime = 1000 * 60 * 60 /* an hour */

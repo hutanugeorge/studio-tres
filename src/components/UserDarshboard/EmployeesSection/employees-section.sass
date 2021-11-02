@@ -1,0 +1,293 @@
+@import '../../sharedStyles/utils/variables'
+@import '../../sharedStyles/base/animations'
+@import '../../sharedStyles/utils/mixins'
+
+
+.employees
+    width: 100%
+    height: 90%
+    overflow-y: scroll
+    display: flex
+    align-items: center
+    flex-direction: column
+
+    &:not(:nth-child(1))
+        gap: 10rem
+
+    &--wrap
+        height: 100vh
+        width: 100%
+
+    &__title
+        padding-top: 1rem
+        width: 100%
+        height: 10%
+        display: flex
+        justify-content: flex-end
+        align-items: center
+        animation: moveToLeft 1s ease-in
+
+        &-content
+            margin-right: 10%
+
+    &__add-employee
+        padding-left: 7%
+
+        &__button
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 20rem
+            border-radius: 25px
+            padding: 1.5rem 3rem
+            background-color: $color-secondary
+            box-shadow: 0 1rem 2rem rgba($color-black, .3)
+            transition: all .3s
+            cursor: pointer
+
+            &:hover
+                transform: translateY(-.6rem)
+                box-shadow: 0 2rem 4rem rgba($color-black, .3)
+
+            &:active
+                box-shadow: 0 1rem 2rem rgba($color-black, .3)
+                transform: translateY(0)
+
+
+    &__categories
+        @include displayFlexCenterCenter
+        width: 100%
+        max-width: 200rem
+
+        &:last-child
+            padding-bottom: 10rem
+
+        &__employees-group
+            box-shadow: 0 1rem 2rem rgba($color-black, .3)
+            border-radius: 20px
+            width: 90%
+            display: flex
+            flex-direction: column
+            background-image: linear-gradient(to right bottom, rgba($color-primary-light, .6), rgba($color-primary-dark, .7))
+            padding-bottom: 5rem
+            overflow: hidden
+
+            &--title
+                clip-path: polygon(0 0, 100% 0, 100% 40%, 0% 100%)
+                width: 100%
+                height: 12rem
+                background-color: $color-primary-dark
+
+                &--content
+                    width: fit-content
+                    padding-left: 6%
+                    height: 40%
+                    display: flex
+                    align-items: center
+
+            &__employee
+                display: flex
+                flex-direction: column
+                gap: 3rem
+
+                &--info
+                    display: flex
+                    justify-content: center
+
+                    &--person
+                        display: flex
+                        gap: 3rem
+                        width: 60%
+
+                        &--photo
+                            width: 13rem
+                            height: 13rem
+
+                            &--content
+                                clip-path: circle()
+                                width: 100%
+
+                            &--wrap
+                                filter: drop-shadow(0 1rem 2rem rgba($color-black, .6))
+                                width: fit-content
+
+                        &--personal
+                            width: 80%
+                            max-width: 100rem
+                            display: flex
+                            flex-direction: column
+                            justify-content: center
+
+                            &-dates
+                                display: flex
+                                width: 100%
+                                justify-content: space-evenly
+                                align-items: center
+
+                                &--settings-button
+                                    background-color: $color-secondary
+                                    padding: 1rem 2rem
+                                    border-radius: 20px
+                                    box-shadow: 0 1rem 2rem rgba($color-black, .3)
+                                    transition: all .3s
+                                    cursor: pointer
+
+                                    &:hover
+                                        transform: translateY(-.6rem)
+                                        box-shadow: 0 2rem 4rem rgba($color-black, .3)
+
+                                    &:active
+                                        box-shadow: 0 1rem 2rem rgba($color-black, .3)
+                                        transform: translateY(0)
+
+                            &-statistics
+                                display: flex
+                                justify-content: space-evenly
+
+                    &--last-appointments
+                        width: 35%
+                        box-shadow: 0 1rem 2rem rgba($color-black, .3)
+                        background-color: rgba($color-white-smoke, .7)
+                        border-radius: 20px
+                        overflow: hidden
+
+                        &--title
+                            clip-path: polygon(0 0, 100% 0, 100% 40%, 0% 100%)
+                            background-color: $color-primary-dark
+                            display: flex
+                            height: 9rem
+                            width: 100%
+
+                            &--content
+                                width: fit-content
+                                padding-left: 6%
+
+                        &--content
+                            width: 100%
+
+                            &--appointment
+                                display: flex
+                                width: 100%
+                                justify-content: space-evenly
+
+                &--edit
+                    overflow: hidden
+                    display: flex
+                    flex-direction: column
+                    align-items: center
+                    width: 90rem
+                    background-color: rgba($color-white-smoke, .7)
+                    box-shadow: 0 1rem 2rem rgba($color-black, .3)
+                    padding-bottom: 3rem
+                    border-radius: 20px
+                    gap: 3rem
+
+                    &--wrap
+                        width: 100%
+                        display: flex
+                        justify-content: center
+
+                    &--title
+                        clip-path: polygon(0 0, 100% 0, 100% 40%, 0% 100%)
+                        background-color: $color-primary-dark
+                        width: 100%
+                        height: 8rem
+                        display: flex
+
+                        &--content
+                            width: fit-content
+                            padding-top: .4rem
+                            padding-left: 6%
+
+                    &--form
+                        max-width: 80rem
+
+                        &--content
+                            flex-wrap: wrap
+                            display: flex
+                            justify-content: space-evenly
+                            align-items: center
+
+                            &--input
+                                text-align: center
+                                border: none
+                                border-radius: 40px
+                                padding: 1rem 2rem
+                                width: 20rem
+                                height: 3rem
+                                box-shadow: 0 1rem 2rem rgba($color-black, .2)
+                                transition: all .4s
+
+                                &:focus + .employees__categories__employees-group__employee--edit--form--content--label
+                                    opacity: 1
+                                    transform: translateY(0)
+                                    margin-bottom: 3rem
+
+                                &:focus
+                                    transform: translateY(-.6rem)
+                                    box-shadow: 0 2rem 4rem rgba($color-black, .2)
+
+                                    &::placeholder
+                                        opacity: 0
+
+                                &::placeholder
+                                    text-align: center
+
+                            &--label
+                                transition: all .6s
+                                margin-top: 1rem
+                                opacity: 0
+                                transform: translateY(-1.5rem)
+
+                            &--group
+                                display: flex
+                                flex-direction: column
+                                align-items: center
+                                gap: 1rem
+
+                            &--buttons
+                                width: 100%
+                                display: flex
+                                gap: 3rem
+                                justify-content: center
+
+                                &--save
+                                    margin: auto 0
+                                    height: 5.5rem
+                                    background-color: $color-secondary
+
+                                &--cancel
+                                    border: 3px solid $color-secondary !important
+                                    background-color: rgba($color-white-smoke, .7)
+
+                                &--save, &--cancel
+                                    display: flex
+                                    justify-content: center
+                                    align-items: center
+                                    padding: 1.4rem 3.5rem
+                                    border: unset
+                                    border-radius: 50px
+                                    box-shadow: 0 1rem 2rem rgba($color-black, .3)
+                                    transition: all .3s
+                                    cursor: pointer
+
+                                    &:hover
+                                        transform: translateY(-.6rem)
+                                        box-shadow: 0 2rem 4rem rgba($color-black, .3)
+
+                                    &:active
+                                        box-shadow: 0 1rem 2rem rgba($color-black, .3)
+                                        transform: translateY(0)
+
+
+
+
+
+
+
+
+
+
+
+
+

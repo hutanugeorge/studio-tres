@@ -1019,6 +1019,67 @@
   }
 }
 
+.employees {
+  font-size: 1.6rem;
+  color: #F3F5F3;
+}
+.employees__title {
+  font-size: 5rem;
+  background-image: linear-gradient(to right, rgba(111, 45, 189, 0.8), rgba(166, 99, 204, 0.8));
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 900;
+}
+.employees__add-employee__button {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.employees__categories__employees-group--title {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+.employees__categories__employees-group__employee--info--last-appointments {
+  color: #2A1E38;
+}
+.employees__categories__employees-group__employee--info--last-appointments--title {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #F3F5F3;
+}
+.employees__categories__employees-group__employee--info--last-appointments--content {
+  color: rgba(42, 30, 56, 0.7);
+}
+.employees__categories__employees-group__employee--info--person--personal-dates--content {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.employees__categories__employees-group__employee--edit {
+  font-size: 1.5rem;
+  color: #6F2DBD;
+  font-weight: 500;
+}
+.employees__categories__employees-group__employee--edit--title {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #F3F5F3;
+}
+.employees__categories__employees-group__employee--edit--form--content--buttons {
+  font-weight: 700;
+}
+.employees__categories__employees-group__employee--edit--form--content--buttons--save {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #F3F5F3;
+}
+.employees__categories__employees-group__employee--edit--form--content--buttons--cancel {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #52b69a;
+}
+
 .section-program__wrap {
   background: url(../../../images/navigation-background-alternative.svg) top;
   background-size: cover;

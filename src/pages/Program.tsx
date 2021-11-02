@@ -1,5 +1,4 @@
-import * as React from 'react'
-import { FC } from 'react'
+import React, { FC } from 'react'
 
 import ProgramSection from '../components/Program/ProgramSection'
 import DesktopNavigation from '../components/NavigationSection/DesktopNavigation'

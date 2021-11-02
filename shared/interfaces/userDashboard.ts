@@ -9,7 +9,7 @@ export interface IReward {
 }
 
 export interface IPromotion {
-   readonly  title: string
+   readonly title: string
    readonly saleType: string
    readonly amount: number
    readonly description?: string
@@ -23,21 +23,16 @@ export interface IAppointment {
 }
 
 export interface IEmployee {
-   readonly  _id: string
-   readonly  firstName: string
+   readonly _id: string
+   readonly firstName: string
    readonly lastName: string
    readonly jobTitle: string
    readonly field: string
-   readonly unavailability?: IUnavailabilityPeriod[]
+   readonly unavailability?: string[]
    readonly appointments?: IEmployeeAppointment[]
 }
 
 export type IEmployeeAppointment =  Pick<IAppointment, 'subService' | 'date' | 'hour'>
-
-export interface IUnavailabilityPeriod {
-   readonly startDate: string
-   readonly endDate: string
-}
 
 export interface ILoginUserArgs {
    readonly email: string

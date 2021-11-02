@@ -1,35 +1,40 @@
 import React, { Dispatch, FC, useEffect, useState } from 'react'
+
 import { Link } from 'react-router-dom'
-
 import { useDispatch, useSelector } from "react-redux"
-import { IUserInfo } from "../../../shared/interfaces/user"
-import HomeIcon from "../Icons/HomeIcon"
 
+import { IUseFetchResponse } from "../../../shared/interfaces/api"
+import useFetch from "../../customHooks/useFetch"
+import HomeIcon from "../Icons/HomeIcon"
 import SettingsIcon from '../Icons/SettingsIcon'
 import LogoutIcon from '../Icons/LogoutIcon'
-import LocationIcon from '../Icons/LocationIcon'
-import DiscountIcon from "../Icons/DiscountIcon"
-import RewardIcon from "../Icons/RewardIcon"
 import { RootState } from "../../reducers"
-import { fetchUserInfo, logoutUser, setUserView, toggleSettingsMenu } from "../../actions"
-import { Actions, userUpperTabs } from "../../../utils/constants"
-import { JSXArrayElements } from "../../../shared/types"
+import { logoutUser, setUserView, toggleSettingsMenu } from "../../actions"
+import { Actions, IUpperTab, tresStudioAPIRoutes } from "../../../utils/constants"
+import { IUserInfo } from "../../../shared/interfaces/user"
 import { IUserViewAction } from "../../../shared/interfaces/userView"
+import { RenderIcon } from "./renderIcons"
 
 
+interface IUserInfoBarArgs {
+   customerUpperTabs: IUpperTab[]
+   renderIcon: RenderIcon
+}
+
+type RenderCustomerUpperTabs = (tabs: IUpperTab[], renderIcon: RenderIcon, role: string | undefined) => JSX.Element[]
 type DispatchOnClick = (action: IUserViewAction | undefined, dispatch: Dispatch<IUserViewAction>) => void
-type RenderIcon = (title: string, active: boolean) => JSX.Element
 
-const UserInfo: FC = (): JSX.Element => {
+const UserInfoBar: FC<IUserInfoBarArgs> = ({ customerUpperTabs, renderIcon }: IUserInfoBarArgs): JSX.Element => {
    const dispatch = useDispatch()
 
    const isMenuOpen: boolean = useSelector((state: RootState) => state.isMenuOpen)
-   const userInfo: IUserInfo = useSelector((state: RootState) => state.userInfo)
+   const userInfo: IUseFetchResponse<{ userInfo: IUserInfo }> = useFetch<{ userInfo: IUserInfo }>(tresStudioAPIRoutes.user, true)
+
    const openUserClassName = 'user-info__mobile--open'
 
    useEffect((): void => {
-      dispatch(fetchUserInfo())
-   }, [])
+   }, [ userInfo.data ])
+
    return (
       <>
          <div className="user-info-wrap">
@@ -44,7 +49,7 @@ const UserInfo: FC = (): JSX.Element => {
                      <p className="user-info__header--name">
                         Hello,
                         <span className="user-info__header--name--firstname">
-                        &nbsp;{userInfo.firstName}!
+                        &nbsp;{userInfo.data?.userInfo.firstName}!
                      </span>
                      </p>
                   </div>
@@ -55,7 +60,7 @@ const UserInfo: FC = (): JSX.Element => {
                         </div>
                         <p className="user-info__details--detail--personal">Home</p>
                      </Link>
-                     {renderUserUpperTabs()}
+                     {renderUpperTabs(customerUpperTabs, renderIcon, userInfo.data?.userInfo.role)}
                   </div>
                </div>
                <div className="user-info__settings">
@@ -94,7 +99,11 @@ const UserInfo: FC = (): JSX.Element => {
                   </div>
                   <p className="user-info__mobile-details--detail--personal">Settings</p>
                </div>
-               <Link className="user-info__mobile-details--detail" to={'/'}>
+               <Link className="user-info__mobile-details--detail" to={'/'}
+                     onClick={(): void => {
+                        dispatch(logoutUser())
+                        dispatch(toggleSettingsMenu(isMenuOpen))
+                     }}>
                   <div className="user-info__mobile-details--detail--icon">
                      <LogoutIcon/>
                   </div>
@@ -110,15 +119,27 @@ const dispatchOnClick: DispatchOnClick = (action: IUserViewAction | undefined, d
    action && dispatch(action)
 }
 
-const renderUserUpperTabs: JSXArrayElements = (): JSX.Element[] => {
+const renderUpperTabs: RenderCustomerUpperTabs = (tabs: IUpperTab[], renderIcon: RenderIcon, role: string | undefined): JSX.Element[] => {
    const dispatch = useDispatch()
-   const [ activeTab, setActiveTab ] = useState<string>('Discounts')
+
+   const [ activeTab, setActiveTab ] = useState<string>('')
 
    useEffect((): void => {
-      dispatchOnClick(setUserView(Actions.DISCOUNTS), dispatch)
-   }, [])
+      let firstView = Actions.DISCOUNTS
+      if (role === 'customer') {
+         firstView = Actions.DISCOUNTS
+         setActiveTab('Discounts')
+      } else if (role === 'employee') {
+         firstView = Actions.VISITS
+         setActiveTab('Appointments')
+      } else if (role === 'admin') {
+         firstView = Actions.EMPLOYEES
+         setActiveTab('Employees')
+      }
+      dispatchOnClick(setUserView(firstView), dispatch)
+   }, [ role ])
 
-   return (userUpperTabs.map(({ title, action }, index: number): JSX.Element =>
+   return (tabs.map(({ title, action }, index: number): JSX.Element =>
       <div key={index}
            className={`user-info__details--detail ${activeTab === title ? 'user-info__details--detail--active' : ''}`}
            onClick={(): void => {
@@ -133,15 +154,5 @@ const renderUserUpperTabs: JSXArrayElements = (): JSX.Element[] => {
    ))
 }
 
-const renderIcon: RenderIcon = (title: string, active: boolean): JSX.Element => {
-   switch (title) {
-      case 'Rewards':
-         return <RewardIcon active={active}/>
-      case 'Appointments':
-         return <LocationIcon active={active}/>
-      default:
-         return <DiscountIcon active={active}/>
-   }
-}
 
-export default UserInfo
+export default UserInfoBar

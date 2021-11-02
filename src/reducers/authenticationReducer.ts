@@ -1,7 +1,7 @@
 import { Action } from "../../shared/interfaces/api"
 import { IUser } from "../../shared/interfaces/user"
 import { Reducer } from "../../shared/types"
-import { Actions, defaultValues } from "../../utils/constants";
+import { Actions, defaultValues } from "../../utils/constants"
 
 
 const authenticationReducer: Reducer<IUser, Action<IUser>> = (state: IUser = defaultValues.USER, action: Action<IUser>): IUser => {

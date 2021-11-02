@@ -1,13 +1,11 @@
 import axios, { AxiosResponse } from "axios"
+
 import { ILoginUserArgs, IResetPasswordArgs, ISignupArgs } from "../../shared/interfaces/userDashboard"
+import { PostRequest } from "../../shared/types"
+import { Headers, tresStudioAPIRoutes } from "../../utils/constants"
 
-import { Headers, tresStudioAPIRoutes } from "../../utils/constants";
 
-
-type PostLogin = (args: ILoginUserArgs) => Promise<AxiosResponse>
-type SignupUser = (args: ISignupArgs) => Promise<AxiosResponse>
-
-export const postLogin: PostLogin = async (args: ILoginUserArgs): Promise<AxiosResponse> => {
+export const postLogin: PostRequest<ILoginUserArgs> = async (args: ILoginUserArgs): Promise<AxiosResponse> => {
    try {
       const userData = JSON.stringify({ ...args })
       const headers = Headers.contentTypeJsonHeader
@@ -17,7 +15,7 @@ export const postLogin: PostLogin = async (args: ILoginUserArgs): Promise<AxiosR
    }
 }
 
-export const signupUser: SignupUser = async (args: ISignupArgs): Promise<AxiosResponse> => {
+export const signupUser: PostRequest<ISignupArgs> = async (args: ISignupArgs): Promise<AxiosResponse> => {
    try {
       const userData = JSON.stringify({ ...args })
       const headers = Headers.contentTypeJsonHeader
@@ -27,7 +25,7 @@ export const signupUser: SignupUser = async (args: ISignupArgs): Promise<AxiosRe
    }
 }
 
-export const resetPassword = async (args: IResetPasswordArgs): Promise<AxiosResponse> => {
+export const resetPassword: PostRequest<IResetPasswordArgs> = async (args: IResetPasswordArgs): Promise<AxiosResponse> => {
    try {
       const userData = JSON.stringify({ ...args })
       const headers = Headers.contentTypeJsonHeader
@@ -37,7 +35,7 @@ export const resetPassword = async (args: IResetPasswordArgs): Promise<AxiosResp
    }
 }
 
-export const resetPasswordEmail = async (email: string): Promise<AxiosResponse> => {
+export const resetPasswordEmail: PostRequest<string> = async (email: string): Promise<AxiosResponse> => {
    try {
       const userData = JSON.stringify({ email})
       const headers = Headers.contentTypeJsonHeader

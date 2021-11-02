@@ -1,6 +1,6 @@
-import { Actions } from "../../utils/constants";
-import { IToggleSettingsMenu } from "../../shared/interfaces/userView";
-import { Reducer } from "../../shared/types";
+import { Actions } from "../../utils/constants"
+import { IToggleSettingsMenu } from "../../shared/interfaces/userView"
+import { Reducer } from "../../shared/types"
 
 
 const toggleMenuReducer: Reducer<boolean, IToggleSettingsMenu> = (state: boolean = false, action: IToggleSettingsMenu): boolean => {
